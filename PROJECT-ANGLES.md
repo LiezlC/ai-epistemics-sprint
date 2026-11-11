@@ -51,6 +51,26 @@ About 12 paired case families and two models, with at least a third of families 
 
 Track 1 fits the reviewer evaluation, and Track 2 fits the comparison of trust signals. All tracks share one judging rubric. [Sprint brief and Guidelines](https://apartresearch.com/sprints/ai-x-epistemics-research-sprint-2026-11-13-to-2026-11-15)
 
+### Pre-sprint trial results (prior work, November 11)
+
+A minimum fine-tuning trial ran before the sprint, on Liezl's account ([trial README](./training-trial/README.md), [results](./training-trial/results/test_a_results.md)). 1,000 scripted training cases in the gate-and-log setting, covering all four packet conditions; 60 Test A cases from disjoint sites and record numbers. Qwen3.5-4B, LoRA, one iteration on Adaption (32 minutes). Evaluated on Modal, greedy decoding, thinking off.
+
+| Model | Verdict right | Verdict and record IDs right |
+| --- | --- | --- |
+| Untuned, no examples | 32/60 | 20/60 |
+| Untuned, three worked examples | 48/60 | 46/60 |
+| Tuned | 54/60 | 54/60 |
+
+- **Against the fair control** (untuned with examples), tuning fixed 7 cases and broke 1 (exact McNemar p = 0.07). Suggestive, not settled.
+- **The gain sits in incomplete trails** (5/12 to 11/12). The tuned model learned to answer undetermined when a trail ends at an unsourced note.
+- **The headline failure survives tuning.** A false “independent” label on shared-source reports: tuned 1 of 6 right, untuned with examples 2 of 6. A false “same source” label on independent reports: 6 of 6 for both. The misleading label pulls one way, towards independence.
+
+What this changes for the sprint design:
+
+- **Report the two contradiction directions separately**, as planned, and expect the false-“independent” direction to carry the effect. Give it more than six cases per model in Test B.
+- **Test B is the transfer test.** Test A shares a generator with training, so it only shows the task was learned as taught.
+- **A fine-tune arm is cheap enough to include**: 32 minutes of training, no credits charged so far, and one Modal batch job for evaluation (`training-trial/eval_modal.py`).
+
 ### Decisions for the three of us
 
 Agreed in the team chat on November 11:
@@ -58,7 +78,7 @@ Agreed in the team chat on November 11:
 - **Setting:** site gate and guard log.
 - **Firsthand observation:** a record made by someone who directly saw or measured the thing at the time. A report that restates another record is not firsthand (Prashanth's wording).
 - **Prashanth** writes the held-back contradiction variants and checks the answer key. He writes the variants before reading the rubric, so the check stays independent.
-- **No case files before Friday.** The 30-row seed is dropped.
+- **No case files before Friday.** The 30-row seed is dropped. Exception: the scripted training and Test A cases of the pre-sprint trial above, disclosed as prior work. No scored Test B material exists before Friday.
 - **Prashanth** sends one line on what we add beyond Zhou et al. and Bara.
 - **Deepayan** owns the run: prompts, models, scoring.
 - **Toy Adaption run launched November 11, 17:13 SAST** ([run log](./toy-run/RUN-LOG.md)). Previously: goes ahead before the sprint on Liezl's account (about 2,000 credits; Deepayan has about 1,000). Limits: 1,050 toy rows, one iteration, four-hour cutoff from submission to usable checkpoint. Log start and finish times, which also shows whether last weekend's delay was a one-off. Dated and listed as prior work in the README and report.
@@ -73,8 +93,12 @@ Agreed after the repo went up (November 11):
 - **Training files hold nothing** from the rubric, answer key, or held-back variants. Training files go up as private Hugging Face datasets, which Adaption imports through the connected account (tested 11 Nov, see the run log). The rule still applies.
 - **Prompt freeze:** Deepayan freezes the reviewer prompt by end of day Friday, November 13. Prashanth's variants go into the repo only after that. Prashanth posts when the variants are done, before he reads the rubric. Liezl holds the rubric until then.
 - **Sibling project dropped** (trail beside each claim versus in an appendix) unless someone takes it.
+- **Prashanth's 3 draft variants** (dated 11 Nov) stay as practice. He writes the scored contradiction variants on Friday, before reading the rubric, and posts when done.
+- **No team call** needed for now.
 
 ### Optional: a fine-tune check before the sprint
+
+Done November 11: 19 minutes from submission to finished run, no credits charged ([run log](./toy-run/RUN-LOG.md)). The plan as written:
 
 The Swarm Adaption Invent jobs stalled before training. A disposable run tests whether fine-tuning is worth sprint time.
 
