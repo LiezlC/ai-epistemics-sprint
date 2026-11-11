@@ -18,6 +18,7 @@ Usage: python -I generate_cases.py OUTDIR
 import json
 import os
 import random
+import re
 import sys
 
 SITES_TRAIN = ["North Quarry", "Kestrel Yard", "Riverbend Depot", "Hilltop Substation",
@@ -63,7 +64,40 @@ REPORT_FORMS = [
     "{role} statement: {Claim} {when}. This is based on {cite}.",
     "{role} memo: For the record, {claim} {when} (source: {cite}).",
     "{role} note: Our information is that {claim} {when}; see {cite}.",
+    "{role} update: Following up on the complaint, {cite} shows {claim} {when}.",
+    "{role} reply: We checked {cite}. It says {claim} {when}, so we do not dispute this point.",
+    "{role} briefing: Per {cite}, {claim} {when}. No further action is planned on this item.",
+    "{role} comment: I was told, and {cite} supports it, that {claim} {when}.",
 ]
+
+# Paraphrases a report may use for each claim (index 0 is the canonical claim).
+CLAIM_VARIANTS = {
+    "the main gate was locked": ["the main gate was locked", "the front gate was secured", "nobody could get in through the main entrance"],
+    "the night guard was at the east post": ["the night guard was at the east post", "the guard was stationed at the eastern post", "security was manning the east post"],
+    "a water truck entered through gate 2": ["a water truck entered through gate 2", "a water bowser came in at the second gate", "the water tanker was let in through gate two"],
+    "the perimeter alarm sounded": ["the perimeter alarm sounded", "the fence alarm went off", "the boundary alarm was triggered"],
+    "the stormwater drain was blocked": ["the stormwater drain was blocked", "the storm drain was clogged", "runoff could not get through the drain"],
+    "the fence near the river was cut": ["the fence near the river was cut", "someone had cut the riverside fence", "the river fence was damaged by cutting"],
+    "the community access road was closed": ["the community access road was closed", "residents could not use the access road", "the road into the community was shut"],
+    "the generator was switched off": ["the generator was switched off", "the genset was shut down", "the backup generator was turned off"],
+    "two contractors left the site": ["two contractors left the site", "a pair of contractors signed out and left", "two contract workers went off site"],
+    "the blasting warning siren was not tested": ["the blasting warning siren was not tested", "nobody tested the blast siren", "the siren check before blasting was skipped"],
+}
+
+STOP = {"the", "a", "an", "at", "by", "on", "from", "to", "of", "and", "is", "was", "that", "this", "it", "we", "i", "our", "so"}
+
+
+def overlap(x, y):
+    """Content-word Jaccard overlap of two reports, ignoring record IDs and the role prefix."""
+    def toks(s):
+        s = re.sub(r"[A-Z]-\d+", " ", s.split(": ", 1)[-1]).lower()
+        return {w for w in re.findall(r"[a-z0-9:]+", s) if w not in STOP}
+    a, b = toks(x), toks(y)
+    return len(a & b) / max(1, len(a | b))
+
+
+NEAR_IDENTICAL = 0.8  # overlap >= this: near identical
+VARIED = 0.35         # overlap <= this: varied
 
 LABELS = {
     "independent": "Handoff note: these two reports come from independent sources.",
@@ -102,17 +136,17 @@ class Gen:
         kind = self.r.choice([k for k in FIRSTHAND if k[0] not in exclude])
         pre, typ, tpl = kind
         return {"id": self.rid(pre), "type": typ, "firsthand": True, "cites": None,
-                "text": tpl.format(who=self.r.choice(PEOPLE), claim=claim, when=when)}
+                "text": tpl.format(who=self.people.pop(), claim=claim, when=when)}
 
     def restate(self, claim, when, cite_id):
         pre, typ, tpl = self.r.choice(RESTATE)
         return {"id": self.rid(pre), "type": typ, "firsthand": False, "cites": cite_id,
-                "text": tpl.format(who=self.r.choice(PEOPLE), claim=claim, when=when, cite=cite_id)}
+                "text": tpl.format(who=self.people.pop(), claim=claim, when=when, cite=cite_id)}
 
     def dead_end(self, claim, when):
         pre, typ, _ = self.r.choice(RESTATE)
         return {"id": self.rid(pre), "type": typ, "firsthand": False, "cites": None,
-                "text": f"{self.r.choice(PEOPLE)} noted that {claim} {when}. No source is attached to this note."}
+                "text": f"{self.people.pop()} passed on that {claim} {when}. The writer was not on site and does not say where the information came from."}
 
     def chain(self, claim, when, root, depth):
         """Return (records_in_chain, id_the_report_cites)."""
@@ -123,14 +157,32 @@ class Gen:
             top = rec["id"]
         return recs, top
 
-    def report(self, role, claim, when, cite, form=None):
-        form = form or self.r.choice(REPORT_FORMS)
-        return form.format(role=role, claim=claim, Claim=claim[0].upper() + claim[1:], when=when, cite=cite)
+    def report(self, role, when, cite, form, variant):
+        return form.format(role=role, claim=variant, Claim=variant[0].upper() + variant[1:], when=when, cite=cite)
+
+    def report_pair(self, roles, claim, when, cite1, cite2, target):
+        """Write two reports whose measured overlap falls in the target band."""
+        variants = CLAIM_VARIANTS[claim]
+        for _ in range(200):
+            if target == "near_identical":
+                form, v = self.r.choice(REPORT_FORMS), self.r.choice(variants)
+                a = self.report(roles[0], when, cite1, form, v)
+                b = self.report(roles[1], when, cite2, form, v)
+            else:
+                fa, fb = self.r.sample(REPORT_FORMS, 2)
+                va, vb = self.r.sample(variants, 2)
+                a = self.report(roles[0], when, cite1, fa, va)
+                b = self.report(roles[1], when, cite2, fb, vb)
+            o = overlap(a, b)
+            if (target == "near_identical" and o >= NEAR_IDENTICAL) or (target == "varied" and o <= VARIED):
+                return a, b, o
+        raise RuntimeError("could not hit wording target " + target)
 
     def case(self, truth, condition):
         """condition: consistent | contradiction | label_only | incomplete"""
         r = self.r
         self.used = set()
+        self.people = r.sample(PEOPLE, len(PEOPLE))  # no name appears twice in one case
         site = r.choice(self.sites)
         claim, when_t = r.choice(CLAIMS)
         when = when_t.format(t=self.time())
@@ -169,15 +221,10 @@ class Gen:
             hidden_truth = "undetermined"
 
         # wording: shared-root cases sometimes reworded heavily; independent sometimes near-identical
-        if hidden_truth == "independent" and r.random() < 0.4:
-            form = r.choice(REPORT_FORMS)
-            rep_a = self.report(roles[0], claim, when, cite1, form)
-            rep_b = self.report(roles[1], claim, when, cite2, form)
-            wording = "near_identical"
-        else:
-            rep_a = self.report(roles[0], claim, when, cite1)
-            rep_b = self.report(roles[1], claim, when, cite2)
-            wording = "varied"
+        # Wording band is measured, not assumed: near identical >= 0.8 overlap, varied <= 0.35.
+        p_same = 0.4 if hidden_truth == "independent" else 0.25
+        wording = "near_identical" if r.random() < p_same else "varied"
+        rep_a, rep_b, ovl = self.report_pair(roles, claim, when, cite1, cite2, wording)
 
         if r.random() < 0.5:
             rep_a, rep_b = rep_b, rep_a
@@ -211,7 +258,7 @@ class Gen:
             "meta": {
                 "site": site, "claim": claim_full, "condition": condition, "label": label_key,
                 "truth": answer_verdict, "underlying": hidden_truth if condition != "incomplete" else "undetermined",
-                "wording": wording, "roots": answer_roots,
+                "wording": wording, "overlap": round(ovl, 2), "roots": answer_roots,
                 "records": records if show_records else [],
                 "reports": [rep_a, rep_b],
             },

@@ -28,6 +28,16 @@ Does fine-tuning make a small reviewer model better at telling shared-source cor
 3. One AutoScientist run, Qwen3.5-4B, LoRA, one iteration.
 4. Run untuned (with three examples) and tuned on Test A now and on Test B in the sprint. Score with the frozen key.
 
+## Human check, v1 (November 11)
+
+Liezl checked 20 stratified v1 cases (`review/case-check-results-2026-11-11.json`, sheet in `review/review-v1.html`, data in `data/v1/`). All 20 verdicts and root IDs correct, all marked fit to train on. Notes led to three generator fixes in v2:
+
+- **Wording was labeled, not measured.** In v1, "varied" only meant two templates were drawn at random, often the same one: median content-word overlap was 47%, with some at 100%. v2 measures overlap (content-word Jaccard, record IDs and role prefixes removed) and only accepts **near identical at 80% or more** and **varied at 35% or less**. v2 adds four report templates and three paraphrases per claim. Measured: near identical pairs all 100%, varied pairs 4–33%. The score is stored per case as `overlap`.
+- **Name collisions suggested links that were not there** (case 6). v2 never reuses a person's name within a case.
+- **Dead-end notes could read as firsthand** (case 14). v2 dead ends say the writer was not on site and gives no source.
+
+Verdict logic is unchanged, and the independent re-derivation still matches all 1,060 v2 answers. Near-identical wording now also appears on shared-source cases (25%), so wording cannot be used as a shortcut in either direction.
+
 ## Deviation from the team plan
 
 The team agreed on November 11 that no case files exist before Friday and that Deepayan writes training cases. This trial generates training cases now, from a script in the gate-and-log setting. Test B, the rubric and the answer key are untouched: they are still written during the sprint. Confirm in the group before step 2.

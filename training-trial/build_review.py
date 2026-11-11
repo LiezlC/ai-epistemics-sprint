@@ -24,7 +24,7 @@ for k, x in enumerate(pick, 1):
         end = "firsthand" if c in recs and recs[c]["firsthand"] else ("no excerpt shown" if not recs else "dead end: no source")
         trails.append({"report": i, "steps": steps, "end": end})
     out.append({"n": k, "train_idx": x["idx"], "packet": p, "answer": json.loads(x["completion"]),
-                "condition": m["condition"], "label": m["label"], "wording": m["wording"], "trails": trails})
+                "condition": m["condition"], "label": m["label"], "wording": m["wording"], "overlap": m.get("overlap"), "trails": trails})
 open(os.path.join(D, "review_data.js"), "w", encoding="utf-8").write("window.REVIEW = " + json.dumps(out, indent=1) + ";\n")
 print(len(out), "cases")
 tpl = open(os.path.join(D, "review_template.html"), encoding="utf-8").read()

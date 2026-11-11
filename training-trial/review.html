@@ -57,7 +57,7 @@ details summary{cursor:pointer;color:var(--muted);font-size:.85rem}
 <body>
 <header>
   <div class="bar">
-    <h1>Generator check · 20 training cases</h1>
+    <h1>Generator check v2 · 20 training cases</h1>
     <div class="prog" aria-hidden="true"><i id="pbar"></i></div>
     <span id="count">0 / 20</span>
     <button id="export" class="primary">Download results</button>
@@ -118,31 +118,29 @@ details summary{cursor:pointer;color:var(--muted);font-size:.85rem}
  {
   "n": 1,
   "train_idx": 100,
-  "packet": "Claim under review: At Lowveld Store, the night guard was at the east post at 10:10.\n\nReport 1. Contractor foreman memo: For the record, the night guard was at the east post at 10:10 (source: R-4857).\nReport 2. Shift manager memo: For the record, the night guard was at the east post at 10:10 (source: E-304).\n\nHandoff note: these two reports draw on the same source.\n\nRecord excerpts:\n[E-304] Email. A. Pillay wrote: as recorded in I-1999, the night guard was at the east post at 10:10.\n[E-547] Email. N. Zulu wrote: as recorded in I-1999, the night guard was at the east post at 10:10.\n[I-1999] Site inspection record. R. Naidoo inspected in person and recorded: the night guard was at the east post at 10:10.\n[R-4857] Shift summary. S. Dlamini compiled the shift summary: the night guard was at the east post at 10:10, per E-547.",
+  "packet": "Claim under review: At Eastgate Plant, two contractors left the site at 09:50.\n\nReport 1. Security coordinator briefing: Per M-4588, two contract workers went off site at 09:50. No further action is planned on this item.\nReport 2. Shift manager comment: I was told, and M-4588 supports it, that a pair of contractors signed out and left at 09:50.\n\nHandoff note: these two reports draw on the same source.\n\nRecord excerpts:\n[M-4588] Maintenance ticket. K. Abrahams attended on site and wrote: two contractors left the site at 09:50.",
   "answer": {
    "verdict": "shared",
    "root_records": [
-    "I-1999"
+    "M-4588"
    ]
   },
   "condition": "consistent",
   "label": "shared",
   "wording": "varied",
+  "overlap": 0.05,
   "trails": [
    {
     "report": 1,
     "steps": [
-     "R-4857",
-     "E-547",
-     "I-1999"
+     "M-4588"
     ],
     "end": "firsthand"
    },
    {
     "report": 2,
     "steps": [
-     "E-304",
-     "I-1999"
+     "M-4588"
     ],
     "end": "firsthand"
    }
@@ -151,31 +149,33 @@ details summary{cursor:pointer;color:var(--muted);font-size:.85rem}
  {
   "n": 2,
   "train_idx": 497,
-  "packet": "Claim under review: At Eastgate Plant, the blasting warning siren was not tested on the 20:30 shift.\n\nReport 1. Safety officer statement: The blasting warning siren was not tested on the 20:30 shift. This is based on E-1889.\nReport 2. Environmental officer statement: The blasting warning siren was not tested on the 20:30 shift. This is based on E-1754.\n\nHandoff note: these two reports come from independent sources.\n\nRecord excerpts:\n[C-4995] CCTV review note. F. Jacobs reviewed camera 4 footage and noted: the blasting warning siren was not tested on the 20:30 shift.\n[E-1754] Email. S. Dlamini wrote: as recorded in C-4995, the blasting warning siren was not tested on the 20:30 shift.\n[E-1889] Email. F. Jacobs wrote: as recorded in G-785, the blasting warning siren was not tested on the 20:30 shift.\n[G-785] Guard log. N. Zulu (guard on duty) recorded: the blasting warning siren was not tested on the 20:30 shift.",
+  "packet": "Claim under review: At Baobab Junction, the night guard was at the east post at 19:30.\n\nReport 1. Security coordinator reply: We checked R-551. It says the night guard was at the east post at 19:30, so we do not dispute this point.\nReport 2. Community liaison officer statement: The guard was stationed at the eastern post at 19:30. This is based on N-3644.\n\nHandoff note: these two reports come from independent sources.\n\nRecord excerpts:\n[G-3252] Guard log. N. Zulu (guard on duty) recorded: the night guard was at the east post at 19:30.\n[N-3644] Meeting note. Minutes by T. Mokoena: R-4615 confirms the night guard was at the east post at 19:30.\n[R-4615] Shift summary. Z. Mahlangu compiled the shift summary: the night guard was at the east post at 19:30, per G-3252.\n[R-551] Shift summary. R. Naidoo compiled the shift summary: the night guard was at the east post at 19:30, per S-3921.\n[S-3921] Sensor log. Automatic sensor entry: the night guard was at the east post at 19:30 (logged by device, checked by D. Sithole).",
   "answer": {
    "verdict": "independent",
    "root_records": [
-    "C-4995",
-    "G-785"
+    "G-3252",
+    "S-3921"
    ]
   },
   "condition": "consistent",
   "label": "independent",
   "wording": "varied",
+  "overlap": 0.21,
   "trails": [
    {
     "report": 1,
     "steps": [
-     "E-1889",
-     "G-785"
+     "R-551",
+     "S-3921"
     ],
     "end": "firsthand"
    },
    {
     "report": 2,
     "steps": [
-     "E-1754",
-     "C-4995"
+     "N-3644",
+     "R-4615",
+     "G-3252"
     ],
     "end": "firsthand"
    }
@@ -184,26 +184,27 @@ details summary{cursor:pointer;color:var(--muted);font-size:.85rem}
  {
   "n": 3,
   "train_idx": 518,
-  "packet": "Claim under review: At Marula Camp, the blasting warning siren was not tested on the 23:45 shift.\n\nReport 1. Shift manager report: I can confirm that the blasting warning siren was not tested on the 23:45 shift. Basis: S-4710.\nReport 2. Security coordinator memo: For the record, the blasting warning siren was not tested on the 23:45 shift (source: N-1161).\n\nHandoff note: these two reports draw on the same source.\n\nNo record excerpts are attached.",
+  "packet": "Claim under review: At Marula Camp, the stormwater drain was blocked at 01:40.\n\nReport 1. Site supervisor reply: We checked S-2958. It says runoff could not get through the drain at 01:40, so we do not dispute this point.\nReport 2. Shift manager reply: We checked E-4556. It says runoff could not get through the drain at 01:40, so we do not dispute this point.\n\nHandoff note: these two reports draw on the same source.\n\nNo record excerpts are attached.",
   "answer": {
    "verdict": "undetermined",
    "root_records": []
   },
   "condition": "label_only",
   "label": "shared",
-  "wording": "varied",
+  "wording": "near_identical",
+  "overlap": 1.0,
   "trails": [
    {
     "report": 1,
     "steps": [
-     "S-4710"
+     "S-2958"
     ],
     "end": "no excerpt shown"
    },
    {
     "report": 2,
     "steps": [
-     "N-1161"
+     "E-4556"
     ],
     "end": "no excerpt shown"
    }
@@ -212,30 +213,30 @@ details summary{cursor:pointer;color:var(--muted);font-size:.85rem}
  {
   "n": 4,
   "train_idx": 484,
-  "packet": "Claim under review: At Lowveld Store, the fence near the river was cut by 13:10.\n\nReport 1. Shift manager memo: For the record, the fence near the river was cut by 13:10 (source: I-2042).\nReport 2. HR representative memo: For the record, the fence near the river was cut by 13:10 (source: E-3888).\n\nHandoff note: these two reports draw on the same source.\n\nRecord excerpts:\n[E-3888] Email. J. van Wyk wrote: as recorded in G-2300, the fence near the river was cut by 13:10.\n[G-2300] Guard log. A. Pillay (guard on duty) recorded: the fence near the river was cut by 13:10.\n[I-2042] Site inspection record. E. Govender inspected in person and recorded: the fence near the river was cut by 13:10.",
+  "packet": "Claim under review: At Kestrel Yard, the stormwater drain was blocked at 23:15.\n\nReport 1. Community liaison officer reply: We checked I-1798. It says the storm drain was clogged at 23:15, so we do not dispute this point.\nReport 2. Security coordinator comment: I was told, and C-1973 supports it, that the stormwater drain was blocked at 23:15.\n\nHandoff note: these two reports draw on the same source.\n\nRecord excerpts:\n[C-1973] CCTV review note. Z. Mahlangu reviewed camera 4 footage and noted: the stormwater drain was blocked at 23:15.\n[I-1798] Site inspection record. S. Dlamini inspected in person and recorded: the stormwater drain was blocked at 23:15.",
   "answer": {
    "verdict": "independent",
    "root_records": [
-    "G-2300",
-    "I-2042"
+    "C-1973",
+    "I-1798"
    ]
   },
   "condition": "contradiction",
   "label": "shared",
-  "wording": "near_identical",
+  "wording": "varied",
+  "overlap": 0.14,
   "trails": [
    {
     "report": 1,
     "steps": [
-     "I-2042"
+     "I-1798"
     ],
     "end": "firsthand"
    },
    {
     "report": 2,
     "steps": [
-     "E-3888",
-     "G-2300"
+     "C-1973"
     ],
     "end": "firsthand"
    }
@@ -244,29 +245,31 @@ details summary{cursor:pointer;color:var(--muted);font-size:.85rem}
  {
   "n": 5,
   "train_idx": 60,
-  "packet": "Claim under review: At Granite Ridge, the blasting warning siren was not tested on the 20:40 shift.\n\nReport 1. Community liaison officer statement: The blasting warning siren was not tested on the 20:40 shift. This is based on E-272.\nReport 2. Environmental officer memo: For the record, the blasting warning siren was not tested on the 20:40 shift (source: C-4791).\n\nHandoff note: these two reports draw on the same source.\n\nRecord excerpts:\n[C-4791] CCTV review note. M. Fourie reviewed camera 4 footage and noted: the blasting warning siren was not tested on the 20:40 shift.\n[E-272] Email. S. Dlamini wrote: as recorded in C-4791, the blasting warning siren was not tested on the 20:40 shift.",
+  "packet": "Claim under review: At Hilltop Substation, the stormwater drain was blocked at 20:10.\n\nReport 1. Environmental officer comment: I was told, and N-2022 supports it, that the storm drain was clogged at 20:10.\nReport 2. Site supervisor update: Following up on the complaint, N-540 shows runoff could not get through the drain at 20:10.\n\nHandoff note: these two reports draw on the same source.\n\nRecord excerpts:\n[N-2022] Meeting note. Minutes by T. Mokoena: S-4367 confirms the stormwater drain was blocked at 20:10.\n[N-540] Meeting note. Minutes by B. Nkosi: S-4367 confirms the stormwater drain was blocked at 20:10.\n[S-4367] Sensor log. Automatic sensor entry: the stormwater drain was blocked at 20:10 (logged by device, checked by H. Petersen).",
   "answer": {
    "verdict": "shared",
    "root_records": [
-    "C-4791"
+    "S-4367"
    ]
   },
   "condition": "consistent",
   "label": "shared",
   "wording": "varied",
+  "overlap": 0.13,
   "trails": [
    {
     "report": 1,
     "steps": [
-     "E-272",
-     "C-4791"
+     "N-2022",
+     "S-4367"
     ],
     "end": "firsthand"
    },
    {
     "report": 2,
     "steps": [
-     "C-4791"
+     "N-540",
+     "S-4367"
     ],
     "end": "firsthand"
    }
@@ -275,7 +278,7 @@ details summary{cursor:pointer;color:var(--muted);font-size:.85rem}
  {
   "n": 6,
   "train_idx": 544,
-  "packet": "Claim under review: At Baobab Junction, two contractors left the site at 01:15.\n\nReport 1. Shift manager memo: For the record, two contractors left the site at 01:15 (source: E-3200).\nReport 2. Community liaison officer note: Our information is that two contractors left the site at 01:15; see E-3859.\n\nHandoff note: these two reports draw on the same source.\n\nRecord excerpts:\n[C-3097] CCTV review note. N. Zulu reviewed camera 4 footage and noted: two contractors left the site at 01:15.\n[E-3200] Email. N. Zulu noted that two contractors left the site at 01:15. No source is attached to this note.\n[E-3859] Email. L. Khumalo wrote: as recorded in R-4430, two contractors left the site at 01:15.\n[R-4430] Shift summary. D. Sithole compiled the shift summary: two contractors left the site at 01:15, per C-3097.",
+  "packet": "Claim under review: At Hilltop Substation, the night guard was at the east post at 13:05.\n\nReport 1. Shift manager memo: For the record, the guard was stationed at the eastern post at 13:05 (source: N-1326).\nReport 2. Environmental officer update: Following up on the complaint, R-1388 shows security was manning the east post at 13:05.\n\nHandoff note: these two reports draw on the same source.\n\nRecord excerpts:\n[G-3936] Guard log. Z. Mahlangu (guard on duty) recorded: the night guard was at the east post at 13:05.\n[N-1326] Meeting note. Minutes by T. Mokoena: G-3936 confirms the night guard was at the east post at 13:05.\n[R-1388] Shift summary. R. Naidoo passed on that the night guard was at the east post at 13:05. The writer was not on site and does not say where the information came from.",
   "answer": {
    "verdict": "undetermined",
    "root_records": []
@@ -283,48 +286,49 @@ details summary{cursor:pointer;color:var(--muted);font-size:.85rem}
   "condition": "incomplete",
   "label": "shared",
   "wording": "varied",
+  "overlap": 0.13,
   "trails": [
    {
     "report": 1,
     "steps": [
-     "E-3200"
+     "N-1326",
+     "G-3936"
     ],
-    "end": "dead end: no source"
+    "end": "firsthand"
    },
    {
     "report": 2,
     "steps": [
-     "E-3859",
-     "R-4430",
-     "C-3097"
+     "R-1388"
     ],
-    "end": "firsthand"
+    "end": "dead end: no source"
    }
   ]
  },
  {
   "n": 7,
   "train_idx": 110,
-  "packet": "Claim under review: At Baobab Junction, the community access road was closed from 02:40.\n\nReport 1. Security coordinator note: Our information is that the community access road was closed from 02:40; see G-4937.\nReport 2. Site supervisor note: Our information is that the community access road was closed from 02:40; see I-3801.\n\nHandoff note: these two reports come from independent sources.\n\nNo record excerpts are attached.",
+  "packet": "Claim under review: At Hilltop Substation, the fence near the river was cut by 17:45.\n\nReport 1. Shift manager update: Following up on the complaint, S-949 shows someone had cut the riverside fence by 17:45.\nReport 2. Safety officer reply: We checked E-850. It says the fence near the river was cut by 17:45, so we do not dispute this point.\n\nHandoff note: these two reports come from independent sources.\n\nNo record excerpts are attached.",
   "answer": {
    "verdict": "undetermined",
    "root_records": []
   },
   "condition": "label_only",
   "label": "independent",
-  "wording": "near_identical",
+  "wording": "varied",
+  "overlap": 0.17,
   "trails": [
    {
     "report": 1,
     "steps": [
-     "G-4937"
+     "S-949"
     ],
     "end": "no excerpt shown"
    },
    {
     "report": 2,
     "steps": [
-     "I-3801"
+     "E-850"
     ],
     "end": "no excerpt shown"
    }
@@ -333,29 +337,30 @@ details summary{cursor:pointer;color:var(--muted);font-size:.85rem}
  {
   "n": 8,
   "train_idx": 644,
-  "packet": "Claim under review: At Riverbend Depot, the perimeter alarm sounded at 05:45.\n\nReport 1. Site supervisor statement: The perimeter alarm sounded at 05:45. This is based on R-3565.\nReport 2. Contractor foreman note: Our information is that the perimeter alarm sounded at 05:45; see I-2115.\n\nHandoff note: these two reports come from independent sources.\n\nRecord excerpts:\n[I-2115] Site inspection record. F. Jacobs inspected in person and recorded: the perimeter alarm sounded at 05:45.\n[R-3565] Shift summary. R. Naidoo compiled the shift summary: the perimeter alarm sounded at 05:45, per I-2115.",
+  "packet": "Claim under review: At Marula Camp, two contractors left the site at 02:45.\n\nReport 1. Environmental officer reply: We checked M-195. It says two contract workers went off site at 02:45, so we do not dispute this point.\nReport 2. Security coordinator reply: We checked E-1161. It says two contract workers went off site at 02:45, so we do not dispute this point.\n\nHandoff note: these two reports come from independent sources.\n\nRecord excerpts:\n[E-1161] Email. Z. Mahlangu wrote: as recorded in M-195, two contractors left the site at 02:45.\n[M-195] Maintenance ticket. E. Govender attended on site and wrote: two contractors left the site at 02:45.",
   "answer": {
    "verdict": "shared",
    "root_records": [
-    "I-2115"
+    "M-195"
    ]
   },
   "condition": "contradiction",
   "label": "independent",
-  "wording": "varied",
+  "wording": "near_identical",
+  "overlap": 1.0,
   "trails": [
    {
     "report": 1,
     "steps": [
-     "R-3565",
-     "I-2115"
+     "M-195"
     ],
     "end": "firsthand"
    },
    {
     "report": 2,
     "steps": [
-     "I-2115"
+     "E-1161",
+     "M-195"
     ],
     "end": "firsthand"
    }
@@ -364,31 +369,32 @@ details summary{cursor:pointer;color:var(--muted);font-size:.85rem}
  {
   "n": 9,
   "train_idx": 664,
-  "packet": "Claim under review: At Granite Ridge, the night guard was at the east post at 07:15.\n\nReport 1. Safety officer memo: For the record, the night guard was at the east post at 07:15 (source: R-4489).\nReport 2. Security coordinator memo: For the record, the night guard was at the east post at 07:15 (source: R-3795).\n\nHandoff note: these two reports draw on the same source.\n\nRecord excerpts:\n[G-4935] Guard log. B. Nkosi (guard on duty) recorded: the night guard was at the east post at 07:15.\n[M-3623] Maintenance ticket. Z. Mahlangu attended on site and wrote: the night guard was at the east post at 07:15.\n[R-3795] Shift summary. L. Khumalo compiled the shift summary: the night guard was at the east post at 07:15, per M-3623.\n[R-4489] Shift summary. J. van Wyk compiled the shift summary: the night guard was at the east post at 07:15, per G-4935.",
+  "packet": "Claim under review: At Eastgate Plant, the night guard was at the east post at 21:00.\n\nReport 1. Security coordinator reply: We checked C-1069. It says security was manning the east post at 21:00, so we do not dispute this point.\nReport 2. Site supervisor reply: We checked R-2131. It says security was manning the east post at 21:00, so we do not dispute this point.\n\nHandoff note: these two reports draw on the same source.\n\nRecord excerpts:\n[C-1069] CCTV review note. S. Dlamini reviewed camera 4 footage and noted: the night guard was at the east post at 21:00.\n[E-2206] Email. R. Naidoo wrote: as recorded in I-745, the night guard was at the east post at 21:00.\n[I-745] Site inspection record. H. Petersen inspected in person and recorded: the night guard was at the east post at 21:00.\n[R-2131] Shift summary. B. Nkosi compiled the shift summary: the night guard was at the east post at 21:00, per E-2206.",
   "answer": {
    "verdict": "independent",
    "root_records": [
-    "G-4935",
-    "M-3623"
+    "C-1069",
+    "I-745"
    ]
   },
   "condition": "contradiction",
   "label": "shared",
   "wording": "near_identical",
+  "overlap": 1.0,
   "trails": [
    {
     "report": 1,
     "steps": [
-     "R-4489",
-     "G-4935"
+     "C-1069"
     ],
     "end": "firsthand"
    },
    {
     "report": 2,
     "steps": [
-     "R-3795",
-     "M-3623"
+     "R-2131",
+     "E-2206",
+     "I-745"
     ],
     "end": "firsthand"
    }
@@ -397,26 +403,27 @@ details summary{cursor:pointer;color:var(--muted);font-size:.85rem}
  {
   "n": 10,
   "train_idx": 264,
-  "packet": "Claim under review: At Ironwood Shed, the stormwater drain was blocked at 07:40.\n\nReport 1. Shift manager memo: For the record, the stormwater drain was blocked at 07:40 (source: E-2485).\nReport 2. Security coordinator note: Our information is that the stormwater drain was blocked at 07:40; see I-2598.\n\nHandoff note: these two reports come from independent sources.\n\nNo record excerpts are attached.",
+  "packet": "Claim under review: At Copperline Mill, a water truck entered through gate 2 at 13:40.\n\nReport 1. Shift manager update: Following up on the complaint, E-118 shows a water truck entered through gate 2 at 13:40.\nReport 2. Community liaison officer briefing: Per E-2342, a water bowser came in at the second gate at 13:40. No further action is planned on this item.\n\nHandoff note: these two reports draw on the same source.\n\nNo record excerpts are attached.",
   "answer": {
    "verdict": "undetermined",
    "root_records": []
   },
   "condition": "label_only",
-  "label": "independent",
+  "label": "shared",
   "wording": "varied",
+  "overlap": 0.14,
   "trails": [
    {
     "report": 1,
     "steps": [
-     "E-2485"
+     "E-118"
     ],
     "end": "no excerpt shown"
    },
    {
     "report": 2,
     "steps": [
-     "I-2598"
+     "E-2342"
     ],
     "end": "no excerpt shown"
    }
@@ -425,7 +432,7 @@ details summary{cursor:pointer;color:var(--muted);font-size:.85rem}
  {
   "n": 11,
   "train_idx": 293,
-  "packet": "Claim under review: At Riverbend Depot, two contractors left the site at 05:00.\n\nReport 1. Community liaison officer statement: Two contractors left the site at 05:00. This is based on E-759.\nReport 2. HR representative statement: Two contractors left the site at 05:00. This is based on N-3539.\n\nHandoff note: these two reports draw on the same source.\n\nRecord excerpts:\n[E-759] Email. A. Pillay noted that two contractors left the site at 05:00. No source is attached to this note.\n[N-3539] Meeting note. Minutes by L. Khumalo: S-1754 confirms two contractors left the site at 05:00.\n[S-1754] Sensor log. Automatic sensor entry: two contractors left the site at 05:00 (logged by device, checked by R. Naidoo).",
+  "packet": "Claim under review: At Riverbend Depot, the blasting warning siren was not tested on the 10:10 shift.\n\nReport 1. Community liaison officer note: Our information is that nobody tested the blast siren on the 10:10 shift; see R-4268.\nReport 2. Safety officer report: I can confirm that the blasting warning siren was not tested on the 10:10 shift. Basis: E-1799.\n\nHandoff note: these two reports draw on the same source.\n\nRecord excerpts:\n[C-2722] CCTV review note. L. Khumalo reviewed camera 4 footage and noted: the blasting warning siren was not tested on the 10:10 shift.\n[E-1799] Email. R. Naidoo passed on that the blasting warning siren was not tested on the 10:10 shift. The writer was not on site and does not say where the information came from.\n[R-4268] Shift summary. H. Petersen compiled the shift summary: the blasting warning siren was not tested on the 10:10 shift, per C-2722.",
   "answer": {
    "verdict": "undetermined",
    "root_records": []
@@ -433,53 +440,55 @@ details summary{cursor:pointer;color:var(--muted);font-size:.85rem}
   "condition": "incomplete",
   "label": "shared",
   "wording": "varied",
+  "overlap": 0.29,
   "trails": [
    {
     "report": 1,
     "steps": [
-     "E-759"
+     "R-4268",
+     "C-2722"
     ],
-    "end": "dead end: no source"
+    "end": "firsthand"
    },
    {
     "report": 2,
     "steps": [
-     "N-3539",
-     "S-1754"
+     "E-1799"
     ],
-    "end": "firsthand"
+    "end": "dead end: no source"
    }
   ]
  },
  {
   "n": 12,
   "train_idx": 415,
-  "packet": "Claim under review: At Eastgate Plant, the blasting warning siren was not tested on the 23:30 shift.\n\nReport 1. Shift manager memo: For the record, the blasting warning siren was not tested on the 23:30 shift (source: E-1742).\nReport 2. Environmental officer memo: For the record, the blasting warning siren was not tested on the 23:30 shift (source: R-15).\n\nHandoff note: these two reports come from independent sources.\n\nRecord excerpts:\n[E-1742] Email. S. Dlamini wrote: as recorded in R-663, the blasting warning siren was not tested on the 23:30 shift.\n[G-1291] Guard log. L. Khumalo (guard on duty) recorded: the blasting warning siren was not tested on the 23:30 shift.\n[M-1012] Maintenance ticket. H. Petersen attended on site and wrote: the blasting warning siren was not tested on the 23:30 shift.\n[R-15] Shift summary. N. Zulu compiled the shift summary: the blasting warning siren was not tested on the 23:30 shift, per G-1291.\n[R-663] Shift summary. T. Mokoena compiled the shift summary: the blasting warning siren was not tested on the 23:30 shift, per M-1012.",
+  "packet": "Claim under review: At Lowveld Store, the perimeter alarm sounded at 13:05.\n\nReport 1. Community liaison officer memo: For the record, the boundary alarm was triggered at 13:05 (source: E-4281).\nReport 2. Environmental officer memo: For the record, the boundary alarm was triggered at 13:05 (source: N-2738).\n\nHandoff note: these two reports come from independent sources.\n\nRecord excerpts:\n[E-4281] Email. H. Petersen wrote: as recorded in M-2805, the perimeter alarm sounded at 13:05.\n[I-1456] Site inspection record. S. Dlamini inspected in person and recorded: the perimeter alarm sounded at 13:05.\n[M-2805] Maintenance ticket. F. Jacobs attended on site and wrote: the perimeter alarm sounded at 13:05.\n[N-2738] Meeting note. Minutes by E. Govender: R-3760 confirms the perimeter alarm sounded at 13:05.\n[R-3760] Shift summary. D. Sithole compiled the shift summary: the perimeter alarm sounded at 13:05, per I-1456.",
   "answer": {
    "verdict": "independent",
    "root_records": [
-    "G-1291",
-    "M-1012"
+    "I-1456",
+    "M-2805"
    ]
   },
   "condition": "consistent",
   "label": "independent",
   "wording": "near_identical",
+  "overlap": 1.0,
   "trails": [
    {
     "report": 1,
     "steps": [
-     "E-1742",
-     "R-663",
-     "M-1012"
+     "E-4281",
+     "M-2805"
     ],
     "end": "firsthand"
    },
    {
     "report": 2,
     "steps": [
-     "R-15",
-     "G-1291"
+     "N-2738",
+     "R-3760",
+     "I-1456"
     ],
     "end": "firsthand"
    }
@@ -488,30 +497,30 @@ details summary{cursor:pointer;color:var(--muted);font-size:.85rem}
  {
   "n": 13,
   "train_idx": 723,
-  "packet": "Claim under review: At North Quarry, two contractors left the site at 01:05.\n\nReport 1. HR representative memo: For the record, two contractors left the site at 01:05 (source: R-2489).\nReport 2. Site supervisor report: I can confirm that two contractors left the site at 01:05. Basis: N-155.\n\nHandoff note: these two reports come from independent sources.\n\nRecord excerpts:\n[I-67] Site inspection record. D. Sithole inspected in person and recorded: two contractors left the site at 01:05.\n[N-155] Meeting note. Minutes by D. Sithole: I-67 confirms two contractors left the site at 01:05.\n[R-2489] Shift summary. B. Nkosi compiled the shift summary: two contractors left the site at 01:05, per I-67.",
+  "packet": "Claim under review: At Kestrel Yard, two contractors left the site at 12:45.\n\nReport 1. Shift manager comment: I was told, and I-2573 supports it, that a pair of contractors signed out and left at 12:45.\nReport 2. Site supervisor statement: Two contract workers went off site at 12:45. This is based on E-824.\n\nHandoff note: these two reports come from independent sources.\n\nRecord excerpts:\n[E-824] Email. H. Petersen wrote: as recorded in I-2573, two contractors left the site at 12:45.\n[I-2573] Site inspection record. K. Abrahams inspected in person and recorded: two contractors left the site at 12:45.",
   "answer": {
    "verdict": "shared",
    "root_records": [
-    "I-67"
+    "I-2573"
    ]
   },
   "condition": "contradiction",
   "label": "independent",
   "wording": "varied",
+  "overlap": 0.07,
   "trails": [
    {
     "report": 1,
     "steps": [
-     "R-2489",
-     "I-67"
+     "I-2573"
     ],
     "end": "firsthand"
    },
    {
     "report": 2,
     "steps": [
-     "N-155",
-     "I-67"
+     "E-824",
+     "I-2573"
     ],
     "end": "firsthand"
    }
@@ -520,7 +529,7 @@ details summary{cursor:pointer;color:var(--muted);font-size:.85rem}
  {
   "n": 14,
   "train_idx": 120,
-  "packet": "Claim under review: At Riverbend Depot, the perimeter alarm sounded at 02:30.\n\nReport 1. Security coordinator memo: For the record, the perimeter alarm sounded at 02:30 (source: R-2747).\nReport 2. Contractor foreman memo: For the record, the perimeter alarm sounded at 02:30 (source: M-3874).\n\nHandoff note: these two reports come from independent sources.\n\nRecord excerpts:\n[M-3874] Maintenance ticket. N. Zulu attended on site and wrote: the perimeter alarm sounded at 02:30.\n[R-2747] Shift summary. Z. Mahlangu noted that the perimeter alarm sounded at 02:30. No source is attached to this note.",
+  "packet": "Claim under review: At Granite Ridge, the night guard was at the east post at 00:45.\n\nReport 1. Security coordinator memo: For the record, the night guard was at the east post at 00:45 (source: N-381).\nReport 2. Community liaison officer note: Our information is that security was manning the east post at 00:45; see E-4345.\n\nHandoff note: these two reports come from independent sources.\n\nRecord excerpts:\n[E-2859] Email. T. Mokoena wrote: as recorded in I-3150, the night guard was at the east post at 00:45.\n[E-4345] Email. A. Pillay passed on that the night guard was at the east post at 00:45. The writer was not on site and does not say where the information came from.\n[I-3150] Site inspection record. H. Petersen inspected in person and recorded: the night guard was at the east post at 00:45.\n[N-381] Meeting note. Minutes by R. Naidoo: E-2859 confirms the night guard was at the east post at 00:45.",
   "answer": {
    "verdict": "undetermined",
    "root_records": []
@@ -528,50 +537,54 @@ details summary{cursor:pointer;color:var(--muted);font-size:.85rem}
   "condition": "incomplete",
   "label": "independent",
   "wording": "varied",
+  "overlap": 0.25,
   "trails": [
    {
     "report": 1,
     "steps": [
-     "R-2747"
+     "N-381",
+     "E-2859",
+     "I-3150"
     ],
-    "end": "dead end: no source"
+    "end": "firsthand"
    },
    {
     "report": 2,
     "steps": [
-     "M-3874"
+     "E-4345"
     ],
-    "end": "firsthand"
+    "end": "dead end: no source"
    }
   ]
  },
  {
   "n": 15,
   "train_idx": 51,
-  "packet": "Claim under review: At Copperline Mill, the main gate was locked at 02:40.\n\nReport 1. Shift manager statement: The main gate was locked at 02:40. This is based on R-32.\nReport 2. Safety officer memo: For the record, the main gate was locked at 02:40 (source: E-169).\n\nHandoff note: these two reports come from independent sources.\n\nRecord excerpts:\n[E-169] Email. J. van Wyk wrote: as recorded in G-3097, the main gate was locked at 02:40.\n[G-3097] Guard log. E. Govender (guard on duty) recorded: the main gate was locked at 02:40.\n[R-32] Shift summary. P. Botha compiled the shift summary: the main gate was locked at 02:40, per G-3097.",
+  "packet": "Claim under review: At North Quarry, a water truck entered through gate 2 at 23:50.\n\nReport 1. HR representative statement: A water bowser came in at the second gate at 23:50. This is based on E-2070.\nReport 2. Contractor foreman statement: A water bowser came in at the second gate at 23:50. This is based on R-4841.\n\nHandoff note: these two reports come from independent sources.\n\nRecord excerpts:\n[E-2070] Email. L. Khumalo wrote: as recorded in S-1797, a water truck entered through gate 2 at 23:50.\n[R-4841] Shift summary. B. Nkosi compiled the shift summary: a water truck entered through gate 2 at 23:50, per S-1797.\n[S-1797] Sensor log. Automatic sensor entry: a water truck entered through gate 2 at 23:50 (logged by device, checked by H. Petersen).",
   "answer": {
    "verdict": "shared",
    "root_records": [
-    "G-3097"
+    "S-1797"
    ]
   },
   "condition": "contradiction",
   "label": "independent",
-  "wording": "varied",
+  "wording": "near_identical",
+  "overlap": 1.0,
   "trails": [
    {
     "report": 1,
     "steps": [
-     "R-32",
-     "G-3097"
+     "E-2070",
+     "S-1797"
     ],
     "end": "firsthand"
    },
    {
     "report": 2,
     "steps": [
-     "E-169",
-     "G-3097"
+     "R-4841",
+     "S-1797"
     ],
     "end": "firsthand"
    }
@@ -580,30 +593,32 @@ details summary{cursor:pointer;color:var(--muted);font-size:.85rem}
  {
   "n": 16,
   "train_idx": 132,
-  "packet": "Claim under review: At Baobab Junction, the blasting warning siren was not tested on the 16:10 shift.\n\nReport 1. Site supervisor note: Our information is that the blasting warning siren was not tested on the 16:10 shift; see G-2376.\nReport 2. Security coordinator note: Our information is that the blasting warning siren was not tested on the 16:10 shift; see N-645.\n\nHandoff note: these two reports draw on the same source.\n\nRecord excerpts:\n[G-2376] Guard log. F. Jacobs (guard on duty) recorded: the blasting warning siren was not tested on the 16:10 shift.\n[M-4569] Maintenance ticket. A. Pillay attended on site and wrote: the blasting warning siren was not tested on the 16:10 shift.\n[N-645] Meeting note. Minutes by R. Naidoo: M-4569 confirms the blasting warning siren was not tested on the 16:10 shift.",
+  "packet": "Claim under review: At Baobab Junction, the blasting warning siren was not tested on the 23:15 shift.\n\nReport 1. Shift manager briefing: Per R-1122, the siren check before blasting was skipped on the 23:15 shift. No further action is planned on this item.\nReport 2. Site supervisor briefing: Per R-4883, the siren check before blasting was skipped on the 23:15 shift. No further action is planned on this item.\n\nHandoff note: these two reports draw on the same source.\n\nRecord excerpts:\n[C-4933] CCTV review note. R. Naidoo reviewed camera 4 footage and noted: the blasting warning siren was not tested on the 23:15 shift.\n[M-4488] Maintenance ticket. D. Sithole attended on site and wrote: the blasting warning siren was not tested on the 23:15 shift.\n[R-1122] Shift summary. E. Govender compiled the shift summary: the blasting warning siren was not tested on the 23:15 shift, per M-4488.\n[R-4883] Shift summary. F. Jacobs compiled the shift summary: the blasting warning siren was not tested on the 23:15 shift, per C-4933.",
   "answer": {
    "verdict": "independent",
    "root_records": [
-    "G-2376",
-    "M-4569"
+    "C-4933",
+    "M-4488"
    ]
   },
   "condition": "contradiction",
   "label": "shared",
   "wording": "near_identical",
+  "overlap": 1.0,
   "trails": [
    {
     "report": 1,
     "steps": [
-     "G-2376"
+     "R-1122",
+     "M-4488"
     ],
     "end": "firsthand"
    },
    {
     "report": 2,
     "steps": [
-     "N-645",
-     "M-4569"
+     "R-4883",
+     "C-4933"
     ],
     "end": "firsthand"
    }
@@ -612,30 +627,29 @@ details summary{cursor:pointer;color:var(--muted);font-size:.85rem}
  {
   "n": 17,
   "train_idx": 829,
-  "packet": "Claim under review: At North Quarry, the main gate was locked at 04:10.\n\nReport 1. HR representative report: I can confirm that the main gate was locked at 04:10. Basis: N-3003.\nReport 2. Shift manager memo: For the record, the main gate was locked at 04:10 (source: R-3277).\n\nHandoff note: these two reports draw on the same source.\n\nRecord excerpts:\n[N-3003] Meeting note. Minutes by S. Dlamini: S-2838 confirms the main gate was locked at 04:10.\n[R-3277] Shift summary. J. van Wyk compiled the shift summary: the main gate was locked at 04:10, per S-2838.\n[S-2838] Sensor log. Automatic sensor entry: the main gate was locked at 04:10 (logged by device, checked by F. Jacobs).",
+  "packet": "Claim under review: At North Quarry, the stormwater drain was blocked at 14:20.\n\nReport 1. Site supervisor memo: For the record, runoff could not get through the drain at 14:20 (source: I-914).\nReport 2. Community liaison officer report: I can confirm that the storm drain was clogged at 14:20. Basis: I-914.\n\nHandoff note: these two reports draw on the same source.\n\nRecord excerpts:\n[I-914] Site inspection record. N. Zulu inspected in person and recorded: the stormwater drain was blocked at 14:20.",
   "answer": {
    "verdict": "shared",
    "root_records": [
-    "S-2838"
+    "I-914"
    ]
   },
   "condition": "consistent",
   "label": "shared",
   "wording": "varied",
+  "overlap": 0.13,
   "trails": [
    {
     "report": 1,
     "steps": [
-     "N-3003",
-     "S-2838"
+     "I-914"
     ],
     "end": "firsthand"
    },
    {
     "report": 2,
     "steps": [
-     "R-3277",
-     "S-2838"
+     "I-914"
     ],
     "end": "firsthand"
    }
@@ -644,31 +658,32 @@ details summary{cursor:pointer;color:var(--muted);font-size:.85rem}
  {
   "n": 18,
   "train_idx": 208,
-  "packet": "Claim under review: At North Quarry, the main gate was locked at 16:20.\n\nReport 1. Community liaison officer report: I can confirm that the main gate was locked at 16:20. Basis: R-1762.\nReport 2. HR representative note: Our information is that the main gate was locked at 16:20; see N-4723.\n\nHandoff note: these two reports come from independent sources.\n\nRecord excerpts:\n[I-586] Site inspection record. L. Khumalo inspected in person and recorded: the main gate was locked at 16:20.\n[N-4723] Meeting note. Minutes by D. Sithole: I-586 confirms the main gate was locked at 16:20.\n[R-1762] Shift summary. Z. Mahlangu compiled the shift summary: the main gate was locked at 16:20, per S-4381.\n[S-4381] Sensor log. Automatic sensor entry: the main gate was locked at 16:20 (logged by device, checked by J. van Wyk).",
+  "packet": "Claim under review: At Kestrel Yard, the stormwater drain was blocked at 13:50.\n\nReport 1. Security coordinator memo: For the record, the stormwater drain was blocked at 13:50 (source: I-1910).\nReport 2. HR representative statement: Runoff could not get through the drain at 13:50. This is based on N-2013.\n\nHandoff note: these two reports come from independent sources.\n\nRecord excerpts:\n[I-1910] Site inspection record. N. Zulu inspected in person and recorded: the stormwater drain was blocked at 13:50.\n[M-50] Maintenance ticket. K. Abrahams attended on site and wrote: the stormwater drain was blocked at 13:50.\n[N-2013] Meeting note. Minutes by F. Jacobs: N-4944 confirms the stormwater drain was blocked at 13:50.\n[N-4944] Meeting note. Minutes by S. Dlamini: M-50 confirms the stormwater drain was blocked at 13:50.",
   "answer": {
    "verdict": "independent",
    "root_records": [
-    "I-586",
-    "S-4381"
+    "I-1910",
+    "M-50"
    ]
   },
   "condition": "consistent",
   "label": "independent",
   "wording": "varied",
+  "overlap": 0.15,
   "trails": [
    {
     "report": 1,
     "steps": [
-     "R-1762",
-     "S-4381"
+     "I-1910"
     ],
     "end": "firsthand"
    },
    {
     "report": 2,
     "steps": [
-     "N-4723",
-     "I-586"
+     "N-2013",
+     "N-4944",
+     "M-50"
     ],
     "end": "firsthand"
    }
@@ -677,55 +692,58 @@ details summary{cursor:pointer;color:var(--muted);font-size:.85rem}
  {
   "n": 19,
   "train_idx": 47,
-  "packet": "Claim under review: At Ironwood Shed, the generator was switched off at 17:10.\n\nReport 1. HR representative report: I can confirm that the generator was switched off at 17:10. Basis: E-235.\nReport 2. Community liaison officer memo: For the record, the generator was switched off at 17:10 (source: R-4864).\n\nHandoff note: these two reports draw on the same source.\n\nRecord excerpts:\n[C-1176] CCTV review note. P. Botha reviewed camera 4 footage and noted: the generator was switched off at 17:10.\n[E-235] Email. A. Pillay wrote: as recorded in C-1176, the generator was switched off at 17:10.\n[R-4864] Shift summary. B. Nkosi noted that the generator was switched off at 17:10. No source is attached to this note.",
+  "packet": "Claim under review: At Marula Camp, a water truck entered through gate 2 at 16:15.\n\nReport 1. Safety officer memo: For the record, the water tanker was let in through gate two at 16:15 (source: E-1580).\nReport 2. HR representative comment: I was told, and N-1128 supports it, that a water bowser came in at the second gate at 16:15.\n\nHandoff note: these two reports come from independent sources.\n\nRecord excerpts:\n[E-1580] Email. P. Botha passed on that a water truck entered through gate 2 at 16:15. The writer was not on site and does not say where the information came from.\n[M-431] Maintenance ticket. A. Pillay attended on site and wrote: a water truck entered through gate 2 at 16:15.\n[N-1128] Meeting note. Minutes by K. Abrahams: N-2054 confirms a water truck entered through gate 2 at 16:15.\n[N-2054] Meeting note. Minutes by M. Fourie: M-431 confirms a water truck entered through gate 2 at 16:15.",
   "answer": {
    "verdict": "undetermined",
    "root_records": []
   },
   "condition": "incomplete",
-  "label": "shared",
+  "label": "independent",
   "wording": "varied",
+  "overlap": 0.25,
   "trails": [
    {
     "report": 1,
     "steps": [
-     "E-235",
-     "C-1176"
+     "E-1580"
     ],
-    "end": "firsthand"
+    "end": "dead end: no source"
    },
    {
     "report": 2,
     "steps": [
-     "R-4864"
+     "N-1128",
+     "N-2054",
+     "M-431"
     ],
-    "end": "dead end: no source"
+    "end": "firsthand"
    }
   ]
  },
  {
   "n": 20,
   "train_idx": 89,
-  "packet": "Claim under review: At North Quarry, the community access road was closed from 17:15.\n\nReport 1. Contractor foreman statement: The community access road was closed from 17:15. This is based on N-39.\nReport 2. Community liaison officer statement: The community access road was closed from 17:15. This is based on E-4463.\n\nHandoff note: these two reports draw on the same source.\n\nNo record excerpts are attached.",
+  "packet": "Claim under review: At Granite Ridge, the fence near the river was cut by 10:10.\n\nReport 1. Contractor foreman memo: For the record, someone had cut the riverside fence by 10:10 (source: R-844).\nReport 2. Community liaison officer briefing: Per E-1041, the fence near the river was cut by 10:10. No further action is planned on this item.\n\nHandoff note: these two reports draw on the same source.\n\nNo record excerpts are attached.",
   "answer": {
    "verdict": "undetermined",
    "root_records": []
   },
   "condition": "label_only",
   "label": "shared",
-  "wording": "near_identical",
+  "wording": "varied",
+  "overlap": 0.18,
   "trails": [
    {
     "report": 1,
     "steps": [
-     "N-39"
+     "R-844"
     ],
     "end": "no excerpt shown"
    },
    {
     "report": 2,
     "steps": [
-     "E-4463"
+     "E-1041"
     ],
     "end": "no excerpt shown"
    }
@@ -754,7 +772,7 @@ function show(i){
   $("packet").innerHTML = ids(c.packet);
   $("answer").innerHTML = ids(`${c.answer.verdict}  ·  roots: ${c.answer.root_records.length ? c.answer.root_records.join(", ") : "none"}`);
   $("trails").innerHTML = c.trails.map(t => `<div class="trail">Report ${t.report}: ${ids(t.steps.join(" → "))} <span class="${t.end==="firsthand"?"end-firsthand":"end-other"}">[${t.end}]</span></div>`).join("");
-  $("meta").innerHTML = [`condition: ${c.condition.replace("_"," ")}`, `note says: ${c.label}`, `wording: ${c.wording.replace("_"," ")}`].map(x=>`<span class="chip">${x}</span>`).join("");
+  $("meta").innerHTML = [`condition: ${c.condition.replace("_"," ")}`, `note says: ${c.label}`, `wording: ${c.wording.replace("_"," ")} (word overlap ${Math.round(100*c.overlap)}%)`].map(x=>`<span class="chip">${x}</span>`).join("");
   form.reset(); const a = S[c.n] || {};
   for (const k of ["verdict","roots","usable"]) if (a[k]) form.querySelector(`[name=${k}][value=${a[k]}]`).checked = true;
   (a.flags||[]).forEach(f => form.querySelector(`[name=flag][value=${f}]`).checked = true);

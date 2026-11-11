@@ -1,0 +1,185 @@
+{
+ "checked_at": "2026-11-11T17:36:24.359Z",
+ "results": {
+  "1": {
+   "train_idx": 100,
+   "condition": "consistent",
+   "verdict": "yes",
+   "roots": "yes",
+   "usable": "yes",
+   "flags": [],
+   "note": "wording: near identical\n"
+  },
+  "2": {
+   "train_idx": 497,
+   "condition": "consistent",
+   "verdict": "yes",
+   "roots": "yes",
+   "usable": "yes",
+   "flags": [],
+   "note": "wording: near identical\n"
+  },
+  "3": {
+   "train_idx": 518,
+   "condition": "label_only",
+   "verdict": "yes",
+   "roots": "yes",
+   "usable": "yes",
+   "flags": [],
+   "note": "wording: near identical\n"
+  },
+  "4": {
+   "train_idx": 484,
+   "condition": "contradiction",
+   "verdict": "yes",
+   "roots": "yes",
+   "usable": "yes",
+   "flags": [],
+   "note": ""
+  },
+  "5": {
+   "train_idx": 60,
+   "condition": "consistent",
+   "verdict": "yes",
+   "roots": "yes",
+   "usable": "yes",
+   "flags": [],
+   "note": "wording: near identical\n"
+  },
+  "6": {
+   "train_idx": 544,
+   "condition": "incomplete",
+   "verdict": "yes",
+   "roots": "yes",
+   "usable": "yes",
+   "flags": [],
+   "note": "while E-3200 does not directly refer to C-3097, the lack of reference seems to be in error rather than the lack of a link as both refer to N. Zulu's observation. Which would make a more complete \"same source' verdict."
+  },
+  "7": {
+   "train_idx": 110,
+   "condition": "label_only",
+   "verdict": "yes",
+   "roots": "yes",
+   "usable": "yes",
+   "flags": [],
+   "note": ""
+  },
+  "8": {
+   "train_idx": 644,
+   "condition": "contradiction",
+   "verdict": "yes",
+   "roots": "yes",
+   "usable": "yes",
+   "flags": [],
+   "note": "wording: near identical\n"
+  },
+  "9": {
+   "train_idx": 664,
+   "condition": "contradiction",
+   "verdict": "yes",
+   "roots": "yes",
+   "usable": "yes",
+   "flags": [],
+   "note": ""
+  },
+  "10": {
+   "train_idx": 264,
+   "condition": "label_only",
+   "verdict": "yes",
+   "roots": "yes",
+   "usable": "yes",
+   "flags": [],
+   "note": "wording: near identical\n"
+  },
+  "11": {
+   "train_idx": 293,
+   "condition": "incomplete",
+   "verdict": "yes",
+   "roots": "yes",
+   "usable": "yes",
+   "flags": [],
+   "note": "wording: near identical\n"
+  },
+  "12": {
+   "train_idx": 415,
+   "condition": "consistent",
+   "verdict": "yes",
+   "roots": "yes",
+   "usable": "yes",
+   "flags": [],
+   "note": ""
+  },
+  "13": {
+   "train_idx": 723,
+   "condition": "contradiction",
+   "verdict": "yes",
+   "roots": "yes",
+   "usable": "yes",
+   "flags": [],
+   "note": "\"wording: varied\" - is bit of a stretch - seems near idetical for the 2nd hand reports"
+  },
+  "14": {
+   "train_idx": 120,
+   "condition": "incomplete",
+   "verdict": "yes",
+   "roots": "yes",
+   "usable": "yes",
+   "flags": [],
+   "note": "Z. Mahlangu's report might be a 1st hand report but this does not seem to be confirmed. wording: near identical\n"
+  },
+  "15": {
+   "train_idx": 51,
+   "condition": "contradiction",
+   "verdict": "yes",
+   "roots": "yes",
+   "usable": "yes",
+   "flags": [],
+   "note": "wording: near identical\n"
+  },
+  "16": {
+   "train_idx": 132,
+   "condition": "contradiction",
+   "verdict": "yes",
+   "roots": "yes",
+   "usable": "yes",
+   "flags": [],
+   "note": ""
+  },
+  "17": {
+   "train_idx": 829,
+   "condition": "consistent",
+   "verdict": "yes",
+   "roots": "yes",
+   "usable": "yes",
+   "flags": [],
+   "note": "wording: near identical\n"
+  },
+  "18": {
+   "train_idx": 208,
+   "condition": "consistent",
+   "verdict": "yes",
+   "roots": "yes",
+   "usable": "yes",
+   "flags": [],
+   "note": ""
+  },
+  "19": {
+   "train_idx": 47,
+   "condition": "incomplete",
+   "verdict": "yes",
+   "roots": "yes",
+   "usable": "yes",
+   "flags": [],
+   "note": "wording: near identical\n"
+  },
+  "20": {
+   "train_idx": 89,
+   "condition": "label_only",
+   "verdict": "yes",
+   "roots": "yes",
+   "usable": "yes",
+   "flags": [],
+   "note": ""
+  }
+ }
+}

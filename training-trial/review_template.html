@@ -57,7 +57,7 @@ details summary{cursor:pointer;color:var(--muted);font-size:.85rem}
 <body>
 <header>
   <div class="bar">
-    <h1>Generator check · 20 training cases</h1>
+    <h1>Generator check v2 · 20 training cases</h1>
     <div class="prog" aria-hidden="true"><i id="pbar"></i></div>
     <span id="count">0 / 20</span>
     <button id="export" class="primary">Download results</button>
@@ -136,7 +136,7 @@ function show(i){
   $("packet").innerHTML = ids(c.packet);
   $("answer").innerHTML = ids(`${c.answer.verdict}  ·  roots: ${c.answer.root_records.length ? c.answer.root_records.join(", ") : "none"}`);
   $("trails").innerHTML = c.trails.map(t => `<div class="trail">Report ${t.report}: ${ids(t.steps.join(" → "))} <span class="${t.end==="firsthand"?"end-firsthand":"end-other"}">[${t.end}]</span></div>`).join("");
-  $("meta").innerHTML = [`condition: ${c.condition.replace("_"," ")}`, `note says: ${c.label}`, `wording: ${c.wording.replace("_"," ")}`].map(x=>`<span class="chip">${x}</span>`).join("");
+  $("meta").innerHTML = [`condition: ${c.condition.replace("_"," ")}`, `note says: ${c.label}`, `wording: ${c.wording.replace("_"," ")} (word overlap ${Math.round(100*c.overlap)}%)`].map(x=>`<span class="chip">${x}</span>`).join("");
   form.reset(); const a = S[c.n] || {};
   for (const k of ["verdict","roots","usable"]) if (a[k]) form.querySelector(`[name=${k}][value=${a[k]}]`).checked = true;
   (a.flags||[]).forEach(f => form.querySelector(`[name=flag][value=${f}]`).checked = true);

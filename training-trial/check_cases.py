@@ -11,7 +11,7 @@ for path in sys.argv[1:]:
             cite = re.search(r"(?:per|in|Minutes by [^:]+: )\s*([A-Z]-\d+)", text)
             cites = re.findall(r"\b([A-Z]-\d+)\b", text)
             recs[rid] = (first, cites[0] if cites and not first else None)
-        reps = re.findall(r"^Report \d\. .*?([A-Z]-\d+)\.?\s*\)?\.?$", p, re.M)
+        reps = [re.findall(r"\b([A-Z]-\d+)\b", line)[0] for line in re.findall(r"^Report \d\. .*$", p, re.M)]
         if "No record excerpts" in p:
             exp = ("undetermined", [])
         else:
