@@ -70,7 +70,7 @@ Agreed in the team chat on November 11:
 Agreed after the repo went up (November 11):
 
 - **Deepayan** writes any sprint fine-tune training cases, from source histories that never appear in the scored set, before seeing the variants or answer key.
-- **Training files hold nothing** from the rubric, answer key, or held-back variants. Prefer a private import route (see the run log); if the file must be public, this rule is what keeps the scored set clean.
+- **Training files hold nothing** from the rubric, answer key, or held-back variants. Training files go up as private Hugging Face datasets, which Adaption imports through the connected account (tested 11 Nov, see the run log). The rule still applies.
 - **Prompt freeze:** Deepayan freezes the reviewer prompt by end of day Friday, November 13. Prashanth's variants go into the repo only after that. Prashanth posts when the variants are done, before he reads the rubric. Liezl holds the rubric until then.
 - **Sibling project dropped** (trail beside each claim versus in an appendix) unless someone takes it.
 

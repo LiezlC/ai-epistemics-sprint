@@ -16,4 +16,6 @@ Pre-sprint check of Adaption turnaround. Fictional warehouse logs, unrelated to 
 
 ## Private import
 
-The import tool accepts `access: "oauth"` for Hugging Face and Google Sheets sources, which suggests a private Hugging Face dataset can be imported through the account's OAuth link. Tested 11 Nov: a private copy (`khayali/toy-warehouse-bins-private-test`) imported with `access: "oauth"` **failed** (dataset `e82417d2-0d48-473c-82aa-409e11145940`, no error detail). Adaption's docs say `oauth` applies to Google Sheets only, and there is no Hugging Face token field, but the web app has a **Hugging Face connector** under Settings > Connectors (not connected as of 11 Nov). Connecting it is the likely fix; retry the private import afterwards. Kaggle credentials under API keys are the fallback private route. Until then, sprint training files go up public and follow the rule that they hold nothing from the scored set.
+**Works.** Hugging Face connected to Adaption on 11 Nov (Settings > Connectors; scopes: read repos, contribute to repos it creates, inference providers, jobs, MCP tools; no organization access). The private copy `khayali/toy-warehouse-bins-private-test` then imported with `access: "oauth"`, `processing_mode: "raw"`: dataset `2d773aea-e51f-41eb-b990-306e91e22087`, 1,050 rows. The first attempt before connecting failed (`e82417d2-0d48-473c-82aa-409e11145940`). Adaption's docs still say `oauth` is Sheets only; they are out of date.
+
+Sprint training files therefore go up as **private** Hugging Face datasets on khayali and import the same way.
