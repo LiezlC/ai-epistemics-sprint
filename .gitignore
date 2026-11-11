@@ -1,0 +1,6 @@
+# Copyrighted papers and their text extracts stay local; notes in papers/resources are tracked.
+papers/*.pdf
+papers/adjacent/
+papers/text/
+.claude/
+.obsidian/

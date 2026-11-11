@@ -1,0 +1,81 @@
+Captured 2026-11-09 from https://apartresearch.com/sprints/ai-x-epistemics-research-sprint-2026-11-13-to-2026-11-15#resources
+All 55 link occurrences in the Resources panel, with 40 distinct exact URLs. Repeated URLs retain their first number.
+
+Resources
+
+Suggested reading material
+
+Sprint-wide
+01. "State of the Field: AI for Epistemics and Coordination" | https://www.lesswrong.com/posts/uw8RQ8yjKexnhTw6E/state-of-the-field-ai-for-epistemics-and-coordination
+02. "What's Important in 'AI for Epistemics'?" | https://www.forethought.org/research/whats-important-in-ai-for-epistemics
+03. "AI Impacts on Epistemics: the Good, the Bad and the Ugly" | https://www.forethought.org/research/ai-impacts-on-epistemics-the-good-the-bad-and-the-ugly
+04. "Design Sketches for a More Sensible World" | https://www.forethought.org/research/design-sketches-for-a-more-sensible-world
+05. "Project Ideas: Epistemics" | https://lukasfinnveden.substack.com/p/project-ideas-epistemics
+06. "The most interesting startup idea I've seen recently: AI for epistemics" | https://80000hours.org/2024/05/project-idea-ai-for-epistemics/
+07. "A Full Epistemic Stack" | https://www.lesswrong.com/posts/DMswzhPQqkqx2XAma/a-full-epistemic-stack-knowledge-commons-for-the-21st-1
+08. "Multi-Agent Risks from Advanced AI" | https://arxiv.org/abs/2502.14143
+
+Track 1: Model Epistemics & Decision-Making Evals
+09. "Design Sketches: Collective Epistemics" | https://www.forethought.org/research/design-sketches-collective-epistemics
+10. "The MASK Benchmark" | https://arxiv.org/abs/2503.03750
+11. "DarkBench" | https://arxiv.org/abs/2503.10728
+12. "SycEval" | https://arxiv.org/abs/2502.08177
+13. "ELEPHANT" | https://arxiv.org/abs/2505.13995
+14. "Why Language Models Hallucinate" | https://arxiv.org/abs/2509.04664
+15. "ForecastBench" | https://arxiv.org/abs/2409.19839
+16. Petri | https://www.anthropic.com/research/petri-open-source-auditing
+17. Bloom | https://www.anthropic.com/research/bloom
+18. EU AI Act, Article 5 | https://artificialintelligenceact.eu/article/5/
+
+Track 2: Trust Infrastructure
+19. C2PA Technical Specification v2.4 | https://spec.c2pa.org/specifications/specifications/2.4/index.html
+20. Community Notes open dataset | https://github.com/twitter/communitynotes
+21. "From Birdwatch to Community Notes" | https://arxiv.org/abs/2510.09585
+22. "AI for AI for Epistemics" | https://www.forethought.org/research/ai-for-ai-for-epistemics
+
+Track 3: Epistemic Products
+23. "Design Sketches: Angels-on-the-Shoulder" | https://www.forethought.org/research/design-sketches-angels-on-the-shoulder
+24. "Guardian Angels: LLM Personalization for Productivity and Security" | https://gwern.net/guardian-angel
+25. "Sycophancy in GPT-4o" | https://openai.com/index/sycophancy-in-gpt-4o/
+26. "Sycophantic AI Decreases Prosocial Intentions and Promotes Dependence" | https://www.science.org/doi/10.1126/science.aec8352
+27. "AI Can Help Humans Find Common Ground" | https://www.science.org/doi/10.1126/science.adq2852
+
+Track 4: Open Track (deployment, adoption and impact)
+28. "The AI Adoption Gap" | https://www.forethought.org/research/the-ai-adoption-gap
+29. "AI Tools for Existential Security" | https://www.forethought.org/research/ai-tools-for-existential-security
+30. "Did the Roll-Out of Community Notes Reduce Engagement With Misinformation?" | https://arxiv.org/abs/2307.07960
+31. Community Notes public dataset | https://communitynotes.x.com/guide/en/under-the-hood/download-data
+32. "Accuracy of Forecasts in Strategic Intelligence" | https://www.pnas.org/doi/10.1073/pnas.1406138111
+33. FutureSearch | https://futuresearch.ai/writings/
+34. Swift Centre | https://www.swiftcentre.org/
+35. Sentinel | https://sentinel-team.org/
+
+Example projects per track
+
+Track 1: Model Epistemics & Decision-Making Evals
+10. MASK | https://arxiv.org/abs/2503.03750
+11. DarkBench | https://arxiv.org/abs/2503.10728
+15. ForecastBench | https://arxiv.org/abs/2409.19839
+36. consistency checks | https://arxiv.org/abs/2412.18544
+12. SycEval | https://arxiv.org/abs/2502.08177
+13. ELEPHANT | https://arxiv.org/abs/2505.13995
+09. collective-epistemics sketches | https://www.forethought.org/research/design-sketches-collective-epistemics
+37. Inspect | https://github.com/UKGovernmentBEIS/inspect_ai
+18. EU AI Act | https://artificialintelligenceact.eu/article/5/
+11. DarkBench | https://arxiv.org/abs/2503.10728
+10. MASK | https://arxiv.org/abs/2503.03750
+
+Track 2: Trust Infrastructure
+20. Community Notes | https://github.com/twitter/communitynotes
+38. OpenTelemetry GenAI conventions | https://opentelemetry.io/docs/specs/semconv/registry/attributes/gen-ai/
+39. Certificate Transparency | https://datatracker.ietf.org/doc/html/rfc6962
+40. AVeriTeC | https://arxiv.org/abs/2305.13117
+19. C2PA | https://spec.c2pa.org/specifications/specifications/2.4/index.html
+20. Community Notes | https://github.com/twitter/communitynotes
+
+Track 3: Epistemic Products
+26. evidence this is a live harm | https://www.science.org/doi/10.1126/science.aec8352
+23. briefings | https://www.forethought.org/research/design-sketches-angels-on-the-shoulder
+27. the Habermas Machine | https://www.science.org/doi/10.1126/science.adq2852
+
+Track 4: Open Track
