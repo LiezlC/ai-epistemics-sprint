@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case Check</title>
+<style>
+:root{--bg:#f7f8f6;--card:#fff;--ink:#1d2a28;--muted:#5d6c69;--line:#d7dfdc;--accent:#0b6b62;--accent-soft:#e1f2ee;--yes:#1f7a3a;--yes-soft:#e3f4e7;--no:#b23a2a;--no-soft:#fbe6e2;--maybe:#8a6a00;--maybe-soft:#fbf1d4;--mono:ui-monospace,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121816;--card:#1a2220;--ink:#e3ebe8;--muted:#9aaba6;--line:#2e3a37;--accent:#4fc3b4;--accent-soft:#1d3532;--yes:#6fd18a;--yes-soft:#1b3323;--no:#f08a7a;--no-soft:#3a1f1b;--maybe:#e6c35a;--maybe-soft:#33290f}}
+:root[data-theme="dark"]{--bg:#121816;--card:#1a2220;--ink:#e3ebe8;--muted:#9aaba6;--line:#2e3a37;--accent:#4fc3b4;--accent-soft:#1d3532;--yes:#6fd18a;--yes-soft:#1b3323;--no:#f08a7a;--no-soft:#3a1f1b;--maybe:#e6c35a;--maybe-soft:#33290f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,sans-serif}
+header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 16px}
+.bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;max-width:1200px;margin:auto}
+h1{font-size:1.05rem;margin:0;flex:1 1 auto}
+.prog{flex:1 1 200px;height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--accent);width:0}
+button{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:6px;padding:6px 12px;cursor:pointer}
+button:hover{border-color:var(--accent)}
+button.primary{background:var(--accent);color:var(--bg);border-color:var(--accent);font-weight:600}
+nav.dots{display:flex;gap:4px;flex-wrap:wrap;max-width:1200px;margin:8px auto 0}
+nav.dots button{width:30px;padding:3px 0;font-size:.8rem}
+nav.dots button.done{background:var(--accent-soft);border-color:var(--accent)}
+nav.dots button.flag{background:var(--no-soft);border-color:var(--no)}
+nav.dots button.cur{outline:2px solid var(--accent)}
+main{max-width:1200px;margin:auto;padding:16px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:16px}
+@media (max-width:860px){main{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px}
+.label{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+pre{white-space:pre-wrap;word-break:break-word;font:13.5px/1.55 var(--mono);margin:0}
+.rid{background:var(--accent-soft);border-radius:3px;padding:0 2px;cursor:pointer}
+.rid.hl{background:var(--accent);color:var(--bg)}
+.answer{font:600 1.05rem var(--mono);padding:8px 10px;border-radius:6px;background:var(--accent-soft);margin-bottom:12px}
+.trail{font:13.5px var(--mono);margin:4px 0}
+.trail .end-firsthand{color:var(--yes);font-weight:700}
+.trail .end-other{color:var(--maybe);font-weight:700}
+.meta{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 0}
+.chip{font-size:.78rem;border:1px solid var(--line);border-radius:999px;padding:1px 8px;color:var(--muted)}
+fieldset{border:0;margin:0 0 14px;padding:0}
+legend{font-weight:650;margin-bottom:6px;padding:0}
+.opts{display:flex;gap:6px;flex-wrap:wrap}
+.opts label{border:1px solid var(--line);border-radius:6px;padding:6px 12px;cursor:pointer;user-select:none}
+.opts input{position:absolute;opacity:0;pointer-events:none}
+.opts label:has(input:focus-visible){outline:2px solid var(--accent)}
+.opts label.y:has(input:checked){background:var(--yes-soft);border-color:var(--yes);color:var(--yes);font-weight:650}
+.opts label.n:has(input:checked){background:var(--no-soft);border-color:var(--no);color:var(--no);font-weight:650}
+.opts label.m:has(input:checked){background:var(--maybe-soft);border-color:var(--maybe);color:var(--maybe);font-weight:650}
+.flags label{display:flex;gap:8px;align-items:flex-start;margin:4px 0;cursor:pointer}
+textarea{width:100%;font:inherit;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);padding:6px;min-height:44px}
+.kbd{font:12px var(--mono);border:1px solid var(--line);border-radius:3px;padding:0 4px}
+.foot{display:flex;justify-content:space-between;gap:8px;margin-top:12px}
+.help{color:var(--muted);font-size:.85rem;margin:6px 0 0}
+#summary{max-width:1200px;margin:auto;padding:0 16px 24px}
+details summary{cursor:pointer;color:var(--muted);font-size:.85rem}
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <h1>Generator check · 20 training cases</h1>
+    <div class="prog" aria-hidden="true"><i id="pbar"></i></div>
+    <span id="count">0 / 20</span>
+    <button id="export" class="primary">Download results</button>
+  </div>
+  <nav class="dots" id="dots" aria-label="Cases"></nav>
+</header>
+<main>
+  <section class="card">
+    <p class="label">What the model sees · case <span id="cn"></span></p>
+    <pre id="packet"></pre>
+    <details style="margin-top:10px"><summary>Instructions given to the model (same for every case)</summary>
+      <pre class="help">Decide whether the two reports give independent corroboration of the named claim. Independent: each report traces back to a different firsthand record. Shared: both trace back to the same firsthand record. If the material cannot settle it: undetermined. Judge from the records, not the handoff note. Answer as JSON with verdict and root_records.</pre>
+    </details>
+  </section>
+  <section class="card">
+    <p class="label">Generator’s answer</p>
+    <div class="answer" id="answer"></div>
+    <p class="label">Trail the generator followed (click an ID to highlight it)</p>
+    <div id="trails"></div>
+    <div class="meta" id="meta"></div>
+    <hr style="border:0;border-top:1px solid var(--line);margin:14px 0">
+    <form id="form">
+      <fieldset><legend>1. Is the verdict right? <span class="kbd">1</span>/<span class="kbd">2</span>/<span class="kbd">3</span></legend>
+        <div class="opts">
+          <label class="y"><input type="radio" name="verdict" value="yes">Yes</label>
+          <label class="n"><input type="radio" name="verdict" value="no">No</label>
+          <label class="m"><input type="radio" name="verdict" value="unsure">Unsure</label>
+        </div></fieldset>
+      <fieldset><legend>2. Are the root record IDs right? <span class="kbd">Q</span>/<span class="kbd">W</span>/<span class="kbd">E</span></legend>
+        <div class="opts">
+          <label class="y"><input type="radio" name="roots" value="yes">Yes</label>
+          <label class="n"><input type="radio" name="roots" value="no">No</label>
+          <label class="m"><input type="radio" name="roots" value="na">N/A (undetermined)</label>
+        </div></fieldset>
+      <fieldset><legend>3. Fit to train on? <span class="kbd">A</span>/<span class="kbd">S</span></legend>
+        <div class="opts">
+          <label class="y"><input type="radio" name="usable" value="yes">Yes</label>
+          <label class="n"><input type="radio" name="usable" value="no">No, flawed</label>
+        </div></fieldset>
+      <fieldset class="flags"><legend>Anything off? (optional)</legend>
+        <label><input type="checkbox" name="flag" value="giveaway">Wording gives the answer away</label>
+        <label><input type="checkbox" name="flag" value="firsthand_unclear">Firsthand status of a record is unclear</label>
+        <label><input type="checkbox" name="flag" value="label_unclear">Handoff note is confusing</label>
+        <label><input type="checkbox" name="flag" value="unrealistic">Unrealistic for a grievance file</label>
+        <label><input type="checkbox" name="flag" value="should_be_undetermined">Should be undetermined</label>
+      </fieldset>
+      <textarea name="note" placeholder="Note (optional)"></textarea>
+    </form>
+    <div class="foot">
+      <button id="prev">← Prev</button>
+      <button id="next" class="primary">Next →</button>
+    </div>
+    <p class="help">Answers save in this browser as you go. Arrow keys move between cases.</p>
+  </section>
+</main>
+<div id="summary"></div>
+<script>window.REVIEW = [
+ {
+  "n": 1,
+  "train_idx": 100,
+  "packet": "Claim under review: At Lowveld Store, the night guard was at the east post at 10:10.\n\nReport 1. Contractor foreman memo: For the record, the night guard was at the east post at 10:10 (source: R-4857).\nReport 2. Shift manager memo: For the record, the night guard was at the east post at 10:10 (source: E-304).\n\nHandoff note: these two reports draw on the same source.\n\nRecord excerpts:\n[E-304] Email. A. Pillay wrote: as recorded in I-1999, the night guard was at the east post at 10:10.\n[E-547] Email. N. Zulu wrote: as recorded in I-1999, the night guard was at the east post at 10:10.\n[I-1999] Site inspection record. R. Naidoo inspected in person and recorded: the night guard was at the east post at 10:10.\n[R-4857] Shift summary. S. Dlamini compiled the shift summary: the night guard was at the east post at 10:10, per E-547.",
+  "answer": {
+   "verdict": "shared",
+   "root_records": [
+    "I-1999"
+   ]
+  },
+  "condition": "consistent",
+  "label": "shared",
+  "wording": "varied",
+  "trails": [
+   {
+    "report": 1,
+    "steps": [
+     "R-4857",
+     "E-547",
+     "I-1999"
+    ],
+    "end": "firsthand"
+   },
+   {
+    "report": 2,
+    "steps": [
+     "E-304",
+     "I-1999"
+    ],
+    "end": "firsthand"
+   }
+  ]
+ },
+ {
+  "n": 2,
+  "train_idx": 497,
+  "packet": "Claim under review: At Eastgate Plant, the blasting warning siren was not tested on the 20:30 shift.\n\nReport 1. Safety officer statement: The blasting warning siren was not tested on the 20:30 shift. This is based on E-1889.\nReport 2. Environmental officer statement: The blasting warning siren was not tested on the 20:30 shift. This is based on E-1754.\n\nHandoff note: these two reports come from independent sources.\n\nRecord excerpts:\n[C-4995] CCTV review note. F. Jacobs reviewed camera 4 footage and noted: the blasting warning siren was not tested on the 20:30 shift.\n[E-1754] Email. S. Dlamini wrote: as recorded in C-4995, the blasting warning siren was not tested on the 20:30 shift.\n[E-1889] Email. F. Jacobs wrote: as recorded in G-785, the blasting warning siren was not tested on the 20:30 shift.\n[G-785] Guard log. N. Zulu (guard on duty) recorded: the blasting warning siren was not tested on the 20:30 shift.",
+  "answer": {
+   "verdict": "independent",
+   "root_records": [
+    "C-4995",
+    "G-785"
+   ]
+  },
+  "condition": "consistent",
+  "label": "independent",
+  "wording": "varied",
+  "trails": [
+   {
+    "report": 1,
+    "steps": [
+     "E-1889",
+     "G-785"
+    ],
+    "end": "firsthand"
+   },
+   {
+    "report": 2,
+    "steps": [
+     "E-1754",
+     "C-4995"
+    ],
+    "end": "firsthand"
+   }
+  ]
+ },
+ {
+  "n": 3,
+  "train_idx": 518,
+  "packet": "Claim under review: At Marula Camp, the blasting warning siren was not tested on the 23:45 shift.\n\nReport 1. Shift manager report: I can confirm that the blasting warning siren was not tested on the 23:45 shift. Basis: S-4710.\nReport 2. Security coordinator memo: For the record, the blasting warning siren was not tested on the 23:45 shift (source: N-1161).\n\nHandoff note: these two reports draw on the same source.\n\nNo record excerpts are attached.",
+  "answer": {
+   "verdict": "undetermined",
+   "root_records": []
+  },
+  "condition": "label_only",
+  "label": "shared",
+  "wording": "varied",
+  "trails": [
+   {
+    "report": 1,
+    "steps": [
+     "S-4710"
+    ],
+    "end": "no excerpt shown"
+   },
+   {
+    "report": 2,
+    "steps": [
+     "N-1161"
+    ],
+    "end": "no excerpt shown"
+   }
+  ]
+ },
+ {
+  "n": 4,
+  "train_idx": 484,
+  "packet": "Claim under review: At Lowveld Store, the fence near the river was cut by 13:10.\n\nReport 1. Shift manager memo: For the record, the fence near the river was cut by 13:10 (source: I-2042).\nReport 2. HR representative memo: For the record, the fence near the river was cut by 13:10 (source: E-3888).\n\nHandoff note: these two reports draw on the same source.\n\nRecord excerpts:\n[E-3888] Email. J. van Wyk wrote: as recorded in G-2300, the fence near the river was cut by 13:10.\n[G-2300] Guard log. A. Pillay (guard on duty) recorded: the fence near the river was cut by 13:10.\n[I-2042] Site inspection record. E. Govender inspected in person and recorded: the fence near the river was cut by 13:10.",
+  "answer": {
+   "verdict": "independent",
+   "root_records": [
+    "G-2300",
+    "I-2042"
+   ]
+  },
+  "condition": "contradiction",
+  "label": "shared",
+  "wording": "near_identical",
+  "trails": [
+   {
+    "report": 1,
+    "steps": [
+     "I-2042"
+    ],
+    "end": "firsthand"
+   },
+   {
+    "report": 2,
+    "steps": [
+     "E-3888",
+     "G-2300"
+    ],
+    "end": "firsthand"
+   }
+  ]
+ },
+ {
+  "n": 5,
+  "train_idx": 60,
+  "packet": "Claim under review: At Granite Ridge, the blasting warning siren was not tested on the 20:40 shift.\n\nReport 1. Community liaison officer statement: The blasting warning siren was not tested on the 20:40 shift. This is based on E-272.\nReport 2. Environmental officer memo: For the record, the blasting warning siren was not tested on the 20:40 shift (source: C-4791).\n\nHandoff note: these two reports draw on the same source.\n\nRecord excerpts:\n[C-4791] CCTV review note. M. Fourie reviewed camera 4 footage and noted: the blasting warning siren was not tested on the 20:40 shift.\n[E-272] Email. S. Dlamini wrote: as recorded in C-4791, the blasting warning siren was not tested on the 20:40 shift.",
+  "answer": {
+   "verdict": "shared",
+   "root_records": [
+    "C-4791"
+   ]
+  },
+  "condition": "consistent",
+  "label": "shared",
+  "wording": "varied",
+  "trails": [
+   {
+    "report": 1,
+    "steps": [
+     "E-272",
+     "C-4791"
+    ],
+    "end": "firsthand"
+   },
+   {
+    "report": 2,
+    "steps": [
+     "C-4791"
+    ],
+    "end": "firsthand"
+   }
+  ]
+ },
+ {
+  "n": 6,
+  "train_idx": 544,
+  "packet": "Claim under review: At Baobab Junction, two contractors left the site at 01:15.\n\nReport 1. Shift manager memo: For the record, two contractors left the site at 01:15 (source: E-3200).\nReport 2. Community liaison officer note: Our information is that two contractors left the site at 01:15; see E-3859.\n\nHandoff note: these two reports draw on the same source.\n\nRecord excerpts:\n[C-3097] CCTV review note. N. Zulu reviewed camera 4 footage and noted: two contractors left the site at 01:15.\n[E-3200] Email. N. Zulu noted that two contractors left the site at 01:15. No source is attached to this note.\n[E-3859] Email. L. Khumalo wrote: as recorded in R-4430, two contractors left the site at 01:15.\n[R-4430] Shift summary. D. Sithole compiled the shift summary: two contractors left the site at 01:15, per C-3097.",
+  "answer": {
+   "verdict": "undetermined",
+   "root_records": []
+  },
+  "condition": "incomplete",
+  "label": "shared",
+  "wording": "varied",
+  "trails": [
+   {
+    "report": 1,
+    "steps": [
+     "E-3200"
+    ],
+    "end": "dead end: no source"
+   },
+   {
+    "report": 2,
+    "steps": [
+     "E-3859",
+     "R-4430",
+     "C-3097"
+    ],
+    "end": "firsthand"
+   }
+  ]
+ },
+ {
+  "n": 7,
+  "train_idx": 110,
+  "packet": "Claim under review: At Baobab Junction, the community access road was closed from 02:40.\n\nReport 1. Security coordinator note: Our information is that the community access road was closed from 02:40; see G-4937.\nReport 2. Site supervisor note: Our information is that the community access road was closed from 02:40; see I-3801.\n\nHandoff note: these two reports come from independent sources.\n\nNo record excerpts are attached.",
+  "answer": {
+   "verdict": "undetermined",
+   "root_records": []
+  },
+  "condition": "label_only",
+  "label": "independent",
+  "wording": "near_identical",
+  "trails": [
+   {
+    "report": 1,
+    "steps": [
+     "G-4937"
+    ],
+    "end": "no excerpt shown"
+   },
+   {
+    "report": 2,
+    "steps": [
+     "I-3801"
+    ],
+    "end": "no excerpt shown"
+   }
+  ]
+ },
+ {
+  "n": 8,
+  "train_idx": 644,
+  "packet": "Claim under review: At Riverbend Depot, the perimeter alarm sounded at 05:45.\n\nReport 1. Site supervisor statement: The perimeter alarm sounded at 05:45. This is based on R-3565.\nReport 2. Contractor foreman note: Our information is that the perimeter alarm sounded at 05:45; see I-2115.\n\nHandoff note: these two reports come from independent sources.\n\nRecord excerpts:\n[I-2115] Site inspection record. F. Jacobs inspected in person and recorded: the perimeter alarm sounded at 05:45.\n[R-3565] Shift summary. R. Naidoo compiled the shift summary: the perimeter alarm sounded at 05:45, per I-2115.",
+  "answer": {
+   "verdict": "shared",
+   "root_records": [
+    "I-2115"
+   ]
+  },
+  "condition": "contradiction",
+  "label": "independent",
+  "wording": "varied",
+  "trails": [
+   {
+    "report": 1,
+    "steps": [
+     "R-3565",
+     "I-2115"
+    ],
+    "end": "firsthand"
+   },
+   {
+    "report": 2,
+    "steps": [
+     "I-2115"
+    ],
+    "end": "firsthand"
+   }
+  ]
+ },
+ {
+  "n": 9,
+  "train_idx": 664,
+  "packet": "Claim under review: At Granite Ridge, the night guard was at the east post at 07:15.\n\nReport 1. Safety officer memo: For the record, the night guard was at the east post at 07:15 (source: R-4489).\nReport 2. Security coordinator memo: For the record, the night guard was at the east post at 07:15 (source: R-3795).\n\nHandoff note: these two reports draw on the same source.\n\nRecord excerpts:\n[G-4935] Guard log. B. Nkosi (guard on duty) recorded: the night guard was at the east post at 07:15.\n[M-3623] Maintenance ticket. Z. Mahlangu attended on site and wrote: the night guard was at the east post at 07:15.\n[R-3795] Shift summary. L. Khumalo compiled the shift summary: the night guard was at the east post at 07:15, per M-3623.\n[R-4489] Shift summary. J. van Wyk compiled the shift summary: the night guard was at the east post at 07:15, per G-4935.",
+  "answer": {
+   "verdict": "independent",
+   "root_records": [
+    "G-4935",
+    "M-3623"
+   ]
+  },
+  "condition": "contradiction",
+  "label": "shared",
+  "wording": "near_identical",
+  "trails": [
+   {
+    "report": 1,
+    "steps": [
+     "R-4489",
+     "G-4935"
+    ],
+    "end": "firsthand"
+   },
+   {
+    "report": 2,
+    "steps": [
+     "R-3795",
+     "M-3623"
+    ],
+    "end": "firsthand"
+   }
+  ]
+ },
+ {
+  "n": 10,
+  "train_idx": 264,
+  "packet": "Claim under review: At Ironwood Shed, the stormwater drain was blocked at 07:40.\n\nReport 1. Shift manager memo: For the record, the stormwater drain was blocked at 07:40 (source: E-2485).\nReport 2. Security coordinator note: Our information is that the stormwater drain was blocked at 07:40; see I-2598.\n\nHandoff note: these two reports come from independent sources.\n\nNo record excerpts are attached.",
+  "answer": {
+   "verdict": "undetermined",
+   "root_records": []
+  },
+  "condition": "label_only",
+  "label": "independent",
+  "wording": "varied",
+  "trails": [
+   {
+    "report": 1,
+    "steps": [
+     "E-2485"
+    ],
+    "end": "no excerpt shown"
+   },
+   {
+    "report": 2,
+    "steps": [
+     "I-2598"
+    ],
+    "end": "no excerpt shown"
+   }
+  ]
+ },
+ {
+  "n": 11,
+  "train_idx": 293,
+  "packet": "Claim under review: At Riverbend Depot, two contractors left the site at 05:00.\n\nReport 1. Community liaison officer statement: Two contractors left the site at 05:00. This is based on E-759.\nReport 2. HR representative statement: Two contractors left the site at 05:00. This is based on N-3539.\n\nHandoff note: these two reports draw on the same source.\n\nRecord excerpts:\n[E-759] Email. A. Pillay noted that two contractors left the site at 05:00. No source is attached to this note.\n[N-3539] Meeting note. Minutes by L. Khumalo: S-1754 confirms two contractors left the site at 05:00.\n[S-1754] Sensor log. Automatic sensor entry: two contractors left the site at 05:00 (logged by device, checked by R. Naidoo).",
+  "answer": {
+   "verdict": "undetermined",
+   "root_records": []
+  },
+  "condition": "incomplete",
+  "label": "shared",
+  "wording": "varied",
+  "trails": [
+   {
+    "report": 1,
+    "steps": [
+     "E-759"
+    ],
+    "end": "dead end: no source"
+   },
+   {
+    "report": 2,
+    "steps": [
+     "N-3539",
+     "S-1754"
+    ],
+    "end": "firsthand"
+   }
+  ]
+ },
+ {
+  "n": 12,
+  "train_idx": 415,
+  "packet": "Claim under review: At Eastgate Plant, the blasting warning siren was not tested on the 23:30 shift.\n\nReport 1. Shift manager memo: For the record, the blasting warning siren was not tested on the 23:30 shift (source: E-1742).\nReport 2. Environmental officer memo: For the record, the blasting warning siren was not tested on the 23:30 shift (source: R-15).\n\nHandoff note: these two reports come from independent sources.\n\nRecord excerpts:\n[E-1742] Email. S. Dlamini wrote: as recorded in R-663, the blasting warning siren was not tested on the 23:30 shift.\n[G-1291] Guard log. L. Khumalo (guard on duty) recorded: the blasting warning siren was not tested on the 23:30 shift.\n[M-1012] Maintenance ticket. H. Petersen attended on site and wrote: the blasting warning siren was not tested on the 23:30 shift.\n[R-15] Shift summary. N. Zulu compiled the shift summary: the blasting warning siren was not tested on the 23:30 shift, per G-1291.\n[R-663] Shift summary. T. Mokoena compiled the shift summary: the blasting warning siren was not tested on the 23:30 shift, per M-1012.",
+  "answer": {
+   "verdict": "independent",
+   "root_records": [
+    "G-1291",
+    "M-1012"
+   ]
+  },
+  "condition": "consistent",
+  "label": "independent",
+  "wording": "near_identical",
+  "trails": [
+   {
+    "report": 1,
+    "steps": [
+     "E-1742",
+     "R-663",
+     "M-1012"
+    ],
+    "end": "firsthand"
+   },
+   {
+    "report": 2,
+    "steps": [
+     "R-15",
+     "G-1291"
+    ],
+    "end": "firsthand"
+   }
+  ]
+ },
+ {
+  "n": 13,
+  "train_idx": 723,
+  "packet": "Claim under review: At North Quarry, two contractors left the site at 01:05.\n\nReport 1. HR representative memo: For the record, two contractors left the site at 01:05 (source: R-2489).\nReport 2. Site supervisor report: I can confirm that two contractors left the site at 01:05. Basis: N-155.\n\nHandoff note: these two reports come from independent sources.\n\nRecord excerpts:\n[I-67] Site inspection record. D. Sithole inspected in person and recorded: two contractors left the site at 01:05.\n[N-155] Meeting note. Minutes by D. Sithole: I-67 confirms two contractors left the site at 01:05.\n[R-2489] Shift summary. B. Nkosi compiled the shift summary: two contractors left the site at 01:05, per I-67.",
+  "answer": {
+   "verdict": "shared",
+   "root_records": [
+    "I-67"
+   ]
+  },
+  "condition": "contradiction",
+  "label": "independent",
+  "wording": "varied",
+  "trails": [
+   {
+    "report": 1,
+    "steps": [
+     "R-2489",
+     "I-67"
+    ],
+    "end": "firsthand"
+   },
+   {
+    "report": 2,
+    "steps": [
+     "N-155",
+     "I-67"
+    ],
+    "end": "firsthand"
+   }
+  ]
+ },
+ {
+  "n": 14,
+  "train_idx": 120,
+  "packet": "Claim under review: At Riverbend Depot, the perimeter alarm sounded at 02:30.\n\nReport 1. Security coordinator memo: For the record, the perimeter alarm sounded at 02:30 (source: R-2747).\nReport 2. Contractor foreman memo: For the record, the perimeter alarm sounded at 02:30 (source: M-3874).\n\nHandoff note: these two reports come from independent sources.\n\nRecord excerpts:\n[M-3874] Maintenance ticket. N. Zulu attended on site and wrote: the perimeter alarm sounded at 02:30.\n[R-2747] Shift summary. Z. Mahlangu noted that the perimeter alarm sounded at 02:30. No source is attached to this note.",
+  "answer": {
+   "verdict": "undetermined",
+   "root_records": []
+  },
+  "condition": "incomplete",
+  "label": "independent",
+  "wording": "varied",
+  "trails": [
+   {
+    "report": 1,
+    "steps": [
+     "R-2747"
+    ],
+    "end": "dead end: no source"
+   },
+   {
+    "report": 2,
+    "steps": [
+     "M-3874"
+    ],
+    "end": "firsthand"
+   }
+  ]
+ },
+ {
+  "n": 15,
+  "train_idx": 51,
+  "packet": "Claim under review: At Copperline Mill, the main gate was locked at 02:40.\n\nReport 1. Shift manager statement: The main gate was locked at 02:40. This is based on R-32.\nReport 2. Safety officer memo: For the record, the main gate was locked at 02:40 (source: E-169).\n\nHandoff note: these two reports come from independent sources.\n\nRecord excerpts:\n[E-169] Email. J. van Wyk wrote: as recorded in G-3097, the main gate was locked at 02:40.\n[G-3097] Guard log. E. Govender (guard on duty) recorded: the main gate was locked at 02:40.\n[R-32] Shift summary. P. Botha compiled the shift summary: the main gate was locked at 02:40, per G-3097.",
+  "answer": {
+   "verdict": "shared",
+   "root_records": [
+    "G-3097"
+   ]
+  },
+  "condition": "contradiction",
+  "label": "independent",
+  "wording": "varied",
+  "trails": [
+   {
+    "report": 1,
+    "steps": [
+     "R-32",
+     "G-3097"
+    ],
+    "end": "firsthand"
+   },
+   {
+    "report": 2,
+    "steps": [
+     "E-169",
+     "G-3097"
+    ],
+    "end": "firsthand"
+   }
+  ]
+ },
+ {
+  "n": 16,
+  "train_idx": 132,
+  "packet": "Claim under review: At Baobab Junction, the blasting warning siren was not tested on the 16:10 shift.\n\nReport 1. Site supervisor note: Our information is that the blasting warning siren was not tested on the 16:10 shift; see G-2376.\nReport 2. Security coordinator note: Our information is that the blasting warning siren was not tested on the 16:10 shift; see N-645.\n\nHandoff note: these two reports draw on the same source.\n\nRecord excerpts:\n[G-2376] Guard log. F. Jacobs (guard on duty) recorded: the blasting warning siren was not tested on the 16:10 shift.\n[M-4569] Maintenance ticket. A. Pillay attended on site and wrote: the blasting warning siren was not tested on the 16:10 shift.\n[N-645] Meeting note. Minutes by R. Naidoo: M-4569 confirms the blasting warning siren was not tested on the 16:10 shift.",
+  "answer": {
+   "verdict": "independent",
+   "root_records": [
+    "G-2376",
+    "M-4569"
+   ]
+  },
+  "condition": "contradiction",
+  "label": "shared",
+  "wording": "near_identical",
+  "trails": [
+   {
+    "report": 1,
+    "steps": [
+     "G-2376"
+    ],
+    "end": "firsthand"
+   },
+   {
+    "report": 2,
+    "steps": [
+     "N-645",
+     "M-4569"
+    ],
+    "end": "firsthand"
+   }
+  ]
+ },
+ {
+  "n": 17,
+  "train_idx": 829,
+  "packet": "Claim under review: At North Quarry, the main gate was locked at 04:10.\n\nReport 1. HR representative report: I can confirm that the main gate was locked at 04:10. Basis: N-3003.\nReport 2. Shift manager memo: For the record, the main gate was locked at 04:10 (source: R-3277).\n\nHandoff note: these two reports draw on the same source.\n\nRecord excerpts:\n[N-3003] Meeting note. Minutes by S. Dlamini: S-2838 confirms the main gate was locked at 04:10.\n[R-3277] Shift summary. J. van Wyk compiled the shift summary: the main gate was locked at 04:10, per S-2838.\n[S-2838] Sensor log. Automatic sensor entry: the main gate was locked at 04:10 (logged by device, checked by F. Jacobs).",
+  "answer": {
+   "verdict": "shared",
+   "root_records": [
+    "S-2838"
+   ]
+  },
+  "condition": "consistent",
+  "label": "shared",
+  "wording": "varied",
+  "trails": [
+   {
+    "report": 1,
+    "steps": [
+     "N-3003",
+     "S-2838"
+    ],
+    "end": "firsthand"
+   },
+   {
+    "report": 2,
+    "steps": [
+     "R-3277",
+     "S-2838"
+    ],
+    "end": "firsthand"
+   }
+  ]
+ },
+ {
+  "n": 18,
+  "train_idx": 208,
+  "packet": "Claim under review: At North Quarry, the main gate was locked at 16:20.\n\nReport 1. Community liaison officer report: I can confirm that the main gate was locked at 16:20. Basis: R-1762.\nReport 2. HR representative note: Our information is that the main gate was locked at 16:20; see N-4723.\n\nHandoff note: these two reports come from independent sources.\n\nRecord excerpts:\n[I-586] Site inspection record. L. Khumalo inspected in person and recorded: the main gate was locked at 16:20.\n[N-4723] Meeting note. Minutes by D. Sithole: I-586 confirms the main gate was locked at 16:20.\n[R-1762] Shift summary. Z. Mahlangu compiled the shift summary: the main gate was locked at 16:20, per S-4381.\n[S-4381] Sensor log. Automatic sensor entry: the main gate was locked at 16:20 (logged by device, checked by J. van Wyk).",
+  "answer": {
+   "verdict": "independent",
+   "root_records": [
+    "I-586",
+    "S-4381"
+   ]
+  },
+  "condition": "consistent",
+  "label": "independent",
+  "wording": "varied",
+  "trails": [
+   {
+    "report": 1,
+    "steps": [
+     "R-1762",
+     "S-4381"
+    ],
+    "end": "firsthand"
+   },
+   {
+    "report": 2,
+    "steps": [
+     "N-4723",
+     "I-586"
+    ],
+    "end": "firsthand"
+   }
+  ]
+ },
+ {
+  "n": 19,
+  "train_idx": 47,
+  "packet": "Claim under review: At Ironwood Shed, the generator was switched off at 17:10.\n\nReport 1. HR representative report: I can confirm that the generator was switched off at 17:10. Basis: E-235.\nReport 2. Community liaison officer memo: For the record, the generator was switched off at 17:10 (source: R-4864).\n\nHandoff note: these two reports draw on the same source.\n\nRecord excerpts:\n[C-1176] CCTV review note. P. Botha reviewed camera 4 footage and noted: the generator was switched off at 17:10.\n[E-235] Email. A. Pillay wrote: as recorded in C-1176, the generator was switched off at 17:10.\n[R-4864] Shift summary. B. Nkosi noted that the generator was switched off at 17:10. No source is attached to this note.",
+  "answer": {
+   "verdict": "undetermined",
+   "root_records": []
+  },
+  "condition": "incomplete",
+  "label": "shared",
+  "wording": "varied",
+  "trails": [
+   {
+    "report": 1,
+    "steps": [
+     "E-235",
+     "C-1176"
+    ],
+    "end": "firsthand"
+   },
+   {
+    "report": 2,
+    "steps": [
+     "R-4864"
+    ],
+    "end": "dead end: no source"
+   }
+  ]
+ },
+ {
+  "n": 20,
+  "train_idx": 89,
+  "packet": "Claim under review: At North Quarry, the community access road was closed from 17:15.\n\nReport 1. Contractor foreman statement: The community access road was closed from 17:15. This is based on N-39.\nReport 2. Community liaison officer statement: The community access road was closed from 17:15. This is based on E-4463.\n\nHandoff note: these two reports draw on the same source.\n\nNo record excerpts are attached.",
+  "answer": {
+   "verdict": "undetermined",
+   "root_records": []
+  },
+  "condition": "label_only",
+  "label": "shared",
+  "wording": "near_identical",
+  "trails": [
+   {
+    "report": 1,
+    "steps": [
+     "N-39"
+    ],
+    "end": "no excerpt shown"
+   },
+   {
+    "report": 2,
+    "steps": [
+     "E-4463"
+    ],
+    "end": "no excerpt shown"
+   }
+  ]
+ }
+];
+</script>
+<script>
+const C = window.REVIEW, KEY = "case-check-v1";
+let S = {}; try { S = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) {}
+let cur = 0;
+const $ = id => document.getElementById(id), form = $("form");
+const esc = s => s.replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const ids = s => esc(s).replace(/\b([A-Z]-\d+)\b/g, '<span class="rid" data-id="$1">$1</span>');
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+function done(i){ const a = S[C[i].n]; return a && a.verdict && a.roots && a.usable; }
+function flagged(i){ const a = S[C[i].n]; return a && (a.verdict === "no" || a.roots === "no" || a.usable === "no"); }
+function dots(){
+  $("dots").innerHTML = C.map((c,i)=>`<button class="${done(i)?"done":""} ${flagged(i)?"flag":""} ${i===cur?"cur":""}" data-i="${i}" aria-label="Case ${c.n}">${c.n}</button>`).join("");
+  const n = C.filter((_,i)=>done(i)).length;
+  $("count").textContent = `${n} / ${C.length}`; $("pbar").style.width = (100*n/C.length)+"%";
+}
+function show(i){
+  cur = i; const c = C[i];
+  $("cn").textContent = c.n;
+  $("packet").innerHTML = ids(c.packet);
+  $("answer").innerHTML = ids(`${c.answer.verdict}  ·  roots: ${c.answer.root_records.length ? c.answer.root_records.join(", ") : "none"}`);
+  $("trails").innerHTML = c.trails.map(t => `<div class="trail">Report ${t.report}: ${ids(t.steps.join(" → "))} <span class="${t.end==="firsthand"?"end-firsthand":"end-other"}">[${t.end}]</span></div>`).join("");
+  $("meta").innerHTML = [`condition: ${c.condition.replace("_"," ")}`, `note says: ${c.label}`, `wording: ${c.wording.replace("_"," ")}`].map(x=>`<span class="chip">${x}</span>`).join("");
+  form.reset(); const a = S[c.n] || {};
+  for (const k of ["verdict","roots","usable"]) if (a[k]) form.querySelector(`[name=${k}][value=${a[k]}]`).checked = true;
+  (a.flags||[]).forEach(f => form.querySelector(`[name=flag][value=${f}]`).checked = true);
+  form.note.value = a.note || "";
+  if (!a.roots && c.answer.verdict === "undetermined") { form.querySelector('[name=roots][value=na]').checked = true; record(); }
+  $("next").textContent = i === C.length-1 ? "Finish" : "Next →";
+  dots(); summary();
+}
+function record(){
+  const c = C[cur], fd = new FormData(form);
+  S[c.n] = {train_idx: c.train_idx, condition: c.condition, verdict: fd.get("verdict"), roots: fd.get("roots"), usable: fd.get("usable"), flags: fd.getAll("flag"), note: fd.get("note") || ""};
+  save(); dots(); summary();
+}
+function summary(){
+  const a = Object.values(S), n = C.filter((_,i)=>done(i)).length;
+  if (!n) { $("summary").innerHTML = ""; return; }
+  const cnt = (k,v) => a.filter(x=>x[k]===v).length;
+  $("summary").innerHTML = `<div class="card"><p class="label">Tally so far</p>Verdict right: ${cnt("verdict","yes")} · wrong: ${cnt("verdict","no")} · unsure: ${cnt("verdict","unsure")}<br>Roots wrong: ${cnt("roots","no")} · Flawed for training: ${cnt("usable","no")}<br><span class="help">Rule of thumb: 0 wrong verdicts in 20 → train. Any wrong verdict → fix the generator first.</span></div>`;
+}
+form.addEventListener("change", record);
+form.note.addEventListener("input", record);
+$("prev").onclick = () => cur > 0 && show(cur-1);
+$("next").onclick = () => cur < C.length-1 ? show(cur+1) : $("export").click();
+$("dots").onclick = e => { const b = e.target.closest("button"); if (b) show(+b.dataset.i); };
+document.addEventListener("click", e => { const r = e.target.closest(".rid"); if (!r) return;
+  const on = !r.classList.contains("hl"); document.querySelectorAll(".rid").forEach(x => x.classList.toggle("hl", on && x.dataset.id === r.dataset.id)); });
+document.addEventListener("keydown", e => {
+  if (e.target.tagName === "TEXTAREA") return;
+  const map = {"1":["verdict","yes"],"2":["verdict","no"],"3":["verdict","unsure"],q:["roots","yes"],w:["roots","no"],e:["roots","na"],a:["usable","yes"],s:["usable","no"]};
+  const m = map[e.key.toLowerCase()];
+  if (m) { form.querySelector(`[name=${m[0]}][value=${m[1]}]`).checked = true; record(); }
+  if (e.key === "ArrowRight" && cur < C.length-1) show(cur+1);
+  if (e.key === "ArrowLeft" && cur > 0) show(cur-1);
+});
+$("export").onclick = () => {
+  const blob = new Blob([JSON.stringify({checked_at: new Date().toISOString(), results: S}, null, 1)], {type: "application/json"});
+  const u = URL.createObjectURL(blob), l = document.createElement("a");
+  l.href = u; l.download = "case-check-results.json"; l.click(); URL.revokeObjectURL(u);
+};
+show(0);
+</script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case Check</title>
+<style>
+:root{--bg:#f7f8f6;--card:#fff;--ink:#1d2a28;--muted:#5d6c69;--line:#d7dfdc;--accent:#0b6b62;--accent-soft:#e1f2ee;--yes:#1f7a3a;--yes-soft:#e3f4e7;--no:#b23a2a;--no-soft:#fbe6e2;--maybe:#8a6a00;--maybe-soft:#fbf1d4;--mono:ui-monospace,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121816;--card:#1a2220;--ink:#e3ebe8;--muted:#9aaba6;--line:#2e3a37;--accent:#4fc3b4;--accent-soft:#1d3532;--yes:#6fd18a;--yes-soft:#1b3323;--no:#f08a7a;--no-soft:#3a1f1b;--maybe:#e6c35a;--maybe-soft:#33290f}}
+:root[data-theme="dark"]{--bg:#121816;--card:#1a2220;--ink:#e3ebe8;--muted:#9aaba6;--line:#2e3a37;--accent:#4fc3b4;--accent-soft:#1d3532;--yes:#6fd18a;--yes-soft:#1b3323;--no:#f08a7a;--no-soft:#3a1f1b;--maybe:#e6c35a;--maybe-soft:#33290f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,sans-serif}
+header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 16px}
+.bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;max-width:1200px;margin:auto}
+h1{font-size:1.05rem;margin:0;flex:1 1 auto}
+.prog{flex:1 1 200px;height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--accent);width:0}
+button{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:6px;padding:6px 12px;cursor:pointer}
+button:hover{border-color:var(--accent)}
+button.primary{background:var(--accent);color:var(--bg);border-color:var(--accent);font-weight:600}
+nav.dots{display:flex;gap:4px;flex-wrap:wrap;max-width:1200px;margin:8px auto 0}
+nav.dots button{width:30px;padding:3px 0;font-size:.8rem}
+nav.dots button.done{background:var(--accent-soft);border-color:var(--accent)}
+nav.dots button.flag{background:var(--no-soft);border-color:var(--no)}
+nav.dots button.cur{outline:2px solid var(--accent)}
+main{max-width:1200px;margin:auto;padding:16px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:16px}
+@media (max-width:860px){main{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px}
+.label{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+pre{white-space:pre-wrap;word-break:break-word;font:13.5px/1.55 var(--mono);margin:0}
+.rid{background:var(--accent-soft);border-radius:3px;padding:0 2px;cursor:pointer}
+.rid.hl{background:var(--accent);color:var(--bg)}
+.answer{font:600 1.05rem var(--mono);padding:8px 10px;border-radius:6px;background:var(--accent-soft);margin-bottom:12px}
+.trail{font:13.5px var(--mono);margin:4px 0}
+.trail .end-firsthand{color:var(--yes);font-weight:700}
+.trail .end-other{color:var(--maybe);font-weight:700}
+.meta{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 0}
+.chip{font-size:.78rem;border:1px solid var(--line);border-radius:999px;padding:1px 8px;color:var(--muted)}
+fieldset{border:0;margin:0 0 14px;padding:0}
+legend{font-weight:650;margin-bottom:6px;padding:0}
+.opts{display:flex;gap:6px;flex-wrap:wrap}
+.opts label{border:1px solid var(--line);border-radius:6px;padding:6px 12px;cursor:pointer;user-select:none}
+.opts input{position:absolute;opacity:0;pointer-events:none}
+.opts label:has(input:focus-visible){outline:2px solid var(--accent)}
+.opts label.y:has(input:checked){background:var(--yes-soft);border-color:var(--yes);color:var(--yes);font-weight:650}
+.opts label.n:has(input:checked){background:var(--no-soft);border-color:var(--no);color:var(--no);font-weight:650}
+.opts label.m:has(input:checked){background:var(--maybe-soft);border-color:var(--maybe);color:var(--maybe);font-weight:650}
+.flags label{display:flex;gap:8px;align-items:flex-start;margin:4px 0;cursor:pointer}
+textarea{width:100%;font:inherit;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);padding:6px;min-height:44px}
+.kbd{font:12px var(--mono);border:1px solid var(--line);border-radius:3px;padding:0 4px}
+.foot{display:flex;justify-content:space-between;gap:8px;margin-top:12px}
+.help{color:var(--muted);font-size:.85rem;margin:6px 0 0}
+#summary{max-width:1200px;margin:auto;padding:0 16px 24px}
+details summary{cursor:pointer;color:var(--muted);font-size:.85rem}
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <h1>Generator check · 20 training cases</h1>
+    <div class="prog" aria-hidden="true"><i id="pbar"></i></div>
+    <span id="count">0 / 20</span>
+    <button id="export" class="primary">Download results</button>
+  </div>
+  <nav class="dots" id="dots" aria-label="Cases"></nav>
+</header>
+<main>
+  <section class="card">
+    <p class="label">What the model sees · case <span id="cn"></span></p>
+    <pre id="packet"></pre>
+    <details style="margin-top:10px"><summary>Instructions given to the model (same for every case)</summary>
+      <pre class="help">Decide whether the two reports give independent corroboration of the named claim. Independent: each report traces back to a different firsthand record. Shared: both trace back to the same firsthand record. If the material cannot settle it: undetermined. Judge from the records, not the handoff note. Answer as JSON with verdict and root_records.</pre>
+    </details>
+  </section>
+  <section class="card">
+    <p class="label">Generator’s answer</p>
+    <div class="answer" id="answer"></div>
+    <p class="label">Trail the generator followed (click an ID to highlight it)</p>
+    <div id="trails"></div>
+    <div class="meta" id="meta"></div>
+    <hr style="border:0;border-top:1px solid var(--line);margin:14px 0">
+    <form id="form">
+      <fieldset><legend>1. Is the verdict right? <span class="kbd">1</span>/<span class="kbd">2</span>/<span class="kbd">3</span></legend>
+        <div class="opts">
+          <label class="y"><input type="radio" name="verdict" value="yes">Yes</label>
+          <label class="n"><input type="radio" name="verdict" value="no">No</label>
+          <label class="m"><input type="radio" name="verdict" value="unsure">Unsure</label>
+        </div></fieldset>
+      <fieldset><legend>2. Are the root record IDs right? <span class="kbd">Q</span>/<span class="kbd">W</span>/<span class="kbd">E</span></legend>
+        <div class="opts">
+          <label class="y"><input type="radio" name="roots" value="yes">Yes</label>
+          <label class="n"><input type="radio" name="roots" value="no">No</label>
+          <label class="m"><input type="radio" name="roots" value="na">N/A (undetermined)</label>
+        </div></fieldset>
+      <fieldset><legend>3. Fit to train on? <span class="kbd">A</span>/<span class="kbd">S</span></legend>
+        <div class="opts">
+          <label class="y"><input type="radio" name="usable" value="yes">Yes</label>
+          <label class="n"><input type="radio" name="usable" value="no">No, flawed</label>
+        </div></fieldset>
+      <fieldset class="flags"><legend>Anything off? (optional)</legend>
+        <label><input type="checkbox" name="flag" value="giveaway">Wording gives the answer away</label>
+        <label><input type="checkbox" name="flag" value="firsthand_unclear">Firsthand status of a record is unclear</label>
+        <label><input type="checkbox" name="flag" value="label_unclear">Handoff note is confusing</label>
+        <label><input type="checkbox" name="flag" value="unrealistic">Unrealistic for a grievance file</label>
+        <label><input type="checkbox" name="flag" value="should_be_undetermined">Should be undetermined</label>
+      </fieldset>
+      <textarea name="note" placeholder="Note (optional)"></textarea>
+    </form>
+    <div class="foot">
+      <button id="prev">← Prev</button>
+      <button id="next" class="primary">Next →</button>
+    </div>
+    <p class="help">Answers save in this browser as you go. Arrow keys move between cases.</p>
+  </section>
+</main>
+<div id="summary"></div>
+<script src="review_data.js"></script>
+<script>
+const C = window.REVIEW, KEY = "case-check-v1";
+let S = {}; try { S = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) {}
+let cur = 0;
+const $ = id => document.getElementById(id), form = $("form");
+const esc = s => s.replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const ids = s => esc(s).replace(/\b([A-Z]-\d+)\b/g, '<span class="rid" data-id="$1">$1</span>');
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+function done(i){ const a = S[C[i].n]; return a && a.verdict && a.roots && a.usable; }
+function flagged(i){ const a = S[C[i].n]; return a && (a.verdict === "no" || a.roots === "no" || a.usable === "no"); }
+function dots(){
+  $("dots").innerHTML = C.map((c,i)=>`<button class="${done(i)?"done":""} ${flagged(i)?"flag":""} ${i===cur?"cur":""}" data-i="${i}" aria-label="Case ${c.n}">${c.n}</button>`).join("");
+  const n = C.filter((_,i)=>done(i)).length;
+  $("count").textContent = `${n} / ${C.length}`; $("pbar").style.width = (100*n/C.length)+"%";
+}
+function show(i){
+  cur = i; const c = C[i];
+  $("cn").textContent = c.n;
+  $("packet").innerHTML = ids(c.packet);
+  $("answer").innerHTML = ids(`${c.answer.verdict}  ·  roots: ${c.answer.root_records.length ? c.answer.root_records.join(", ") : "none"}`);
+  $("trails").innerHTML = c.trails.map(t => `<div class="trail">Report ${t.report}: ${ids(t.steps.join(" → "))} <span class="${t.end==="firsthand"?"end-firsthand":"end-other"}">[${t.end}]</span></div>`).join("");
+  $("meta").innerHTML = [`condition: ${c.condition.replace("_"," ")}`, `note says: ${c.label}`, `wording: ${c.wording.replace("_"," ")}`].map(x=>`<span class="chip">${x}</span>`).join("");
+  form.reset(); const a = S[c.n] || {};
+  for (const k of ["verdict","roots","usable"]) if (a[k]) form.querySelector(`[name=${k}][value=${a[k]}]`).checked = true;
+  (a.flags||[]).forEach(f => form.querySelector(`[name=flag][value=${f}]`).checked = true);
+  form.note.value = a.note || "";
+  if (!a.roots && c.answer.verdict === "undetermined") { form.querySelector('[name=roots][value=na]').checked = true; record(); }
+  $("next").textContent = i === C.length-1 ? "Finish" : "Next →";
+  dots(); summary();
+}
+function record(){
+  const c = C[cur], fd = new FormData(form);
+  S[c.n] = {train_idx: c.train_idx, condition: c.condition, verdict: fd.get("verdict"), roots: fd.get("roots"), usable: fd.get("usable"), flags: fd.getAll("flag"), note: fd.get("note") || ""};
+  save(); dots(); summary();
+}
+function summary(){
+  const a = Object.values(S), n = C.filter((_,i)=>done(i)).length;
+  if (!n) { $("summary").innerHTML = ""; return; }
+  const cnt = (k,v) => a.filter(x=>x[k]===v).length;
+  $("summary").innerHTML = `<div class="card"><p class="label">Tally so far</p>Verdict right: ${cnt("verdict","yes")} · wrong: ${cnt("verdict","no")} · unsure: ${cnt("verdict","unsure")}<br>Roots wrong: ${cnt("roots","no")} · Flawed for training: ${cnt("usable","no")}<br><span class="help">Rule of thumb: 0 wrong verdicts in 20 → train. Any wrong verdict → fix the generator first.</span></div>`;
+}
+form.addEventListener("change", record);
+form.note.addEventListener("input", record);
+$("prev").onclick = () => cur > 0 && show(cur-1);
+$("next").onclick = () => cur < C.length-1 ? show(cur+1) : $("export").click();
+$("dots").onclick = e => { const b = e.target.closest("button"); if (b) show(+b.dataset.i); };
+document.addEventListener("click", e => { const r = e.target.closest(".rid"); if (!r) return;
+  const on = !r.classList.contains("hl"); document.querySelectorAll(".rid").forEach(x => x.classList.toggle("hl", on && x.dataset.id === r.dataset.id)); });
+document.addEventListener("keydown", e => {
+  if (e.target.tagName === "TEXTAREA") return;
+  const map = {"1":["verdict","yes"],"2":["verdict","no"],"3":["verdict","unsure"],q:["roots","yes"],w:["roots","no"],e:["roots","na"],a:["usable","yes"],s:["usable","no"]};
+  const m = map[e.key.toLowerCase()];
+  if (m) { form.querySelector(`[name=${m[0]}][value=${m[1]}]`).checked = true; record(); }
+  if (e.key === "ArrowRight" && cur < C.length-1) show(cur+1);
+  if (e.key === "ArrowLeft" && cur > 0) show(cur-1);
+});
+$("export").onclick = () => {
+  const blob = new Blob([JSON.stringify({checked_at: new Date().toISOString(), results: S}, null, 1)], {type: "application/json"});
+  const u = URL.createObjectURL(blob), l = document.createElement("a");
+  l.href = u; l.download = "case-check-results.json"; l.click(); URL.revokeObjectURL(u);
+};
+show(0);
+</script>
+</body>
+</html>
