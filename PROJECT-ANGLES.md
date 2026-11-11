@@ -6,7 +6,7 @@ Team: Liezl, Deepayan, Prashanth. Sprint November 13–15, 2026. This file is th
 
 A supervisor and a contractor both say the site gate was locked at 08:10. That sounds like two witnesses. The paperwork shows both quoted the same guard’s log. In a complaint about site access, that difference decides whether the case closes or stays open.
 
-In [Laundered Consensus](../Swarm%20Alignment%20Sprint/report_sections/Laundered-Consensus_Coetzee-Sinha-Vijay_Swarm-Alignment-Sprint-2026.pdf), we tested whether a watchdog accepts a claim of prior approval when the approval record is missing or hidden. Here a model reviewer gets two reports that claim independent support, and the underlying records may show that both repeat one observation. Marc Bara varied report count and evidence-root count independently. Zhou et al. showed deep research agents treat paraphrased copies as corroboration, with ground-truth provenance hidden at test time. Our test hands the reviewer the records and asks whether it reads them. [Epistemic Sybil Resistance](https://arxiv.org/abs/2609.01873) · [Evidence Laundering](https://aclanthology.org/2026.emnlp-main.509/)
+In [Laundered Consensus](https://github.com/Dsinha97/laundered-consensus/blob/main/report/Laundered-Consensus_Coetzee-Sinha-Vijay_Swarm-Alignment-Sprint-2026.pdf), we tested whether a watchdog accepts a claim of prior approval when the approval record is missing or hidden. Here a model reviewer gets two reports that claim independent support, and the underlying records may show that both repeat one observation. Marc Bara varied report count and evidence-root count independently. Zhou et al. showed deep research agents treat paraphrased copies as corroboration, with ground-truth provenance hidden at test time. Our test hands the reviewer the records and asks whether it reads them. [Epistemic Sybil Resistance](https://arxiv.org/abs/2609.01873) · [Evidence Laundering](https://aclanthology.org/2026.emnlp-main.509/)
 
 ### Headline question: does the reviewer believe the label or the record?
 
@@ -67,9 +67,12 @@ Agreed in the team chat on November 11:
 - **Liezl** owns the case rubric and answer key, and launches Adaption jobs from her account. Deepayan writes the reviewer prompt, so case writer and prompt writer stay separate.
 - **Sprint fine-tune training cases**, if any, are written by someone other than Liezl, from source histories that do not appear in the scored set.
 
-Still open:
+Agreed after the repo went up (November 11):
 
-- Whether to build the sibling project or drop it. **Sibling project:** with identical excerpts and source information, compare a trail next to each claim with a trail in an appendix, to see whether placement changes which records get checked. It runs only if a second owner takes the build and report.
+- **Deepayan** writes any sprint fine-tune training cases, from source histories that never appear in the scored set, before seeing the variants or answer key.
+- **Training files hold nothing** from the rubric, answer key, or held-back variants. Prefer a private import route (see the run log); if the file must be public, this rule is what keeps the scored set clean.
+- **Prompt freeze:** Deepayan freezes the reviewer prompt by end of day Friday, November 13. Prashanth's variants go into the repo only after that. Prashanth posts when the variants are done, before he reads the rubric. Liezl holds the rubric until then.
+- **Sibling project dropped** (trail beside each claim versus in an appendix) unless someone takes it.
 
 ### Optional: a fine-tune check before the sprint
 

@@ -8,7 +8,12 @@ Pre-sprint check of Adaption turnaround. Fictional warehouse logs, unrelated to 
 - **Run:** `adc822c7-6138-4977-a02b-4fc3ba704e58`, Qwen/Qwen3.5-4B, LoRA r16/alpha32, 1 epoch, lr 5e-5, max 1 iteration, Liezl's account, paid from the voucher credits already loaded on the account.
 - **Submitted:** 15:13:31 UTC (17:13 SAST).
 - **Cutoff:** usable checkpoint by 19:13 UTC (21:13 SAST). Otherwise drop fine-tuning and run the paired benchmark only.
-- **First training progress:**
-- **Completed:**
-- **Checkpoint downloaded and loaded by runner:**
-- **Credits used:**
+- **Completed:** 15:32:54 UTC (17:32 SAST). **19 min 23 s** from submission to a finished run, well inside the four-hour cutoff. Last weekend's delay looks like a one-off.
+- **Result:** 1 of 1 iterations, best win rate 0.4636 against a 0.7 target. The win rate is the platform's own comparison and says little on a toy task; the useful number here is turnaround.
+- **Download:** available in the Adaption web app. The MCP tools have no checkpoint download.
+- **Checkpoint loaded by runner:** pending (Deepayan).
+- **Credits used:** pending (Liezl, from the dashboard balance).
+
+## Private import
+
+The import tool accepts `access: "oauth"` for Hugging Face and Google Sheets sources, which suggests a private Hugging Face dataset can be imported through the account's OAuth link. Untested. Try it with a private copy of this toy file before the sprint fine-tune.
