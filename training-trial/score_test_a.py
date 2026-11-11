@@ -75,5 +75,12 @@ for a in ARMS:
     c = Counter((y["gold"], y["verdict"]) for y in res[a])
     lines.append(f"- {a}: " + ", ".join(f"{g}→{s}: {k}" for (g, s), k in sorted(c.items(), key=lambda t: (str(t[0][0]), str(t[0][1])))))
 
-open(f"{D}/results/test_a_results.md", "w", encoding="utf-8").write("\n".join(lines) + "\n")
+out = f"{D}/results/test_a_results.md"
+try:
+    reading = open(out, encoding="utf-8").read().split("\n## Reading", 1)[1]
+    lines += ["", "## Reading" + reading.rstrip("\n")]  # keep the hand-written reading on rescoring
+except (FileNotFoundError, IndexError):
+    pass
+open(out, "w", encoding="utf-8").write("\n".join(lines) + "\n")
+sys.stdout.reconfigure(encoding="utf-8")
 print("\n".join(lines))

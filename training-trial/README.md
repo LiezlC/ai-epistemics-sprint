@@ -26,7 +26,7 @@ Does fine-tuning make a small reviewer model better at telling shared-source cor
 1. **Human check (Liezl):** open `review.html` in a browser, mark 20 cases, download the results JSON into this folder. Gate: no wrong verdicts. Any wrong verdict means fixing the generator first.
 2. Upload `train.jsonl` as a private Hugging Face dataset and import through the Adaption connector.
 3. One AutoScientist run, Qwen3.5-4B, LoRA, one iteration.
-4. Done for Test A on 11 Nov via Modal (`eval_modal.py`, `score_test_a.py`; results in `results/test_a_results.md`). Run untuned (with three examples) and tuned and on Test B in the sprint. Score with the frozen key.
+4. Test A done on 11 Nov via Modal (`eval_modal.py`, `score_test_a.py`; results in `results/test_a_results.md`). Test B in the sprint: same three arms, scored with the frozen key.
 
 ## Human check, v1 (November 11)
 
