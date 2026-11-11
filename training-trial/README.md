@@ -41,3 +41,10 @@ Verdict logic is unchanged, and the independent re-derivation still matches all 
 ## Deviation from the team plan
 
 The team agreed on November 11 that no case files exist before Friday and that Deepayan writes training cases. This trial generates training cases now, from a script in the gate-and-log setting. Test B, the rubric and the answer key are untouched: they are still written during the sprint. Confirm in the group before step 2.
+
+## Run log
+
+- **Training data:** v2 `data/train.jsonl`, uploaded as private Hugging Face dataset `khayali/provenance-trial-train-v2`, imported through the Adaption connector: dataset `36c6ac85-fa93-40c8-96f1-bc58faf6ef82`, 1,000 rows.
+- **Run:** `50993f1c-ae1f-47db-a06b-71a7402511d2`, Qwen/Qwen3.5-4B, LoRA r16/alpha32, 1 epoch, lr 5e-5, one iteration (Adaption's recommended settings, same as the toy run). Submitted 17:41:31 UTC (19:41 SAST) on Liezl's account.
+- **Completed:**
+- **Checkpoint:**
