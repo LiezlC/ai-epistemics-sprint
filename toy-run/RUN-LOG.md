@@ -10,10 +10,10 @@ Pre-sprint check of Adaption turnaround. Fictional warehouse logs, unrelated to 
 - **Cutoff:** usable checkpoint by 19:13 UTC (21:13 SAST). Otherwise drop fine-tuning and run the paired benchmark only.
 - **Completed:** 15:32:54 UTC (17:32 SAST). **19 min 23 s** from submission to a finished run, well inside the four-hour cutoff. Last weekend's delay looks like a one-off.
 - **Result:** 1 of 1 iterations, best win rate 0.4636 against a 0.7 target. The win rate is the platform's own comparison and says little on a toy task; the useful number here is turnaround.
-- **Download:** available in the Adaption web app. The MCP tools have no checkpoint download.
+- **Download:** done via the API (`GET /api/v1/autoscientist/{id}/download`, key in Liezl's secrets). 81 MB archive, **zstd-compressed tar despite the docs saying gzip**; unpack with `tar --zstd` or Python `zstandard`. Contents: LoRA adapter (`adapter_model.safetensors`, `adapter_config.json`), tokenizer, chat template, `trainer_state.json`. Kept locally in `toy-run/checkpoint/`, not committed.
 - **Checkpoint loaded by runner:** pending (Deepayan).
-- **Credits used:** pending (Liezl, from the dashboard balance).
+- **Credits used:** pending (Liezl, from the dashboard). Neither the connector nor the API exposes the account balance.
 
 ## Private import
 
-The import tool accepts `access: "oauth"` for Hugging Face and Google Sheets sources, which suggests a private Hugging Face dataset can be imported through the account's OAuth link. Tested 11 Nov: a private copy (`khayali/toy-warehouse-bins-private-test`) imported with `access: "oauth"` **failed** (dataset `e82417d2-0d48-473c-82aa-409e11145940`, no error detail). Most likely Hugging Face is not linked to the Adaption account. Next try: link Hugging Face in the Adaption web app and re-run the import. Until then, sprint training files go up public and follow the rule that they hold nothing from the scored set.
+The import tool accepts `access: "oauth"` for Hugging Face and Google Sheets sources, which suggests a private Hugging Face dataset can be imported through the account's OAuth link. Tested 11 Nov: a private copy (`khayali/toy-warehouse-bins-private-test`) imported with `access: "oauth"` **failed** (dataset `e82417d2-0d48-473c-82aa-409e11145940`, no error detail). Adaption's docs say `oauth` applies to Google Sheets only, and there is no Hugging Face token field, so private Hugging Face imports are not supported as documented. Kaggle is the one source with stored credentials (API keys in Adaption settings), so a private Kaggle dataset is the likely private route. Untested; Adaption support can confirm. Until then, sprint training files go up public and follow the rule that they hold nothing from the scored set.
