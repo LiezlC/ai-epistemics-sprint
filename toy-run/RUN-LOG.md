@@ -16,4 +16,4 @@ Pre-sprint check of Adaption turnaround. Fictional warehouse logs, unrelated to 
 
 ## Private import
 
-The import tool accepts `access: "oauth"` for Hugging Face and Google Sheets sources, which suggests a private Hugging Face dataset can be imported through the account's OAuth link. Untested. Try it with a private copy of this toy file before the sprint fine-tune.
+The import tool accepts `access: "oauth"` for Hugging Face and Google Sheets sources, which suggests a private Hugging Face dataset can be imported through the account's OAuth link. Tested 11 Nov: a private copy (`khayali/toy-warehouse-bins-private-test`) imported with `access: "oauth"` **failed** (dataset `e82417d2-0d48-473c-82aa-409e11145940`, no error detail). Most likely Hugging Face is not linked to the Adaption account. Next try: link Hugging Face in the Adaption web app and re-run the import. Until then, sprint training files go up public and follow the rule that they hold nothing from the scored set.
