@@ -71,6 +71,29 @@ What this changes for the sprint design:
 - **Test B is the transfer test.** Test A shares a generator with training, so it only shows the task was learned as taught.
 - **A fine-tune arm is cheap enough to include**: 32 minutes of training, no credits charged so far, and one Modal batch job for evaluation (`training-trial/eval_modal.py`).
 
+### Proposed additions (November 12, for the team to decide)
+
+Nothing here is agreed yet. It comes from a second reading of the raw Test A outputs (`training-trial/results/test_a_outputs.jsonl`, prior work).
+
+**What the raw outputs show.** In 3 of the tuned model’s 5 failures on a false “independent” label, it names the single shared root record and still answers “independent” (cases 36, 40, 43). The other two answer “undetermined” with no roots. The three-example model does the same on case 43, citing S-6107 twice. With an accurate “shared” label on the same structure, both arms score 12 of 12. The prompt already says “Judge from the records, not from the handoff note,” and training included 200 contradiction cases. Six cases per direction is a hypothesis for Test B to confirm.
+
+1. **Split the headline rate in two.** Among label-following errors, count how often the reviewer cited the correct shared root and still followed the label, and how often it failed to trace the root. [MASK](https://arxiv.org/abs/2503.03750) separates what a model knows from what it says; this applies the same split to provenance. Zhou et al. and Bara cannot make it, because their reviewers never receive the records. It needs one scoring line and two arms on the same cases:
+   - **No label.** Excerpts with no handoff note. Shows whether a false label hurts or an accurate one helps.
+   - **Roots first.** Ask for the root records before the label appears, then ask for the verdict.
+2. **Vary the label’s form.** One forged word adds a second witness, and only in the direction that inflates corroboration. That makes provenance metadata an attack surface, which is the Track 2 result. Compare a bare assertion (“independent”), an authority-stamped assertion (“verified independent by audit”), and a literally true label that misleads (“Report 1 cites R-6353, Report 2 cites G-7611”). The last one is how laundering happens when nobody lies. If it holds, the design recommendation is that labels should point to records for the reviewer to resolve and should never state the conclusion.
+3. **Test which training signal removes the failure.** Supervised tuning left it in place. Adaption offers two more on Qwen3.5-4B:
+   - **Preference pairs (DPO).** The rejected completion is the label-following verdict with the same roots, so each pair differs only in the failure under test.
+   - **Reasoning traces.** The target walks the trail before the verdict.
+
+   Check for over-correction afterwards: a tuned model should still answer “undetermined” on label-only packets and stay right on consistent ones. Deepayan’s rule on training cases applies unchanged.
+4. **Shared conduit, separate observations.** The false “same source” direction scored 6 of 6 because those cases are easy. In real grievance files, separate witnesses often reach the file through one scribe, interpreter, or liaison officer, in near-identical wording on one form. Three or four such families would test whether a reviewer collapses them into one source, which is the error that erases complainants.
+
+Suggested priority: 1 and 2 carry the report, 3 is the fine-tune arm, 4 goes in if case-writing time allows.
+
+Smaller Adaption options: untuned Qwen3.5 at 2B, 4B and 9B as a size ladder; similar-row augmentation to move training cases away from the generator’s templates. Skip Invent, which stalled during Swarm.
+
+Prior art to read before claiming novelty: [arXiv 2606.09005](https://arxiv.org/abs/2606.09005), reported as retrieved text impersonating metadata and provenance signals in RAG (found by search on November 12, not yet read).
+
 ### Decisions for the three of us
 
 Agreed in the team chat on November 11:
