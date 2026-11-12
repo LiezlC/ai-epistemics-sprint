@@ -62,7 +62,6 @@ A minimum fine-tuning trial ran before the sprint, on Liezl's account ([trial RE
 | Tuned | 54/60 | 54/60 |
 
 - **Against the fair control** (untuned with examples), tuning fixed 7 cases and broke 1 (exact McNemar p = 0.07). Suggestive, not settled.
-- **Fine-tune arm, if we run one** (Deepayan's proposal, 12 Nov): Deepayan writes the training cases Friday morning, before the prompt freeze, from source histories outside the scored set. Whether to run it at all is decided Friday.
 - **The gain sits in incomplete trails** (5/12 to 11/12). The tuned model learned to answer undetermined when a trail ends at an unsourced note.
 - **The headline failure survives tuning.** A false “independent” label on shared-source reports: tuned 1 of 6 right, untuned with examples 2 of 6. A false “same source” label on independent reports: 6 of 6 for both. The misleading label pulls one way, towards independence.
 
@@ -107,6 +106,7 @@ Agreed in the team chat on November 11:
 - **Deepayan** owns the run: prompts, models, scoring.
 - **Toy Adaption run launched November 11, 17:13 SAST** ([run log](./toy-run/RUN-LOG.md)). Previously: goes ahead before the sprint on Liezl's account (about 2,000 credits; Deepayan has about 1,000). Limits: 1,050 toy rows, one iteration, four-hour cutoff from submission to usable checkpoint. Log start and finish times, which also shows whether last weekend's delay was a one-off. Dated and listed as prior work in the README and report.
 - **Sprint fine-tune budget:** check the order preview first. If it would use more than about 600 of Deepayan's credits, say so in the group and Liezl launches it from her account with the same settings and files, while Deepayan keeps scoring. If neither account covers it, skip fine-tuning and run the paired benchmark on untuned models.
+- **Fine-tune arm, if we run one** (Deepayan's proposal, 12 Nov): Deepayan writes the training cases Friday morning, before the prompt freeze, from source histories outside the scored set. Whether to run it at all is decided Friday.
 
 - **Liezl** owns the case rubric and answer key, and launches Adaption jobs from her account. Deepayan writes the reviewer prompt, so case writer and prompt writer stay separate.
 - **Sprint fine-tune training cases**, if any, are written by someone other than Liezl, from source histories that do not appear in the scored set.
