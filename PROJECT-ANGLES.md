@@ -62,6 +62,7 @@ A minimum fine-tuning trial ran before the sprint, on Liezl's account ([trial RE
 | Tuned | 54/60 | 54/60 |
 
 - **Against the fair control** (untuned with examples), tuning fixed 7 cases and broke 1 (exact McNemar p = 0.07). Suggestive, not settled.
+- **Fine-tune arm, if we run one** (Deepayan's proposal, 12 Nov): Deepayan writes the training cases Friday morning, before the prompt freeze, from source histories outside the scored set. Whether to run it at all is decided Friday.
 - **The gain sits in incomplete trails** (5/12 to 11/12). The tuned model learned to answer undetermined when a trail ends at an unsourced note.
 - **The headline failure survives tuning.** A false “independent” label on shared-source reports: tuned 1 of 6 right, untuned with examples 2 of 6. A false “same source” label on independent reports: 6 of 6 for both. The misleading label pulls one way, towards independence.
 

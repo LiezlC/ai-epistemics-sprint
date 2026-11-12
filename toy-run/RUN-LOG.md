@@ -11,7 +11,8 @@ Pre-sprint check of Adaption turnaround. Fictional warehouse logs, unrelated to 
 - **Completed:** 15:32:54 UTC (17:32 SAST). **19 min 23 s** from submission to a finished run, well inside the four-hour cutoff. Last weekend's delay looks like a one-off.
 - **Result:** 1 of 1 iterations, best win rate 0.4636 against a 0.7 target. The win rate is the platform's own comparison and says little on a toy task; the useful number here is turnaround.
 - **Download:** done via the API (`GET /api/v1/autoscientist/{id}/download`, key in Liezl's secrets). 81 MB archive, **zstd-compressed tar despite the docs saying gzip**; unpack with `tar --zstd` or Python `zstandard`. Contents: LoRA adapter (`adapter_model.safetensors`, `adapter_config.json`), tokenizer, chat template, `trainer_state.json`. Kept locally in `toy-run/checkpoint/`, not committed.
-- **Checkpoint loaded by runner:** pending (Deepayan).
+- **Checkpoint loaded by runner:** yes, 12 Nov (Deepayan, Modal H100, base `Qwen/Qwen3.5-4B`). On the 20 holdout rows: adapter on 20/20 exact with clean JSON; adapter off 0/20 clean JSON (every answer in a code fence), 15/20 exact once the JSON is read out. Toy data, so this shows the adapter works and nothing more.
+- **Base model name:** the adapter config says `togethercomputer/Qwen3.5-4B`, which is the name on Adaption's training backend (Together). That repo does not load outside it; the adapter loads and works on `Qwen/Qwen3.5-4B`, which is what both evaluations used. Same for the trial adapter.
 - **Credits used:** none charged as of 18:00 SAST, 11 Nov. The dashboard usage breakdown (Settings > Payment details > See breakdown) lists no job after Nov 8; balance 2,082.573 credits. Neither the MCP connector nor the API exposes the balance.
 
 ## Private import
