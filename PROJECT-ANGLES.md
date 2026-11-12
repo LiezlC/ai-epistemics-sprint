@@ -120,6 +120,18 @@ Agreed after the repo went up (November 11):
 - **Prashanth's 3 draft variants** (dated 11 Nov) stay as practice. He writes the scored contradiction variants on Friday, before reading the rubric, and posts when done.
 - **No team call** needed for now.
 
+Agreed November 12:
+
+- **Base model wording for the report:** the adapter loads and was tested on `Qwen/Qwen3.5-4B`; Adaption does not confirm that `togethercomputer/Qwen3.5-4B` (named in the adapter config) is the same model.
+- **Deepayan** is in favour of proposals 1 (split the headline rate) and 2 (three label forms). He builds the three label forms into his own training cases, so a fine-tune would see them.
+- **Prashanth** chooses how the label forms reach the scored variants: (a) he writes each with the bare label and Deepayan makes the other two forms after the freeze, or (b) he writes all three forms himself, same case, label line swapped.
+
+To decide Friday:
+
+- Whether a fine-tune arm runs at all.
+- Whether the label-form arm (proposal 2) and the no-label and roots-first arms (proposal 1) go in, given case-writing time.
+- Whether the fine-tune arm uses supervised, preference-pair, or reasoning-trace training (proposal 3).
+
 ### Optional: a fine-tune check before the sprint
 
 Done November 11: 19 minutes from submission to finished run, no credits charged ([run log](./toy-run/RUN-LOG.md)). The plan as written:
