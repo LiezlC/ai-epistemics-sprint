@@ -1,4 +1,4 @@
-"""Qwen3.5-4B positive control and pilot on Modal (sprint code, written 13 Nov 2026). NOT YET RUN.
+"""Qwen3.5-4B positive control and pilot on Modal (sprint code, written 13 Nov 2026). Run on 13 Nov: positive control reproduced and pilots done.
 
 PREEXISTING CODE REUSED: the model, the vLLM setup, the Modal image and the arm definitions follow
 `training-trial/eval_modal.py` (Liezl, 11 Nov 2026; vLLM 0.32.0, transformers 5.19.0, L40S, greedy, thinking off,

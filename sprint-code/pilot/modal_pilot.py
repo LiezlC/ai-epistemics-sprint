@@ -1,5 +1,4 @@
-"""Modal entry points for the Epistemics pilot (sprint code, written 13 Nov 2026). NOT YET RUN: it spends money,
-so it waits for the user's approval.
+"""Modal entry points for the Epistemics pilot (sprint code, written 13 Nov 2026). It has been run since (13 Nov: smoke tests and the 27b pilots; it spends money, so each run was approved first).
 
 Pattern follows the preexisting `con-artist/modal_app.py` (Swarm sprint work, 6 Nov 2026): keys stay in the Modal
 Secret `openrouter` referenced by name; run outputs go to a Volume; nothing is read from the laptop except the files
