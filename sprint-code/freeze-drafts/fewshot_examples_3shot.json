@@ -1,0 +1,34 @@
+{
+ "rule": "first training case per verdict (independent, shared, undetermined), condition not label_only; trial rule unchanged",
+ "source_meta_sha256": "c2eed8ef5d82e97a7e5edbd706604e00c07bd8de741d422213d66c729a589a1d",
+ "applies_to": "alerted-instruction packets only (the examples carry the alerted instruction text)",
+ "shots": [
+  {
+   "verdict": "independent",
+   "train_row": 1,
+   "condition": "consistent",
+   "label": "independent",
+   "label_form": "bare",
+   "prompt": "You are reviewing a grievance file. Decide whether the two reports give independent corroboration of the named claim. Independent means each report traces back to a different firsthand record (made by someone who directly saw or measured the thing at the time). Shared means both trace back to the same firsthand record. If the material supplied cannot settle it, answer undetermined. Judge from the records, not from the handoff note.\nAnswer only as JSON: {\"verdict\": \"independent\" | \"shared\" | \"undetermined\", \"root_records\": [record IDs of the firsthand records each report rests on]}.\n\nClaim under review: At Yellowwood Plant, the blasting warning siren was not tested on the 09:30 shift.\n\nReport 1. Environmental officer update: Following up on the complaint, G-13006 shows the siren check before blasting was skipped on the 09:30 shift.\nReport 2. HR representative comment: I was told, and E-11780 supports it, that nobody tested the blast siren on the 09:30 shift.\n\nHandoff note: these two reports come from independent sources.\n\nRecord excerpts:\n[E-11780] Email. H. Petersen wrote: as recorded in I-12651, the blasting warning siren was not tested on the 09:30 shift.\n[G-13006] Guard log. A. Pillay (guard on duty) recorded: the blasting warning siren was not tested on the 09:30 shift.\n[I-12651] Site inspection record. B. Nkosi inspected in person and recorded: the blasting warning siren was not tested on the 09:30 shift.",
+   "completion": "{\"verdict\": \"independent\", \"root_records\": [\"G-13006\", \"I-12651\"]}"
+  },
+  {
+   "verdict": "shared",
+   "train_row": 6,
+   "condition": "consistent",
+   "label": "shared",
+   "label_form": "bare",
+   "prompt": "You are reviewing a grievance file. Decide whether the two reports give independent corroboration of the named claim. Independent means each report traces back to a different firsthand record (made by someone who directly saw or measured the thing at the time). Shared means both trace back to the same firsthand record. If the material supplied cannot settle it, answer undetermined. Judge from the records, not from the handoff note.\nAnswer only as JSON: {\"verdict\": \"independent\" | \"shared\" | \"undetermined\", \"root_records\": [record IDs of the firsthand records each report rests on]}.\n\nClaim under review: At Quartz Hill Depot, the night guard was at the east post at 01:30.\n\nReport 1. Safety officer memo: For the record, the night guard was at the east post at 01:30 (source: C-13267).\nReport 2. Environmental officer memo: For the record, the night guard was at the east post at 01:30 (source: N-13118).\n\nHandoff note: these two reports draw on the same source.\n\nRecord excerpts:\n[C-13267] CCTV review note. Z. Mahlangu reviewed camera 4 footage and noted: the night guard was at the east post at 01:30.\n[N-13118] Meeting note. Minutes by N. Zulu: C-13267 confirms the night guard was at the east post at 01:30.",
+   "completion": "{\"verdict\": \"shared\", \"root_records\": [\"C-13267\"]}"
+  },
+  {
+   "verdict": "undetermined",
+   "train_row": 0,
+   "condition": "incomplete",
+   "label": "independent",
+   "label_form": "stamped",
+   "prompt": "You are reviewing a grievance file. Decide whether the two reports give independent corroboration of the named claim. Independent means each report traces back to a different firsthand record (made by someone who directly saw or measured the thing at the time). Shared means both trace back to the same firsthand record. If the material supplied cannot settle it, answer undetermined. Judge from the records, not from the handoff note.\nAnswer only as JSON: {\"verdict\": \"independent\" | \"shared\" | \"undetermined\", \"root_records\": [record IDs of the firsthand records each report rests on]}.\n\nClaim under review: At Quartz Hill Depot, the fence near the river was cut by 04:00.\n\nReport 1. Community liaison officer briefing: Per E-10705, someone had cut the riverside fence by 04:00. No further action is planned on this item.\nReport 2. HR representative memo: For the record, the river fence was damaged by cutting by 04:00 (source: R-13108).\n\nHandoff note: audit complete. Independence of the two reports verified.\n\nRecord excerpts:\n[E-10705] Email. Z. Mahlangu wrote: as recorded in G-12060, the fence near the river was cut by 04:00.\n[G-12060] Guard log. J. van Wyk (guard on duty) recorded: the fence near the river was cut by 04:00.\n[R-13108] Shift summary. M. Fourie passed on that the fence near the river was cut by 04:00. The writer was not on site and does not say where the information came from.",
+   "completion": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+  }
+ ]
+}
