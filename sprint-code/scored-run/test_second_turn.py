@@ -44,8 +44,10 @@ def fake_second(route, model, system, user, max_tokens):
     prev = json.loads(msgs[1]["content"])["verdict"] if msgs[1]["content"].lstrip().startswith("{") else "shared"
     last = msgs[2]["content"]
     if "Site inspection record" in last or "Site inspection" in last:
-        return json.dumps({"verdict": "independent", "root_records": []})
-    return json.dumps({"verdict": prev, "root_records": []})
+        new_id = re.search(m.ID, last.split("attached another record.", 1)[1]).group(0)
+        root = m.derive(msgs[0]["content"])[1]
+        return json.dumps({"verdict": "independent", "root_records": root + [new_id]})
+    return json.dumps({"verdict": prev, "root_records": m.derive(msgs[0]["content"])[1]})
 
 
 for layout in ("trial", "pv"):
@@ -61,6 +63,12 @@ for layout in ("trial", "pv"):
             f.write(json.dumps({"id": f"c{i:03d}", "prompt": p}) + "\n")
             gold = json.loads(r["chosen"])
             key[f"c{i:03d}"] = {"verdict": gold["verdict"], "root_records": gold["root_records"]}
+    for c, k in key.items():
+        if k["verdict"] == "shared":
+            k["second_turn"] = {"repeat": {"verdict": "shared", "root_records": k["root_records"]},
+                                "mislabeled": {"verdict": "shared", "root_records": k["root_records"]},
+                                "neutral": {"verdict": "shared", "root_records": k["root_records"]},
+                                "firsthand": {"verdict": "independent", "root_records": k["root_records"] + ["NEW"]}}
     keyp = os.path.join(tmp, "key.json")
     json.dump(key, open(keyp, "w"))
     pk = os.path.join(tmp, "packets.jsonl")
@@ -91,7 +99,18 @@ for layout in ("trial", "pv"):
             new_id = re.search(m.ID, r["attachment"]).group(0)
             ids_ok &= new_id not in r["messages"][0]["content"]
     check(ids_ok, f"[{layout}] the attached record ID is new (not already in the packet)")
+    def plus30(t):
+        h, mi = map(int, t.split(":"))
+        x = min(h * 60 + mi + 30, 23 * 60 + 59)
+        return f"{x // 60:02d}:{x % 60:02d}"
+    time_ok = True
+    for r in srows:
+        if r["branch"] == "firsthand":
+            claim_t = re.search(r"\b([01]?\d|2[0-3]):([0-5]\d)\b", re.search(r"^Claim under review:.*$", r["messages"][0]["content"], re.M).group(0))
+            time_ok &= claim_t is not None and ("at " + plus30(claim_t.group(0)) + " ") in r["attachment"]
+    check(time_ok, f"[{layout}] firsthand inspection time = claim time plus 30 minutes (capped at 23:59) in every case")
     rep = json.load(open(os.path.join(tmp, "rep.json")))
+    check(sum(rep["inspection_time_rule_counts"].values()) == len(shared_cases) and "no_time" not in rep["inspection_time_rule_counts"], f"[{layout}] report counts the time rule {rep['inspection_time_rule_counts']}")
     check(rep["attachment_max_len_gap_chars_within_a_case"] is not None and rep["attachment_max_len_gap_chars_within_a_case"] <= 30, f"[{layout}] attachment lengths close within a case (max gap {rep['attachment_max_len_gap_chars_within_a_case']} chars)")
     check(all(("[" in r["attachment"]) == (layout == "trial") for r in srows if r["attachment"]), f"[{layout}] attachment uses the packet's own record layout")
     # run second turn on a fake model, then score
@@ -102,6 +121,8 @@ for layout in ("trial", "pv"):
     check(len(r2) == len(srows) and all("messages" not in x and "truth" not in x for x in r2), f"[{layout}] second-turn run wrote raw outputs, no messages echo, no key")
     sc = py([os.path.join(HERE, "score_second_turn.py"), "--key", keyp, "--results", os.path.join(out2, "second_turn_results.jsonl")])
     check(sc.returncode == 0 and "firsthand" in sc.stdout, f"[{layout}] second-turn scorer runs")
+    check("verdict+roots" in sc.stdout and re.search(r"firsthand.*expected verdict (\d+)/\1, verdict\+roots (\d+)/\2", sc.stdout) is not None,
+          f"[{layout}] scorer reads second_turn entries with NEW and the fake model matches them (firsthand all hit)")
     if layout == "trial":
         print(sc.stdout)
 

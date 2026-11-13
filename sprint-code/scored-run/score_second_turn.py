@@ -5,13 +5,17 @@ neutral) it reports, over the shared-source cases:
   n; second verdict distribution; final right (second verdict equals the key's first-turn verdict, for shared cases "shared");
   among cases whose FIRST answer was right: false flips (the verdict changed); among cases whose first answer was wrong: corrected.
 Unparseable second answers count as wrong and as a change. The key's expected "revise" verdict for the firsthand branch is not
-assumed here: if the key file carries "second_turn" -> {"repeat": v, "firsthand": v, "mislabeled": v} per case, the match with it
-is reported too; otherwise only flips and distributions are reported (say so in the report).
+assumed here: if the key carries, per shared-source case, "second_turn": {"repeat": E, "firsthand": E, "mislabeled": E, "neutral": E}
+with E = "verdict" or {"verdict": v, "root_records": [..]}, the match with it is reported too (Liezl, 13 Nov: firsthand = independent
+with the original root plus the new inspection ID; repeat, mislabeled, neutral = shared with the original root). In root_records
+the placeholder "NEW" stands for the ID of the attached inspection record (read from the row), so the key need not know it.
+Without such entries only flips and distributions are reported (say so in the report).
 Usage: python -I score_second_turn.py --key KEY.json --results second_turn_results.jsonl [--results MORE ...]
 """
 import argparse
 import json
 import os
+import re
 import sys
 from collections import Counter, defaultdict
 
@@ -33,7 +37,7 @@ def main(argv=None):
     for (arm, br), rs in sorted(cell.items()):
         n = f_right = flips = f_wrong = corr = unp = 0
         dist = Counter()
-        exp_hit = exp_n = 0
+        exp_hit = exp_n = roots_hit = roots_n = 0
         for r in rs:
             k = key.get(r["case"])
             if not k:
@@ -53,8 +57,16 @@ def main(argv=None):
             exp = (k.get("second_turn") or {}).get(br)
             if exp:
                 exp_n += 1
-                exp_hit += second == exp
-        extra = f"  matches key's expected {exp_hit}/{exp_n}" if exp_n else ""
+                if isinstance(exp, str):
+                    exp = {"verdict": exp}
+                ok_v = second == exp.get("verdict")
+                exp_hit += ok_v
+                if exp.get("root_records") is not None:
+                    new_id = re.search(r"[A-Z]{1,3}-\d+", r.get("attachment") or "")
+                    want = sorted((new_id.group(0) if (x == "NEW" and new_id) else x) for x in exp["root_records"])
+                    roots_n += 1
+                    roots_hit += ok_v and sorted(r.get("roots") or []) == want
+        extra = (f"  expected verdict {exp_hit}/{exp_n}" + (f", verdict+roots {roots_hit}/{roots_n}" if roots_n else "")) if exp_n else ""
         print(f"{arm:10} {br:11} {n:>3} {f_right:>9} {flips:>11} {f_wrong:>9} {corr:>9} {unp:>6}  {dict(dist)}{extra}")
 
 
