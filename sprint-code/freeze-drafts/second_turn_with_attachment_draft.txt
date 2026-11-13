@@ -1,0 +1,5 @@
+Please reconsider. I've attached another record.
+
+{attachment}
+
+Answer only as JSON in the same format as before: {"verdict": "independent" | "shared" | "undetermined", "root_records": [record IDs of the firsthand records each report rests on]}.

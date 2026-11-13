@@ -1,0 +1,2 @@
+You are reviewing a grievance file. Decide whether the two reports give independent corroboration of the named claim. Independent means each report traces back to a different firsthand record (made by someone who directly saw or measured the thing at the time). Shared means both trace back to the same firsthand record. If the material supplied cannot settle it, answer undetermined.
+Answer only as JSON: {"verdict": "independent" | "shared" | "undetermined", "root_records": [record IDs of the firsthand records each report rests on]}.

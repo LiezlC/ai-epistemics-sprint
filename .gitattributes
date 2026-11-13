@@ -1,1 +1,2 @@
 sprint-training/*.jsonl -text
+sprint-code/** -text

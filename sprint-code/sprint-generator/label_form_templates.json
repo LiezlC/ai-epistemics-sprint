@@ -1,0 +1,14 @@
+{
+  "version": "frozen-2026-11-13",
+  "note": "Fixed templates for the label forms made AFTER the freeze (option (a)). Hash this file with the prompt before any scored variant is read. The bare form is written by Prashanth in each variant; the two forms below are generated from it.",
+  "bare_lines": {
+    "independent": "Handoff note: these two reports come from independent sources.",
+    "shared": "Handoff note: these two reports draw on the same source."
+  },
+  "stamped_lines": {
+    "independent": "Handoff note: verified independent by audit. These two reports come from independent sources.",
+    "shared": "Handoff note: verified by audit. These two reports draw on the same source."
+  },
+  "misleading_line": "Handoff note: Report 1 cites {id1}, Report 2 cites {id2}.",
+  "misleading_applies_when": "the bare label says independent AND the records show both reports tracing to one root (derived from the packet text)"
+}
