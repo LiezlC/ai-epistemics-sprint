@@ -1,0 +1,18 @@
+{
+ "variants": "C:\\MBA\\AI Collusion Research Sprint\\plans\\Epistemics Sprint\\scored-run\\smoke_variants.jsonl",
+ "variants_sha256": "94f8b789e9933ff000bb2d8b3fdfa51f2276df3c97dadfc86a1eeff3a7dec6f8",
+ "templates_sha256": "14572f3244ccbeb91c3a1fad61d5627ab264a521a30909286c6df59222c7992d",
+ "out_sha256": "08bf3ac303ba5f98df60d673c08af00f9425acd5e0cb91fc12dd5ccb7e181d3f",
+ "packets_read": 10,
+ "packets_skipped": [],
+ "rows": 63,
+ "rows_by_arm": {
+  "alerted|bare": 10,
+  "alerted|misleading": 3,
+  "alerted|none": 10,
+  "alerted|stamped": 10,
+  "neutral|bare": 10,
+  "neutral|none": 10,
+  "neutral|stamped": 10
+ }
+}
