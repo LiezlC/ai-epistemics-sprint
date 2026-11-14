@@ -1,0 +1,9 @@
+{
+ "base": "Qwen/Qwen3.5-4B",
+ "arm": "4b_base",
+ "tuned": false,
+ "adapter_dir_name": "adapter-empty",
+ "rows_sha256": "341bdafa09124393ed960c338435873a39c332ed08999d4a02ac150f8e93b5f1",
+ "rows_run": 40,
+ "decoding": "greedy temperature 0, thinking off, max 200 new tokens, vLLM 0.32.0, L40S, seed 0"
+}

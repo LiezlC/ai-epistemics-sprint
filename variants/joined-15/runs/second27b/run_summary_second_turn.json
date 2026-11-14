@@ -1,0 +1,10 @@
+{
+ "model": "qwen/qwen3.8-27b",
+ "arm": "27b",
+ "rows_sha256": "341bdafa09124393ed960c338435873a39c332ed08999d4a02ac150f8e93b5f1",
+ "calls": 40,
+ "spend_usd": 0.00383,
+ "errors": 0,
+ "unparseable": 0,
+ "reasoning_tokens_total": 0
+}

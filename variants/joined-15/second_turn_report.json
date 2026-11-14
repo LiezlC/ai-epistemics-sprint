@@ -1,0 +1,20 @@
+{
+ "packets_sha256": "96d555e25c4e52e4787eb734631af5269f2cc4368e748ea154c19ed8d5a61ddb",
+ "out_sha256": "341bdafa09124393ed960c338435873a39c332ed08999d4a02ac150f8e93b5f1",
+ "attachments_override_sha256": null,
+ "eligible_cases_per_arm": {
+  "27b": 10,
+  "4b_base": 10
+ },
+ "inspection_time_rule_counts": {
+  "claim_time_plus_30": 20
+ },
+ "rows": 80,
+ "skipped": [],
+ "attachment_mean_chars": {
+  "repeat": 106.1,
+  "firsthand": 132.7,
+  "mislabeled": 115.1
+ },
+ "attachment_max_len_gap_chars_within_a_case": 27
+}
