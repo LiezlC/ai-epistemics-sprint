@@ -1,0 +1,16 @@
+{
+ "base": "Qwen/Qwen3.5-4B",
+ "arm": "base_3shot",
+ "packets_file": "packets_scored.jsonl",
+ "packets_sha256": "96d555e25c4e52e4787eb734631af5269f2cc4368e748ea154c19ed8d5a61ddb",
+ "examples_sha256": "e2ca430be7e2ca32e8730387e41149fd032e37a6df6aac08e2ab913f6ec0aa0b",
+ "examples_train_rows": [
+  1,
+  6,
+  0
+ ],
+ "rows_run": 54,
+ "neutral_rows_skipped": 45,
+ "limit": 0,
+ "decoding": "greedy temperature 0, thinking off, max 200 new tokens, vLLM 0.32.0, L40S, seed 0"
+}

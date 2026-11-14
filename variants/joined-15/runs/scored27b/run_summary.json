@@ -1,0 +1,16 @@
+{
+ "model": "qwen/qwen3.8-27b",
+ "route": "openrouter_chat",
+ "thinking": "off",
+ "seed": 20261113,
+ "temperature": 0,
+ "packets_sha256": "96d555e25c4e52e4787eb734631af5269f2cc4368e748ea154c19ed8d5a61ddb",
+ "calls": 99,
+ "spend_usd": 0.0074,
+ "errors": 0,
+ "unparseable": 0,
+ "reasoning_tokens_total": 0,
+ "models_served": [
+  "qwen/qwen3.8-27b"
+ ]
+}
