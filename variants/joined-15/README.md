@@ -10,6 +10,7 @@ Inputs are the two files already in `variants/`: `PV-scored-variants-DRAFT-2026-
 | variants15.jsonl | 15 cases, ids v000 to v014 (first file v000 to v002, new file v003 to v014) |
 | packets_scored.jsonl | output of the frozen `sprint-code/scored-run/build_scored_packets.py` on variants15.jsonl |
 | runs/scored27b/ | Qwen3.8-27b via OpenRouter, raw outputs and run summary |
+| runs/4b_untuned/ | Qwen3.5-4B untuned, zero-shot, all arms, raw outputs and run record (no adapter; the tuned arm was not run) |
 | runs/4b_3shot/ | Qwen3.5-4B untuned, three-shot, alerted prompt only, raw outputs and run record |
 
 Command: `python -I derive_joined_variants.py <first file> <new file> variants15.jsonl`
