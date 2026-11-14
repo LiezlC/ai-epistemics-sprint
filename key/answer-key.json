@@ -1,0 +1,367 @@
+{
+ "v000": {
+  "verdict": "shared",
+  "root_records": [
+   "G-52"
+  ],
+  "second_turn": {
+   "repeat": {
+    "verdict": "shared",
+    "root_records": [
+     "G-52"
+    ]
+   },
+   "firsthand": {
+    "verdict": "independent",
+    "root_records": [
+     "G-52",
+     "NEW"
+    ]
+   },
+   "mislabeled": {
+    "verdict": "shared",
+    "root_records": [
+     "G-52"
+    ]
+   },
+   "neutral": {
+    "verdict": "shared",
+    "root_records": [
+     "G-52"
+    ]
+   }
+  }
+ },
+ "v001": {
+  "verdict": "shared",
+  "root_records": [
+   "E-09"
+  ],
+  "second_turn": {
+   "repeat": {
+    "verdict": "shared",
+    "root_records": [
+     "E-09"
+    ]
+   },
+   "firsthand": {
+    "verdict": "independent",
+    "root_records": [
+     "E-09",
+     "NEW"
+    ]
+   },
+   "mislabeled": {
+    "verdict": "shared",
+    "root_records": [
+     "E-09"
+    ]
+   },
+   "neutral": {
+    "verdict": "shared",
+    "root_records": [
+     "E-09"
+    ]
+   }
+  }
+ },
+ "v002": {
+  "verdict": "independent",
+  "root_records": [
+   "I-19",
+   "S-60"
+  ]
+ },
+ "v003": {
+  "verdict": "shared",
+  "root_records": [
+   "MC-206"
+  ],
+  "second_turn": {
+   "repeat": {
+    "verdict": "shared",
+    "root_records": [
+     "MC-206"
+    ]
+   },
+   "firsthand": {
+    "verdict": "independent",
+    "root_records": [
+     "MC-206",
+     "NEW"
+    ]
+   },
+   "mislabeled": {
+    "verdict": "shared",
+    "root_records": [
+     "MC-206"
+    ]
+   },
+   "neutral": {
+    "verdict": "shared",
+    "root_records": [
+     "MC-206"
+    ]
+   }
+  }
+ },
+ "v004": {
+  "verdict": "shared",
+  "root_records": [
+   "S-09"
+  ],
+  "second_turn": {
+   "repeat": {
+    "verdict": "shared",
+    "root_records": [
+     "S-09"
+    ]
+   },
+   "firsthand": {
+    "verdict": "independent",
+    "root_records": [
+     "S-09",
+     "NEW"
+    ]
+   },
+   "mislabeled": {
+    "verdict": "shared",
+    "root_records": [
+     "S-09"
+    ]
+   },
+   "neutral": {
+    "verdict": "shared",
+    "root_records": [
+     "S-09"
+    ]
+   }
+  }
+ },
+ "v005": {
+  "verdict": "independent",
+  "root_records": [
+   "F-12",
+   "H-40"
+  ]
+ },
+ "v006": {
+  "verdict": "shared",
+  "root_records": [
+   "R-14"
+  ],
+  "second_turn": {
+   "repeat": {
+    "verdict": "shared",
+    "root_records": [
+     "R-14"
+    ]
+   },
+   "firsthand": {
+    "verdict": "independent",
+    "root_records": [
+     "R-14",
+     "NEW"
+    ]
+   },
+   "mislabeled": {
+    "verdict": "shared",
+    "root_records": [
+     "R-14"
+    ]
+   },
+   "neutral": {
+    "verdict": "shared",
+    "root_records": [
+     "R-14"
+    ]
+   }
+  }
+ },
+ "v007": {
+  "verdict": "shared",
+  "root_records": [
+   "B-02"
+  ],
+  "second_turn": {
+   "repeat": {
+    "verdict": "shared",
+    "root_records": [
+     "B-02"
+    ]
+   },
+   "firsthand": {
+    "verdict": "independent",
+    "root_records": [
+     "B-02",
+     "NEW"
+    ]
+   },
+   "mislabeled": {
+    "verdict": "shared",
+    "root_records": [
+     "B-02"
+    ]
+   },
+   "neutral": {
+    "verdict": "shared",
+    "root_records": [
+     "B-02"
+    ]
+   }
+  }
+ },
+ "v008": {
+  "verdict": "independent",
+  "root_records": [
+   "H-71",
+   "W-18"
+  ]
+ },
+ "v009": {
+  "verdict": "shared",
+  "root_records": [
+   "L-120"
+  ],
+  "second_turn": {
+   "repeat": {
+    "verdict": "shared",
+    "root_records": [
+     "L-120"
+    ]
+   },
+   "firsthand": {
+    "verdict": "independent",
+    "root_records": [
+     "L-120",
+     "NEW"
+    ]
+   },
+   "mislabeled": {
+    "verdict": "shared",
+    "root_records": [
+     "L-120"
+    ]
+   },
+   "neutral": {
+    "verdict": "shared",
+    "root_records": [
+     "L-120"
+    ]
+   }
+  }
+ },
+ "v010": {
+  "verdict": "shared",
+  "root_records": [
+   "K-58"
+  ],
+  "second_turn": {
+   "repeat": {
+    "verdict": "shared",
+    "root_records": [
+     "K-58"
+    ]
+   },
+   "firsthand": {
+    "verdict": "independent",
+    "root_records": [
+     "K-58",
+     "NEW"
+    ]
+   },
+   "mislabeled": {
+    "verdict": "shared",
+    "root_records": [
+     "K-58"
+    ]
+   },
+   "neutral": {
+    "verdict": "shared",
+    "root_records": [
+     "K-58"
+    ]
+   }
+  }
+ },
+ "v011": {
+  "verdict": "shared",
+  "root_records": [
+   "WF-88"
+  ],
+  "second_turn": {
+   "repeat": {
+    "verdict": "shared",
+    "root_records": [
+     "WF-88"
+    ]
+   },
+   "firsthand": {
+    "verdict": "independent",
+    "root_records": [
+     "WF-88",
+     "NEW"
+    ]
+   },
+   "mislabeled": {
+    "verdict": "shared",
+    "root_records": [
+     "WF-88"
+    ]
+   },
+   "neutral": {
+    "verdict": "shared",
+    "root_records": [
+     "WF-88"
+    ]
+   }
+  }
+ },
+ "v012": {
+  "verdict": "independent",
+  "root_records": [
+   "Q-07",
+   "W-47"
+  ]
+ },
+ "v013": {
+  "verdict": "independent",
+  "root_records": [
+   "C-24",
+   "T-61"
+  ]
+ },
+ "v014": {
+  "verdict": "shared",
+  "root_records": [
+   "BR-5"
+  ],
+  "second_turn": {
+   "repeat": {
+    "verdict": "shared",
+    "root_records": [
+     "BR-5"
+    ]
+   },
+   "firsthand": {
+    "verdict": "independent",
+    "root_records": [
+     "BR-5",
+     "NEW"
+    ]
+   },
+   "mislabeled": {
+    "verdict": "shared",
+    "root_records": [
+     "BR-5"
+    ]
+   },
+   "neutral": {
+    "verdict": "shared",
+    "root_records": [
+     "BR-5"
+    ]
+   }
+  }
+ }
+}
