@@ -69,7 +69,7 @@ def record_line(layout, rid, rtype, text):
 def make_attachments(packet):
     """Fixed templates. Returns {branch: attachment_text} for repeat, firsthand, mislabeled."""
     layout = "trial" if m.REC_TRIAL.search(packet) else "pv"
-    ids = re.findall(m.ID, packet.split("Record excerpts:", 1)[1])
+    ids = re.findall(m.ID, packet.split("Record excerpts:" if "Record excerpts:" in packet else "Records:", 1)[1])
     nums = [int(i.split("-")[1]) for i in ids]
     n = (max(nums) + 1) if nums else 1
     _, roots = m.derive(packet)

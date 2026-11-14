@@ -32,7 +32,7 @@ def check(ok, msg):
 
 
 def to_pv(p):
-    return re.sub(r"^\[(%s)\] ([^.]+)\. (.*)$" % m.ID, lambda mm: '%s (%s): "%s"' % (mm.group(1), mm.group(2), mm.group(3)), p, flags=re.M)
+    return re.sub(r"^Record excerpts:", "Records:", re.sub(r"^\[(%s)\] ([^.]+)\. (.*)$" % m.ID, lambda mm: '%s (%s): "%s"' % (mm.group(1), mm.group(2), mm.group(3)), p, flags=re.M), flags=re.M)
 
 
 def py(cmd):
