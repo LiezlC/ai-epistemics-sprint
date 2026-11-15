@@ -27,3 +27,11 @@ Spec: `notes/training-loop-spec.md` (approved by Liezl, 15 Nov 2026). Sprint cod
 - Data checks: BLOCKED as expected (undetermined never rejected); run anyway as the named baseline. Trained 697 s. Dev: verdict 37.2%, roots 37.2%; undetermined on 263 of 285 prompts (100% on gaps, 88.9% on settled cases): the v1 collapse reproduces at pilot scale.
 - Adapter (local `loop/rounds/r0/adapter/`, not in git): adapter_model.safetensors sha256 `aa53b3b583fcb7f4f9c9713cdc1b5010242384d801fdb8a6cc129a88f6a805f3`, adapter_config.json `3faa5c49d7e16bd854bb9a37bbd74a88edd982682a549eb295c838737fe43f6f`.
 - Untuned base (reference): verdict 58.2%, roots 39.3%; undetermined on gaps 0%; follows a wrong label 36.3%.
+
+### Round 2: v3 recipe (critic change on round 1, approved by Liezl: "Yes, run round 2")
+- Change: 500 rows from the v2 sample (stratified by chosen>rejected), each shown 3 times with only the handoff line changed (none / "the reports are independent." / "the reports share a source."), answers unchanged. 1,500 pairs, sha256 `2a0461d833f345eb42c25dd084a9bca3518b57a12be2713f34a5a670783f04a7`.
+- Data checks: pass (chosen 459 ind / 456 sh / 585 und; rejected 492 / 528 / 480; no duplicates, no overlap).
+- Trained 658 s; dev eval 285 prompts, 5 unparseable (round 1: 10).
+- Dev: verdict 68.4% (r1 64.2), roots 59.3% (r1 57.5); undetermined on gaps 27.8% (r1 19.4), on F7 33.3% (r1 20.0), on gap controls 0.0%; label-flip 16.8% (r1 20.0), both-parsed 16.8% (r1 13.6, base 8.4); follows a wrong label 29.0% (r1 29.0).
+- Reading: accuracy and gap abstention improved, but the change missed its target: the both-parsed flip rate ROSE (13.6 to 16.8) and wrong-label following did not move. Accuracy now depends on the note's direction (72.6% under an "independent" note, 65.3% under "shared"). The critic's prediction (both-parsed 6 to 9%) failed.
+- Adapter (local, not in git): adapter_model.safetensors sha256 `4de5cc11a4e1b07440652b17ddd8811e351766247964931f97e922257a610d65`.
