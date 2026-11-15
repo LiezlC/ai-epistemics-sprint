@@ -63,3 +63,13 @@ For anyone, or anyone's Claude, picking up if Liezl's sessions stop. **Submissio
   - Liezl's gap audit found the key flaw.
   - The v1 flaw was only visible in file totals.
   - Model validators share blind spots.
+
+## Update, Sun 15 Nov about 14:50 UTC (Liezl's sessions pausing for a usage reset)
+
+- **Working report is now `report/draft-report.condensed.md`** (Deepayan's condensed version, about 5,200 words; detail in Appendices E to J). `report/draft-report.md` stays as the full record. Edit only the condensed file from here.
+- **Fixed:** of five untuned models, four rarely or never said undetermined on the gap set, and only Kimi tracked gaps (the old "five of six" wording was wrong). Round 3 rows now in counts.
+- **Headline:** labels rarely override clear records; the consistent weakness is over-commitment. Round 3's label pull on gaps (+0.10 [0.01, 0.19]) is an exploratory lead only.
+- **Prashanth:** trim the abstract to 250 words, paste into the Google Docs template, measure pages, cut to 8 if needed. Branch, then push, target 21:00 UTC.
+- **Liezl's calls still open:** author order (earlier reports listed Liezl first), Table P1 row 1 dates, public repo or access link, Adaption credits figure.
+- **Slides (`slidevid/slides/`, local only):** Liezl is applying text fixes in Canva. Charts for slides 8 and 10 need redrawing with real numbers (slide 8: one "firm verdict 97 to 100%" bar, not two; slide 10: label flip 8.4 untuned, 13.6, 16.8, 14.0, 25.3 against roots 39, 58, 59, 58, 63).
+- **Video (`slidevid/vidoverview/`, local only):** a Claude session is building the animated overview with HyperFrames. The voiceover fix clip `Delilah-editline-11614436.mp3` replaces the scene 6 sentence; the output is `label-or-record-overview.mp4`.
