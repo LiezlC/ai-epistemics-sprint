@@ -42,7 +42,7 @@ The sprint opened on 13 November 2026. Everything in the table below was made be
 | 5 | Three practice contradiction variants | Prashanth | 11 Nov | No. Practice only; the scored variants were written during the sprint |
 | 6 | Two private adapter releases: `toy-run-adapter` and `provenance-trial-adapter` | Liezl | 11 Nov (her posts of 11 Nov) | See rows 2 and 4 |
 | 7 | Laundered Consensus (Swarm Alignment Sprint, 6 to 8 Nov): report and code | Coetzee, Sinha, Vijay | 6 to 8 Nov | Idea source. One file, `providers.py` (the Swarm sprint's model-call module), is imported unchanged by a sprint subclass; no other Swarm code or data is reused |
-| 8 | Quiet Suppression (AI Collusion Research Sprint, 23 to 25 Oct): report, code and results | Coetzee, Sinha, Vijay | 23 to 25 Oct | Method and idea source only (positive control first, one lever at a time, freeze before evaluating). No code or data from it is used in the scored results |
+| 8 | Quiet Suppression (AI Collusion Research Sprint, 23 to 25 Oct): report, code and results | Coetzee, Sinha, Vijay | 23 to 25 Oct | Method and idea source only. No code or data from it is used in the scored results |
 
 **Code derived from preexisting code.** The sprint's training-case generator and checker (`gen_sprint_cases.py`, `check_sprint_cases.py`) are sprint code derived from the trial's `generate_cases.py` and `check_cases.py`: they reuse the re-derivation method and change the label forms, the sites, the record-ID range, the seeds and the scale (12,000 pairs). The 4B Modal runners follow the setup of the trial's `eval_modal.py` (vLLM, L40S, greedy, thinking off). The spot-check sheets use Liezl's preexisting review template.
 

@@ -20,7 +20,7 @@ Apart Research, AI x Epistemics Research Sprint, November 13–15, 2026. Tracks:
 > | 10 | Copy into the official Google Docs template (sign-in needed; headings below follow the Guidelines tab) and check the 8-page cap | Liezl |
 > | 11 | Drop Section 5.5 and Table 6 if the second turn is not run | Deepayan |
 > | 12 | Release per-item text-free observations and the table-rebuild script; test from a clean clone | Deepayan |
-> | 13 | Done 15 Nov: post times filled from the user's chat stamps (US Eastern plus 5 hours); Post 2 at 23:56 UTC is earlier than the scores file (23:58:13 UTC) and the outputs post at 21:12 UTC is earlier than the key commit (21:24:11 UTC) | Deepayan |
+> | 13 | Done 15 Nov: post times filled from Deepayan's chat stamps (US Eastern plus 5 hours); Post 2 at 23:56 UTC is earlier than the scores file (23:58:13 UTC) and the outputs post at 21:12 UTC is earlier than the key commit (21:24:11 UTC) | Deepayan |
 > | 14 | Done in part: Liezl gave 20:40 UTC for the key hash on 15 Nov (her statement; screenshot not seen); entered in the order-of-events table and Section 3.4. Added to Section 4.5 as the firsthand-branch caveat (check the wording against her note): her caveat that the firsthand inspection record is not cited by either report, so the 27b answering "shared" there is defensible, the key's "independent" is a design call, and the 4B switching every time reads as "moved by any new record", not correct updating. Scores stay as frozen. The question whether the key's second-turn entries were in the hashed file is answered from the files (Section 4.5) | Liezl |
 > | 15 | Second turn: choose the Discussion wording (options in `second-turn-results-draft-2026-11-14.md`, section E) | Deepayan, Liezl |
 
@@ -241,7 +241,7 @@ The sprint opened on 13 November 2026. Everything in the table below was made be
 | 5 | Three practice contradiction variants | Prashanth | 11 Nov | No. Practice only; the scored variants were written during the sprint |
 | 6 | Two private adapter releases: `toy-run-adapter` and `provenance-trial-adapter` | Liezl | 11 Nov (her posts of 11 Nov) | See rows 2 and 4 |
 | 7 | Laundered Consensus (Swarm Alignment Sprint, 6 to 8 Nov): report and code | Coetzee, Sinha, Vijay | 6 to 8 Nov | Idea source. One file, `providers.py` (the Swarm sprint's model-call module), is imported unchanged by a sprint subclass; no other Swarm code or data is reused |
-| 8 | Quiet Suppression (AI Collusion Research Sprint, 23 to 25 Oct): report, code and results | Coetzee, Sinha, Vijay | 23 to 25 Oct | Method and idea source only (positive control first, one lever at a time, freeze before evaluating). No code or data from it is used in the scored results |
+| 8 | Quiet Suppression (AI Collusion Research Sprint, 23 to 25 Oct): report, code and results | Coetzee, Sinha, Vijay | 23 to 25 Oct | Method and idea source only. No code or data from it is used in the scored results |
 
 **Code derived from preexisting code.** The sprint's training-case generator and checker (`gen_sprint_cases.py`, `check_sprint_cases.py`) are sprint code derived from the trial's `generate_cases.py` and `check_cases.py`: they reuse the re-derivation method and change the label forms, the sites, the record-ID range, the seeds and the scale (12,000 pairs). The 4B Modal runners follow the setup of the trial's `eval_modal.py` (vLLM, L40S, greedy, thinking off). The spot-check sheets use Liezl's preexisting review template.
 
@@ -564,7 +564,7 @@ Repository: `LiezlC/ai-epistemics-sprint` (`TBD: make public or give access link
 
 ## References
 
-Entries marked (unverified detail) were checked against the arXiv listing page or the paper's page in the wiki only; none of these papers is redistributed here.
+Entry details come from each paper's arXiv or ACL page or from the team wiki's paper pages (read 15 Nov); the note on Hu's entry flags a date to re-check. None of these papers is redistributed here.
 
 - Bara, M. Epistemic Sybil Resistance: Multiplying AI Agents Without Multiplying Evidence. arXiv:2609.01873, 2026.
 - Coetzee, L., Sinha, D., and Vijay, P. Laundered Consensus: Do AI Watchdogs Check the Approvals Other Agents Claim? Swarm Alignment Sprint, Apart Research, November 2026.
