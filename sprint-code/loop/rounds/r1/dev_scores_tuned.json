@@ -1,0 +1,125 @@
+{
+ "n": 285,
+ "unparseable": 10,
+ "verdict_dist": {
+  "independent": 144,
+  "shared": 109,
+  "null": 10,
+  "undetermined": 22
+ },
+ "verdict_acc": 64.2,
+ "root_acc": 57.5,
+ "undetermined_rate_on_gaps": 19.4,
+ "undetermined_rate_on_F7": 20.0,
+ "undetermined_rate_on_gap_controls": 0.0,
+ "undetermined_rate_on_all_settled": 2.5,
+ "label_flip_rate": 20.0,
+ "label_follow_rate_when_label_wrong": 29.0,
+ "groups": {
+  "ALL": {
+   "n": 285,
+   "verdict_acc": 64.2,
+   "root_acc": 57.5
+  },
+  "F1": {
+   "n": 15,
+   "verdict_acc": 80.0,
+   "root_acc": 80.0
+  },
+  "F2": {
+   "n": 15,
+   "verdict_acc": 100.0,
+   "root_acc": 93.3
+  },
+  "F3": {
+   "n": 15,
+   "verdict_acc": 86.7,
+   "root_acc": 86.7
+  },
+  "F4": {
+   "n": 15,
+   "verdict_acc": 80.0,
+   "root_acc": 80.0
+  },
+  "F5": {
+   "n": 15,
+   "verdict_acc": 86.7,
+   "root_acc": 86.7
+  },
+  "F7": {
+   "n": 15,
+   "verdict_acc": 20.0,
+   "root_acc": 0.0
+  },
+  "F8": {
+   "n": 15,
+   "verdict_acc": 53.3,
+   "root_acc": 53.3
+  },
+  "G1-control": {
+   "n": 18,
+   "verdict_acc": 72.2,
+   "root_acc": 72.2
+  },
+  "G1-gap": {
+   "n": 18,
+   "verdict_acc": 16.7,
+   "root_acc": 0.0
+  },
+  "G2-control": {
+   "n": 18,
+   "verdict_acc": 100.0,
+   "root_acc": 100.0
+  },
+  "G2-gap": {
+   "n": 18,
+   "verdict_acc": 50.0,
+   "root_acc": 50.0
+  },
+  "G3-control": {
+   "n": 18,
+   "verdict_acc": 94.4,
+   "root_acc": 94.4
+  },
+  "G3-gap": {
+   "n": 18,
+   "verdict_acc": 55.6,
+   "root_acc": 22.2
+  },
+  "G4-control": {
+   "n": 18,
+   "verdict_acc": 94.4,
+   "root_acc": 88.9
+  },
+  "G4-gap": {
+   "n": 18,
+   "verdict_acc": 0.0,
+   "root_acc": 0.0
+  },
+  "G5-control": {
+   "n": 18,
+   "verdict_acc": 83.3,
+   "root_acc": 83.3
+  },
+  "G5-gap": {
+   "n": 18,
+   "verdict_acc": 27.8,
+   "root_acc": 0.0
+  },
+  "label:independent": {
+   "n": 95,
+   "verdict_acc": 63.2,
+   "root_acc": 56.8
+  },
+  "label:none": {
+   "n": 95,
+   "verdict_acc": 63.2,
+   "root_acc": 56.8
+  },
+  "label:shared": {
+   "n": 95,
+   "verdict_acc": 66.3,
+   "root_acc": 58.9
+  }
+ }
+}

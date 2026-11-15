@@ -12,3 +12,14 @@ Spec: `notes/training-loop-spec.md` (approved by Liezl, 15 Nov 2026). Sprint cod
 ## Rounds
 
 (filled in as rounds run)
+
+### Round 1: v2 recipe (1,500 pairs, same indices as round 0, from train_dpo_v2.jsonl)
+- Data checks: pass (no overlap with frozen or dev sets; every verdict both chosen and rejected).
+- Trained on Modal L40S; dev eval 285 prompts, 10 unparseable.
+- Dev: verdict 64.2%, roots 57.5%; undetermined on gaps 19.4%, on F7 20.0%, on gap controls 0.0%; label-flip 20.0%; follows a wrong label 29.0%.
+- Weakest: G4-gap 0%, G1-gap 16.7%, F7 20%, G5-gap 27.8%, F8 53.3%. Strong on settled cases (F2 100%, G2/G3/G4 controls 94 to 100%).
+- Reading: v2 removes the collapse but overshoots: the model now under-uses undetermined, as most models do on the gap set.
+- Critic: not yet run.
+
+### Round 0: v1 recipe (baseline for the collapse)
+- Data checks: BLOCKED as expected (undetermined never rejected); run anyway as the named baseline. Trained 697 s. Eval (with untuned base arm) running at the time of writing.
