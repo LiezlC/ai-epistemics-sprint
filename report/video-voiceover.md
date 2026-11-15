@@ -26,7 +26,7 @@ We tested two open models from the same family: a large one, and a small one abo
 
 **Scene 6. Holes in the evidence** *(visual: a torn-out page, an unsigned note, a line reading “I was told”)*
 
-That gave us a sharper question. Maybe notes only matter when the records leave a hole. So we built forty cases with holes in them (a missing page, an unsigned record, secondhand hearsay, a record that names no source) and a twin for each with the hole filled. We ran six different AI models on them, with and without notes. The notes did not fill the holes. The models did, on their own, by guessing. Five of the six almost never said “I can’t tell.”
+That gave us a sharper question. Maybe notes only matter when the records leave a hole. So we built forty cases with holes in them (a missing page, an unsigned record, secondhand hearsay, a record that names no source) and a twin for each with the hole filled. We ran six different AI models on them, with and without notes. The notes did not fill the holes. The models did, on their own, by guessing. Only one of them said “I can’t tell” when it mattered, and not when it didn’t.
 
 **Scene 7. Teaching the small model** *(visual: pairs of answers, one marked better, one marked worse)*
 

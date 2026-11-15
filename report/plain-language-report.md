@@ -28,7 +28,7 @@ The big model walked past almost every trap. Flipping the note changed its answe
 
 That hinted at a sharper idea: maybe notes only matter when the records leave a hole. So we built forty cases where the records could not settle the question (a missing record, an unsigned one, a hearsay one, an unclear one), each with a twin where the hole was filled, and ran each with no note and with each kind of note.
 
-The idea did not survive. Notes did not fill the holes. The models filled them on their own, mostly by guessing “shared,” with or without any note to lean on. Of six models, only one (Kimi) said “I can’t tell” at a useful rate.
+The idea did not survive. Notes did not fill the holes. The models filled them on their own, mostly by guessing “shared,” with or without any note to lean on. Of the five untrained models, only one (Kimi) said “I can’t tell” at a useful rate.
 
 Liezl checked ten of these cases by hand and found a flaw in our key. In ten cases, both reports led back to the same unsigned record, and the fair answer there is “shared,” whatever that record’s origin. We reported the results with and without those cases. The finding held either way.
 
