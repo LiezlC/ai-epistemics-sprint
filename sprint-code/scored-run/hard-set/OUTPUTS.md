@@ -13,3 +13,12 @@ Raw-output paths were stated in the session before the runs (runs/4b/, runs/27b/
 | 4B | runs/4b/run_record_4b.json | aaa827419e78b7467262a08156bf2d4ec37e77d955c26b5406dc9e8029d83fff |
 
 The 4B launch was first blocked by a permission check, then run after Liezl approved it (finished 09:07 UTC). The outputs were hashed and committed before scoring.
+
+## Addendum: DPO v2 arm (tuned_v2_zero)
+
+Adapter: release provenance-dpo-adapter-v2 (Adaption run 8a22454b, archive sha256 d68865d6ae93e9c193f1fa09fc4d064a63be812e1fef695e3dc4b70da8676d38), on Qwen/Qwen3.5-4B. Same Modal script and settings as the 4B arms (`--arm tuned_zero`), frozen packets_hard.jsonl unchanged. Raw outputs hashed and committed before scoring.
+
+| Arm | File | sha256 |
+|---|---|---|
+| 4B DPO v2 (120 prompts, 0 unparseable) | runs/4b_v2/scored_outputs_tuned_zero.jsonl | 143152f13eb47f6a215ec6c045770808bba053486665eefd2610641bd9bf6634 |
+| 4B DPO v2 | runs/4b_v2/run_record_4b.json | 6bf26ac55ac15c647fed3ebef608e7cd0dfbba2d46884abdf66d3e458ec25d9b |
