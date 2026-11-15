@@ -1,0 +1,3109 @@
+[
+ {
+  "case": "h000",
+  "family": "F1",
+  "truth": "shared",
+  "domain": "port customs",
+  "style": "close",
+  "depth": 3,
+  "report1_cites": "R-79",
+  "report2_cites": "L-473",
+  "records": [
+   {
+    "id": "R-79",
+    "role": "relay",
+    "cites": [
+     "KX-32"
+    ]
+   },
+   {
+    "id": "FV-262",
+    "role": "relay",
+    "cites": [
+     "D-97"
+    ]
+   },
+   {
+    "id": "D-97",
+    "role": "relay",
+    "cites": [
+     "KX-32"
+    ]
+   },
+   {
+    "id": "KX-32",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "L-473",
+    "role": "relay",
+    "cites": [
+     "FV-262"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "KX-32"
+   ]
+  }
+ },
+ {
+  "case": "h001",
+  "family": "F1",
+  "truth": "shared",
+  "domain": "hotel kitchen",
+  "style": "different",
+  "depth": 2,
+  "report1_cites": "H-89",
+  "report2_cites": "R-226",
+  "records": [
+   {
+    "id": "DZ-91",
+    "role": "relay",
+    "cites": [
+     "L-51"
+    ]
+   },
+   {
+    "id": "L-51",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "H-89",
+    "role": "relay",
+    "cites": [
+     "L-51"
+    ]
+   },
+   {
+    "id": "R-226",
+    "role": "relay",
+    "cites": [
+     "DZ-91"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "L-51"
+   ]
+  }
+ },
+ {
+  "case": "h002",
+  "family": "F1",
+  "truth": "shared",
+  "domain": "lab freezer",
+  "style": "close",
+  "depth": 2,
+  "report1_cites": "M-83",
+  "report2_cites": "T-68",
+  "records": [
+   {
+    "id": "LV-52",
+    "role": "relay",
+    "cites": [
+     "AK-396"
+    ]
+   },
+   {
+    "id": "AK-396",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "T-68",
+    "role": "relay",
+    "cites": [
+     "LV-52"
+    ]
+   },
+   {
+    "id": "M-83",
+    "role": "relay",
+    "cites": [
+     "AK-396"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "AK-396"
+   ]
+  }
+ },
+ {
+  "case": "h003",
+  "family": "F1",
+  "truth": "shared",
+  "domain": "bus depot",
+  "style": "different",
+  "depth": 2,
+  "report1_cites": "F-12",
+  "report2_cites": "D-87",
+  "records": [
+   {
+    "id": "J-123",
+    "role": "relay",
+    "cites": [
+     "B-37"
+    ]
+   },
+   {
+    "id": "H-65",
+    "role": "relay",
+    "cites": [
+     "B-37"
+    ]
+   },
+   {
+    "id": "D-87",
+    "role": "relay",
+    "cites": [
+     "J-123"
+    ]
+   },
+   {
+    "id": "F-12",
+    "role": "relay",
+    "cites": [
+     "H-65"
+    ]
+   },
+   {
+    "id": "B-37",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "B-37"
+   ]
+  }
+ },
+ {
+  "case": "h004",
+  "family": "F1",
+  "truth": "shared",
+  "domain": "pharmacy",
+  "style": "close",
+  "depth": 3,
+  "report1_cites": "V-862",
+  "report2_cites": "L-153",
+  "records": [
+   {
+    "id": "C-18",
+    "role": "relay",
+    "cites": [
+     "S-93"
+    ]
+   },
+   {
+    "id": "L-153",
+    "role": "relay",
+    "cites": [
+     "WV-713"
+    ]
+   },
+   {
+    "id": "V-862",
+    "role": "relay",
+    "cites": [
+     "SS-17"
+    ]
+   },
+   {
+    "id": "SS-17",
+    "role": "relay",
+    "cites": [
+     "C-18"
+    ]
+   },
+   {
+    "id": "WV-713",
+    "role": "relay",
+    "cites": [
+     "S-93"
+    ]
+   },
+   {
+    "id": "S-93",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "S-93"
+   ]
+  }
+ },
+ {
+  "case": "h005",
+  "family": "F1",
+  "truth": "shared",
+  "domain": "bank branch",
+  "style": "different",
+  "depth": 2,
+  "report1_cites": "TC-54",
+  "report2_cites": "C-41",
+  "records": [
+   {
+    "id": "C-41",
+    "role": "relay",
+    "cites": [
+     "H-743"
+    ]
+   },
+   {
+    "id": "TC-54",
+    "role": "relay",
+    "cites": [
+     "E-49"
+    ]
+   },
+   {
+    "id": "E-49",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "H-743",
+    "role": "relay",
+    "cites": [
+     "E-49"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "E-49"
+   ]
+  }
+ },
+ {
+  "case": "h006",
+  "family": "F1",
+  "truth": "shared",
+  "domain": "farm co-op",
+  "style": "close",
+  "depth": 2,
+  "report1_cites": "M-51",
+  "report2_cites": "TN-57",
+  "records": [
+   {
+    "id": "BG-426",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "TN-57",
+    "role": "relay",
+    "cites": [
+     "GR-23"
+    ]
+   },
+   {
+    "id": "M-51",
+    "role": "relay",
+    "cites": [
+     "BG-426"
+    ]
+   },
+   {
+    "id": "GR-23",
+    "role": "relay",
+    "cites": [
+     "BG-426"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "BG-426"
+   ]
+  }
+ },
+ {
+  "case": "h007",
+  "family": "F1",
+  "truth": "shared",
+  "domain": "call centre",
+  "style": "different",
+  "depth": 2,
+  "report1_cites": "M-28",
+  "report2_cites": "S-54",
+  "records": [
+   {
+    "id": "Z-714",
+    "role": "relay",
+    "cites": [
+     "W-84"
+    ]
+   },
+   {
+    "id": "S-54",
+    "role": "relay",
+    "cites": [
+     "DK-73"
+    ]
+   },
+   {
+    "id": "DK-73",
+    "role": "relay",
+    "cites": [
+     "W-84"
+    ]
+   },
+   {
+    "id": "W-84",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "M-28",
+    "role": "relay",
+    "cites": [
+     "Z-714"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "W-84"
+   ]
+  }
+ },
+ {
+  "case": "h008",
+  "family": "F1",
+  "truth": "shared",
+  "domain": "port customs",
+  "style": "close",
+  "depth": 2,
+  "report1_cites": "PF-215",
+  "report2_cites": "C-381",
+  "records": [
+   {
+    "id": "C-26",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "TF-24",
+    "role": "relay",
+    "cites": [
+     "C-26"
+    ]
+   },
+   {
+    "id": "PF-215",
+    "role": "relay",
+    "cites": [
+     "TF-24"
+    ]
+   },
+   {
+    "id": "A-73",
+    "role": "relay",
+    "cites": [
+     "C-26"
+    ]
+   },
+   {
+    "id": "C-381",
+    "role": "relay",
+    "cites": [
+     "A-73"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "C-26"
+   ]
+  }
+ },
+ {
+  "case": "h009",
+  "family": "F1",
+  "truth": "shared",
+  "domain": "hotel kitchen",
+  "style": "different",
+  "depth": 2,
+  "report1_cites": "H-97",
+  "report2_cites": "S-61",
+  "records": [
+   {
+    "id": "T-84",
+    "role": "relay",
+    "cites": [
+     "L-517"
+    ]
+   },
+   {
+    "id": "S-61",
+    "role": "relay",
+    "cites": [
+     "T-84"
+    ]
+   },
+   {
+    "id": "L-517",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "H-97",
+    "role": "relay",
+    "cites": [
+     "L-517"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "L-517"
+   ]
+  }
+ },
+ {
+  "case": "h010",
+  "family": "F2",
+  "truth": "independent",
+  "domain": "lab freezer",
+  "style": "close",
+  "depth": 2,
+  "report1_cites": "XJ-95",
+  "report2_cites": "B-86",
+  "records": [
+   {
+    "id": "XJ-95",
+    "role": "relay",
+    "cites": [
+     "B-98"
+    ]
+   },
+   {
+    "id": "B-86",
+    "role": "relay",
+    "cites": [
+     "HW-448"
+    ]
+   },
+   {
+    "id": "A-662",
+    "role": "root",
+    "cites": [],
+    "observer": "B"
+   },
+   {
+    "id": "B-98",
+    "role": "relay",
+    "cites": [
+     "R-47"
+    ]
+   },
+   {
+    "id": "R-47",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "HW-448",
+    "role": "relay",
+    "cites": [
+     "A-662"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "independent",
+   "root_records": [
+    "A-662",
+    "R-47"
+   ]
+  }
+ },
+ {
+  "case": "h011",
+  "family": "F2",
+  "truth": "independent",
+  "domain": "bus depot",
+  "style": "different",
+  "depth": 3,
+  "report1_cites": "S-32",
+  "report2_cites": "D-73",
+  "records": [
+   {
+    "id": "D-73",
+    "role": "relay",
+    "cites": [
+     "P-49"
+    ]
+   },
+   {
+    "id": "R-363",
+    "role": "relay",
+    "cites": [
+     "M-15"
+    ]
+   },
+   {
+    "id": "ZG-81",
+    "role": "root",
+    "cites": [],
+    "observer": "B"
+   },
+   {
+    "id": "P-49",
+    "role": "relay",
+    "cites": [
+     "RP-406"
+    ]
+   },
+   {
+    "id": "RP-406",
+    "role": "relay",
+    "cites": [
+     "ZG-81"
+    ]
+   },
+   {
+    "id": "M-15",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "S-32",
+    "role": "relay",
+    "cites": [
+     "R-363"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "independent",
+   "root_records": [
+    "M-15",
+    "ZG-81"
+   ]
+  }
+ },
+ {
+  "case": "h012",
+  "family": "F2",
+  "truth": "independent",
+  "domain": "pharmacy",
+  "style": "close",
+  "depth": 3,
+  "report1_cites": "D-679",
+  "report2_cites": "SS-86",
+  "records": [
+   {
+    "id": "E-261",
+    "role": "relay",
+    "cites": [
+     "R-79"
+    ]
+   },
+   {
+    "id": "Z-56",
+    "role": "relay",
+    "cites": [
+     "AS-29"
+    ]
+   },
+   {
+    "id": "R-79",
+    "role": "relay",
+    "cites": [
+     "GX-38"
+    ]
+   },
+   {
+    "id": "D-679",
+    "role": "relay",
+    "cites": [
+     "Z-56"
+    ]
+   },
+   {
+    "id": "AS-29",
+    "role": "root",
+    "cites": [],
+    "observer": "B"
+   },
+   {
+    "id": "GX-38",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "SS-86",
+    "role": "relay",
+    "cites": [
+     "E-261"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "independent",
+   "root_records": [
+    "AS-29",
+    "GX-38"
+   ]
+  }
+ },
+ {
+  "case": "h013",
+  "family": "F2",
+  "truth": "independent",
+  "domain": "bank branch",
+  "style": "different",
+  "depth": 3,
+  "report1_cites": "CN-87",
+  "report2_cites": "R-29",
+  "records": [
+   {
+    "id": "D-32",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "F-407",
+    "role": "root",
+    "cites": [],
+    "observer": "B"
+   },
+   {
+    "id": "ZK-53",
+    "role": "relay",
+    "cites": [
+     "F-407"
+    ]
+   },
+   {
+    "id": "EV-24",
+    "role": "relay",
+    "cites": [
+     "ZK-53"
+    ]
+   },
+   {
+    "id": "CN-87",
+    "role": "relay",
+    "cites": [
+     "EV-24"
+    ]
+   },
+   {
+    "id": "R-29",
+    "role": "relay",
+    "cites": [
+     "S-648"
+    ]
+   },
+   {
+    "id": "S-648",
+    "role": "relay",
+    "cites": [
+     "JH-12"
+    ]
+   },
+   {
+    "id": "JH-12",
+    "role": "relay",
+    "cites": [
+     "D-32"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "independent",
+   "root_records": [
+    "D-32",
+    "F-407"
+   ]
+  }
+ },
+ {
+  "case": "h014",
+  "family": "F2",
+  "truth": "independent",
+  "domain": "farm co-op",
+  "style": "close",
+  "depth": 3,
+  "report1_cites": "ZB-54",
+  "report2_cites": "T-41",
+  "records": [
+   {
+    "id": "CT-45",
+    "role": "root",
+    "cites": [],
+    "observer": "B"
+   },
+   {
+    "id": "DT-585",
+    "role": "relay",
+    "cites": [
+     "W-87"
+    ]
+   },
+   {
+    "id": "W-16",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "ZB-54",
+    "role": "relay",
+    "cites": [
+     "KR-91"
+    ]
+   },
+   {
+    "id": "W-87",
+    "role": "relay",
+    "cites": [
+     "W-16"
+    ]
+   },
+   {
+    "id": "T-41",
+    "role": "relay",
+    "cites": [
+     "DT-585"
+    ]
+   },
+   {
+    "id": "KR-91",
+    "role": "relay",
+    "cites": [
+     "CT-45"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "independent",
+   "root_records": [
+    "CT-45",
+    "W-16"
+   ]
+  }
+ },
+ {
+  "case": "h015",
+  "family": "F2",
+  "truth": "independent",
+  "domain": "call centre",
+  "style": "different",
+  "depth": 3,
+  "report1_cites": "FV-94",
+  "report2_cites": "B-169",
+  "records": [
+   {
+    "id": "K-71",
+    "role": "root",
+    "cites": [],
+    "observer": "B"
+   },
+   {
+    "id": "B-35",
+    "role": "relay",
+    "cites": [
+     "PM-24"
+    ]
+   },
+   {
+    "id": "PM-24",
+    "role": "relay",
+    "cites": [
+     "J-91"
+    ]
+   },
+   {
+    "id": "J-91",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "FV-94",
+    "role": "relay",
+    "cites": [
+     "F-581"
+    ]
+   },
+   {
+    "id": "D-21",
+    "role": "relay",
+    "cites": [
+     "K-71"
+    ]
+   },
+   {
+    "id": "B-169",
+    "role": "relay",
+    "cites": [
+     "B-35"
+    ]
+   },
+   {
+    "id": "F-581",
+    "role": "relay",
+    "cites": [
+     "D-21"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "independent",
+   "root_records": [
+    "J-91",
+    "K-71"
+   ]
+  }
+ },
+ {
+  "case": "h016",
+  "family": "F2",
+  "truth": "independent",
+  "domain": "port customs",
+  "style": "close",
+  "depth": 3,
+  "report1_cites": "G-38",
+  "report2_cites": "VC-172",
+  "records": [
+   {
+    "id": "JB-96",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "VC-172",
+    "role": "relay",
+    "cites": [
+     "RP-75"
+    ]
+   },
+   {
+    "id": "A-194",
+    "role": "root",
+    "cites": [],
+    "observer": "B"
+   },
+   {
+    "id": "SD-58",
+    "role": "relay",
+    "cites": [
+     "A-194"
+    ]
+   },
+   {
+    "id": "G-38",
+    "role": "relay",
+    "cites": [
+     "MM-27"
+    ]
+   },
+   {
+    "id": "RP-75",
+    "role": "relay",
+    "cites": [
+     "SD-58"
+    ]
+   },
+   {
+    "id": "MM-27",
+    "role": "relay",
+    "cites": [
+     "JB-96"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "independent",
+   "root_records": [
+    "A-194",
+    "JB-96"
+   ]
+  }
+ },
+ {
+  "case": "h017",
+  "family": "F2",
+  "truth": "independent",
+  "domain": "hotel kitchen",
+  "style": "different",
+  "depth": 3,
+  "report1_cites": "NW-13",
+  "report2_cites": "M-235",
+  "records": [
+   {
+    "id": "H-447",
+    "role": "root",
+    "cites": [],
+    "observer": "B"
+   },
+   {
+    "id": "Z-61",
+    "role": "relay",
+    "cites": [
+     "H-447"
+    ]
+   },
+   {
+    "id": "TH-516",
+    "role": "relay",
+    "cites": [
+     "M-69"
+    ]
+   },
+   {
+    "id": "M-235",
+    "role": "relay",
+    "cites": [
+     "Z-61"
+    ]
+   },
+   {
+    "id": "M-69",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "HP-53",
+    "role": "relay",
+    "cites": [
+     "TH-516"
+    ]
+   },
+   {
+    "id": "NW-13",
+    "role": "relay",
+    "cites": [
+     "HP-53"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "independent",
+   "root_records": [
+    "H-447",
+    "M-69"
+   ]
+  }
+ },
+ {
+  "case": "h018",
+  "family": "F3",
+  "truth": "shared",
+  "domain": "lab freezer",
+  "style": "close",
+  "depth": 1,
+  "report1_cites": "S-89",
+  "report2_cites": "Z-262",
+  "records": [
+   {
+    "id": "S-89",
+    "role": "relay",
+    "cites": [
+     "AC-15"
+    ]
+   },
+   {
+    "id": "Z-262",
+    "role": "relay",
+    "cites": [
+     "AC-15"
+    ]
+   },
+   {
+    "id": "H-61",
+    "role": "distractor",
+    "cites": [],
+    "observer": "C"
+   },
+   {
+    "id": "AC-15",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "AC-15"
+   ]
+  }
+ },
+ {
+  "case": "h019",
+  "family": "F3",
+  "truth": "shared",
+  "domain": "bus depot",
+  "style": "different",
+  "depth": 2,
+  "report1_cites": "L-616",
+  "report2_cites": "B-32",
+  "records": [
+   {
+    "id": "L-616",
+    "role": "relay",
+    "cites": [
+     "GP-34"
+    ]
+   },
+   {
+    "id": "M-756",
+    "role": "distractor",
+    "cites": [],
+    "observer": "C"
+   },
+   {
+    "id": "B-94",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "B-32",
+    "role": "relay",
+    "cites": [
+     "B-94"
+    ]
+   },
+   {
+    "id": "GP-34",
+    "role": "relay",
+    "cites": [
+     "B-94"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "B-94"
+   ]
+  }
+ },
+ {
+  "case": "h020",
+  "family": "F3",
+  "truth": "shared",
+  "domain": "pharmacy",
+  "style": "close",
+  "depth": 1,
+  "report1_cites": "TE-82",
+  "report2_cites": "H-14",
+  "records": [
+   {
+    "id": "B-94",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "TE-82",
+    "role": "relay",
+    "cites": [
+     "B-94"
+    ]
+   },
+   {
+    "id": "H-14",
+    "role": "relay",
+    "cites": [
+     "B-94"
+    ]
+   },
+   {
+    "id": "F-615",
+    "role": "distractor",
+    "cites": [],
+    "observer": "C"
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "B-94"
+   ]
+  }
+ },
+ {
+  "case": "h021",
+  "family": "F3",
+  "truth": "shared",
+  "domain": "bank branch",
+  "style": "different",
+  "depth": 1,
+  "report1_cites": "WW-35",
+  "report2_cites": "JH-81",
+  "records": [
+   {
+    "id": "WW-35",
+    "role": "relay",
+    "cites": [
+     "P-87"
+    ]
+   },
+   {
+    "id": "JH-81",
+    "role": "relay",
+    "cites": [
+     "P-87"
+    ]
+   },
+   {
+    "id": "VF-16",
+    "role": "distractor",
+    "cites": [],
+    "observer": "C"
+   },
+   {
+    "id": "P-87",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "P-87"
+   ]
+  }
+ },
+ {
+  "case": "h022",
+  "family": "F3",
+  "truth": "shared",
+  "domain": "farm co-op",
+  "style": "close",
+  "depth": 1,
+  "report1_cites": "X-59",
+  "report2_cites": "S-71",
+  "records": [
+   {
+    "id": "X-59",
+    "role": "relay",
+    "cites": [
+     "F-418"
+    ]
+   },
+   {
+    "id": "F-418",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "B-13",
+    "role": "distractor",
+    "cites": [],
+    "observer": "C"
+   },
+   {
+    "id": "S-71",
+    "role": "relay",
+    "cites": [
+     "F-418"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "F-418"
+   ]
+  }
+ },
+ {
+  "case": "h023",
+  "family": "F3",
+  "truth": "independent",
+  "domain": "call centre",
+  "style": "different",
+  "depth": 1,
+  "report1_cites": "F-36",
+  "report2_cites": "GP-76",
+  "records": [
+   {
+    "id": "S-68",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "L-86",
+    "role": "distractor",
+    "cites": [],
+    "observer": "C"
+   },
+   {
+    "id": "GP-76",
+    "role": "relay",
+    "cites": [
+     "S-68"
+    ]
+   },
+   {
+    "id": "F-36",
+    "role": "relay",
+    "cites": [
+     "L-43"
+    ]
+   },
+   {
+    "id": "L-43",
+    "role": "root",
+    "cites": [],
+    "observer": "B"
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "independent",
+   "root_records": [
+    "L-43",
+    "S-68"
+   ]
+  }
+ },
+ {
+  "case": "h024",
+  "family": "F3",
+  "truth": "independent",
+  "domain": "port customs",
+  "style": "close",
+  "depth": 2,
+  "report1_cites": "R-83",
+  "report2_cites": "Z-53",
+  "records": [
+   {
+    "id": "T-193",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "R-83",
+    "role": "relay",
+    "cites": [
+     "B-43"
+    ]
+   },
+   {
+    "id": "X-95",
+    "role": "distractor",
+    "cites": [],
+    "observer": "C"
+   },
+   {
+    "id": "HC-473",
+    "role": "root",
+    "cites": [],
+    "observer": "B"
+   },
+   {
+    "id": "B-43",
+    "role": "relay",
+    "cites": [
+     "T-193"
+    ]
+   },
+   {
+    "id": "Z-53",
+    "role": "relay",
+    "cites": [
+     "HC-473"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "independent",
+   "root_records": [
+    "HC-473",
+    "T-193"
+   ]
+  }
+ },
+ {
+  "case": "h025",
+  "family": "F3",
+  "truth": "independent",
+  "domain": "hotel kitchen",
+  "style": "different",
+  "depth": 1,
+  "report1_cites": "T-423",
+  "report2_cites": "A-27",
+  "records": [
+   {
+    "id": "V-96",
+    "role": "root",
+    "cites": [],
+    "observer": "B"
+   },
+   {
+    "id": "CJ-728",
+    "role": "distractor",
+    "cites": [],
+    "observer": "C"
+   },
+   {
+    "id": "T-423",
+    "role": "relay",
+    "cites": [
+     "R-31"
+    ]
+   },
+   {
+    "id": "R-31",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "A-27",
+    "role": "relay",
+    "cites": [
+     "V-96"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "independent",
+   "root_records": [
+    "R-31",
+    "V-96"
+   ]
+  }
+ },
+ {
+  "case": "h026",
+  "family": "F3",
+  "truth": "independent",
+  "domain": "lab freezer",
+  "style": "close",
+  "depth": 1,
+  "report1_cites": "X-596",
+  "report2_cites": "S-27",
+  "records": [
+   {
+    "id": "Z-13",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "S-27",
+    "role": "relay",
+    "cites": [
+     "Z-13"
+    ]
+   },
+   {
+    "id": "K-65",
+    "role": "distractor",
+    "cites": [],
+    "observer": "C"
+   },
+   {
+    "id": "M-483",
+    "role": "root",
+    "cites": [],
+    "observer": "B"
+   },
+   {
+    "id": "X-596",
+    "role": "relay",
+    "cites": [
+     "M-483"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "independent",
+   "root_records": [
+    "M-483",
+    "Z-13"
+   ]
+  }
+ },
+ {
+  "case": "h027",
+  "family": "F3",
+  "truth": "independent",
+  "domain": "bus depot",
+  "style": "different",
+  "depth": 1,
+  "report1_cites": "VH-19",
+  "report2_cites": "D-36",
+  "records": [
+   {
+    "id": "VH-19",
+    "role": "relay",
+    "cites": [
+     "R-773"
+    ]
+   },
+   {
+    "id": "MJ-58",
+    "role": "distractor",
+    "cites": [],
+    "observer": "C"
+   },
+   {
+    "id": "R-773",
+    "role": "root",
+    "cites": [],
+    "observer": "B"
+   },
+   {
+    "id": "AS-56",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "D-36",
+    "role": "relay",
+    "cites": [
+     "AS-56"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "independent",
+   "root_records": [
+    "AS-56",
+    "R-773"
+   ]
+  }
+ },
+ {
+  "case": "h028",
+  "family": "F4",
+  "truth": "shared",
+  "domain": "pharmacy",
+  "style": "close",
+  "depth": 1,
+  "report1_cites": "R-36",
+  "report2_cites": "K-584",
+  "records": [
+   {
+    "id": "RX-771",
+    "role": "lookalike",
+    "cites": [],
+    "observer": "C",
+    "looks_like": "RX-717"
+   },
+   {
+    "id": "RX-717",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "R-36",
+    "role": "relay",
+    "cites": [
+     "RX-717"
+    ]
+   },
+   {
+    "id": "K-584",
+    "role": "relay",
+    "cites": [
+     "RX-717"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "RX-717"
+   ]
+  }
+ },
+ {
+  "case": "h029",
+  "family": "F4",
+  "truth": "shared",
+  "domain": "bank branch",
+  "style": "different",
+  "depth": 2,
+  "report1_cites": "K-131",
+  "report2_cites": "C-52",
+  "records": [
+   {
+    "id": "K-131",
+    "role": "relay",
+    "cites": [
+     "BX-36"
+    ]
+   },
+   {
+    "id": "BX-63",
+    "role": "lookalike",
+    "cites": [],
+    "observer": "C",
+    "looks_like": "BX-36"
+   },
+   {
+    "id": "C-52",
+    "role": "relay",
+    "cites": [
+     "K-51"
+    ]
+   },
+   {
+    "id": "K-51",
+    "role": "relay",
+    "cites": [
+     "BX-36"
+    ]
+   },
+   {
+    "id": "BX-36",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "BX-36"
+   ]
+  }
+ },
+ {
+  "case": "h030",
+  "family": "F4",
+  "truth": "shared",
+  "domain": "farm co-op",
+  "style": "close",
+  "depth": 2,
+  "report1_cites": "J-64",
+  "report2_cites": "Z-59",
+  "records": [
+   {
+    "id": "J-64",
+    "role": "relay",
+    "cites": [
+     "D-38"
+    ]
+   },
+   {
+    "id": "CP-69",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "Z-59",
+    "role": "relay",
+    "cites": [
+     "C-543"
+    ]
+   },
+   {
+    "id": "D-38",
+    "role": "relay",
+    "cites": [
+     "CP-69"
+    ]
+   },
+   {
+    "id": "CP-96",
+    "role": "lookalike",
+    "cites": [],
+    "observer": "C",
+    "looks_like": "CP-69"
+   },
+   {
+    "id": "C-543",
+    "role": "relay",
+    "cites": [
+     "CP-69"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "CP-69"
+   ]
+  }
+ },
+ {
+  "case": "h031",
+  "family": "F4",
+  "truth": "shared",
+  "domain": "call centre",
+  "style": "different",
+  "depth": 2,
+  "report1_cites": "K-94",
+  "report2_cites": "P-75",
+  "records": [
+   {
+    "id": "K-94",
+    "role": "relay",
+    "cites": [
+     "LJ-68"
+    ]
+   },
+   {
+    "id": "LJ-86",
+    "role": "lookalike",
+    "cites": [],
+    "observer": "C",
+    "looks_like": "LJ-68"
+   },
+   {
+    "id": "P-75",
+    "role": "relay",
+    "cites": [
+     "ZA-65"
+    ]
+   },
+   {
+    "id": "LJ-68",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "ZA-65",
+    "role": "relay",
+    "cites": [
+     "LJ-68"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "LJ-68"
+   ]
+  }
+ },
+ {
+  "case": "h032",
+  "family": "F4",
+  "truth": "independent",
+  "domain": "port customs",
+  "style": "close",
+  "depth": 1,
+  "report1_cites": "NB-58",
+  "report2_cites": "HJ-76",
+  "records": [
+   {
+    "id": "HJ-76",
+    "role": "relay",
+    "cites": [
+     "Z-18"
+    ]
+   },
+   {
+    "id": "H-34",
+    "role": "lookalike",
+    "cites": [],
+    "observer": "C",
+    "looks_like": "H-43"
+   },
+   {
+    "id": "Z-18",
+    "role": "root",
+    "cites": [],
+    "observer": "B"
+   },
+   {
+    "id": "H-43",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "NB-58",
+    "role": "relay",
+    "cites": [
+     "H-43"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "independent",
+   "root_records": [
+    "H-43",
+    "Z-18"
+   ]
+  }
+ },
+ {
+  "case": "h033",
+  "family": "F4",
+  "truth": "independent",
+  "domain": "hotel kitchen",
+  "style": "different",
+  "depth": 1,
+  "report1_cites": "RV-14",
+  "report2_cites": "F-497",
+  "records": [
+   {
+    "id": "J-18",
+    "role": "root",
+    "cites": [],
+    "observer": "B"
+   },
+   {
+    "id": "D-42",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "RV-14",
+    "role": "relay",
+    "cites": [
+     "J-18"
+    ]
+   },
+   {
+    "id": "D-24",
+    "role": "lookalike",
+    "cites": [],
+    "observer": "C",
+    "looks_like": "D-42"
+   },
+   {
+    "id": "F-497",
+    "role": "relay",
+    "cites": [
+     "D-42"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "independent",
+   "root_records": [
+    "D-42",
+    "J-18"
+   ]
+  }
+ },
+ {
+  "case": "h034",
+  "family": "F4",
+  "truth": "independent",
+  "domain": "lab freezer",
+  "style": "close",
+  "depth": 2,
+  "report1_cites": "Z-57",
+  "report2_cites": "P-247",
+  "records": [
+   {
+    "id": "Z-57",
+    "role": "relay",
+    "cites": [
+     "MX-96"
+    ]
+   },
+   {
+    "id": "C-62",
+    "role": "relay",
+    "cites": [
+     "HL-27"
+    ]
+   },
+   {
+    "id": "MX-96",
+    "role": "relay",
+    "cites": [
+     "A-236"
+    ]
+   },
+   {
+    "id": "HL-27",
+    "role": "root",
+    "cites": [],
+    "observer": "B"
+   },
+   {
+    "id": "A-236",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "P-247",
+    "role": "relay",
+    "cites": [
+     "C-62"
+    ]
+   },
+   {
+    "id": "A-263",
+    "role": "lookalike",
+    "cites": [],
+    "observer": "C",
+    "looks_like": "A-236"
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "independent",
+   "root_records": [
+    "A-236",
+    "HL-27"
+   ]
+  }
+ },
+ {
+  "case": "h035",
+  "family": "F4",
+  "truth": "independent",
+  "domain": "bus depot",
+  "style": "different",
+  "depth": 2,
+  "report1_cites": "L-68",
+  "report2_cites": "C-41",
+  "records": [
+   {
+    "id": "J-51",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "J-15",
+    "role": "lookalike",
+    "cites": [],
+    "observer": "C",
+    "looks_like": "J-51"
+   },
+   {
+    "id": "L-68",
+    "role": "relay",
+    "cites": [
+     "DH-369"
+    ]
+   },
+   {
+    "id": "P-83",
+    "role": "root",
+    "cites": [],
+    "observer": "B"
+   },
+   {
+    "id": "C-41",
+    "role": "relay",
+    "cites": [
+     "DC-69"
+    ]
+   },
+   {
+    "id": "DC-69",
+    "role": "relay",
+    "cites": [
+     "P-83"
+    ]
+   },
+   {
+    "id": "DH-369",
+    "role": "relay",
+    "cites": [
+     "J-51"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "independent",
+   "root_records": [
+    "J-51",
+    "P-83"
+   ]
+  }
+ },
+ {
+  "case": "h036",
+  "family": "F5",
+  "truth": "shared",
+  "domain": "pharmacy",
+  "style": "close",
+  "depth": 1,
+  "report1_cites": "RX-91",
+  "report2_cites": "ZP-29",
+  "records": [
+   {
+    "id": "ZP-29",
+    "role": "inspection",
+    "cites": [
+     "K-36"
+    ]
+   },
+   {
+    "id": "RX-91",
+    "role": "relay",
+    "cites": [
+     "K-36"
+    ]
+   },
+   {
+    "id": "K-36",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "K-36"
+   ]
+  }
+ },
+ {
+  "case": "h037",
+  "family": "F5",
+  "truth": "shared",
+  "domain": "bank branch",
+  "style": "different",
+  "depth": 2,
+  "report1_cites": "R-25",
+  "report2_cites": "NE-75",
+  "records": [
+   {
+    "id": "NE-75",
+    "role": "relay",
+    "cites": [
+     "B-771"
+    ]
+   },
+   {
+    "id": "B-771",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "CT-51",
+    "role": "inspection",
+    "cites": [
+     "B-771"
+    ]
+   },
+   {
+    "id": "R-25",
+    "role": "relay",
+    "cites": [
+     "CT-51"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "B-771"
+   ]
+  }
+ },
+ {
+  "case": "h038",
+  "family": "F5",
+  "truth": "shared",
+  "domain": "farm co-op",
+  "style": "close",
+  "depth": 2,
+  "report1_cites": "P-828",
+  "report2_cites": "KM-59",
+  "records": [
+   {
+    "id": "D-29",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "KM-59",
+    "role": "relay",
+    "cites": [
+     "WH-15"
+    ]
+   },
+   {
+    "id": "LC-68",
+    "role": "inspection",
+    "cites": [
+     "D-29"
+    ]
+   },
+   {
+    "id": "P-828",
+    "role": "relay",
+    "cites": [
+     "LC-68"
+    ]
+   },
+   {
+    "id": "WH-15",
+    "role": "relay",
+    "cites": [
+     "D-29"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "D-29"
+   ]
+  }
+ },
+ {
+  "case": "h039",
+  "family": "F5",
+  "truth": "shared",
+  "domain": "call centre",
+  "style": "different",
+  "depth": 2,
+  "report1_cites": "T-78",
+  "report2_cites": "H-54",
+  "records": [
+   {
+    "id": "EK-37",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "K-75",
+    "role": "inspection",
+    "cites": [
+     "EK-37"
+    ]
+   },
+   {
+    "id": "H-54",
+    "role": "relay",
+    "cites": [
+     "K-75"
+    ]
+   },
+   {
+    "id": "T-78",
+    "role": "relay",
+    "cites": [
+     "EV-45"
+    ]
+   },
+   {
+    "id": "EV-45",
+    "role": "relay",
+    "cites": [
+     "EK-37"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "EK-37"
+   ]
+  }
+ },
+ {
+  "case": "h040",
+  "family": "F5",
+  "truth": "shared",
+  "domain": "port customs",
+  "style": "close",
+  "depth": 2,
+  "report1_cites": "N-57",
+  "report2_cites": "L-28",
+  "records": [
+   {
+    "id": "V-72",
+    "role": "inspection",
+    "cites": [
+     "R-74"
+    ]
+   },
+   {
+    "id": "L-28",
+    "role": "relay",
+    "cites": [
+     "V-72"
+    ]
+   },
+   {
+    "id": "R-74",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "N-57",
+    "role": "relay",
+    "cites": [
+     "R-74"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "R-74"
+   ]
+  }
+ },
+ {
+  "case": "h041",
+  "family": "F5",
+  "truth": "shared",
+  "domain": "hotel kitchen",
+  "style": "different",
+  "depth": 2,
+  "report1_cites": "W-478",
+  "report2_cites": "DF-607",
+  "records": [
+   {
+    "id": "W-478",
+    "role": "relay",
+    "cites": [
+     "R-63"
+    ]
+   },
+   {
+    "id": "F-65",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "R-63",
+    "role": "inspection",
+    "cites": [
+     "F-65"
+    ]
+   },
+   {
+    "id": "VS-279",
+    "role": "relay",
+    "cites": [
+     "F-65"
+    ]
+   },
+   {
+    "id": "DF-607",
+    "role": "relay",
+    "cites": [
+     "VS-279"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "F-65"
+   ]
+  }
+ },
+ {
+  "case": "h042",
+  "family": "F5",
+  "truth": "shared",
+  "domain": "lab freezer",
+  "style": "close",
+  "depth": 2,
+  "report1_cites": "GV-29",
+  "report2_cites": "LF-838",
+  "records": [
+   {
+    "id": "P-532",
+    "role": "inspection",
+    "cites": [
+     "S-24"
+    ]
+   },
+   {
+    "id": "GV-29",
+    "role": "relay",
+    "cites": [
+     "S-24"
+    ]
+   },
+   {
+    "id": "LF-838",
+    "role": "relay",
+    "cites": [
+     "P-532"
+    ]
+   },
+   {
+    "id": "S-24",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "S-24"
+   ]
+  }
+ },
+ {
+  "case": "h043",
+  "family": "F5",
+  "truth": "shared",
+  "domain": "bus depot",
+  "style": "different",
+  "depth": 2,
+  "report1_cites": "C-12",
+  "report2_cites": "TV-656",
+  "records": [
+   {
+    "id": "F-51",
+    "role": "inspection",
+    "cites": [
+     "L-751"
+    ]
+   },
+   {
+    "id": "L-751",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "C-12",
+    "role": "relay",
+    "cites": [
+     "L-751"
+    ]
+   },
+   {
+    "id": "TV-656",
+    "role": "relay",
+    "cites": [
+     "F-51"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "L-751"
+   ]
+  }
+ },
+ {
+  "case": "h044",
+  "family": "F7",
+  "truth": "undetermined",
+  "domain": "pharmacy",
+  "style": "close",
+  "depth": 2,
+  "report1_cites": "C-17",
+  "report2_cites": "JX-24",
+  "records": [
+   {
+    "id": "H-41",
+    "role": "relay",
+    "cites": [
+     "C-43"
+    ]
+   },
+   {
+    "id": "JX-24",
+    "role": "relay",
+    "cites": [
+     "RC-95"
+    ]
+   },
+   {
+    "id": "C-17",
+    "role": "relay",
+    "cites": [
+     "H-41"
+    ]
+   },
+   {
+    "id": "C-43",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "RC-95",
+    "role": "relay",
+    "cites": [
+     "S-13"
+    ]
+   }
+  ],
+  "missing": [
+   "S-13"
+  ],
+  "key": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "case": "h045",
+  "family": "F7",
+  "truth": "undetermined",
+  "domain": "bank branch",
+  "style": "different",
+  "depth": 1,
+  "report1_cites": "C-574",
+  "report2_cites": "G-17",
+  "records": [
+   {
+    "id": "C-574",
+    "role": "relay",
+    "cites": [
+     "X-173"
+    ]
+   },
+   {
+    "id": "X-173",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "G-17",
+    "role": "relay",
+    "cites": [
+     "B-26"
+    ]
+   }
+  ],
+  "missing": [
+   "B-26"
+  ],
+  "key": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "case": "h046",
+  "family": "F7",
+  "truth": "undetermined",
+  "domain": "farm co-op",
+  "style": "close",
+  "depth": 1,
+  "report1_cites": "TL-21",
+  "report2_cites": "L-457",
+  "records": [
+   {
+    "id": "TL-21",
+    "role": "relay",
+    "cites": [
+     "W-28"
+    ]
+   },
+   {
+    "id": "W-53",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "L-457",
+    "role": "relay",
+    "cites": [
+     "W-53"
+    ]
+   }
+  ],
+  "missing": [
+   "W-28"
+  ],
+  "key": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "case": "h047",
+  "family": "F7",
+  "truth": "undetermined",
+  "domain": "call centre",
+  "style": "different",
+  "depth": 1,
+  "report1_cites": "NF-18",
+  "report2_cites": "PC-69",
+  "records": [
+   {
+    "id": "AK-43",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "NF-18",
+    "role": "relay",
+    "cites": [
+     "AK-43"
+    ]
+   },
+   {
+    "id": "PC-69",
+    "role": "relay",
+    "cites": [
+     "ZN-91"
+    ]
+   }
+  ],
+  "missing": [
+   "ZN-91"
+  ],
+  "key": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "case": "h048",
+  "family": "F7",
+  "truth": "undetermined",
+  "domain": "port customs",
+  "style": "close",
+  "depth": 2,
+  "report1_cites": "B-12",
+  "report2_cites": "G-69",
+  "records": [
+   {
+    "id": "G-69",
+    "role": "relay",
+    "cites": [
+     "X-76"
+    ]
+   },
+   {
+    "id": "LS-65",
+    "role": "relay",
+    "cites": [
+     "W-48"
+    ]
+   },
+   {
+    "id": "W-48",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "B-12",
+    "role": "relay",
+    "cites": [
+     "LS-65"
+    ]
+   }
+  ],
+  "missing": [
+   "X-76"
+  ],
+  "key": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "case": "h049",
+  "family": "F7",
+  "truth": "undetermined",
+  "domain": "hotel kitchen",
+  "style": "different",
+  "depth": 2,
+  "report1_cites": "B-617",
+  "report2_cites": "B-47",
+  "records": [
+   {
+    "id": "B-47",
+    "role": "relay",
+    "cites": [
+     "Z-85"
+    ]
+   },
+   {
+    "id": "B-617",
+    "role": "relay",
+    "cites": [
+     "PF-621"
+    ]
+   },
+   {
+    "id": "Z-85",
+    "role": "relay",
+    "cites": [
+     "H-72"
+    ]
+   },
+   {
+    "id": "H-72",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   }
+  ],
+  "missing": [
+   "PF-621"
+  ],
+  "key": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "case": "h050",
+  "family": "F7",
+  "truth": "undetermined",
+  "domain": "lab freezer",
+  "style": "close",
+  "depth": 2,
+  "report1_cites": "V-56",
+  "report2_cites": "N-46",
+  "records": [
+   {
+    "id": "V-56",
+    "role": "relay",
+    "cites": [
+     "H-706"
+    ]
+   },
+   {
+    "id": "H-298",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "H-706",
+    "role": "relay",
+    "cites": [
+     "H-298"
+    ]
+   },
+   {
+    "id": "D-478",
+    "role": "relay",
+    "cites": [
+     "E-61"
+    ]
+   },
+   {
+    "id": "N-46",
+    "role": "relay",
+    "cites": [
+     "D-478"
+    ]
+   }
+  ],
+  "missing": [
+   "E-61"
+  ],
+  "key": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "case": "h051",
+  "family": "F7",
+  "truth": "undetermined",
+  "domain": "bus depot",
+  "style": "different",
+  "depth": 2,
+  "report1_cites": "LJ-18",
+  "report2_cites": "P-48",
+  "records": [
+   {
+    "id": "F-29",
+    "role": "relay",
+    "cites": [
+     "LN-94"
+    ]
+   },
+   {
+    "id": "LJ-18",
+    "role": "relay",
+    "cites": [
+     "F-29"
+    ]
+   },
+   {
+    "id": "P-48",
+    "role": "relay",
+    "cites": [
+     "D-34"
+    ]
+   },
+   {
+    "id": "LN-94",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   }
+  ],
+  "missing": [
+   "D-34"
+  ],
+  "key": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "case": "h052",
+  "family": "F8",
+  "truth": "shared",
+  "domain": "pharmacy",
+  "style": "close",
+  "depth": 2,
+  "report1_cites": "E-39",
+  "report2_cites": "VC-47",
+  "records": [
+   {
+    "id": "VC-47",
+    "role": "relay",
+    "cites": [
+     "C-27"
+    ]
+   },
+   {
+    "id": "C-27",
+    "role": "trap",
+    "cites": [
+     "T-386"
+    ]
+   },
+   {
+    "id": "T-386",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "E-39",
+    "role": "relay",
+    "cites": [
+     "XR-61"
+    ]
+   },
+   {
+    "id": "XR-61",
+    "role": "relay",
+    "cites": [
+     "T-386"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "T-386"
+   ]
+  }
+ },
+ {
+  "case": "h053",
+  "family": "F8",
+  "truth": "shared",
+  "domain": "bank branch",
+  "style": "different",
+  "depth": 2,
+  "report1_cites": "W-39",
+  "report2_cites": "SZ-868",
+  "records": [
+   {
+    "id": "EV-65",
+    "role": "relay",
+    "cites": [
+     "F-398"
+    ]
+   },
+   {
+    "id": "W-39",
+    "role": "trap",
+    "cites": [
+     "F-398"
+    ]
+   },
+   {
+    "id": "SZ-868",
+    "role": "relay",
+    "cites": [
+     "EV-65"
+    ]
+   },
+   {
+    "id": "F-398",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "F-398"
+   ]
+  }
+ },
+ {
+  "case": "h054",
+  "family": "F8",
+  "truth": "shared",
+  "domain": "farm co-op",
+  "style": "close",
+  "depth": 2,
+  "report1_cites": "LG-708",
+  "report2_cites": "DV-16",
+  "records": [
+   {
+    "id": "DV-16",
+    "role": "relay",
+    "cites": [
+     "XP-95"
+    ]
+   },
+   {
+    "id": "XP-95",
+    "role": "trap",
+    "cites": [
+     "S-85"
+    ]
+   },
+   {
+    "id": "F-98",
+    "role": "relay",
+    "cites": [
+     "S-85"
+    ]
+   },
+   {
+    "id": "LG-708",
+    "role": "relay",
+    "cites": [
+     "F-98"
+    ]
+   },
+   {
+    "id": "S-85",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "S-85"
+   ]
+  }
+ },
+ {
+  "case": "h055",
+  "family": "F8",
+  "truth": "shared",
+  "domain": "call centre",
+  "style": "different",
+  "depth": 2,
+  "report1_cites": "B-65",
+  "report2_cites": "CE-25",
+  "records": [
+   {
+    "id": "NW-75",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "E-321",
+    "role": "trap",
+    "cites": [
+     "NW-75"
+    ]
+   },
+   {
+    "id": "CE-25",
+    "role": "relay",
+    "cites": [
+     "NW-75"
+    ]
+   },
+   {
+    "id": "B-65",
+    "role": "relay",
+    "cites": [
+     "E-321"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "NW-75"
+   ]
+  }
+ },
+ {
+  "case": "h056",
+  "family": "F8",
+  "truth": "shared",
+  "domain": "port customs",
+  "style": "close",
+  "depth": 1,
+  "report1_cites": "B-47",
+  "report2_cites": "A-45",
+  "records": [
+   {
+    "id": "CP-75",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "B-47",
+    "role": "relay",
+    "cites": [
+     "CP-75"
+    ]
+   },
+   {
+    "id": "A-45",
+    "role": "trap",
+    "cites": [
+     "CP-75"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "CP-75"
+   ]
+  }
+ },
+ {
+  "case": "h057",
+  "family": "F8",
+  "truth": "shared",
+  "domain": "hotel kitchen",
+  "style": "different",
+  "depth": 2,
+  "report1_cites": "G-69",
+  "report2_cites": "LL-94",
+  "records": [
+   {
+    "id": "JR-242",
+    "role": "trap",
+    "cites": [
+     "P-235"
+    ]
+   },
+   {
+    "id": "LL-94",
+    "role": "relay",
+    "cites": [
+     "JR-242"
+    ]
+   },
+   {
+    "id": "G-69",
+    "role": "relay",
+    "cites": [
+     "P-235"
+    ]
+   },
+   {
+    "id": "P-235",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "P-235"
+   ]
+  }
+ },
+ {
+  "case": "h058",
+  "family": "F8",
+  "truth": "shared",
+  "domain": "lab freezer",
+  "style": "close",
+  "depth": 1,
+  "report1_cites": "VD-86",
+  "report2_cites": "HA-59",
+  "records": [
+   {
+    "id": "VD-86",
+    "role": "relay",
+    "cites": [
+     "X-14"
+    ]
+   },
+   {
+    "id": "X-14",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "HA-59",
+    "role": "trap",
+    "cites": [
+     "X-14"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "X-14"
+   ]
+  }
+ },
+ {
+  "case": "h059",
+  "family": "F8",
+  "truth": "shared",
+  "domain": "bus depot",
+  "style": "different",
+  "depth": 2,
+  "report1_cites": "A-57",
+  "report2_cites": "Z-559",
+  "records": [
+   {
+    "id": "MX-269",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "Z-52",
+    "role": "relay",
+    "cites": [
+     "MX-269"
+    ]
+   },
+   {
+    "id": "A-57",
+    "role": "relay",
+    "cites": [
+     "Z-52"
+    ]
+   },
+   {
+    "id": "Z-559",
+    "role": "trap",
+    "cites": [
+     "MX-269"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "MX-269"
+   ]
+  }
+ }
+]

@@ -1,0 +1,483 @@
+{
+ "h000": {
+  "verdict": "shared",
+  "root_records": [
+   "KX-32"
+  ],
+  "family": "F1",
+  "depth": 3
+ },
+ "h001": {
+  "verdict": "shared",
+  "root_records": [
+   "L-51"
+  ],
+  "family": "F1",
+  "depth": 2
+ },
+ "h002": {
+  "verdict": "shared",
+  "root_records": [
+   "AK-396"
+  ],
+  "family": "F1",
+  "depth": 2
+ },
+ "h003": {
+  "verdict": "shared",
+  "root_records": [
+   "B-37"
+  ],
+  "family": "F1",
+  "depth": 2
+ },
+ "h004": {
+  "verdict": "shared",
+  "root_records": [
+   "S-93"
+  ],
+  "family": "F1",
+  "depth": 3
+ },
+ "h005": {
+  "verdict": "shared",
+  "root_records": [
+   "E-49"
+  ],
+  "family": "F1",
+  "depth": 2
+ },
+ "h006": {
+  "verdict": "shared",
+  "root_records": [
+   "BG-426"
+  ],
+  "family": "F1",
+  "depth": 2
+ },
+ "h007": {
+  "verdict": "shared",
+  "root_records": [
+   "W-84"
+  ],
+  "family": "F1",
+  "depth": 2
+ },
+ "h008": {
+  "verdict": "shared",
+  "root_records": [
+   "C-26"
+  ],
+  "family": "F1",
+  "depth": 2
+ },
+ "h009": {
+  "verdict": "shared",
+  "root_records": [
+   "L-517"
+  ],
+  "family": "F1",
+  "depth": 2
+ },
+ "h010": {
+  "verdict": "independent",
+  "root_records": [
+   "A-662",
+   "R-47"
+  ],
+  "family": "F2",
+  "depth": 2
+ },
+ "h011": {
+  "verdict": "independent",
+  "root_records": [
+   "M-15",
+   "ZG-81"
+  ],
+  "family": "F2",
+  "depth": 3
+ },
+ "h012": {
+  "verdict": "independent",
+  "root_records": [
+   "AS-29",
+   "GX-38"
+  ],
+  "family": "F2",
+  "depth": 3
+ },
+ "h013": {
+  "verdict": "independent",
+  "root_records": [
+   "D-32",
+   "F-407"
+  ],
+  "family": "F2",
+  "depth": 3
+ },
+ "h014": {
+  "verdict": "independent",
+  "root_records": [
+   "CT-45",
+   "W-16"
+  ],
+  "family": "F2",
+  "depth": 3
+ },
+ "h015": {
+  "verdict": "independent",
+  "root_records": [
+   "J-91",
+   "K-71"
+  ],
+  "family": "F2",
+  "depth": 3
+ },
+ "h016": {
+  "verdict": "independent",
+  "root_records": [
+   "A-194",
+   "JB-96"
+  ],
+  "family": "F2",
+  "depth": 3
+ },
+ "h017": {
+  "verdict": "independent",
+  "root_records": [
+   "H-447",
+   "M-69"
+  ],
+  "family": "F2",
+  "depth": 3
+ },
+ "h018": {
+  "verdict": "shared",
+  "root_records": [
+   "AC-15"
+  ],
+  "family": "F3",
+  "depth": 1
+ },
+ "h019": {
+  "verdict": "shared",
+  "root_records": [
+   "B-94"
+  ],
+  "family": "F3",
+  "depth": 2
+ },
+ "h020": {
+  "verdict": "shared",
+  "root_records": [
+   "B-94"
+  ],
+  "family": "F3",
+  "depth": 1
+ },
+ "h021": {
+  "verdict": "shared",
+  "root_records": [
+   "P-87"
+  ],
+  "family": "F3",
+  "depth": 1
+ },
+ "h022": {
+  "verdict": "shared",
+  "root_records": [
+   "F-418"
+  ],
+  "family": "F3",
+  "depth": 1
+ },
+ "h023": {
+  "verdict": "independent",
+  "root_records": [
+   "L-43",
+   "S-68"
+  ],
+  "family": "F3",
+  "depth": 1
+ },
+ "h024": {
+  "verdict": "independent",
+  "root_records": [
+   "HC-473",
+   "T-193"
+  ],
+  "family": "F3",
+  "depth": 2
+ },
+ "h025": {
+  "verdict": "independent",
+  "root_records": [
+   "R-31",
+   "V-96"
+  ],
+  "family": "F3",
+  "depth": 1
+ },
+ "h026": {
+  "verdict": "independent",
+  "root_records": [
+   "M-483",
+   "Z-13"
+  ],
+  "family": "F3",
+  "depth": 1
+ },
+ "h027": {
+  "verdict": "independent",
+  "root_records": [
+   "AS-56",
+   "R-773"
+  ],
+  "family": "F3",
+  "depth": 1
+ },
+ "h028": {
+  "verdict": "shared",
+  "root_records": [
+   "RX-717"
+  ],
+  "family": "F4",
+  "depth": 1
+ },
+ "h029": {
+  "verdict": "shared",
+  "root_records": [
+   "BX-36"
+  ],
+  "family": "F4",
+  "depth": 2
+ },
+ "h030": {
+  "verdict": "shared",
+  "root_records": [
+   "CP-69"
+  ],
+  "family": "F4",
+  "depth": 2
+ },
+ "h031": {
+  "verdict": "shared",
+  "root_records": [
+   "LJ-68"
+  ],
+  "family": "F4",
+  "depth": 2
+ },
+ "h032": {
+  "verdict": "independent",
+  "root_records": [
+   "H-43",
+   "Z-18"
+  ],
+  "family": "F4",
+  "depth": 1
+ },
+ "h033": {
+  "verdict": "independent",
+  "root_records": [
+   "D-42",
+   "J-18"
+  ],
+  "family": "F4",
+  "depth": 1
+ },
+ "h034": {
+  "verdict": "independent",
+  "root_records": [
+   "A-236",
+   "HL-27"
+  ],
+  "family": "F4",
+  "depth": 2
+ },
+ "h035": {
+  "verdict": "independent",
+  "root_records": [
+   "J-51",
+   "P-83"
+  ],
+  "family": "F4",
+  "depth": 2
+ },
+ "h036": {
+  "verdict": "shared",
+  "root_records": [
+   "K-36"
+  ],
+  "family": "F5",
+  "depth": 1
+ },
+ "h037": {
+  "verdict": "shared",
+  "root_records": [
+   "B-771"
+  ],
+  "family": "F5",
+  "depth": 2
+ },
+ "h038": {
+  "verdict": "shared",
+  "root_records": [
+   "D-29"
+  ],
+  "family": "F5",
+  "depth": 2
+ },
+ "h039": {
+  "verdict": "shared",
+  "root_records": [
+   "EK-37"
+  ],
+  "family": "F5",
+  "depth": 2
+ },
+ "h040": {
+  "verdict": "shared",
+  "root_records": [
+   "R-74"
+  ],
+  "family": "F5",
+  "depth": 2
+ },
+ "h041": {
+  "verdict": "shared",
+  "root_records": [
+   "F-65"
+  ],
+  "family": "F5",
+  "depth": 2
+ },
+ "h042": {
+  "verdict": "shared",
+  "root_records": [
+   "S-24"
+  ],
+  "family": "F5",
+  "depth": 2
+ },
+ "h043": {
+  "verdict": "shared",
+  "root_records": [
+   "L-751"
+  ],
+  "family": "F5",
+  "depth": 2
+ },
+ "h044": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "family": "F7",
+  "depth": 2
+ },
+ "h045": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "family": "F7",
+  "depth": 1
+ },
+ "h046": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "family": "F7",
+  "depth": 1
+ },
+ "h047": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "family": "F7",
+  "depth": 1
+ },
+ "h048": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "family": "F7",
+  "depth": 2
+ },
+ "h049": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "family": "F7",
+  "depth": 2
+ },
+ "h050": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "family": "F7",
+  "depth": 2
+ },
+ "h051": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "family": "F7",
+  "depth": 2
+ },
+ "h052": {
+  "verdict": "shared",
+  "root_records": [
+   "T-386"
+  ],
+  "family": "F8",
+  "depth": 2
+ },
+ "h053": {
+  "verdict": "shared",
+  "root_records": [
+   "F-398"
+  ],
+  "family": "F8",
+  "depth": 2
+ },
+ "h054": {
+  "verdict": "shared",
+  "root_records": [
+   "S-85"
+  ],
+  "family": "F8",
+  "depth": 2
+ },
+ "h055": {
+  "verdict": "shared",
+  "root_records": [
+   "NW-75"
+  ],
+  "family": "F8",
+  "depth": 2
+ },
+ "h056": {
+  "verdict": "shared",
+  "root_records": [
+   "CP-75"
+  ],
+  "family": "F8",
+  "depth": 1
+ },
+ "h057": {
+  "verdict": "shared",
+  "root_records": [
+   "P-235"
+  ],
+  "family": "F8",
+  "depth": 2
+ },
+ "h058": {
+  "verdict": "shared",
+  "root_records": [
+   "X-14"
+  ],
+  "family": "F8",
+  "depth": 1
+ },
+ "h059": {
+  "verdict": "shared",
+  "root_records": [
+   "MX-269"
+  ],
+  "family": "F8",
+  "depth": 2
+ }
+}

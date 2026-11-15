@@ -1,0 +1,16 @@
+{
+ "variants_sha256": "be9b56a0ed80f007b0e13467dd32755a7388194cbbd35f6adbd262f9c200f447",
+ "training_sha256": "0f830ea2eb709651934ddd3de67200d23b18ace89d6feddf78c083d5f369fba1",
+ "packets_checked": 120,
+ "training_site_names_checked": 12,
+ "packets_with_a_training_site_name": 0,
+ "sites_detail": [],
+ "packets_sharing_an_exact_record_id": 0,
+ "exact_id_detail": [],
+ "packets_sharing_only_a_record_number": 0,
+ "number_detail": [],
+ "packets_with_ids_in_the_training_range_10000_14999": 0,
+ "range_detail": [],
+ "packets_identical_to_a_training_packet": 0,
+ "identical_detail": []
+}

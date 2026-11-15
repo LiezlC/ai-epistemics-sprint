@@ -1,0 +1,17 @@
+{
+ "model": "moonshotai/kimi-k3.1-pro",
+ "route": "openrouter_chat",
+ "thinking": "off",
+ "seed": 20261113,
+ "temperature": 0,
+ "packets_sha256": "6263aa50061ffd83a504e2c7b80a89d3334ecca24eb2a8b5c15efeda97947576",
+ "calls": 68,
+ "spend_usd": 0.0636,
+ "errors": 0,
+ "unparseable": 0,
+ "reasoning_tokens_total": 0,
+ "models_served": [
+  "moonshotai/kimi-k3.1-pro"
+ ]
+}
+alerted  bare       {'shared': 36, 'independent': 16, 'undetermined': 16}
