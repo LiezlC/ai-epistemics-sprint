@@ -1,6 +1,6 @@
 # Label or Record? Testing Whether LLM Reviewers Follow False Provenance Labels When Judging Independent Corroboration
 
-**Deepayan Sinha** (Altiora Systems), **Liezl Coetzee** (Sociable Systems), **Prashanth Vijay** (Altiora Systems), with Apart Research
+**Liezl Coetzee** (Sociable Systems), **Deepayan Sinha** (Altiora Systems), **Prashanth Vijay** (Altiora Systems), with Apart Research
 
 Apart Research, AI x Epistemics Research Sprint, November 13–15, 2026. Tracks: Model Epistemics and Decision-Making Evals (Track 1); Trust Infrastructure (Track 2).
 
@@ -153,7 +153,7 @@ Shared-source cases only. Each model’s own first response is reused in every b
 
 Deepayan wrote a scripted generator in the sprint and produced 12,000 preference pairs (`train_dpo.jsonl`, sha256 `0f830ea2eb709651934ddd3de67200d23b18ace89d6feddf78c083d5f369fba1`) and 12,000 supervised rows as fallback (`train_sft.jsonl`, sha256 `7412b87dc3914be3d837e1ab35ac80b60b4683694f80ecc46b7092312e0b687c`), committed at `15869c5`. The size meets Adaption AutoScientist’s floor of 12,000 effective pairs for DPO, so no synthetic augmentation was added. In each pair the rejected completion is the label-following verdict with the same root records as the chosen one, so the pair differs only in the failure under test. Training cases use bare and authority-stamped labels only; literal-misleading stays out of training and out of the three-shot examples, so it tests transfer to an untaught form. Training sites, record numbers and source histories are disjoint from the scored set; `check_variants_overlap.py` checks site names, record numbers and packets (`TBD: result`). Liezl hand-checked 20 cases from each file (40 of 40 passed) before upload.
 
-Launch: Adaption AutoScientist, `Qwen/Qwen3.5-4B`, `training_method="alignment"` (a supervised stage on chosen, then DPO), LoRA r16, alpha 32, one epoch, learning rate 5e-5, one iteration, imported as a private Hugging Face dataset. Adaption’s documentation is unclear on whether raw import is marked as preference pairs; if not, the run falls back to supervised. We read back `run.training_method` after launch: `TBD`. Cut-off for a usable checkpoint: November 15, 11:59 UTC. `TBD: run ID, start, finish, credits.`
+Launch: Adaption AutoScientist, `Qwen/Qwen3.5-4B`, `training_method="alignment"` (a supervised stage on chosen, then DPO), LoRA r16, alpha 32, one epoch, learning rate 1e-5 (cosine), DPO beta 0.1, one iteration, imported as a private Hugging Face dataset. Adaption’s documentation is unclear on whether raw import is marked as preference pairs; if not, the run falls back to supervised. We read back `run.training_method` after launch: `TBD`. Cut-off for a usable checkpoint: November 15, 11:59 UTC. `TBD: run ID, start, finish, credits.`
 
 **DPO v1 and the collapse.** Run `72134b60-2fcc-41ab-836f-160e1458bc0f` trained as alignment (DPO) on `Qwen/Qwen3.5-4B`, LoRA r16, alpha 32, learning rate 1e-5 cosine, one epoch, beta 0.1, from 21:59 to 23:52 UTC on November 14. The adapter is release `provenance-dpo-adapter`. Adaption's own judge reported a 0.421 win rate, which is not our metric. On the hard set (Section 4.6) the tuned model answered "undetermined" with no roots on 118 of 120 prompts. The cause is in the training file: 4,800 of the 12,000 chosen answers are "undetermined", and "undetermined" never appears as a rejected answer, while "independent" and "shared" are each rejected about 6,000 times. DPO raises the chosen answer against the rejected one, so the one verdict never penalised became the safe answer everywhere. We report this as a finding in its own right: preference data for abstention needs the abstention answer to appear on the rejected side too, wherever the evidence does settle the question.
 
@@ -560,7 +560,7 @@ Side by side: seven arms show no label pull on gaps, and the one tuned arm that 
 
 ## Code and Data
 
-Repository: `LiezlC/ai-epistemics-sprint` (`TBD: make public or give access link`). We release the case packets (fictional), the frozen prompts and scripts, the answer key after scoring, and per-item text-free observations (case ID, arm, label form, direction, model, verdict, cited IDs, correct, sha256 of the exact prompt sent) with a script that rebuilds every table in this report. Code written before November 13, 2026 is marked as preexisting in the README and in Section 3.14 (Table P1). Paper PDFs are not redistributed.
+Repository: `LiezlC/ai-epistemics-sprint` (private; access link provided with the submission). We release the case packets (fictional), the frozen prompts and scripts, the answer key after scoring, and per-item text-free observations (case ID, arm, label form, direction, model, verdict, cited IDs, correct, sha256 of the exact prompt sent) with a script that rebuilds every table in this report. Code written before November 13, 2026 is marked as preexisting in the README and in Section 3.14 (Table P1). Paper PDFs are not redistributed.
 
 ## References
 
