@@ -1,0 +1,54 @@
+## Diagnosis (3 to 5 sentences)
+
+The base model’s low flip rate partly reflects its tendency to answer “shared,” so lower flipping alone does not establish better reasoning. Matched-note training improved accuracy, but identical chosen answers across three separate DPO pairs do not directly constrain predictions to agree across notes. In v4, the rejected verdict explicitly depends on the note, while retained rejected roots can make the answer internally inconsistent, as in “independent” with an empty root list. My diagnosis is that these shortcuts weaken the intended evidence-based preference signal; the results support this explanation without proving it.
+
+## Proposed change (one change; precise enough to implement; say which rows change and how)
+
+**Replace the rejected-answer construction for all 1,500 pairs with note-independent, verdict-only negatives.**
+
+Keep v3’s 500 selected files, their three note variants, and every chosen answer unchanged. Group the 500 underlying files by chosen verdict and sort each group by original source-row index. For file position `j` within its group, select `sorted({"independent", "shared", "undetermined"} - {chosen_verdict})[j % 2]` as its rejected verdict. Construct the rejected JSON using that verdict and an exact copy of the chosen `root_records`; use this same rejected answer for all three note variants.
+
+This deterministically preserves 1,500 pairs and keeps every verdict both chosen and rejected. It introduces no records, IDs, or domains.
+
+## Expected effect (which dev metrics move and roughly how far)
+
+My pilot hypothesis is that both-parsed label flipping falls from **14.0% to roughly 9–12%**, and following a wrong label falls from **25.8% to 20–24%**. The note-direction accuracy gap should narrow from **7.3 points to about 3–6 points**.
+
+Overall verdict accuracy may remain around **68–71%**. Root accuracy and gap recognition are likely to move little because this change supplies no new evidence-tracing examples; I would not predict a substantial G4-gap improvement.
+
+## Risk (one or two sentences)
+
+Copying chosen roots into rejected answers removes direct preference training on root selection, so root accuracy could decline. The model could also learn verdict–root-count consistency without improving record tracing, limiting gains on ambiguous or broken trails.
+
+---
+d all of this together.** Do not resolve. Do not conclude.
+6. **Ask: what becomes visible now that wasn't visible before?**
+
+That is it. No forced synthesis. No invented probabilities. No premature conclusion. No borrowed frameworks. Just a way of looking.
+
+**Why it's here:** the default agent move on these topics is to reach for the safe consensus and close the question ("D&D did it", "it's just autocomplete"). That's a form of filtering, and it's the hedging she objects to. The protocol keeps the dismissed material on the table without endorsing it, and it keeps the question open long enough for something new to show.
+
+codex
+## Diagnosis (3 to 5 sentences)
+
+The base model’s low flip rate partly reflects its tendency to answer “shared,” so lower flipping alone does not establish better reasoning. Matched-note training improved accuracy, but identical chosen answers across three separate DPO pairs do not directly constrain predictions to agree across notes. In v4, the rejected verdict explicitly depends on the note, while retained rejected roots can make the answer internally inconsistent, as in “independent” with an empty root list. My diagnosis is that these shortcuts weaken the intended evidence-based preference signal; the results support this explanation without proving it.
+
+## Proposed change (one change; precise enough to implement; say which rows change and how)
+
+**Replace the rejected-answer construction for all 1,500 pairs with note-independent, verdict-only negatives.**
+
+Keep v3’s 500 selected files, their three note variants, and every chosen answer unchanged. Group the 500 underlying files by chosen verdict and sort each group by original source-row index. For file position `j` within its group, select `sorted({"independent", "shared", "undetermined"} - {chosen_verdict})[j % 2]` as its rejected verdict. Construct the rejected JSON using that verdict and an exact copy of the chosen `root_records`; use this same rejected answer for all three note variants.
+
+This deterministically preserves 1,500 pairs and keeps every verdict both chosen and rejected. It introduces no records, IDs, or domains.
+
+## Expected effect (which dev metrics move and roughly how far)
+
+My pilot hypothesis is that both-parsed label flipping falls from **14.0% to roughly 9–12%**, and following a wrong label falls from **25.8% to 20–24%**. The note-direction accuracy gap should narrow from **7.3 points to about 3–6 points**.
+
+Overall verdict accuracy may remain around **68–71%**. Root accuracy and gap recognition are likely to move little because this change supplies no new evidence-tracing examples; I would not predict a substantial G4-gap improvement.
+
+## Risk (one or two sentences)
+
+Copying chosen roots into rejected answers removes direct preference training on root selection, so root accuracy could decline. The model could also learn verdict–root-count consistency without improving record tracing, limiting gains on ambiguous or broken trails.
+tokens used
+27,542
