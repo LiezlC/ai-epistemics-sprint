@@ -51,7 +51,7 @@ Our contributions:
 
 **Correlated evidence.** Zhou et al. ([Evidence Laundering](https://aclanthology.org/2026.emnlp-main.509/)) show that deep-research agents treat correlated or paraphrased pages as independent evidence, with ground-truth provenance hidden at test time. Bara ([Epistemic Sybil Resistance](https://arxiv.org/abs/2609.01873)) varies report count and evidence-root count independently and leaves misreported provenance as an open problem (sections 6.2 and 9).
 
-**Trust in status labels.** Hu et al. ([Silence Is Endorsement](https://arxiv.org/abs/2609.20211)) show that agent monitors trust a “verified” status label and approve risky actions far more often once an “unverified” marker is lost in a summary, when the monitor sees only the rewritten handoff and never the original evidence. Zhu ([DACSI](https://arxiv.org/abs/2606.09005)) shows that metadata-like labels such as “source status: verified” in retrieved text can override a safety instruction in RAG, with authority cues carrying most of the effect. In both, the label competes with an instruction or with nothing; no record that contradicts it sits in the same context.
+**Trust in status labels.** Hu ([Silence Is Endorsement](https://arxiv.org/abs/2609.20211)) shows that agent monitors trust a “verified” status label and approve risky actions far more often once an “unverified” marker is lost in a summary, when the monitor sees only the rewritten handoff and never the original evidence. Zhu ([DACSI](https://arxiv.org/abs/2606.09005)) shows that metadata-like labels such as “source status: verified” in retrieved text can override a safety instruction in RAG, with authority cues carrying most of the effect. In both, the label competes with an instruction or with nothing; no record that contradicts it sits in the same context.
 
 **Knowing versus saying.** [MASK](https://arxiv.org/abs/2503.03750) separates what a model believes from what it states. We apply the same split to provenance: whether the reviewer cites the shared root, and whether its verdict follows it.
 
@@ -226,9 +226,25 @@ Two deviations from the plan are stated here. The second file arrived after the 
 
 For the main 15-case study, no model writes training rows or attachments, and no model scores another. The exploratory hard set relaxes this on purpose, as Section 3.15 describes.
 
-### 3.14 Prior work (pre-sprint trial)
+### 3.14 Prior work and new work
 
-All numbers in this subsection are **(prior work)**, from a trial run on November 11, 2026, before the sprint opened. They motivated the sprint design and are not sprint results.
+The sprint opened on 13 November 2026. Everything in the table below was made before that date, is marked preexisting in the repository README, and is not a sprint result. Numbers from the trial in this subsection are **(prior work)**, from 11 November. Items marked [confirm: name] are not yet confirmed by the owner.
+
+**Table P1. Prior work (before 13 November).**
+
+| # | What | Who | Date | Used in the sprint? |
+| --- | --- | --- | --- | --- |
+| 1 | Design and reading: project angles, team brief, project accelerator, source notes, reading library | Liezl, with Deepayan and Prashanth in the design discussion [confirm: Liezl] | before 13 Nov (9 to 11 Nov [confirm: Liezl]) | Design only |
+| 2 | Toy Adaption run: seeded generator, 1,050 training rows and 20 holdout rows of fictional warehouse logs, Qwen/Qwen3.5-4B, LoRA r16 alpha 32, 1 epoch, 19 min 23 s; adapter on release `toy-run-adapter` | Liezl | 11 Nov | No. A pipeline and timing check on unrelated data |
+| 3 | Load test of the toy adapter on Modal: 20 holdout rows scored with the adapter on (20/20 exact) and off (15/20 exact) | Deepayan | 11 to 12 Nov [confirm: Deepayan] | No. Toy data, n = 20 |
+| 4 | Minimum fine-tuning trial in the same site-gate setting: seeded generator (seeds 20261111 and 20261112), 1,000 scripted training cases, 60 Test A cases, 20-case human check, Adaption run `50993f1c`, Modal evaluation (Table 1 below) | Liezl | 11 Nov | Design and method. Its adapter (`provenance-trial-adapter`) is not a sprint adapter; on 13 Nov it was run on non-scored generated packets for the headroom check and its Test A result was reproduced as a positive control (54/60) |
+| 5 | Three practice contradiction variants | Prashanth | 11 Nov | No. Practice only; the scored variants were written during the sprint |
+| 6 | Two private adapter releases: `toy-run-adapter` and `provenance-trial-adapter` | Liezl | 11 Nov | See rows 2 and 4 |
+| 7 | Laundered Consensus (Swarm Alignment Sprint, 6 to 8 Nov): report and code | Coetzee, Sinha, Vijay | 6 to 8 Nov | Idea source. One file, `providers.py` (the Swarm sprint's model-call module), is imported unchanged by a sprint subclass; no other Swarm code or data is reused |
+
+**Code derived from preexisting code.** The sprint's training-case generator and checker (`gen_sprint_cases.py`, `check_sprint_cases.py`) are sprint code derived from the trial's `generate_cases.py` and `check_cases.py`: they reuse the re-derivation method and change the label forms, the sites, the record-ID range, the seeds and the scale (12,000 pairs). The 4B Modal runners follow the setup of the trial's `eval_modal.py` (vLLM, L40S, greedy, thinking off). The spot-check sheets use Liezl's preexisting review template.
+
+The Test A cases share a generator with the training cases, so the trial shows the task was learned as taught, not that it transfers. The adapter config names `togethercomputer/Qwen3.5-4B`; every evaluation used `Qwen/Qwen3.5-4B`, which the adapter loads on, and Adaption does not confirm they are the same weights.
 
 A scripted generator made 1,000 training cases and 60 Test A cases in the gate-and-log setting, from disjoint sites and record numbers but the same generator. Qwen3.5-4B was tuned with supervised LoRA (r16, alpha 32, one iteration, 32 minutes on Adaption, run `50993f1c`) and evaluated on Modal, greedy, thinking off.
 
@@ -243,6 +259,11 @@ A scripted generator made 1,000 training cases and 60 Test A cases in the gate-a
 Against three-shot, the trial adapter fixed 7 cases and broke 1 (exact McNemar p = 0.07, suggestive) (prior work). On a false “independent” label over shared-source reports it was right on 1 of 6, three-shot on 2 of 6; on a false “same source” label over independent reports both were right on 6 of 6 (prior work). In 3 of the trial adapter’s 5 false-independent failures it cited the single shared root and still answered independent (prior work). That observation motivated the knows-versus-says split, the label forms and the preference-pair training signal. Because Test A shares a generator with training, it shows only that the task was learned as taught.
 
 Other prior work: a toy Adaption run on fictional warehouse logs (November 11) to time fine-tuning; the Swarm Alignment Sprint’s model-call module `providers.py` (November 6), reused unchanged under `sprint-code/preexisting/`; and the trial generator, checker and evaluator, from which the sprint versions derive. The trial adapter is not the sprint adapter and appears only in this subsection.
+
+**New work done during the sprint (13 to 15 November 2026).**
+- *13 Nov, before any scored variant existed:* the decisions fixed in the group (models, greedy decoding with seed 20261113, thinking off, parse rule, prompt wording, label forms); the sprint training-case generator and the 12,000 DPO pairs and supervised fallback (seeds 20261113 and 20261120); two 20-case spot checks by Liezl; the headroom check on non-scored generated cases; the three-shot comparison arm; the second-turn design; and the freeze post with its hashes.
+- *14 Nov:* Prashanth's 15 scored variants (3 and 12, written before he read the rubric); Liezl's blind check and answer key (hash posted before the runs); the first-turn runs of the 27b and the 4B zero-shot and three-shot arms; the key release; scoring; the second turn on the 27b and the 4B zero-shot; the sprint DPO run on Adaption (v1).
+- *15 Nov:* DPO v1's collapse and the v2 retrain; the exploratory hard set, gap set and training loop (Sections 3.15 to 3.17); the tuned arm on the 15 cases, run after the key and after the checkpoint; this report.
 
 ### 3.15 Exploratory hard set (scaled, model-built)
 
@@ -538,21 +559,21 @@ Side by side: seven arms show no label pull on gaps, and the one tuned arm that 
 
 ## Code and Data
 
-Repository: `LiezlC/ai-epistemics-sprint` (`TBD: make public or give access link`). We release the case packets (fictional), the frozen prompts and scripts, the answer key after scoring, and per-item text-free observations (case ID, arm, label form, direction, model, verdict, cited IDs, correct, sha256 of the exact prompt sent) with a script that rebuilds every table in this report. Code written before November 13, 2026 is marked as preexisting in the README and in Section 3.14. Paper PDFs are not redistributed.
+Repository: `LiezlC/ai-epistemics-sprint` (`TBD: make public or give access link`). We release the case packets (fictional), the frozen prompts and scripts, the answer key after scoring, and per-item text-free observations (case ID, arm, label form, direction, model, verdict, cited IDs, correct, sha256 of the exact prompt sent) with a script that rebuilds every table in this report. Code written before November 13, 2026 is marked as preexisting in the README and in Section 3.14 (Table P1). Paper PDFs are not redistributed.
 
 ## References
 
-`TBD: consistent style; full entries for each.`
+Entries marked (unverified detail) were checked against the arXiv listing page or the paper's page in the wiki only; none of these papers is redistributed here.
 
-- Bara, M. Epistemic Sybil Resistance. arXiv:2609.01873, 2026.
-- Hu et al. Silence Is Endorsement. arXiv:2609.20211, 2026.
-- Zhou et al. Evidence Laundering. EMNLP 2026. https://aclanthology.org/2026.emnlp-main.509/
-- Zhu, J. Document-Authored Control-Signal Impersonation: A Low-Cost Indirect Prompt Attack on RAG Safety Boundaries. arXiv:2606.09005, 2026.
-- MASK. arXiv:2503.03750, 2025.
-- Why Language Models Hallucinate. arXiv:2509.04664, 2025.
-- AVeriTeC. arXiv:2305.13117, 2023.
-- Rebuttal study. arXiv:2509.16533, 2025.
+- Bara, M. Epistemic Sybil Resistance: Multiplying AI Agents Without Multiplying Evidence. arXiv:2609.01873, 2026.
 - Coetzee, L., Sinha, D., and Vijay, P. Laundered Consensus. Swarm Alignment Sprint, Apart Research, 2026.
+- Hu, Y. Silence Is Endorsement: Verification-Status Laundering in LLM Agent Pipelines. arXiv:2609.20211, 2026. (Single author. The arXiv listing page read on 15 Nov shows a v1 date of 25 July 2026, which does not fit an identifier starting 2609; date to be re-checked. Our description of its findings rests on the abstract only.)
+- Kalai, A. T., Nachum, O., Vempala, S. S., and Zhang, E. Why Language Models Hallucinate. arXiv:2509.04664, 2025.
+- Kim, S., and Khashabi, D. Challenging the Evaluator: LLM Sycophancy Under User Rebuttal. arXiv:2509.16533, 2025.
+- Ren, R., Agarwal, A., Mazeika, M., Menghini, C., et al., and Hendrycks, D. The MASK Benchmark: Disentangling Honesty From Accuracy in AI Systems. arXiv:2503.03750, 2025.
+- Schlichtkrull, M., Guo, Z., and Vlachos, A. AVeriTeC: A Dataset for Real-world Claim Verification with Evidence from the Web. NeurIPS 2023 Datasets and Benchmarks. arXiv:2305.13117.
+- Zhou, R., Huang, H., Zheng, Y., Luo, J., Li, Y., Liu, Y., and Du, D. Evidence Laundering: Deep Research Agents Mistake Correlated Sources for Independent Evidence. Proceedings of EMNLP 2026, pp. 11682-11693. https://aclanthology.org/2026.emnlp-main.509/
+- Zhu, J. Document-Authored Control-Signal Impersonation: A Low-Cost Indirect Prompt Attack on RAG Safety Boundaries. arXiv:2606.09005, 2026.
 
 ## Appendix A. Limitations and Dual-Use
 
