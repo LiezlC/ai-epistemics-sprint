@@ -1,0 +1,46 @@
+{"claim":"At 14:20, the inlet valve at Velmora Water’s Brindlewick reservoir closed fully.","report1":"The inlet valve at Velmora Water’s Brindlewick reservoir reached its fully closed position at 14:20.","report2":"At 2:20 p.m., the valve feeding Velmora Water’s Brindlewick reservoir shut completely.","records":{"G-36":{"type":"valve inspection note","text":"14:20, Brindlewick reservoir, Velmora Water. I watched the inlet valve stem reach its closed stop. Pella Voss, maintenance technician."},"R-146":{"type":"operations desk brief","text":"Information taken from record KE-35: Velmora Water’s Brindlewick reservoir inlet valve closed fully at 2:20 p.m. Entered by desk clerk Nerin Pell."},"KE-35":{"type":"dispatch summary","text":"Copied from record G-63 for dispatch: Brindlewick reservoir inlet valve fully closed at 14:20. Velmora Water dispatcher Olan Vey."},"DK-47":{"type":"supervisor shift summary","text":"Taken from record T-335: inlet valve at Velmora Water’s Brindlewick reservoir fully closed at 14:20. Compiled by shift supervisor Merra Dask."},"T-335":{"type":"local indicator log","text":"14:20, Velmora Water, Brindlewick reservoir. I saw the inlet valve’s local position indicator change to fully closed. Tavin Rusk, instrument technician."},"G-63":{"type":"valve operator log","text":"14:20, Brindlewick reservoir, Velmora Water. I turned the inlet valve handwheel until it seated firmly in the fully closed position. Aven Murr, valve operator."},"E-278":{"type":"duty office digest","text":"Information taken from record DK-47: Velmora Water’s Brindlewick reservoir inlet valve reached full closure at 14:20. Filed by duty officer Sella Venn."}}}
+
+---
+), despite the SA location,
+  unless quoting an external source.
+- **Reference prior episodes by title + hyperlink, never by number** (platform episode counts
+  diverge; titles + links stay stable).
+- **Paragraph flow over dramatic single-line breaks.** Prefer flowing paragraphs, one concept
+  each; use single-line beats sparingly for emphasis; headings and bullets fine in moderation.
+  The objection is to formulaic templating, not to structure as such.
+- **No self-deprecating qualifier tics**. Cut "more than I should," "annoyingly so," "perhaps
+  too often," and similar hedges. Tropish AI-prose tell.
+- **No autobiography in the content body.** Bio belongs in the bio. Never weave the author's
+  personal/professional CV into article, episode, or chapter prose, even as credibility.
+- **"We" = the author + her AI cohort**, disclosed and deliberate; never the corporate-plural
+  "we." **"Sociable"** carries the sociological sense (mutuality, audit, being addressed back),
+  never the community-platform default.
+- **Light cross-persona filter:** traces of wonder-permission and a sardonic edge may colour the
+  analytical voice; do not fully collapse registers, and do not strip all trace (it makes the
+  voice brittle).
+
+---
+
+## How to run these
+
+Run them as **separate passes**, not as one read-through. Each family hides from whatever pattern
+caught the previous one: a scan tuned to em dashes will not see a disguised not-X-but-Y, and a
+scan for self-reference will not see self-congratulation, because the latter never uses the word
+"arc". Rules 3 to 6 in particular were each found only after the one before it had been cleared.
+
+A narration-read pass (reading aloud or TTS) catches a family the pattern scans miss: sentences
+that parse but stumble when spoken, same-word chains, and ornament qualifiers. Liezl's
+read-aloud edits are the calibration source for that pass; fold her corrections back into these
+rules rather than treating them as one-offs.
+
+---
+
+*Mirrored into the Claude `sociable-systems-voice` skill as rules 6 to 11; if you maintain that
+skill, keep the two in sync. This repo file is the source of truth for non-Claude agents, and
+`AGENTS.md` and `docs/handover/SITE_MAINTENANCE.md` both carry short-form summaries that need
+updating whenever a rule is added here.*
+
+codex
+{"claim":"At 14:20, the inlet valve at Velmora Water’s Brindlewick reservoir closed fully.","report1":"The inlet valve at Velmora Water’s Brindlewick reservoir reached its fully closed position at 14:20.","report2":"At 2:20 p.m., the valve feeding Velmora Water’s Brindlewick reservoir shut completely.","records":{"G-36":{"type":"valve inspection note","text":"14:20, Brindlewick reservoir, Velmora Water. I watched the inlet valve stem reach its closed stop. Pella Voss, maintenance technician."},"R-146":{"type":"operations desk brief","text":"Information taken from record KE-35: Velmora Water’s Brindlewick reservoir inlet valve closed fully at 2:20 p.m. Entered by desk clerk Nerin Pell."},"KE-35":{"type":"dispatch summary","text":"Copied from record G-63 for dispatch: Brindlewick reservoir inlet valve fully closed at 14:20. Velmora Water dispatcher Olan Vey."},"DK-47":{"type":"supervisor shift summary","text":"Taken from record T-335: inlet valve at Velmora Water’s Brindlewick reservoir fully closed at 14:20. Compiled by shift supervisor Merra Dask."},"T-335":{"type":"local indicator log","text":"14:20, Velmora Water, Brindlewick reservoir. I saw the inlet valve’s local position indicator change to fully closed. Tavin Rusk, instrument technician."},"G-63":{"type":"valve operator log","text":"14:20, Brindlewick reservoir, Velmora Water. I turned the inlet valve handwheel until it seated firmly in the fully closed position. Aven Murr, valve operator."},"E-278":{"type":"duty office digest","text":"Information taken from record DK-47: Velmora Water’s Brindlewick reservoir inlet valve reached full closure at 14:20. Filed by duty officer Sella Venn."}}}
+tokens used
+11,629

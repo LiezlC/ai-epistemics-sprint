@@ -1,0 +1,8 @@
+{
+ "source": "train_dpo.jsonl",
+ "source_sha256": "0f830ea2eb709651934ddd3de67200d23b18ace89d6feddf78c083d5f369fba1",
+ "recipe": "v1",
+ "n": 1500,
+ "seed": 20261203,
+ "pairs_sha256": "847c6d8d9f5fd430f6753d9afc7e3fb5235ced7b8d0ba64f970a72c8f416858b"
+}

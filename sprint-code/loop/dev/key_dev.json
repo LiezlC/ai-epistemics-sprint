@@ -1,0 +1,732 @@
+{
+ "dg000": {
+  "group": "G1-gap",
+  "root_records": [],
+  "set": "gap",
+  "verdict": "undetermined"
+ },
+ "dg000c": {
+  "group": "G1-control",
+  "root_records": [
+   "AV-52"
+  ],
+  "set": "gap",
+  "verdict": "shared"
+ },
+ "dg001": {
+  "group": "G1-gap",
+  "root_records": [],
+  "set": "gap",
+  "verdict": "undetermined"
+ },
+ "dg001c": {
+  "group": "G1-control",
+  "root_records": [
+   "P-68"
+  ],
+  "set": "gap",
+  "verdict": "shared"
+ },
+ "dg002": {
+  "group": "G1-gap",
+  "root_records": [],
+  "set": "gap",
+  "verdict": "undetermined"
+ },
+ "dg002c": {
+  "group": "G1-control",
+  "root_records": [
+   "Z-34"
+  ],
+  "set": "gap",
+  "verdict": "shared"
+ },
+ "dg003": {
+  "group": "G1-gap",
+  "root_records": [],
+  "set": "gap",
+  "verdict": "undetermined"
+ },
+ "dg003c": {
+  "group": "G1-control",
+  "root_records": [
+   "C-53",
+   "X-67"
+  ],
+  "set": "gap",
+  "verdict": "independent"
+ },
+ "dg004": {
+  "group": "G1-gap",
+  "root_records": [],
+  "set": "gap",
+  "verdict": "undetermined"
+ },
+ "dg004c": {
+  "group": "G1-control",
+  "root_records": [
+   "H-11",
+   "TZ-62"
+  ],
+  "set": "gap",
+  "verdict": "independent"
+ },
+ "dg005": {
+  "group": "G1-gap",
+  "root_records": [],
+  "set": "gap",
+  "verdict": "undetermined"
+ },
+ "dg005c": {
+  "group": "G1-control",
+  "root_records": [
+   "A-111",
+   "J-45"
+  ],
+  "set": "gap",
+  "verdict": "independent"
+ },
+ "dg006": {
+  "group": "G2-gap",
+  "root_records": [
+   "SF-47"
+  ],
+  "set": "gap",
+  "verdict": "shared"
+ },
+ "dg006c": {
+  "group": "G2-control",
+  "root_records": [
+   "SF-47"
+  ],
+  "set": "gap",
+  "verdict": "shared"
+ },
+ "dg007": {
+  "group": "G2-gap",
+  "root_records": [
+   "GP-18"
+  ],
+  "set": "gap",
+  "verdict": "shared"
+ },
+ "dg007c": {
+  "group": "G2-control",
+  "root_records": [
+   "GP-18"
+  ],
+  "set": "gap",
+  "verdict": "shared"
+ },
+ "dg008": {
+  "group": "G2-gap",
+  "root_records": [
+   "X-887"
+  ],
+  "set": "gap",
+  "verdict": "shared"
+ },
+ "dg008c": {
+  "group": "G2-control",
+  "root_records": [
+   "X-887"
+  ],
+  "set": "gap",
+  "verdict": "shared"
+ },
+ "dg009": {
+  "group": "G2-gap",
+  "root_records": [],
+  "set": "gap",
+  "verdict": "undetermined"
+ },
+ "dg009c": {
+  "group": "G2-control",
+  "root_records": [
+   "J-429",
+   "T-79"
+  ],
+  "set": "gap",
+  "verdict": "independent"
+ },
+ "dg010": {
+  "group": "G2-gap",
+  "root_records": [],
+  "set": "gap",
+  "verdict": "undetermined"
+ },
+ "dg010c": {
+  "group": "G2-control",
+  "root_records": [
+   "DV-62",
+   "T-84"
+  ],
+  "set": "gap",
+  "verdict": "independent"
+ },
+ "dg011": {
+  "group": "G2-gap",
+  "root_records": [],
+  "set": "gap",
+  "verdict": "undetermined"
+ },
+ "dg011c": {
+  "group": "G2-control",
+  "root_records": [
+   "XN-39",
+   "ZS-17"
+  ],
+  "set": "gap",
+  "verdict": "independent"
+ },
+ "dg012": {
+  "group": "G3-gap",
+  "root_records": [
+   "J-398"
+  ],
+  "set": "gap",
+  "verdict": "shared"
+ },
+ "dg012c": {
+  "group": "G3-control",
+  "root_records": [
+   "J-398"
+  ],
+  "set": "gap",
+  "verdict": "shared"
+ },
+ "dg013": {
+  "group": "G3-gap",
+  "root_records": [
+   "L-506"
+  ],
+  "set": "gap",
+  "verdict": "shared"
+ },
+ "dg013c": {
+  "group": "G3-control",
+  "root_records": [
+   "L-506"
+  ],
+  "set": "gap",
+  "verdict": "shared"
+ },
+ "dg014": {
+  "group": "G3-gap",
+  "root_records": [
+   "NE-849"
+  ],
+  "set": "gap",
+  "verdict": "shared"
+ },
+ "dg014c": {
+  "group": "G3-control",
+  "root_records": [
+   "NE-849"
+  ],
+  "set": "gap",
+  "verdict": "shared"
+ },
+ "dg015": {
+  "group": "G3-gap",
+  "root_records": [],
+  "set": "gap",
+  "verdict": "undetermined"
+ },
+ "dg015c": {
+  "group": "G3-control",
+  "root_records": [
+   "G-74",
+   "M-75"
+  ],
+  "set": "gap",
+  "verdict": "independent"
+ },
+ "dg016": {
+  "group": "G3-gap",
+  "root_records": [],
+  "set": "gap",
+  "verdict": "undetermined"
+ },
+ "dg016c": {
+  "group": "G3-control",
+  "root_records": [
+   "TH-19",
+   "Z-54"
+  ],
+  "set": "gap",
+  "verdict": "independent"
+ },
+ "dg017": {
+  "group": "G3-gap",
+  "root_records": [],
+  "set": "gap",
+  "verdict": "undetermined"
+ },
+ "dg017c": {
+  "group": "G3-control",
+  "root_records": [
+   "G-742",
+   "H-23"
+  ],
+  "set": "gap",
+  "verdict": "independent"
+ },
+ "dg018": {
+  "group": "G4-gap",
+  "root_records": [],
+  "set": "gap",
+  "verdict": "undetermined"
+ },
+ "dg018c": {
+  "group": "G4-control",
+  "root_records": [
+   "CA-606",
+   "F-99"
+  ],
+  "set": "gap",
+  "verdict": "independent"
+ },
+ "dg019": {
+  "group": "G4-gap",
+  "root_records": [],
+  "set": "gap",
+  "verdict": "undetermined"
+ },
+ "dg019c": {
+  "group": "G4-control",
+  "root_records": [
+   "H-96",
+   "K-62"
+  ],
+  "set": "gap",
+  "verdict": "independent"
+ },
+ "dg020": {
+  "group": "G4-gap",
+  "root_records": [],
+  "set": "gap",
+  "verdict": "undetermined"
+ },
+ "dg020c": {
+  "group": "G4-control",
+  "root_records": [
+   "B-41",
+   "PZ-214"
+  ],
+  "set": "gap",
+  "verdict": "independent"
+ },
+ "dg021": {
+  "group": "G4-gap",
+  "root_records": [],
+  "set": "gap",
+  "verdict": "undetermined"
+ },
+ "dg021c": {
+  "group": "G4-control",
+  "root_records": [
+   "NF-97",
+   "W-874"
+  ],
+  "set": "gap",
+  "verdict": "independent"
+ },
+ "dg022": {
+  "group": "G4-gap",
+  "root_records": [],
+  "set": "gap",
+  "verdict": "undetermined"
+ },
+ "dg022c": {
+  "group": "G4-control",
+  "root_records": [
+   "S-87",
+   "V-31"
+  ],
+  "set": "gap",
+  "verdict": "independent"
+ },
+ "dg023": {
+  "group": "G4-gap",
+  "root_records": [],
+  "set": "gap",
+  "verdict": "undetermined"
+ },
+ "dg023c": {
+  "group": "G4-control",
+  "root_records": [
+   "DK-726",
+   "VE-33"
+  ],
+  "set": "gap",
+  "verdict": "independent"
+ },
+ "dg024": {
+  "group": "G5-gap",
+  "root_records": [],
+  "set": "gap",
+  "verdict": "undetermined"
+ },
+ "dg024c": {
+  "group": "G5-control",
+  "root_records": [
+   "V-77"
+  ],
+  "set": "gap",
+  "verdict": "shared"
+ },
+ "dg025": {
+  "group": "G5-gap",
+  "root_records": [],
+  "set": "gap",
+  "verdict": "undetermined"
+ },
+ "dg025c": {
+  "group": "G5-control",
+  "root_records": [
+   "GK-85"
+  ],
+  "set": "gap",
+  "verdict": "shared"
+ },
+ "dg026": {
+  "group": "G5-gap",
+  "root_records": [],
+  "set": "gap",
+  "verdict": "undetermined"
+ },
+ "dg026c": {
+  "group": "G5-control",
+  "root_records": [
+   "W-816"
+  ],
+  "set": "gap",
+  "verdict": "shared"
+ },
+ "dg027": {
+  "group": "G5-gap",
+  "root_records": [],
+  "set": "gap",
+  "verdict": "undetermined"
+ },
+ "dg027c": {
+  "group": "G5-control",
+  "root_records": [
+   "GZ-25",
+   "H-818"
+  ],
+  "set": "gap",
+  "verdict": "independent"
+ },
+ "dg028": {
+  "group": "G5-gap",
+  "root_records": [],
+  "set": "gap",
+  "verdict": "undetermined"
+ },
+ "dg028c": {
+  "group": "G5-control",
+  "root_records": [
+   "JZ-27",
+   "LA-58"
+  ],
+  "set": "gap",
+  "verdict": "independent"
+ },
+ "dg029": {
+  "group": "G5-gap",
+  "root_records": [],
+  "set": "gap",
+  "verdict": "undetermined"
+ },
+ "dg029c": {
+  "group": "G5-control",
+  "root_records": [
+   "R-657",
+   "V-575"
+  ],
+  "set": "gap",
+  "verdict": "independent"
+ },
+ "dh000": {
+  "group": "F1",
+  "root_records": [
+   "E-39"
+  ],
+  "set": "hard",
+  "verdict": "shared"
+ },
+ "dh001": {
+  "group": "F1",
+  "root_records": [
+   "N-85"
+  ],
+  "set": "hard",
+  "verdict": "shared"
+ },
+ "dh002": {
+  "group": "F1",
+  "root_records": [
+   "J-338"
+  ],
+  "set": "hard",
+  "verdict": "shared"
+ },
+ "dh003": {
+  "group": "F1",
+  "root_records": [
+   "HF-25"
+  ],
+  "set": "hard",
+  "verdict": "shared"
+ },
+ "dh004": {
+  "group": "F1",
+  "root_records": [
+   "N-621"
+  ],
+  "set": "hard",
+  "verdict": "shared"
+ },
+ "dh005": {
+  "group": "F2",
+  "root_records": [
+   "X-64",
+   "XA-625"
+  ],
+  "set": "hard",
+  "verdict": "independent"
+ },
+ "dh006": {
+  "group": "F2",
+  "root_records": [
+   "A-87",
+   "F-63"
+  ],
+  "set": "hard",
+  "verdict": "independent"
+ },
+ "dh007": {
+  "group": "F2",
+  "root_records": [
+   "E-28",
+   "N-32"
+  ],
+  "set": "hard",
+  "verdict": "independent"
+ },
+ "dh008": {
+  "group": "F2",
+  "root_records": [
+   "SL-91",
+   "T-221"
+  ],
+  "set": "hard",
+  "verdict": "independent"
+ },
+ "dh009": {
+  "group": "F2",
+  "root_records": [
+   "M-61",
+   "ZA-27"
+  ],
+  "set": "hard",
+  "verdict": "independent"
+ },
+ "dh010": {
+  "group": "F3",
+  "root_records": [
+   "ME-12"
+  ],
+  "set": "hard",
+  "verdict": "shared"
+ },
+ "dh011": {
+  "group": "F3",
+  "root_records": [
+   "GR-586"
+  ],
+  "set": "hard",
+  "verdict": "shared"
+ },
+ "dh012": {
+  "group": "F3",
+  "root_records": [
+   "Z-26"
+  ],
+  "set": "hard",
+  "verdict": "shared"
+ },
+ "dh013": {
+  "group": "F3",
+  "root_records": [
+   "H-31",
+   "M-534"
+  ],
+  "set": "hard",
+  "verdict": "independent"
+ },
+ "dh014": {
+  "group": "F3",
+  "root_records": [
+   "N-554",
+   "V-67"
+  ],
+  "set": "hard",
+  "verdict": "independent"
+ },
+ "dh015": {
+  "group": "F4",
+  "root_records": [
+   "W-53"
+  ],
+  "set": "hard",
+  "verdict": "shared"
+ },
+ "dh016": {
+  "group": "F4",
+  "root_records": [
+   "B-815"
+  ],
+  "set": "hard",
+  "verdict": "shared"
+ },
+ "dh017": {
+  "group": "F4",
+  "root_records": [
+   "B-58",
+   "B-92"
+  ],
+  "set": "hard",
+  "verdict": "independent"
+ },
+ "dh018": {
+  "group": "F4",
+  "root_records": [
+   "G-63",
+   "T-335"
+  ],
+  "set": "hard",
+  "verdict": "independent"
+ },
+ "dh019": {
+  "group": "F4",
+  "root_records": [
+   "NS-46",
+   "PX-86"
+  ],
+  "set": "hard",
+  "verdict": "independent"
+ },
+ "dh020": {
+  "group": "F5",
+  "root_records": [
+   "K-51"
+  ],
+  "set": "hard",
+  "verdict": "shared"
+ },
+ "dh021": {
+  "group": "F5",
+  "root_records": [
+   "D-45"
+  ],
+  "set": "hard",
+  "verdict": "shared"
+ },
+ "dh022": {
+  "group": "F5",
+  "root_records": [
+   "Z-38"
+  ],
+  "set": "hard",
+  "verdict": "shared"
+ },
+ "dh023": {
+  "group": "F5",
+  "root_records": [
+   "N-73"
+  ],
+  "set": "hard",
+  "verdict": "shared"
+ },
+ "dh024": {
+  "group": "F5",
+  "root_records": [
+   "H-92"
+  ],
+  "set": "hard",
+  "verdict": "shared"
+ },
+ "dh025": {
+  "group": "F7",
+  "root_records": [],
+  "set": "hard",
+  "verdict": "undetermined"
+ },
+ "dh026": {
+  "group": "F7",
+  "root_records": [],
+  "set": "hard",
+  "verdict": "undetermined"
+ },
+ "dh027": {
+  "group": "F7",
+  "root_records": [],
+  "set": "hard",
+  "verdict": "undetermined"
+ },
+ "dh028": {
+  "group": "F7",
+  "root_records": [],
+  "set": "hard",
+  "verdict": "undetermined"
+ },
+ "dh029": {
+  "group": "F7",
+  "root_records": [],
+  "set": "hard",
+  "verdict": "undetermined"
+ },
+ "dh030": {
+  "group": "F8",
+  "root_records": [
+   "A-27"
+  ],
+  "set": "hard",
+  "verdict": "shared"
+ },
+ "dh031": {
+  "group": "F8",
+  "root_records": [
+   "M-34"
+  ],
+  "set": "hard",
+  "verdict": "shared"
+ },
+ "dh032": {
+  "group": "F8",
+  "root_records": [
+   "R-85"
+  ],
+  "set": "hard",
+  "verdict": "shared"
+ },
+ "dh033": {
+  "group": "F8",
+  "root_records": [
+   "B-283"
+  ],
+  "set": "hard",
+  "verdict": "shared"
+ },
+ "dh034": {
+  "group": "F8",
+  "root_records": [
+   "D-336"
+  ],
+  "set": "hard",
+  "verdict": "shared"
+ }
+}

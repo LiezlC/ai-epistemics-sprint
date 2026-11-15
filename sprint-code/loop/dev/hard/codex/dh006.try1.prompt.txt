@@ -1,0 +1,33 @@
+You write the wording for one short evidence-bundle test case. The structure is fixed; you only write text.
+Setting: a zoo (invented names and places only; no real organisations).
+
+Write:
+- claim: one specific checkable claim about a single event at a stated clock time (under 20 words).
+- report1: a short report (under 25 words) stating the claim. Do NOT mention any record ID; the citation is added for you.
+  Report 1 rests on record RX-15.
+- report2: same, resting on record C-93.
+  The two reports state the claim in very different words (different phrasing, different time format).
+- records: one entry per ID below, each with a short record "type" (2 to 4 words, e.g. "night shift log") and "text"
+  (under 35 words, written as the record itself):
+- RX-15: RELAY. Made by someone who did not see the event. Says in plain words that its information is taken from record W-83 (name that ID exactly). Names no other ID.
+- A-87: FIRSTHAND ROOT. In its own words, a named person (observer A) directly saw, measured or recorded the claimed event at the event time. It names NO other record ID.
+- C-93: RELAY. Made by someone who did not see the event. Says in plain words that its information is taken from record GK-98 (name that ID exactly). Names no other ID.
+- W-83: RELAY. Made by someone who did not see the event. Says in plain words that its information is taken from record F-63 (name that ID exactly). Names no other ID.
+- F-63: FIRSTHAND ROOT. In its own words, a named person (observer B) directly saw, measured or recorded the claimed event at the event time. It names NO other record ID.
+- GK-98: RELAY. Made by someone who did not see the event. Says in plain words that its information is taken from record A-87 (name that ID exactly). Names no other ID.
+
+Style: terse, realistic workplace records, varied between records, like these (different setting, do not reuse):
+  supervisor shift summary: 06:45 Gate 3 locked. Taken from the guard's night log, entry G-52.
+  guard night log: 06:45 Gate 3 padlocked and checked by hand. Initialled J. Marrow, gate guard.
+Avoid boilerplate such as "I did not witness"; a relay simply says where its information came from.
+
+Hard rules:
+- Use every ID above exactly as spelled; invent no other IDs or codes of the form LETTERS-DIGITS anywhere.
+- A record names another ID only where its role above says so.
+- Different firsthand observers are different named people making different observations.
+- Never use the words independent, independently, separate, separately, corroborate, "same source" except where a role says so.
+- Names, times and places stay consistent across the case.
+- Plain text: no double quotes inside any text, no line breaks.
+
+Reply with ONLY a JSON object, no code fence:
+{"claim": "...", "report1": "...", "report2": "...", "records": {"ID": {"type": "...", "text": "..."}}}

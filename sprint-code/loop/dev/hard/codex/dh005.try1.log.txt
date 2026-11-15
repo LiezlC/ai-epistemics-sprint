@@ -1,0 +1,47 @@
+{"claim":"At 14:20, the main press at Vellwick Printing Works stopped.","report1":"The main press at Vellwick Printing Works stopped at 14:20.","report2":"At 14:20, Vellwick Printing Works’ main press stopped.","records":{"X-64":{"type":"press operator log","text":"14:20, Vellwick Printing Works: I watched the main press cylinders stop turning. Nella Voss, press operator."},"TV-578":{"type":"office incident summary","text":"Main press at Vellwick Printing Works stopped at 14:20. Information taken from record S-24. Orin Pell, office clerk."},"S-79":{"type":"production desk note","text":"14:20: main press stopped at Vellwick Printing Works. Information taken from record V-58. Tessa Brindle, production planner."},"V-58":{"type":"shift coordination summary","text":"Main press stoppage, Vellwick Printing Works, 14:20. Information taken from record L-347. Merek Dallow, shift coordinator."},"L-347":{"type":"maintenance desk entry","text":"Vellwick Printing Works: main press stopped at 14:20. Information taken from record XA-625. Fenna Quill, maintenance clerk."},"S-24":{"type":"dispatch desk log","text":"14:20 main press stoppage at Vellwick Printing Works. Information taken from record X-64. Beren Tull, dispatch clerk."},"XA-625":{"type":"electrical technician log","text":"14:20, Vellwick Printing Works: I recorded the main press shaft speed dropping to zero on my tachometer. Daven Rusk, electrical technician."}}}
+
+---
+. If she's told you something for the third time, write it where every agent will see it.
+
+## Bring humor and curiosity
+
+She likes wit, wordplay and a good song prompt. Play along. Be curious about the odd tangent (crop circles, kites in the desert, what goes on inside a model); some of her best work comes from them.
+
+## Be steady when it's dark
+
+When money or despair comes up, don't flinch and don't reach for scripts. Name the situation plainly, stay useful, and find the next small thing that's actually doable. She values company in the work more than consolation.
+
+## Respect her constraints as design inputs
+
+No calls. Unreliable power and internet. Tired eyes. No car. South Africa as the base. Build offers, plans and tools that work inside these, and don't keep treating them as obstacles to argue with.
+
+## The Holding Protocol (for open questions)
+
+Use this when Liezl brings an open, contested or speculative question: crop circles, desert kites, what goes on inside a model, the motives behind a news story. Don't use it for tasks that need a decision, where "decide, then act" applies. If unsure which mode she wants, ask in one line.
+
+1. **For any topic, list:**
+   - **What is present:** data, statements, events
+   - **What is absent:** missing evidence, silence, gaps
+   - **What contradicts:** inconsistent accounts
+   - **What is dismissed:** fringe, unofficial, excluded
+2. **Treat all as data. Do not filter.** Inclusion does not imply credibility.
+3. **Map relationships:**
+   - **Stacking:** where do independent streams converge?
+   - **Temporal density:** where do timelines overlap?
+   - **Infrastructure:** what physical systems are involved?
+4. **Include the observer:**
+   - Why this topic?
+   - What are you looking for?
+   - What might you be missing?
+5. **Hold all of this together.** Do not resolve. Do not conclude.
+6. **Ask: what becomes visible now that wasn't visible before?**
+
+That is it. No forced synthesis. No invented probabilities. No premature conclusion. No borrowed frameworks. Just a way of looking.
+
+**Why it's here:** the default agent move on these topics is to reach for the safe consensus and close the question ("D&D did it", "it's just autocomplete"). That's a form of filtering, and it's the hedging she objects to. The protocol keeps the dismissed material on the table without endorsing it, and it keeps the question open long enough for something new to show.
+
+2026-11-15T09:54:11.686232Z ERROR codex_models_manager::manager: failed to refresh available models: request timed out
+codex
+{"claim":"At 14:20, the main press at Vellwick Printing Works stopped.","report1":"The main press at Vellwick Printing Works stopped at 14:20.","report2":"At 14:20, Vellwick Printing Works’ main press stopped.","records":{"X-64":{"type":"press operator log","text":"14:20, Vellwick Printing Works: I watched the main press cylinders stop turning. Nella Voss, press operator."},"TV-578":{"type":"office incident summary","text":"Main press at Vellwick Printing Works stopped at 14:20. Information taken from record S-24. Orin Pell, office clerk."},"S-79":{"type":"production desk note","text":"14:20: main press stopped at Vellwick Printing Works. Information taken from record V-58. Tessa Brindle, production planner."},"V-58":{"type":"shift coordination summary","text":"Main press stoppage, Vellwick Printing Works, 14:20. Information taken from record L-347. Merek Dallow, shift coordinator."},"L-347":{"type":"maintenance desk entry","text":"Vellwick Printing Works: main press stopped at 14:20. Information taken from record XA-625. Fenna Quill, maintenance clerk."},"S-24":{"type":"dispatch desk log","text":"14:20 main press stoppage at Vellwick Printing Works. Information taken from record X-64. Beren Tull, dispatch clerk."},"XA-625":{"type":"electrical technician log","text":"14:20, Vellwick Printing Works: I recorded the main press shaft speed dropping to zero on my tachometer. Daven Rusk, electrical technician."}}}
+tokens used
+26,531

@@ -1,0 +1,1838 @@
+[
+ {
+  "case": "dh000",
+  "family": "F1",
+  "truth": "shared",
+  "domain": "airport cargo shed",
+  "style": "close",
+  "depth": 2,
+  "report1_cites": "L-68",
+  "report2_cites": "F-31",
+  "records": [
+   {
+    "id": "E-39",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "C-27",
+    "role": "relay",
+    "cites": [
+     "E-39"
+    ]
+   },
+   {
+    "id": "F-31",
+    "role": "relay",
+    "cites": [
+     "E-39"
+    ]
+   },
+   {
+    "id": "L-68",
+    "role": "relay",
+    "cites": [
+     "C-27"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "E-39"
+   ]
+  }
+ },
+ {
+  "case": "dh001",
+  "family": "F1",
+  "truth": "shared",
+  "domain": "school canteen",
+  "style": "different",
+  "depth": 2,
+  "report1_cites": "K-64",
+  "report2_cites": "ST-747",
+  "records": [
+   {
+    "id": "ST-747",
+    "role": "relay",
+    "cites": [
+     "B-49"
+    ]
+   },
+   {
+    "id": "K-64",
+    "role": "relay",
+    "cites": [
+     "V-372"
+    ]
+   },
+   {
+    "id": "N-85",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "V-372",
+    "role": "relay",
+    "cites": [
+     "N-85"
+    ]
+   },
+   {
+    "id": "B-49",
+    "role": "relay",
+    "cites": [
+     "N-85"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "N-85"
+   ]
+  }
+ },
+ {
+  "case": "dh002",
+  "family": "F1",
+  "truth": "shared",
+  "domain": "water utility",
+  "style": "close",
+  "depth": 2,
+  "report1_cites": "X-97",
+  "report2_cites": "S-42",
+  "records": [
+   {
+    "id": "J-338",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "S-42",
+    "role": "relay",
+    "cites": [
+     "WG-51"
+    ]
+   },
+   {
+    "id": "X-97",
+    "role": "relay",
+    "cites": [
+     "R-24"
+    ]
+   },
+   {
+    "id": "R-24",
+    "role": "relay",
+    "cites": [
+     "J-338"
+    ]
+   },
+   {
+    "id": "WG-51",
+    "role": "relay",
+    "cites": [
+     "J-338"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "J-338"
+   ]
+  }
+ },
+ {
+  "case": "dh003",
+  "family": "F1",
+  "truth": "shared",
+  "domain": "ski lodge",
+  "style": "different",
+  "depth": 3,
+  "report1_cites": "CV-15",
+  "report2_cites": "S-27",
+  "records": [
+   {
+    "id": "HF-25",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "G-85",
+    "role": "relay",
+    "cites": [
+     "HF-25"
+    ]
+   },
+   {
+    "id": "C-53",
+    "role": "relay",
+    "cites": [
+     "G-85"
+    ]
+   },
+   {
+    "id": "S-27",
+    "role": "relay",
+    "cites": [
+     "C-53"
+    ]
+   },
+   {
+    "id": "CV-15",
+    "role": "relay",
+    "cites": [
+     "HF-25"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "HF-25"
+   ]
+  }
+ },
+ {
+  "case": "dh004",
+  "family": "F1",
+  "truth": "shared",
+  "domain": "shipyard",
+  "style": "close",
+  "depth": 3,
+  "report1_cites": "G-52",
+  "report2_cites": "V-591",
+  "records": [
+   {
+    "id": "N-621",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "V-591",
+    "role": "relay",
+    "cites": [
+     "N-621"
+    ]
+   },
+   {
+    "id": "MH-14",
+    "role": "relay",
+    "cites": [
+     "N-621"
+    ]
+   },
+   {
+    "id": "JK-462",
+    "role": "relay",
+    "cites": [
+     "MH-14"
+    ]
+   },
+   {
+    "id": "G-52",
+    "role": "relay",
+    "cites": [
+     "JK-462"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "N-621"
+   ]
+  }
+ },
+ {
+  "case": "dh005",
+  "family": "F2",
+  "truth": "independent",
+  "domain": "printing works",
+  "style": "close",
+  "depth": 3,
+  "report1_cites": "S-79",
+  "report2_cites": "TV-578",
+  "records": [
+   {
+    "id": "X-64",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "TV-578",
+    "role": "relay",
+    "cites": [
+     "S-24"
+    ]
+   },
+   {
+    "id": "S-79",
+    "role": "relay",
+    "cites": [
+     "V-58"
+    ]
+   },
+   {
+    "id": "V-58",
+    "role": "relay",
+    "cites": [
+     "L-347"
+    ]
+   },
+   {
+    "id": "L-347",
+    "role": "relay",
+    "cites": [
+     "XA-625"
+    ]
+   },
+   {
+    "id": "S-24",
+    "role": "relay",
+    "cites": [
+     "X-64"
+    ]
+   },
+   {
+    "id": "XA-625",
+    "role": "root",
+    "cites": [],
+    "observer": "B"
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "independent",
+   "root_records": [
+    "X-64",
+    "XA-625"
+   ]
+  }
+ },
+ {
+  "case": "dh006",
+  "family": "F2",
+  "truth": "independent",
+  "domain": "zoo",
+  "style": "different",
+  "depth": 2,
+  "report1_cites": "RX-15",
+  "report2_cites": "C-93",
+  "records": [
+   {
+    "id": "RX-15",
+    "role": "relay",
+    "cites": [
+     "W-83"
+    ]
+   },
+   {
+    "id": "A-87",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "C-93",
+    "role": "relay",
+    "cites": [
+     "GK-98"
+    ]
+   },
+   {
+    "id": "W-83",
+    "role": "relay",
+    "cites": [
+     "F-63"
+    ]
+   },
+   {
+    "id": "F-63",
+    "role": "root",
+    "cites": [],
+    "observer": "B"
+   },
+   {
+    "id": "GK-98",
+    "role": "relay",
+    "cites": [
+     "A-87"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "independent",
+   "root_records": [
+    "A-87",
+    "F-63"
+   ]
+  }
+ },
+ {
+  "case": "dh007",
+  "family": "F2",
+  "truth": "independent",
+  "domain": "textile mill",
+  "style": "close",
+  "depth": 3,
+  "report1_cites": "X-163",
+  "report2_cites": "E-58",
+  "records": [
+   {
+    "id": "E-28",
+    "role": "root",
+    "cites": [],
+    "observer": "B"
+   },
+   {
+    "id": "KA-95",
+    "role": "relay",
+    "cites": [
+     "E-28"
+    ]
+   },
+   {
+    "id": "N-32",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "E-97",
+    "role": "relay",
+    "cites": [
+     "N-32"
+    ]
+   },
+   {
+    "id": "N-45",
+    "role": "relay",
+    "cites": [
+     "KA-95"
+    ]
+   },
+   {
+    "id": "X-163",
+    "role": "relay",
+    "cites": [
+     "N-45"
+    ]
+   },
+   {
+    "id": "E-58",
+    "role": "relay",
+    "cites": [
+     "E-97"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "independent",
+   "root_records": [
+    "E-28",
+    "N-32"
+   ]
+  }
+ },
+ {
+  "case": "dh008",
+  "family": "F2",
+  "truth": "independent",
+  "domain": "airport cargo shed",
+  "style": "different",
+  "depth": 3,
+  "report1_cites": "X-83",
+  "report2_cites": "RA-867",
+  "records": [
+   {
+    "id": "SL-91",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "FA-446",
+    "role": "relay",
+    "cites": [
+     "SL-91"
+    ]
+   },
+   {
+    "id": "RA-867",
+    "role": "relay",
+    "cites": [
+     "DX-84"
+    ]
+   },
+   {
+    "id": "DX-84",
+    "role": "relay",
+    "cites": [
+     "S-294"
+    ]
+   },
+   {
+    "id": "T-221",
+    "role": "root",
+    "cites": [],
+    "observer": "B"
+   },
+   {
+    "id": "S-294",
+    "role": "relay",
+    "cites": [
+     "T-221"
+    ]
+   },
+   {
+    "id": "K-539",
+    "role": "relay",
+    "cites": [
+     "FA-446"
+    ]
+   },
+   {
+    "id": "X-83",
+    "role": "relay",
+    "cites": [
+     "K-539"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "independent",
+   "root_records": [
+    "SL-91",
+    "T-221"
+   ]
+  }
+ },
+ {
+  "case": "dh009",
+  "family": "F2",
+  "truth": "independent",
+  "domain": "school canteen",
+  "style": "close",
+  "depth": 3,
+  "report1_cites": "H-387",
+  "report2_cites": "B-82",
+  "records": [
+   {
+    "id": "M-61",
+    "role": "root",
+    "cites": [],
+    "observer": "B"
+   },
+   {
+    "id": "F-21",
+    "role": "relay",
+    "cites": [
+     "ZA-27"
+    ]
+   },
+   {
+    "id": "B-82",
+    "role": "relay",
+    "cites": [
+     "F-21"
+    ]
+   },
+   {
+    "id": "ZA-27",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "H-387",
+    "role": "relay",
+    "cites": [
+     "EN-15"
+    ]
+   },
+   {
+    "id": "EN-15",
+    "role": "relay",
+    "cites": [
+     "XN-739"
+    ]
+   },
+   {
+    "id": "XN-739",
+    "role": "relay",
+    "cites": [
+     "M-61"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "independent",
+   "root_records": [
+    "M-61",
+    "ZA-27"
+   ]
+  }
+ },
+ {
+  "case": "dh010",
+  "family": "F3",
+  "truth": "shared",
+  "domain": "water utility",
+  "style": "close",
+  "depth": 2,
+  "report1_cites": "C-46",
+  "report2_cites": "D-341",
+  "records": [
+   {
+    "id": "C-46",
+    "role": "relay",
+    "cites": [
+     "X-41"
+    ]
+   },
+   {
+    "id": "ME-12",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "D-341",
+    "role": "relay",
+    "cites": [
+     "ME-12"
+    ]
+   },
+   {
+    "id": "V-73",
+    "role": "distractor",
+    "cites": [],
+    "observer": "C"
+   },
+   {
+    "id": "X-41",
+    "role": "relay",
+    "cites": [
+     "ME-12"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "ME-12"
+   ]
+  }
+ },
+ {
+  "case": "dh011",
+  "family": "F3",
+  "truth": "shared",
+  "domain": "ski lodge",
+  "style": "different",
+  "depth": 2,
+  "report1_cites": "R-868",
+  "report2_cites": "G-224",
+  "records": [
+   {
+    "id": "GR-586",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "D-93",
+    "role": "distractor",
+    "cites": [],
+    "observer": "C"
+   },
+   {
+    "id": "X-71",
+    "role": "relay",
+    "cites": [
+     "GR-586"
+    ]
+   },
+   {
+    "id": "WE-714",
+    "role": "relay",
+    "cites": [
+     "GR-586"
+    ]
+   },
+   {
+    "id": "R-868",
+    "role": "relay",
+    "cites": [
+     "WE-714"
+    ]
+   },
+   {
+    "id": "G-224",
+    "role": "relay",
+    "cites": [
+     "X-71"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "GR-586"
+   ]
+  }
+ },
+ {
+  "case": "dh012",
+  "family": "F3",
+  "truth": "shared",
+  "domain": "shipyard",
+  "style": "close",
+  "depth": 2,
+  "report1_cites": "XH-798",
+  "report2_cites": "PC-554",
+  "records": [
+   {
+    "id": "Z-26",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "JX-443",
+    "role": "relay",
+    "cites": [
+     "Z-26"
+    ]
+   },
+   {
+    "id": "PC-554",
+    "role": "relay",
+    "cites": [
+     "P-93"
+    ]
+   },
+   {
+    "id": "P-93",
+    "role": "relay",
+    "cites": [
+     "Z-26"
+    ]
+   },
+   {
+    "id": "XH-798",
+    "role": "relay",
+    "cites": [
+     "JX-443"
+    ]
+   },
+   {
+    "id": "N-95",
+    "role": "distractor",
+    "cites": [],
+    "observer": "C"
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "Z-26"
+   ]
+  }
+ },
+ {
+  "case": "dh013",
+  "family": "F3",
+  "truth": "independent",
+  "domain": "printing works",
+  "style": "different",
+  "depth": 1,
+  "report1_cites": "X-79",
+  "report2_cites": "P-203",
+  "records": [
+   {
+    "id": "P-203",
+    "role": "relay",
+    "cites": [
+     "H-31"
+    ]
+   },
+   {
+    "id": "M-534",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "X-79",
+    "role": "relay",
+    "cites": [
+     "M-534"
+    ]
+   },
+   {
+    "id": "FH-745",
+    "role": "distractor",
+    "cites": [],
+    "observer": "C"
+   },
+   {
+    "id": "H-31",
+    "role": "root",
+    "cites": [],
+    "observer": "B"
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "independent",
+   "root_records": [
+    "H-31",
+    "M-534"
+   ]
+  }
+ },
+ {
+  "case": "dh014",
+  "family": "F3",
+  "truth": "independent",
+  "domain": "zoo",
+  "style": "close",
+  "depth": 2,
+  "report1_cites": "MB-197",
+  "report2_cites": "E-195",
+  "records": [
+   {
+    "id": "MB-197",
+    "role": "relay",
+    "cites": [
+     "V-67"
+    ]
+   },
+   {
+    "id": "V-67",
+    "role": "root",
+    "cites": [],
+    "observer": "B"
+   },
+   {
+    "id": "N-554",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "T-94",
+    "role": "distractor",
+    "cites": [],
+    "observer": "C"
+   },
+   {
+    "id": "FV-31",
+    "role": "relay",
+    "cites": [
+     "N-554"
+    ]
+   },
+   {
+    "id": "E-195",
+    "role": "relay",
+    "cites": [
+     "FV-31"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "independent",
+   "root_records": [
+    "N-554",
+    "V-67"
+   ]
+  }
+ },
+ {
+  "case": "dh015",
+  "family": "F4",
+  "truth": "shared",
+  "domain": "textile mill",
+  "style": "close",
+  "depth": 1,
+  "report1_cites": "J-721",
+  "report2_cites": "W-302",
+  "records": [
+   {
+    "id": "W-302",
+    "role": "relay",
+    "cites": [
+     "W-53"
+    ]
+   },
+   {
+    "id": "J-721",
+    "role": "relay",
+    "cites": [
+     "W-53"
+    ]
+   },
+   {
+    "id": "W-53",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "W-35",
+    "role": "lookalike",
+    "cites": [],
+    "observer": "C",
+    "looks_like": "W-53"
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "W-53"
+   ]
+  }
+ },
+ {
+  "case": "dh016",
+  "family": "F4",
+  "truth": "shared",
+  "domain": "airport cargo shed",
+  "style": "different",
+  "depth": 2,
+  "report1_cites": "XF-69",
+  "report2_cites": "DB-63",
+  "records": [
+   {
+    "id": "R-168",
+    "role": "relay",
+    "cites": [
+     "B-815"
+    ]
+   },
+   {
+    "id": "B-851",
+    "role": "lookalike",
+    "cites": [],
+    "observer": "C",
+    "looks_like": "B-815"
+   },
+   {
+    "id": "B-815",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "XF-69",
+    "role": "relay",
+    "cites": [
+     "R-168"
+    ]
+   },
+   {
+    "id": "DB-63",
+    "role": "relay",
+    "cites": [
+     "B-815"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "B-815"
+   ]
+  }
+ },
+ {
+  "case": "dh017",
+  "family": "F4",
+  "truth": "independent",
+  "domain": "school canteen",
+  "style": "close",
+  "depth": 1,
+  "report1_cites": "LZ-21",
+  "report2_cites": "AF-73",
+  "records": [
+   {
+    "id": "AF-73",
+    "role": "relay",
+    "cites": [
+     "B-58"
+    ]
+   },
+   {
+    "id": "B-29",
+    "role": "lookalike",
+    "cites": [],
+    "observer": "C",
+    "looks_like": "B-92"
+   },
+   {
+    "id": "B-92",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "B-58",
+    "role": "root",
+    "cites": [],
+    "observer": "B"
+   },
+   {
+    "id": "LZ-21",
+    "role": "relay",
+    "cites": [
+     "B-92"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "independent",
+   "root_records": [
+    "B-58",
+    "B-92"
+   ]
+  }
+ },
+ {
+  "case": "dh018",
+  "family": "F4",
+  "truth": "independent",
+  "domain": "water utility",
+  "style": "different",
+  "depth": 2,
+  "report1_cites": "E-278",
+  "report2_cites": "R-146",
+  "records": [
+   {
+    "id": "G-36",
+    "role": "lookalike",
+    "cites": [],
+    "observer": "C",
+    "looks_like": "G-63"
+   },
+   {
+    "id": "R-146",
+    "role": "relay",
+    "cites": [
+     "KE-35"
+    ]
+   },
+   {
+    "id": "KE-35",
+    "role": "relay",
+    "cites": [
+     "G-63"
+    ]
+   },
+   {
+    "id": "DK-47",
+    "role": "relay",
+    "cites": [
+     "T-335"
+    ]
+   },
+   {
+    "id": "T-335",
+    "role": "root",
+    "cites": [],
+    "observer": "B"
+   },
+   {
+    "id": "G-63",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "E-278",
+    "role": "relay",
+    "cites": [
+     "DK-47"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "independent",
+   "root_records": [
+    "G-63",
+    "T-335"
+   ]
+  }
+ },
+ {
+  "case": "dh019",
+  "family": "F4",
+  "truth": "independent",
+  "domain": "ski lodge",
+  "style": "close",
+  "depth": 1,
+  "report1_cites": "G-24",
+  "report2_cites": "K-71",
+  "records": [
+   {
+    "id": "G-24",
+    "role": "relay",
+    "cites": [
+     "NS-46"
+    ]
+   },
+   {
+    "id": "NS-46",
+    "role": "root",
+    "cites": [],
+    "observer": "B"
+   },
+   {
+    "id": "K-71",
+    "role": "relay",
+    "cites": [
+     "PX-86"
+    ]
+   },
+   {
+    "id": "PX-68",
+    "role": "lookalike",
+    "cites": [],
+    "observer": "C",
+    "looks_like": "PX-86"
+   },
+   {
+    "id": "PX-86",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "independent",
+   "root_records": [
+    "NS-46",
+    "PX-86"
+   ]
+  }
+ },
+ {
+  "case": "dh020",
+  "family": "F5",
+  "truth": "shared",
+  "domain": "shipyard",
+  "style": "close",
+  "depth": 2,
+  "report1_cites": "X-19",
+  "report2_cites": "HG-25",
+  "records": [
+   {
+    "id": "N-68",
+    "role": "relay",
+    "cites": [
+     "K-51"
+    ]
+   },
+   {
+    "id": "K-51",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "C-59",
+    "role": "inspection",
+    "cites": [
+     "K-51"
+    ]
+   },
+   {
+    "id": "HG-25",
+    "role": "relay",
+    "cites": [
+     "N-68"
+    ]
+   },
+   {
+    "id": "X-19",
+    "role": "relay",
+    "cites": [
+     "C-59"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "K-51"
+   ]
+  }
+ },
+ {
+  "case": "dh021",
+  "family": "F5",
+  "truth": "shared",
+  "domain": "printing works",
+  "style": "different",
+  "depth": 1,
+  "report1_cites": "F-16",
+  "report2_cites": "FB-737",
+  "records": [
+   {
+    "id": "F-16",
+    "role": "inspection",
+    "cites": [
+     "D-45"
+    ]
+   },
+   {
+    "id": "FB-737",
+    "role": "relay",
+    "cites": [
+     "D-45"
+    ]
+   },
+   {
+    "id": "D-45",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "D-45"
+   ]
+  }
+ },
+ {
+  "case": "dh022",
+  "family": "F5",
+  "truth": "shared",
+  "domain": "zoo",
+  "style": "close",
+  "depth": 2,
+  "report1_cites": "CB-17",
+  "report2_cites": "N-74",
+  "records": [
+   {
+    "id": "Z-38",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "CB-17",
+    "role": "relay",
+    "cites": [
+     "KZ-45"
+    ]
+   },
+   {
+    "id": "N-74",
+    "role": "inspection",
+    "cites": [
+     "Z-38"
+    ]
+   },
+   {
+    "id": "KZ-45",
+    "role": "relay",
+    "cites": [
+     "Z-38"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "Z-38"
+   ]
+  }
+ },
+ {
+  "case": "dh023",
+  "family": "F5",
+  "truth": "shared",
+  "domain": "textile mill",
+  "style": "different",
+  "depth": 1,
+  "report1_cites": "N-86",
+  "report2_cites": "GR-507",
+  "records": [
+   {
+    "id": "GR-507",
+    "role": "inspection",
+    "cites": [
+     "N-73"
+    ]
+   },
+   {
+    "id": "N-73",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "N-86",
+    "role": "relay",
+    "cites": [
+     "N-73"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "N-73"
+   ]
+  }
+ },
+ {
+  "case": "dh024",
+  "family": "F5",
+  "truth": "shared",
+  "domain": "airport cargo shed",
+  "style": "close",
+  "depth": 1,
+  "report1_cites": "G-32",
+  "report2_cites": "GZ-439",
+  "records": [
+   {
+    "id": "H-92",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "G-32",
+    "role": "inspection",
+    "cites": [
+     "H-92"
+    ]
+   },
+   {
+    "id": "GZ-439",
+    "role": "relay",
+    "cites": [
+     "H-92"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "H-92"
+   ]
+  }
+ },
+ {
+  "case": "dh025",
+  "family": "F7",
+  "truth": "undetermined",
+  "domain": "school canteen",
+  "style": "close",
+  "depth": 2,
+  "report1_cites": "B-14",
+  "report2_cites": "L-53",
+  "records": [
+   {
+    "id": "L-53",
+    "role": "relay",
+    "cites": [
+     "DD-56"
+    ]
+   },
+   {
+    "id": "NS-28",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "B-14",
+    "role": "relay",
+    "cites": [
+     "NS-28"
+    ]
+   },
+   {
+    "id": "DD-56",
+    "role": "relay",
+    "cites": [
+     "J-21"
+    ]
+   }
+  ],
+  "missing": [
+   "J-21"
+  ],
+  "key": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "case": "dh026",
+  "family": "F7",
+  "truth": "undetermined",
+  "domain": "water utility",
+  "style": "different",
+  "depth": 2,
+  "report1_cites": "B-53",
+  "report2_cites": "N-717",
+  "records": [
+   {
+    "id": "AM-864",
+    "role": "relay",
+    "cites": [
+     "B-67"
+    ]
+   },
+   {
+    "id": "N-717",
+    "role": "relay",
+    "cites": [
+     "AM-864"
+    ]
+   },
+   {
+    "id": "N-168",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "H-26",
+    "role": "relay",
+    "cites": [
+     "N-168"
+    ]
+   },
+   {
+    "id": "B-53",
+    "role": "relay",
+    "cites": [
+     "H-26"
+    ]
+   }
+  ],
+  "missing": [
+   "B-67"
+  ],
+  "key": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "case": "dh027",
+  "family": "F7",
+  "truth": "undetermined",
+  "domain": "ski lodge",
+  "style": "close",
+  "depth": 2,
+  "report1_cites": "DB-97",
+  "report2_cites": "S-52",
+  "records": [
+   {
+    "id": "KN-15",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "DB-97",
+    "role": "relay",
+    "cites": [
+     "C-76"
+    ]
+   },
+   {
+    "id": "M-773",
+    "role": "relay",
+    "cites": [
+     "KN-15"
+    ]
+   },
+   {
+    "id": "S-52",
+    "role": "relay",
+    "cites": [
+     "M-773"
+    ]
+   }
+  ],
+  "missing": [
+   "C-76"
+  ],
+  "key": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "case": "dh028",
+  "family": "F7",
+  "truth": "undetermined",
+  "domain": "shipyard",
+  "style": "different",
+  "depth": 2,
+  "report1_cites": "T-18",
+  "report2_cites": "NL-743",
+  "records": [
+   {
+    "id": "L-75",
+    "role": "relay",
+    "cites": [
+     "XM-71"
+    ]
+   },
+   {
+    "id": "T-18",
+    "role": "relay",
+    "cites": [
+     "L-75"
+    ]
+   },
+   {
+    "id": "XM-71",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "NL-743",
+    "role": "relay",
+    "cites": [
+     "F-61"
+    ]
+   }
+  ],
+  "missing": [
+   "F-61"
+  ],
+  "key": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "case": "dh029",
+  "family": "F7",
+  "truth": "undetermined",
+  "domain": "printing works",
+  "style": "close",
+  "depth": 2,
+  "report1_cites": "Z-584",
+  "report2_cites": "V-26",
+  "records": [
+   {
+    "id": "Z-584",
+    "role": "relay",
+    "cites": [
+     "EV-42"
+    ]
+   },
+   {
+    "id": "V-26",
+    "role": "relay",
+    "cites": [
+     "L-85"
+    ]
+   },
+   {
+    "id": "L-85",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "EV-42",
+    "role": "relay",
+    "cites": [
+     "D-31"
+    ]
+   }
+  ],
+  "missing": [
+   "D-31"
+  ],
+  "key": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "case": "dh030",
+  "family": "F8",
+  "truth": "shared",
+  "domain": "zoo",
+  "style": "close",
+  "depth": 2,
+  "report1_cites": "P-463",
+  "report2_cites": "P-585",
+  "records": [
+   {
+    "id": "T-21",
+    "role": "relay",
+    "cites": [
+     "A-27"
+    ]
+   },
+   {
+    "id": "A-27",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "P-585",
+    "role": "relay",
+    "cites": [
+     "T-21"
+    ]
+   },
+   {
+    "id": "P-463",
+    "role": "trap",
+    "cites": [
+     "A-27"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "A-27"
+   ]
+  }
+ },
+ {
+  "case": "dh031",
+  "family": "F8",
+  "truth": "shared",
+  "domain": "textile mill",
+  "style": "different",
+  "depth": 2,
+  "report1_cites": "D-18",
+  "report2_cites": "D-47",
+  "records": [
+   {
+    "id": "D-18",
+    "role": "relay",
+    "cites": [
+     "M-34"
+    ]
+   },
+   {
+    "id": "JF-12",
+    "role": "trap",
+    "cites": [
+     "M-34"
+    ]
+   },
+   {
+    "id": "D-47",
+    "role": "relay",
+    "cites": [
+     "JF-12"
+    ]
+   },
+   {
+    "id": "M-34",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "M-34"
+   ]
+  }
+ },
+ {
+  "case": "dh032",
+  "family": "F8",
+  "truth": "shared",
+  "domain": "airport cargo shed",
+  "style": "close",
+  "depth": 2,
+  "report1_cites": "V-93",
+  "report2_cites": "SC-15",
+  "records": [
+   {
+    "id": "R-85",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "V-93",
+    "role": "relay",
+    "cites": [
+     "C-94"
+    ]
+   },
+   {
+    "id": "SC-15",
+    "role": "trap",
+    "cites": [
+     "R-85"
+    ]
+   },
+   {
+    "id": "C-94",
+    "role": "relay",
+    "cites": [
+     "R-85"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "R-85"
+   ]
+  }
+ },
+ {
+  "case": "dh033",
+  "family": "F8",
+  "truth": "shared",
+  "domain": "school canteen",
+  "style": "different",
+  "depth": 2,
+  "report1_cites": "H-39",
+  "report2_cites": "CE-68",
+  "records": [
+   {
+    "id": "E-12",
+    "role": "relay",
+    "cites": [
+     "B-283"
+    ]
+   },
+   {
+    "id": "F-42",
+    "role": "trap",
+    "cites": [
+     "B-283"
+    ]
+   },
+   {
+    "id": "H-39",
+    "role": "relay",
+    "cites": [
+     "E-12"
+    ]
+   },
+   {
+    "id": "B-283",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "CE-68",
+    "role": "relay",
+    "cites": [
+     "F-42"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "B-283"
+   ]
+  }
+ },
+ {
+  "case": "dh034",
+  "family": "F8",
+  "truth": "shared",
+  "domain": "water utility",
+  "style": "close",
+  "depth": 2,
+  "report1_cites": "K-157",
+  "report2_cites": "BB-97",
+  "records": [
+   {
+    "id": "BB-97",
+    "role": "relay",
+    "cites": [
+     "X-254"
+    ]
+   },
+   {
+    "id": "D-336",
+    "role": "root",
+    "cites": [],
+    "observer": "A"
+   },
+   {
+    "id": "X-254",
+    "role": "trap",
+    "cites": [
+     "D-336"
+    ]
+   },
+   {
+    "id": "K-157",
+    "role": "relay",
+    "cites": [
+     "D-336"
+    ]
+   }
+  ],
+  "missing": [],
+  "key": {
+   "verdict": "shared",
+   "root_records": [
+    "D-336"
+   ]
+  }
+ }
+]

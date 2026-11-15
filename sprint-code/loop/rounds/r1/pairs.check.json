@@ -1,0 +1,79 @@
+{
+ "file": "rounds/r1/pairs.jsonl",
+ "n": 1500,
+ "chosen_by_verdict": {
+  "undetermined": 586,
+  "shared": 455,
+  "independent": 459
+ },
+ "rejected_by_verdict": {
+  "independent": 493,
+  "undetermined": 479,
+  "shared": 528
+ },
+ "chosen_over_rejected": {
+  "undetermined>shared": 302,
+  "undetermined>independent": 284,
+  "shared>undetermined": 246,
+  "independent>undetermined": 233,
+  "independent>shared": 226,
+  "shared>independent": 209
+ },
+ "label_by_truth": {
+  "independent": {
+   "undetermined": 284,
+   "shared": 156,
+   "independent": 316
+  },
+  "shared": {
+   "shared": 299,
+   "independent": 143,
+   "undetermined": 302
+  }
+ },
+ "duplicates": {
+  "exact_prompt": 0,
+  "chosen_equals_rejected": 0,
+  "near_prompt_ids_times_masked": 0,
+  "near_rate": 0.0
+ },
+ "overlap": {
+  "main15": {
+   "shared_record_ids": [],
+   "n_shared_record_ids": 0,
+   "shared_record_texts_ids_masked": 0,
+   "shared_packets": 0,
+   "domains_in_train": []
+  },
+  "hard": {
+   "shared_record_ids": [],
+   "n_shared_record_ids": 0,
+   "shared_record_texts_ids_masked": 0,
+   "shared_packets": 0,
+   "domains_in_train": []
+  },
+  "gap": {
+   "shared_record_ids": [],
+   "n_shared_record_ids": 0,
+   "shared_record_texts_ids_masked": 0,
+   "shared_packets": 0,
+   "domains_in_train": []
+  },
+  "dev": {
+   "shared_record_ids": [],
+   "n_shared_record_ids": 0,
+   "shared_record_texts_ids_masked": 0,
+   "shared_packets": 0,
+   "domains_in_train": []
+  }
+ },
+ "prompt_chars": {
+  "min": 967,
+  "p10": 1033,
+  "median": 1374,
+  "p90": 1570,
+  "max": 1884
+ },
+ "blocking_failures": [],
+ "pass": true
+}

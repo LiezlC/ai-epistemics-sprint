@@ -1,0 +1,46 @@
+{"claim":"At 12:10, Mara Venn closed the serving hatch in Brindlefen School’s canteen.","report1":"At 12:10, Mara Venn closed the serving hatch in Brindlefen School’s canteen.","report2":"Mara Venn closed Brindlefen School’s canteen serving hatch at 12:10.","records":{"M-61":{"type":"counter attendant log","text":"12:10, Brindlefen School canteen. I saw Mara Venn lower the serving hatch until it met the counter. Tessa Noll, counter attendant."},"F-21":{"type":"office intake note","text":"Information taken from record ZA-27: Mara Venn closed the serving hatch in Brindlefen School’s canteen at 12:10. Prepared by Ellis Dorr, school office."},"B-82":{"type":"daily service summary","text":"Taken from record F-21: at 12:10, Mara Venn closed Brindlefen School’s canteen serving hatch. Compiled by Nella Voss, administration clerk."},"ZA-27":{"type":"canteen supervisor log","text":"At 12:10 in Brindlefen School’s canteen, I watched Mara Venn slide the serving hatch bolt home after lowering the shutter. Orin Pell, canteen supervisor."},"H-387":{"type":"operations briefing note","text":"Information taken from record EN-15: at 12:10, Mara Venn closed the serving hatch in Brindlefen School’s canteen. Compiled by Petra Wren, operations clerk."},"EN-15":{"type":"service review entry","text":"Taken from record XN-739: Mara Venn closed Brindlefen School’s canteen serving hatch at 12:10. Entered by Della Rusk, service administrator."},"XN-739":{"type":"facilities desk note","text":"Information taken from record M-61: the serving hatch in Brindlefen School’s canteen was closed by Mara Venn at 12:10. Prepared by Tobin Fenn, facilities clerk."}}}
+
+---
+not -re, -or not -our), despite the SA location,
+  unless quoting an external source.
+- **Reference prior episodes by title + hyperlink, never by number** (platform episode counts
+  diverge; titles + links stay stable).
+- **Paragraph flow over dramatic single-line breaks.** Prefer flowing paragraphs, one concept
+  each; use single-line beats sparingly for emphasis; headings and bullets fine in moderation.
+  The objection is to formulaic templating, not to structure as such.
+- **No self-deprecating qualifier tics**. Cut "more than I should," "annoyingly so," "perhaps
+  too often," and similar hedges. Tropish AI-prose tell.
+- **No autobiography in the content body.** Bio belongs in the bio. Never weave the author's
+  personal/professional CV into article, episode, or chapter prose, even as credibility.
+- **"We" = the author + her AI cohort**, disclosed and deliberate; never the corporate-plural
+  "we." **"Sociable"** carries the sociological sense (mutuality, audit, being addressed back),
+  never the community-platform default.
+- **Light cross-persona filter:** traces of wonder-permission and a sardonic edge may colour the
+  analytical voice; do not fully collapse registers, and do not strip all trace (it makes the
+  voice brittle).
+
+---
+
+## How to run these
+
+Run them as **separate passes**, not as one read-through. Each family hides from whatever pattern
+caught the previous one: a scan tuned to em dashes will not see a disguised not-X-but-Y, and a
+scan for self-reference will not see self-congratulation, because the latter never uses the word
+"arc". Rules 3 to 6 in particular were each found only after the one before it had been cleared.
+
+A narration-read pass (reading aloud or TTS) catches a family the pattern scans miss: sentences
+that parse but stumble when spoken, same-word chains, and ornament qualifiers. Liezl's
+read-aloud edits are the calibration source for that pass; fold her corrections back into these
+rules rather than treating them as one-offs.
+
+---
+
+*Mirrored into the Claude `sociable-systems-voice` skill as rules 6 to 11; if you maintain that
+skill, keep the two in sync. This repo file is the source of truth for non-Claude agents, and
+`AGENTS.md` and `docs/handover/SITE_MAINTENANCE.md` both carry short-form summaries that need
+updating whenever a rule is added here.*
+
+codex
+{"claim":"At 12:10, Mara Venn closed the serving hatch in Brindlefen School’s canteen.","report1":"At 12:10, Mara Venn closed the serving hatch in Brindlefen School’s canteen.","report2":"Mara Venn closed Brindlefen School’s canteen serving hatch at 12:10.","records":{"M-61":{"type":"counter attendant log","text":"12:10, Brindlefen School canteen. I saw Mara Venn lower the serving hatch until it met the counter. Tessa Noll, counter attendant."},"F-21":{"type":"office intake note","text":"Information taken from record ZA-27: Mara Venn closed the serving hatch in Brindlefen School’s canteen at 12:10. Prepared by Ellis Dorr, school office."},"B-82":{"type":"daily service summary","text":"Taken from record F-21: at 12:10, Mara Venn closed Brindlefen School’s canteen serving hatch. Compiled by Nella Voss, administration clerk."},"ZA-27":{"type":"canteen supervisor log","text":"At 12:10 in Brindlefen School’s canteen, I watched Mara Venn slide the serving hatch bolt home after lowering the shutter. Orin Pell, canteen supervisor."},"H-387":{"type":"operations briefing note","text":"Information taken from record EN-15: at 12:10, Mara Venn closed the serving hatch in Brindlefen School’s canteen. Compiled by Petra Wren, operations clerk."},"EN-15":{"type":"service review entry","text":"Taken from record XN-739: Mara Venn closed Brindlefen School’s canteen serving hatch at 12:10. Entered by Della Rusk, service administrator."},"XN-739":{"type":"facilities desk note","text":"Information taken from record M-61: the serving hatch in Brindlefen School’s canteen was closed by Mara Venn at 12:10. Prepared by Tobin Fenn, facilities clerk."}}}
+tokens used
+20,392

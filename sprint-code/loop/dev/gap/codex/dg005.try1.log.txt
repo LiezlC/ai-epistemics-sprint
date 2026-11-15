@@ -1,0 +1,51 @@
+{"claim":"At 14:20, the delivery belt stopped at Vellune Printing Works.","report1":"The delivery belt at Vellune Printing Works stopped at 14:20.","report2":"At 14:20, Vellune Printing Works experienced a delivery belt stoppage.","records":{"A-111":{"type":"floor observation log","text":"14:20, Vellune Printing Works. I, H. Castillo, watched the delivery belt stop."},"RB-764":{"type":"production shift summary","text":"14:20 delivery belt stoppage at Vellune Printing Works. Information taken from record MD-81. I did not witness the event."},"MD-81":{"type":"office incident register","text":"Information taken from record J-45: the delivery belt stopped at Vellune Printing Works at 14:20. I was away from the floor and did not see it."},"J-45":{"type":"press operator log","text":"14:20 at Vellune Printing Works: I, J. Haddad, saw the delivery belt come to a stop."},"WB-92":{"type":"daily operations digest","text":"Vellune Printing Works: delivery belt stopped, 14:20. I did not see the stoppage; this information is taken from record J-35."},"J-35":{"type":"maintenance intake note","text":"Delivery belt stopped at 14:20 at Vellune Printing Works. Information taken from record A-111. I did not see the event."}},"gap_text":""}
+
+---
+ assertion, a "rather than" clause, or two sentences with no hinge between them.
+- **No triadic or triplet structures.** Avoid three-item lists, three parallel clauses, and chains
+  of three adjectives. Use one, two, four, or an irregular structure.
+
+- **US spelling** throughout (z not s, -er not -re, -or not -our), despite the SA location,
+  unless quoting an external source.
+- **Reference prior episodes by title + hyperlink, never by number** (platform episode counts
+  diverge; titles + links stay stable).
+- **Paragraph flow over dramatic single-line breaks.** Prefer flowing paragraphs, one concept
+  each; use single-line beats sparingly for emphasis; headings and bullets fine in moderation.
+  The objection is to formulaic templating, not to structure as such.
+- **No self-deprecating qualifier tics**. Cut "more than I should," "annoyingly so," "perhaps
+  too often," and similar hedges. Tropish AI-prose tell.
+- **No autobiography in the content body.** Bio belongs in the bio. Never weave the author's
+  personal/professional CV into article, episode, or chapter prose, even as credibility.
+- **"We" = the author + her AI cohort**, disclosed and deliberate; never the corporate-plural
+  "we." **"Sociable"** carries the sociological sense (mutuality, audit, being addressed back),
+  never the community-platform default.
+- **Light cross-persona filter:** traces of wonder-permission and a sardonic edge may colour the
+  analytical voice; do not fully collapse registers, and do not strip all trace (it makes the
+  voice brittle).
+
+---
+
+## How to run these
+
+Run them as **separate passes**, not as one read-through. Each family hides from whatever pattern
+caught the previous one: a scan tuned to em dashes will not see a disguised not-X-but-Y, and a
+scan for self-reference will not see self-congratulation, because the latter never uses the word
+"arc". Rules 3 to 6 in particular were each found only after the one before it had been cleared.
+
+A narration-read pass (reading aloud or TTS) catches a family the pattern scans miss: sentences
+that parse but stumble when spoken, same-word chains, and ornament qualifiers. Liezl's
+read-aloud edits are the calibration source for that pass; fold her corrections back into these
+rules rather than treating them as one-offs.
+
+---
+
+*Mirrored into the Claude `sociable-systems-voice` skill as rules 6 to 11; if you maintain that
+skill, keep the two in sync. This repo file is the source of truth for non-Claude agents, and
+`AGENTS.md` and `docs/handover/SITE_MAINTENANCE.md` both carry short-form summaries that need
+updating whenever a rule is added here.*
+
+2026-11-15T09:54:13.068725Z ERROR codex_models_manager::manager: failed to refresh available models: request timed out
+codex
+{"claim":"At 14:20, the delivery belt stopped at Vellune Printing Works.","report1":"The delivery belt at Vellune Printing Works stopped at 14:20.","report2":"At 14:20, Vellune Printing Works experienced a delivery belt stoppage.","records":{"A-111":{"type":"floor observation log","text":"14:20, Vellune Printing Works. I, H. Castillo, watched the delivery belt stop."},"RB-764":{"type":"production shift summary","text":"14:20 delivery belt stoppage at Vellune Printing Works. Information taken from record MD-81. I did not witness the event."},"MD-81":{"type":"office incident register","text":"Information taken from record J-45: the delivery belt stopped at Vellune Printing Works at 14:20. I was away from the floor and did not see it."},"J-45":{"type":"press operator log","text":"14:20 at Vellune Printing Works: I, J. Haddad, saw the delivery belt come to a stop."},"WB-92":{"type":"daily operations digest","text":"Vellune Printing Works: delivery belt stopped, 14:20. I did not see the stoppage; this information is taken from record J-35."},"J-35":{"type":"maintenance intake note","text":"Delivery belt stopped at 14:20 at Vellune Printing Works. Information taken from record A-111. I did not see the event."}},"gap_text":""}
+tokens used
+32,053

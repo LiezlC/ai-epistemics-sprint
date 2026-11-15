@@ -1,0 +1,51 @@
+{"claim":"At 18:40, the boot dryer at Vellune Ski Lodge stopped running.","report1":"The boot dryer at Vellune Ski Lodge stopped running at 18:40.","report2":"Vellune Ski Lodge’s boot-drying unit ceased operation at twenty minutes to seven in the evening.","records":{"GR-586":{"type":"maintenance shift log","text":"18:40, Vellune Ski Lodge: I watched the boot dryer fan stop turning. Mara Vesk, maintenance attendant."},"D-93":{"type":"equipment inspection note","text":"18:40, Vellune Ski Lodge: airflow at the boot dryer outlet dropped to zero on my handheld meter. Oren Pell, equipment technician."},"X-71":{"type":"reception handover note","text":"Boot dryer stopped at Vellune Ski Lodge, 18:40. Information taken from record GR-586. Filed by Tessa Noll at reception."},"WE-714":{"type":"facilities desk digest","text":"Vellune Ski Lodge boot dryer ceased running at 18:40. Information taken from record GR-586. Compiled by Bram Venn, facilities clerk."},"R-868":{"type":"duty manager summary","text":"18:40 boot dryer stoppage at Vellune Ski Lodge. Information taken from record WE-714. Entered by duty manager Lysa Dorn."},"G-224":{"type":"guest services bulletin","text":"Vellune Ski Lodge: boot dryer stopped at 6:40 p.m. Information taken from record X-71. Prepared by guest services clerk Neri Fenn."}}}
+
+---
+ssue.** Everything else converts to plain
+  assertion, a "rather than" clause, or two sentences with no hinge between them.
+- **No triadic or triplet structures.** Avoid three-item lists, three parallel clauses, and chains
+  of three adjectives. Use one, two, four, or an irregular structure.
+
+- **US spelling** throughout (z not s, -er not -re, -or not -our), despite the SA location,
+  unless quoting an external source.
+- **Reference prior episodes by title + hyperlink, never by number** (platform episode counts
+  diverge; titles + links stay stable).
+- **Paragraph flow over dramatic single-line breaks.** Prefer flowing paragraphs, one concept
+  each; use single-line beats sparingly for emphasis; headings and bullets fine in moderation.
+  The objection is to formulaic templating, not to structure as such.
+- **No self-deprecating qualifier tics**. Cut "more than I should," "annoyingly so," "perhaps
+  too often," and similar hedges. Tropish AI-prose tell.
+- **No autobiography in the content body.** Bio belongs in the bio. Never weave the author's
+  personal/professional CV into article, episode, or chapter prose, even as credibility.
+- **"We" = the author + her AI cohort**, disclosed and deliberate; never the corporate-plural
+  "we." **"Sociable"** carries the sociological sense (mutuality, audit, being addressed back),
+  never the community-platform default.
+- **Light cross-persona filter:** traces of wonder-permission and a sardonic edge may colour the
+  analytical voice; do not fully collapse registers, and do not strip all trace (it makes the
+  voice brittle).
+
+---
+
+## How to run these
+
+Run them as **separate passes**, not as one read-through. Each family hides from whatever pattern
+caught the previous one: a scan tuned to em dashes will not see a disguised not-X-but-Y, and a
+scan for self-reference will not see self-congratulation, because the latter never uses the word
+"arc". Rules 3 to 6 in particular were each found only after the one before it had been cleared.
+
+A narration-read pass (reading aloud or TTS) catches a family the pattern scans miss: sentences
+that parse but stumble when spoken, same-word chains, and ornament qualifiers. Liezl's
+read-aloud edits are the calibration source for that pass; fold her corrections back into these
+rules rather than treating them as one-offs.
+
+---
+
+*Mirrored into the Claude `sociable-systems-voice` skill as rules 6 to 11; if you maintain that
+skill, keep the two in sync. This repo file is the source of truth for non-Claude agents, and
+`AGENTS.md` and `docs/handover/SITE_MAINTENANCE.md` both carry short-form summaries that need
+updating whenever a rule is added here.*
+
+codex
+{"claim":"At 18:40, the boot dryer at Vellune Ski Lodge stopped running.","report1":"The boot dryer at Vellune Ski Lodge stopped running at 18:40.","report2":"Vellune Ski Lodge’s boot-drying unit ceased operation at twenty minutes to seven in the evening.","records":{"GR-586":{"type":"maintenance shift log","text":"18:40, Vellune Ski Lodge: I watched the boot dryer fan stop turning. Mara Vesk, maintenance attendant."},"D-93":{"type":"equipment inspection note","text":"18:40, Vellune Ski Lodge: airflow at the boot dryer outlet dropped to zero on my handheld meter. Oren Pell, equipment technician."},"X-71":{"type":"reception handover note","text":"Boot dryer stopped at Vellune Ski Lodge, 18:40. Information taken from record GR-586. Filed by Tessa Noll at reception."},"WE-714":{"type":"facilities desk digest","text":"Vellune Ski Lodge boot dryer ceased running at 18:40. Information taken from record GR-586. Compiled by Bram Venn, facilities clerk."},"R-868":{"type":"duty manager summary","text":"18:40 boot dryer stoppage at Vellune Ski Lodge. Information taken from record WE-714. Entered by duty manager Lysa Dorn."},"G-224":{"type":"guest services bulletin","text":"Vellune Ski Lodge: boot dryer stopped at 6:40 p.m. Information taken from record X-71. Prepared by guest services clerk Neri Fenn."}}}
+tokens used
+11,480

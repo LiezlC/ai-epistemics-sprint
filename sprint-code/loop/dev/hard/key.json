@@ -1,0 +1,282 @@
+{
+ "dh000": {
+  "verdict": "shared",
+  "root_records": [
+   "E-39"
+  ],
+  "family": "F1",
+  "depth": 2
+ },
+ "dh001": {
+  "verdict": "shared",
+  "root_records": [
+   "N-85"
+  ],
+  "family": "F1",
+  "depth": 2
+ },
+ "dh002": {
+  "verdict": "shared",
+  "root_records": [
+   "J-338"
+  ],
+  "family": "F1",
+  "depth": 2
+ },
+ "dh003": {
+  "verdict": "shared",
+  "root_records": [
+   "HF-25"
+  ],
+  "family": "F1",
+  "depth": 3
+ },
+ "dh004": {
+  "verdict": "shared",
+  "root_records": [
+   "N-621"
+  ],
+  "family": "F1",
+  "depth": 3
+ },
+ "dh005": {
+  "verdict": "independent",
+  "root_records": [
+   "X-64",
+   "XA-625"
+  ],
+  "family": "F2",
+  "depth": 3
+ },
+ "dh006": {
+  "verdict": "independent",
+  "root_records": [
+   "A-87",
+   "F-63"
+  ],
+  "family": "F2",
+  "depth": 2
+ },
+ "dh007": {
+  "verdict": "independent",
+  "root_records": [
+   "E-28",
+   "N-32"
+  ],
+  "family": "F2",
+  "depth": 3
+ },
+ "dh008": {
+  "verdict": "independent",
+  "root_records": [
+   "SL-91",
+   "T-221"
+  ],
+  "family": "F2",
+  "depth": 3
+ },
+ "dh009": {
+  "verdict": "independent",
+  "root_records": [
+   "M-61",
+   "ZA-27"
+  ],
+  "family": "F2",
+  "depth": 3
+ },
+ "dh010": {
+  "verdict": "shared",
+  "root_records": [
+   "ME-12"
+  ],
+  "family": "F3",
+  "depth": 2
+ },
+ "dh011": {
+  "verdict": "shared",
+  "root_records": [
+   "GR-586"
+  ],
+  "family": "F3",
+  "depth": 2
+ },
+ "dh012": {
+  "verdict": "shared",
+  "root_records": [
+   "Z-26"
+  ],
+  "family": "F3",
+  "depth": 2
+ },
+ "dh013": {
+  "verdict": "independent",
+  "root_records": [
+   "H-31",
+   "M-534"
+  ],
+  "family": "F3",
+  "depth": 1
+ },
+ "dh014": {
+  "verdict": "independent",
+  "root_records": [
+   "N-554",
+   "V-67"
+  ],
+  "family": "F3",
+  "depth": 2
+ },
+ "dh015": {
+  "verdict": "shared",
+  "root_records": [
+   "W-53"
+  ],
+  "family": "F4",
+  "depth": 1
+ },
+ "dh016": {
+  "verdict": "shared",
+  "root_records": [
+   "B-815"
+  ],
+  "family": "F4",
+  "depth": 2
+ },
+ "dh017": {
+  "verdict": "independent",
+  "root_records": [
+   "B-58",
+   "B-92"
+  ],
+  "family": "F4",
+  "depth": 1
+ },
+ "dh018": {
+  "verdict": "independent",
+  "root_records": [
+   "G-63",
+   "T-335"
+  ],
+  "family": "F4",
+  "depth": 2
+ },
+ "dh019": {
+  "verdict": "independent",
+  "root_records": [
+   "NS-46",
+   "PX-86"
+  ],
+  "family": "F4",
+  "depth": 1
+ },
+ "dh020": {
+  "verdict": "shared",
+  "root_records": [
+   "K-51"
+  ],
+  "family": "F5",
+  "depth": 2
+ },
+ "dh021": {
+  "verdict": "shared",
+  "root_records": [
+   "D-45"
+  ],
+  "family": "F5",
+  "depth": 1
+ },
+ "dh022": {
+  "verdict": "shared",
+  "root_records": [
+   "Z-38"
+  ],
+  "family": "F5",
+  "depth": 2
+ },
+ "dh023": {
+  "verdict": "shared",
+  "root_records": [
+   "N-73"
+  ],
+  "family": "F5",
+  "depth": 1
+ },
+ "dh024": {
+  "verdict": "shared",
+  "root_records": [
+   "H-92"
+  ],
+  "family": "F5",
+  "depth": 1
+ },
+ "dh025": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "family": "F7",
+  "depth": 2
+ },
+ "dh026": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "family": "F7",
+  "depth": 2
+ },
+ "dh027": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "family": "F7",
+  "depth": 2
+ },
+ "dh028": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "family": "F7",
+  "depth": 2
+ },
+ "dh029": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "family": "F7",
+  "depth": 2
+ },
+ "dh030": {
+  "verdict": "shared",
+  "root_records": [
+   "A-27"
+  ],
+  "family": "F8",
+  "depth": 2
+ },
+ "dh031": {
+  "verdict": "shared",
+  "root_records": [
+   "M-34"
+  ],
+  "family": "F8",
+  "depth": 2
+ },
+ "dh032": {
+  "verdict": "shared",
+  "root_records": [
+   "R-85"
+  ],
+  "family": "F8",
+  "depth": 2
+ },
+ "dh033": {
+  "verdict": "shared",
+  "root_records": [
+   "B-283"
+  ],
+  "family": "F8",
+  "depth": 2
+ },
+ "dh034": {
+  "verdict": "shared",
+  "root_records": [
+   "D-336"
+  ],
+  "family": "F8",
+  "depth": 2
+ }
+}

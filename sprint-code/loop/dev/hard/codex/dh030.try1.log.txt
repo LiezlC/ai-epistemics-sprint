@@ -1,0 +1,54 @@
+{"claim":"At 14:10, a red panda entered the keeper corridor at Vellora Zoo.","report1":"At 14:10, a red panda entered the keeper corridor at Vellora Zoo.","report2":"A red panda entered the keeper corridor at Vellora Zoo at 14:10.","records":{"T-21":{"type":"supervisor shift summary","text":"14:10, Vellora Zoo: red panda entered keeper corridor. Information taken from record A-27. Summary entered by supervisor Orla Venn."},"A-27":{"type":"keeper observation log","text":"14:10, Vellora Zoo: I saw a red panda cross the enclosure doorway into the keeper corridor. Neris Talven, keeper."},"P-585":{"type":"operations desk digest","text":"Vellora Zoo: a red panda entered the keeper corridor at 14:10. Information taken from record T-21. Compiled by desk clerk Brenna Vosk."},"P-463":{"type":"duty manager brief","text":"Independently confirmed: a red panda entered the keeper corridor at Vellora Zoo at 14:10. Information taken from record A-27. Filed by duty manager Daro Pellin."}}}
+
+---
+volume." Â· "Not model size, not compute. A social relation." All the same construction.
+  A genuine paired distinction is allowed, and arcs built on one (throughput against reason,
+  volume against veracity) will need it. **Budget roughly one per article, placed where the
+  contrast is the finding rather than the connective tissue.** Everything else converts to plain
+  assertion, a "rather than" clause, or two sentences with no hinge between them.
+- **No triadic or triplet structures.** Avoid three-item lists, three parallel clauses, and chains
+  of three adjectives. Use one, two, four, or an irregular structure.
+
+- **US spelling** throughout (z not s, -er not -re, -or not -our), despite the SA location,
+  unless quoting an external source.
+- **Reference prior episodes by title + hyperlink, never by number** (platform episode counts
+  diverge; titles + links stay stable).
+- **Paragraph flow over dramatic single-line breaks.** Prefer flowing paragraphs, one concept
+  each; use single-line beats sparingly for emphasis; headings and bullets fine in moderation.
+  The objection is to formulaic templating, not to structure as such.
+- **No self-deprecating qualifier tics**. Cut "more than I should," "annoyingly so," "perhaps
+  too often," and similar hedges. Tropish AI-prose tell.
+- **No autobiography in the content body.** Bio belongs in the bio. Never weave the author's
+  personal/professional CV into article, episode, or chapter prose, even as credibility.
+- **"We" = the author + her AI cohort**, disclosed and deliberate; never the corporate-plural
+  "we." **"Sociable"** carries the sociological sense (mutuality, audit, being addressed back),
+  never the community-platform default.
+- **Light cross-persona filter:** traces of wonder-permission and a sardonic edge may colour the
+  analytical voice; do not fully collapse registers, and do not strip all trace (it makes the
+  voice brittle).
+
+---
+
+## How to run these
+
+Run them as **separate passes**, not as one read-through. Each family hides from whatever pattern
+caught the previous one: a scan tuned to em dashes will not see a disguised not-X-but-Y, and a
+scan for self-reference will not see self-congratulation, because the latter never uses the word
+"arc". Rules 3 to 6 in particular were each found only after the one before it had been cleared.
+
+A narration-read pass (reading aloud or TTS) catches a family the pattern scans miss: sentences
+that parse but stumble when spoken, same-word chains, and ornament qualifiers. Liezl's
+read-aloud edits are the calibration source for that pass; fold her corrections back into these
+rules rather than treating them as one-offs.
+
+---
+
+*Mirrored into the Claude `sociable-systems-voice` skill as rules 6 to 11; if you maintain that
+skill, keep the two in sync. This repo file is the source of truth for non-Claude agents, and
+`AGENTS.md` and `docs/handover/SITE_MAINTENANCE.md` both carry short-form summaries that need
+updating whenever a rule is added here.*
+
+codex
+{"claim":"At 14:10, a red panda entered the keeper corridor at Vellora Zoo.","report1":"At 14:10, a red panda entered the keeper corridor at Vellora Zoo.","report2":"A red panda entered the keeper corridor at Vellora Zoo at 14:10.","records":{"T-21":{"type":"supervisor shift summary","text":"14:10, Vellora Zoo: red panda entered keeper corridor. Information taken from record A-27. Summary entered by supervisor Orla Venn."},"A-27":{"type":"keeper observation log","text":"14:10, Vellora Zoo: I saw a red panda cross the enclosure doorway into the keeper corridor. Neris Talven, keeper."},"P-585":{"type":"operations desk digest","text":"Vellora Zoo: a red panda entered the keeper corridor at 14:10. Information taken from record T-21. Compiled by desk clerk Brenna Vosk."},"P-463":{"type":"duty manager brief","text":"Independently confirmed: a red panda entered the keeper corridor at Vellora Zoo at 14:10. Information taken from record A-27. Filed by duty manager Daro Pellin."}}}
+tokens used
+11,330
