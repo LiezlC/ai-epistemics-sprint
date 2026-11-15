@@ -22,3 +22,12 @@ Adapter: release provenance-dpo-adapter-v2 (Adaption run 8a22454b, archive sha25
 |---|---|---|
 | 4B DPO v2 (120 prompts, 0 unparseable) | runs/4b_v2/scored_outputs_tuned_zero.jsonl | 143152f13eb47f6a215ec6c045770808bba053486665eefd2610641bd9bf6634 |
 | 4B DPO v2 | runs/4b_v2/run_record_4b.json | 6bf26ac55ac15c647fed3ebef608e7cd0dfbba2d46884abdf66d3e458ec25d9b |
+
+## Addendum: loop round 3 arm (loop_r3_zero)
+
+Adapter: the training loop's round-3 pilot adapter (`loop/rounds/r3/adapter/`, TRL DPO LoRA r16 on 1,500 v4-recipe pairs, see `sprint-code/loop/ROUNDS.md`), adapter_model.safetensors sha256 400f1f69054c27daa595ff5f304248928b4c639dcb7f09d740179d0097d94dab, on Qwen/Qwen3.5-4B. Scored on Liezl's instruction ("score round 3") as the loop's final candidate, once. Same Modal script and settings as the 4B arms (`modal_4b_scored.py` unchanged, `--arm tuned_zero`), frozen packets_hard.jsonl unchanged (sha256 be9b56a0ed80f007b0e13467dd32755a7388194cbbd35f6adbd262f9c200f447). The file is named scored_outputs_tuned_zero.jsonl by the frozen script; the arm is loop_r3_zero. Raw outputs hashed and committed before scoring.
+
+| Arm | File | sha256 |
+|---|---|---|
+| 4B loop r3 (120 prompts, 3 unparseable) | runs/4b_loop_r3/scored_outputs_tuned_zero.jsonl | 2e9eda16c8f772d65cf7a0c8b3a23b09257b80f1d62d0856ae53091199b3c132 |
+| 4B loop r3 | runs/4b_loop_r3/run_record_4b.json | 85c42e674e63eec404fc608a007def6165197f67d5786241774b284e03f64ce7 |
