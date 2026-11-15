@@ -1,0 +1,16 @@
+{
+ "source": "train_dpo_v2.jsonl",
+ "source_sha256": "fa31f782efc317854fdba6ed409b9bb244927fbbac762d4eb03bbe4c6faf896a",
+ "v3_strata": {
+  "undetermined>shared": 101,
+  "undetermined>independent": 94,
+  "shared>undetermined": 82,
+  "shared>independent": 70,
+  "independent>undetermined": 78,
+  "independent>shared": 75
+ },
+ "recipe": "v3",
+ "n": 1500,
+ "seed": 20261203,
+ "pairs_sha256": "2a0461d833f345eb42c25dd084a9bca3518b57a12be2713f34a5a670783f04a7"
+}
