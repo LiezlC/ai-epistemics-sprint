@@ -73,3 +73,7 @@ For anyone, or anyone's Claude, picking up if Liezl's sessions stop. **Submissio
 - **Settled:** author order Liezl, Deepayan, Prashanth; repo stays private with an access link for judges; Adaption had charged no credits as of 15 Nov (reported as such). Still open: Table P1 row 1 dates (design phase), and someone must give judges access.
 - **Slides (`slidevid/slides/`, local only):** Liezl is applying text fixes in Canva. Charts for slides 8 and 10 need redrawing with real numbers (slide 8: one "firm verdict 97 to 100%" bar, not two; slide 10: label flip 8.4 untuned, 13.6, 16.8, 14.0, 25.3 against roots 39, 58, 59, 58, 63).
 - **Video (`slidevid/vidoverview/`, local only):** a Claude session is building the animated overview with HyperFrames. The voiceover fix clip `Delilah-editline-11614436.mp3` replaces the scene 6 sentence; the output is `label-or-record-overview.mp4`.
+
+## Update, Sun 15 Nov (report merged)
+
+- Agreed report merged to main by fast-forward at c41fb2c (Deepayan's backup cut plus Prashanth's comments). `report/draft-report.condensed.md` sha256 `b45d76cc287e9a242ad043d24d0ec4a82eaae24acf13ffb6f94fc654876245ad`. Reviewers get exactly this file. The 8-page check of the PDF is still pending from Deepayan.
