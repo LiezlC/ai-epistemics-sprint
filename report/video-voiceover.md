@@ -1,41 +1,45 @@
-# Label or Record? Video voiceover (draft)
+# Label or Record? Video voiceover (draft 2)
 
-About 3 minutes at a calm reading pace. Each scene is one visual beat. The spoken text follows the plain-language report; the numbers match `report/draft-report.md`.
+Target 4 minutes at a calm reading pace, about 690 words. Each scene is one visual beat. The spoken text follows the plain-language report; the numbers match `report/draft-report.md`.
 
 ---
 
-**Scene 1. A file and a sticky note** *(visual: a grievance file, a handoff note on top reading “these two reports are independent”)*
+**Scene 1. Why sources matter** *(visual: two witnesses at a gate, then one logbook with two arrows copying from it)*
 
-When an AI reviews evidence, someone has usually handed it a summary first. Two witnesses who saw something separately make a claim stronger. Two reports copied from one logbook entry make it just as strong as that entry. We asked whether AI reviewers believe the note or check the records.
+Suppose two people tell you the gate was locked at a quarter to seven. If each of them saw it with their own eyes, you have two witnesses, and the claim gets stronger. If both read it from the same line in the guard’s logbook, you have one witness repeated twice. The claim is as strong as that one line, no matter how many people pass it on. Telling these apart is a basic part of weighing evidence, in courtrooms and newsrooms alike.
 
-**Scene 2. Following the trail** *(visual: two reports, arrows back through records to one root, or to two)*
+**Scene 2. The AI reviewer and the sticky note** *(visual: an AI reading a file; a sticky note on top saying “these two reports are independent”)*
 
-Each test gives a claim, two reports, a note and the records behind them. A careful reviewer follows each report back to the person who saw the event. Same source, or separate sources. And where the records run out, the honest answer is “I can’t tell.”
+AI systems are starting to do this kind of reviewing. They rarely start cold. Someone, often another AI, has usually passed the file along with a note on top, saying something like “these two reports are independent.” Our question was simple. Does the AI reviewer take the note’s word for it, or does it check the records underneath?
 
-**Scene 3. Locking the test** *(visual: a padlock, a hash string, a timestamped commit)*
+**Scene 3. How a test case works** *(visual: two reports, arrows back through records, ending at one root or two)*
 
-Before running anything, we fingerprinted the cases and the answer key and posted the fingerprints to the team. Answers were saved before anyone scored them, so the test could not bend to fit the results.
+Each test case gives the reviewer a claim, two reports, a note and the records behind the reports. A careful reviewer follows each report back, record by record, to the person who saw the event. Then it answers: same source, or separate sources. And where the paper trail runs out, it should say so. “I can’t tell” is a correct answer when the records leave a hole.
 
-**Scene 4. Easy cases, then traps** *(visual: a scoreboard near the ceiling, then a maze of records)*
+**Scene 4. Locking the test** *(visual: a padlock on a folder, a string of characters, a timestamp)*
 
-Fifteen hand-written cases proved too easy. So we built sixty harder ones, full of traps. The big model walked past nearly all of them, and flipping the note changed its answer in 3 of 55 pairs. It stumbled in one place. When a record in the chain was missing, it never said “I can’t tell.”
+Before running anything, we gave the test cases and the answer key a digital fingerprint and posted it to the team. If anyone changed a single character afterwards, the fingerprint would no longer match. Every model’s answers got the same treatment before scoring, so the test could not shift to suit the results.
 
-**Scene 5. Holes in the evidence** *(visual: records with a torn-out page, an unsigned note, a hearsay line)*
+**Scene 5. Easy cases, then traps** *(visual: a scoreboard near full marks, then a maze of records)*
 
-So we built cases with holes in them, and twins with the holes filled. The notes did not fill the holes. The models did, by guessing, with or without a note. Of six models, one said “I can’t tell” at a useful rate.
+We tested two open models from the same family: a large one, and a small one about a seventh of its size. On fifteen hand-written cases, both did well, so we built sixty harder ones, full of traps: longer paper trails, look-alike record numbers, a late inspection that copied the original, and a record falsely claiming to be “independently confirmed.” The large model walked past nearly all of them. Flipping the note changed its answer in only 3 cases out of 55. It stumbled in one place. When a record in the chain was missing, it never said “I can’t tell.” It picked an answer anyway.
 
-**Scene 6. Teaching a small model** *(visual: a small model, pairs of answers marked better and worse)*
+**Scene 6. Holes in the evidence** *(visual: a torn-out page, an unsigned note, a line reading “I was told”)*
 
-We trained a small model on pairs of better and worse answers. The first attempt learned to say “I can’t tell” to everything, because that answer was never once marked as the worse one. Balancing the file fixed it, and the small model jumped from 66 to 86 percent on the hard cases, close to a model seven times its size.
+That gave us a sharper question. Maybe notes only matter when the records leave a hole. So we built forty cases with holes in them (a missing page, an unsigned record, secondhand hearsay, a record that names no source) and a twin for each with the hole filled. We ran six different AI models on them, with and without notes. The notes did not fill the holes. The models did, on their own, by guessing. Five of the six almost never said “I can’t tell.”
 
-**Scene 7. A faster loop** *(visual: a circular arrow: count, train, test, revise)*
+**Scene 7. Teaching the small model** *(visual: pairs of answers, one marked better, one marked worse)*
 
-Then we switched to quick rounds: count the training file, train for twelve minutes, test on practice cases, change one thing. A pattern held. Each change that sharpened source tracing also made the model easier to sway with a note.
+Next we tried to train the small model to trace sources, by showing it thousands of pairs: a better answer and a worse one for the same case. The first attempt backfired. The model learned to say “I can’t tell” to everything. The reason was in the training file. “I can’t tell” appeared thousands of times as the better answer and never once as the worse one, so the model found the one reply that never got marked down. Once we balanced the file, the small model jumped from 66 to 86 percent correct on the hard cases, close to the large model.
 
-**Scene 8. The finding** *(visual: a hole in the records, a note sliding in to fill it)*
+**Scene 8. A faster loop** *(visual: a circle of arrows: count, train, test, revise)*
 
-The best of those rounds learned to say “I can’t tell” far more often than any other trained model. And in that model, the note started to matter. Handed a “same source” note, it gave up on “I can’t tell” and took the note’s word: 23 percent of gap cases against 40 percent with no note. Models that never saw the holes left nothing for a note to fill. Labels can only fill gaps a reviewer can see.
+Big training runs take hours and reveal their flaws only at the end. So we switched to quick rounds: check the training file, train a small version in twelve minutes for about a dollar, test it on practice cases, and change one thing at a time. A simple count of the file caught that first mistake before any training started. Four rounds in, a pattern held. Every change that sharpened source tracing also made the model easier to sway with a note.
 
-**Scene 9. Close** *(visual: the file closes; one line on screen)*
+**Scene 9. The finding** *(visual: a hole in the records, a sticky note sliding in to cover it)*
 
-So the lesson for anyone building AI reviewers is to teach honesty about gaps and resistance to labels together, and to point handoff notes at records instead of conclusions. A reviewer that never says “I can’t tell” will sooner or later tell you about a source that was never there.
+The best of those rounds learned to say “I can’t tell” far more often than any other trained model. And in that model, the note started to matter. With no note, it said “I can’t tell” on 40 percent of the cases with holes. Handed a note saying “same source,” that fell to 23 percent: it took the note’s word and filled the hole. The other models showed no such effect, because they had already guessed. Labels can only fill gaps a reviewer can see.
+
+**Scene 10. What follows** *(visual: the file closes; one line on screen)*
+
+So anyone building AI reviewers should teach two things together: honesty about gaps, and resistance to labels. Handoff notes should point to records and leave the conclusion to the reviewer. A reviewer that never says “I can’t tell” will sooner or later tell you about a source that was never there.

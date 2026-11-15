@@ -33,7 +33,7 @@ h1{font-size:1.5rem;margin:0 0 4px;text-wrap:balance}
 </style>
 
 <h1>Epistemics Sprint Plan</h1>
-<p class="sub">Who did what and what comes next, Apart AI x Epistemics sprint. All times UTC. Submission closes Mon 16 Nov 11:59 UTC (13:59 SAST). Solid bars are done, dashed bars are still to come. As of Sun 15 Nov, 10:55 UTC.</p>
+<p class="sub">Who did what and what comes next, Apart AI x Epistemics sprint. All times UTC. Submission closes Mon 16 Nov 11:59 UTC (13:59 SAST). Solid bars are done, dashed bars are still to come. As of Sun 15 Nov, 12:25 UTC. Draft headline: labels move reviewers little when records settle the question; most models over-commit on gaps; a model tuned to notice gaps abstains more, and there the label decides how the gap gets filled. Labels can only fill gaps a reviewer can see. Handover: HANDOVER.md in the repo.</p>
 <div class="legend">
 <span><i class="sw" style="background:var(--li)"></i>Liezl</span>
 <span><i class="sw" style="background:var(--dp)"></i>Deepayan</span>
@@ -43,10 +43,10 @@ h1{font-size:1.5rem;margin:0 0 4px;text-wrap:balance}
 <span>◆ deadline or hand-off</span>
 </div>
 <div class="wrap"><div class="g" id="g"></div></div>
-<p class="note">Open items: the loop rounds (each change needs Liezl&#8217;s yes); the 4B tuned arm on the 15 cases with v2 (Deepayan); the report results. The hard set, gap set and loop are model-built and reported apart from the main result.</p>
+<p class="note">Open items: Deepayan: the 4B tuned arm on the 15 cases with v2 (and v1), then Tables 3 to 6 and Appendix B; the abstract follows from those. Then a final read, PDF and video by Monday 10:00 UTC. The hard set, gap set and loop are model-built and reported apart from the main result.</p>
 
 <script>
-const S=Date.UTC(2026,10,12,0),E=Date.UTC(2026,10,16,14),NOW=Date.UTC(2026,10,15,10.9);
+const S=Date.UTC(2026,10,12,0),E=Date.UTC(2026,10,16,14),NOW=Date.UTC(2026,10,15,12.4);
 const t=(d,h)=>Date.UTC(2026,10,d,h);
 const C={L:"--li",D:"--dp",P:"--pv",T:"--team",C:"--ses"},N={L:"LC",D:"DS",P:"PV",T:"ALL",C:"AI"};
 const rows=[
@@ -92,10 +92,14 @@ const rows=[
 ["v2 on frozen sets: hard verdict 86% (+19), gap abstention +16","C",t(15,10.3),t(15,10.75),1],
 ["Loop: dev set, data checks, Modal pilot trainer (05b3fa7)","C",t(15,9.7),t(15,10.2),1],
 ["Loop rounds 0 and 1: collapse caught; v2 data fixes it","C",t(15,10.2),t(15,10.6),1],
-["Round 2: same cases under 3 labels (approved, training)","L",t(15,10.7),t(15,11.1),0],
-["Further critic rounds, Liezl approves each","L",t(15,11.1),t(15,17),0],
+["Round 2: same cases under 3 labels; accuracy up, label flips up","L",t(15,10.7),t(15,11.05),1],
+["Round 3: wrong-label verdict as rejected (training)","L",t(15,11.1),t(15,11.5),0],
+["Round 4: flips 25%, worst; loop stopped (b08f0c2)","L",t(15,11.5),t(15,11.9),1],
+["Round 3 on frozen sets: abstains on gaps, label fills them","C",t(15,11.9),t(15,12.2),1],
+["Report, plain version, voiceover: new headline (f982c3f)","C",t(15,12.2),t(15,12.5),1],
 ["Optional 12k Adaption run of best recipe","L",t(15,17),t(15,20),0],
 ["Write-up and submit"],
+["Handover note and report draft pushed (cea6f6c)","C",t(15,11.35),0,1,"ms"],
 ["Report: hard-set sections and future work drafted","C",t(15,8.8),t(15,9),1],
 ["Fill results, figures, TODOs in report","T",t(15,11),t(16,8),0],
 ["Roles table and LLM usage statement","T",t(15,12),t(16,8),0],
