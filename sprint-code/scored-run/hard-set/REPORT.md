@@ -73,3 +73,21 @@ Adapter provenance-dpo-adapter-v2 (Adaption run 8a22454b), retrained on correcte
 v2 minus base, paired over the 55 kept bundles (bootstrap 10,000, seed 20261115): verdict +0.191 [95% +0.091, +0.300]; roots +0.255 [+0.147, +0.373] over 51 bundles; joint +0.236 [+0.127, +0.355].
 
 v2 answers shared 82 times and independent 38 times, and never undetermined. Its biggest gain is F2 (deep independent chains), up from 0.07 to 0.71. Like the 27b, it scores 0 on F7 (broken chain). On the 5 quarantined bundles it gets 1 of 10 prompts right.
+
+## Loop round 3 arm (loop_r3_zero), scored 15 Nov 2026 after outputs commit 8a24a65
+
+Qwen3.5-4B + the training loop's round-3 pilot adapter (1,500 v4-recipe pairs, Modal TRL; see `sprint-code/loop/ROUNDS.md`). Frozen packets, frozen `score_hard.py` unchanged; each arm's file was copied to its own folder for the scorer, since base and v1 share `runs/4b/`. Kept bundles (55). r3 had 3 of 120 answers unparseable (counted invalid). `scores_loop_r3.json` = all four arms, r3 paired with base; `scores_loop_r3_v2pair.json` = r3 paired with v2.
+
+| Arm | Verdict | Roots | Joint | Label flip | Invalid |
+|---|---|---|---|---|---|
+| 4B base | 0.66 | 0.65 | 0.58 | 0.05 | 0 |
+| v1 | 0.09 | 0.02 | 0.09 | 0.00 | 0 |
+| v2 | 0.85 | 0.90 | 0.82 | 0.07 | 0 |
+| loop r3 | 0.75 | 0.83 | 0.74 | 0.09 | 0.03 |
+
+Joint accuracy by family (F1 / F2 / F3 / F4 / F5 / F7 / F8): base .70 / .07 / .60 / .50 / .75 / .12 / 1.00; v1 0 / 0 / .10 / 0 / 0 / 1.00 / 0; v2 .90 / .71 / .80 / .88 / 1.00 / 0 / 1.00; loop r3 .80 / .43 / .75 / .75 / .94 / .38 / .88.
+
+r3 minus base: verdict +0.09 [-0.03, 0.21]; roots +0.19 [0.07, 0.30]; joint +0.15 [0.02, 0.29].
+r3 minus v2: verdict -0.10 [-0.20, -0.01]; roots -0.07 [-0.15, -0.01]; joint -0.08 [-0.17, 0.01].
+
+Reading: the 1,500-pair pilot beats base but falls short of the 12k v2 adapter on the hard set, except on F7 (missing record, undetermined), where r3 reaches .38 and v2 .00. Its label-flip rate (0.09) is the highest of the four arms, matching the loop's dev finding.
