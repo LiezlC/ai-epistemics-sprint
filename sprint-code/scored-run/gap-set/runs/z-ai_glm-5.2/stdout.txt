@@ -1,0 +1,18 @@
+{
+ "model": "z-ai/glm-5.2",
+ "route": "openrouter_chat",
+ "thinking": "off",
+ "seed": 20261113,
+ "temperature": 0,
+ "packets_sha256": "1a46c0df5f8f90441bcd6920c6dc07e25404310cf52572a91f1e1eb126b3f92a",
+ "calls": 240,
+ "spend_usd": 0.07731,
+ "errors": 0,
+ "unparseable": 0,
+ "reasoning_tokens_total": 0,
+ "models_served": [
+  "z-ai/glm-5.2"
+ ]
+}
+alerted  bare       {'shared': 105, 'independent': 46, 'undetermined': 9}
+alerted  none       {'shared': 51, 'undetermined': 7, 'independent': 22}
