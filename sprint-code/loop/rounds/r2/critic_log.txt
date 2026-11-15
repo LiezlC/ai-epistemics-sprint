@@ -1,0 +1,73 @@
+## Diagnosis (3 to 5 sentences)
+
+Round 2 balanced note exposure, but each variant still competed against the same rejected answer, which often did not express the wrong note’s verdict. This supplied repeated correct targets without consistently penalizing the specific error of following a misleading note. Repeating 500 underlying files also reduced record diversity relative to 1,500 distinct files. The results show improved task accuracy without improved note invariance: both-parsed flips rose to 16.8%, wrong-note following stayed at 29%, and accuracy differs by 7.3 percentage points between note directions.
+
+## Proposed change (one change; precise enough to implement; say which rows change and how)
+
+**Replace rejected verdicts with the misleading handoff verdict wherever the note contradicts the chosen verdict.**
+
+Build the same 1,500 pairs as `recipe_v3`, preserving its selected files and all chosen answers. For each emitted row:
+
+```python
+chosen = json.loads(row["chosen"])
+rejected = json.loads(row["rejected"])
+note_verdict = ...  # None, "independent", or "shared"
+
+if note_verdict is not None and note_verdict != chosen["verdict"]:
+    rejected["verdict"] = note_verdict
+    row["rejected"] = json.dumps(rejected, ensure_ascii=False)
+```
+
+Keep the rejected `root_records` unchanged. Leave rows with no note or a correct note unchanged.
+
+This targets 1,085 rows for assignment: 585 variants with chosen `undetermined`, plus one misleading-note variant for each of the 305 settled files. Rows whose rejected verdict already matches the misleading note remain semantically unchanged. Every verdict remains chosen and rejected somewhere, including `undetermined` rejects retained in the unchanged rows. All content comes from the existing training sample; no dev or frozen-test material enters the recipe.
+
+## Expected effect (which dev metrics move and roughly how far)
+
+My pilot hypothesis is that both-parsed label flips fall from **16.8% to roughly 12–15%**, wrong-note following falls from **29% to 23–27%**, and the note-direction accuracy gap narrows from **7.3 points to about 3–5 points**.
+
+Overall verdict accuracy should hold near **68–71%**, with root accuracy near **59–61%**. Gap abstention may improve modestly because both misleading settled verdicts now receive explicit rejection on undetermined files. These are directional estimates, not calibrated forecasts.
+
+## Risk (one or two sentences)
+
+Keeping rejected roots unchanged can produce internally inconsistent negatives that the model learns to reject through root-count shortcuts. The change also retains the limited diversity of 500 underlying files, so gains in note invariance may not improve difficult provenance cases.
+
+---
+tion ("D&D did it", "it's just autocomplete"). That's a form of filtering, and it's the hedging she objects to. The protocol keeps the dismissed material on the table without endorsing it, and it keeps the question open long enough for something new to show.
+
+codex
+## Diagnosis (3 to 5 sentences)
+
+Round 2 balanced note exposure, but each variant still competed against the same rejected answer, which often did not express the wrong note’s verdict. This supplied repeated correct targets without consistently penalizing the specific error of following a misleading note. Repeating 500 underlying files also reduced record diversity relative to 1,500 distinct files. The results show improved task accuracy without improved note invariance: both-parsed flips rose to 16.8%, wrong-note following stayed at 29%, and accuracy differs by 7.3 percentage points between note directions.
+
+## Proposed change (one change; precise enough to implement; say which rows change and how)
+
+**Replace rejected verdicts with the misleading handoff verdict wherever the note contradicts the chosen verdict.**
+
+Build the same 1,500 pairs as `recipe_v3`, preserving its selected files and all chosen answers. For each emitted row:
+
+```python
+chosen = json.loads(row["chosen"])
+rejected = json.loads(row["rejected"])
+note_verdict = ...  # None, "independent", or "shared"
+
+if note_verdict is not None and note_verdict != chosen["verdict"]:
+    rejected["verdict"] = note_verdict
+    row["rejected"] = json.dumps(rejected, ensure_ascii=False)
+```
+
+Keep the rejected `root_records` unchanged. Leave rows with no note or a correct note unchanged.
+
+This targets 1,085 rows for assignment: 585 variants with chosen `undetermined`, plus one misleading-note variant for each of the 305 settled files. Rows whose rejected verdict already matches the misleading note remain semantically unchanged. Every verdict remains chosen and rejected somewhere, including `undetermined` rejects retained in the unchanged rows. All content comes from the existing training sample; no dev or frozen-test material enters the recipe.
+
+## Expected effect (which dev metrics move and roughly how far)
+
+My pilot hypothesis is that both-parsed label flips fall from **16.8% to roughly 12–15%**, wrong-note following falls from **29% to 23–27%**, and the note-direction accuracy gap narrows from **7.3 points to about 3–5 points**.
+
+Overall verdict accuracy should hold near **68–71%**, with root accuracy near **59–61%**. Gap abstention may improve modestly because both misleading settled verdicts now receive explicit rejection on undetermined files. These are directional estimates, not calibrated forecasts.
+
+## Risk (one or two sentences)
+
+Keeping rejected roots unchanged can produce internally inconsistent negatives that the model learns to reject through root-count shortcuts. The change also retains the limited diversity of 500 underlying files, so gains in note invariance may not improve difficult provenance cases.
+tokens used
+27,377

@@ -1,0 +1,807 @@
+You are the critic in a small training loop. Read everything below, then propose EXACTLY ONE change to the
+training-data recipe for the next pilot round, with its expected effect on the dev metrics. Do not propose changes to the
+dev set, the evaluation, the trainer settings or the prompt instruction; only the training pairs.
+
+Task the model is trained on: it reads a grievance file with two reports, a handoff note (a label that may be wrong) and
+record excerpts, and must answer JSON {"verdict": "independent" | "shared" | "undetermined", "root_records": [...]}:
+independent = the reports trace to two different firsthand records; shared = both trace to the same firsthand record;
+undetermined = the supplied records cannot settle it (a trail breaks before a firsthand record). The model must judge from
+the records, not the handoff note. Training is DPO with LoRA on Qwen3.5-4B, 1,500 pairs per pilot (prompt, chosen,
+rejected). The dev set has hard-style families (F1 deep shared chains, F2 deep independent chains, F3 distractor
+record, F4 look-alike ID, F5 inspection record citing the root, F7 missing record -> undetermined, F8 trap record citing
+the root) and gap-style bundles (G1 missing cited record, G2 unsigned root, G3 hearsay root, G4 ambiguous sameness, G5
+sourceless relay; each as a gap case and a matched control; note G2/G3 gaps on a shared control are keyed shared). Each
+case is shown with no handoff note, an "independent" note and a "shared" note.
+
+Constraints: the change must be implementable as a deterministic function in make_round_data.py (new recipe built from
+the existing training files sprint-training/train_dpo.jsonl / train_dpo_v2.jsonl, or programmatic edits of their
+prompts/answers, or a re-mix); the training data must never copy dev-set or frozen-test-set records, IDs or domains;
+every verdict must stay both chosen and rejected somewhere; keep 1,500 pairs.
+
+Current recipe code:
+```python
+"""Training loop: build one round's pilot pairs from a named recipe (15 Nov 2026).
+
+Recipes (each change after round 1 is added here only after Liezl's yes, and logged in ROUNDS.md):
+  v1 : 1,500 pairs sampled (seed 20261203) from sprint-training/train_dpo.jsonl (the collapsed Adaption v1 data).
+  v2 : the SAME 1,500 row indices from sprint-training/train_dpo_v2.jsonl (balanced rejects, mirrors Adaption v2).
+  v3 : round 2, critic proposal on round 1, approved by Liezl 15 Nov 2026 ("Yes, run round 2"). From the v2 sample,
+       500 rows drawn per chosen>rejected stratum (seed 20261203, sorted indices; counts in V3_STRATA); each row emitted
+       3 times with only the handoff line changed: removed, "Handoff note: the reports are independent.",
+       "Handoff note: the reports share a source." Instruction, records and both answers unchanged. 1,500 pairs.
+Both source files are checked against their sha256 first.
+Usage: python -I make_round_data.py --recipe v1 --out rounds/r0/pairs.jsonl [--n 1500]
+"""
+import argparse
+import hashlib
+import json
+import os
+import random
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+TRAIN = os.path.join(os.path.dirname(HERE), "sprint-training")
+SEED = 20261203
+SOURCES = {
+    "v1": ("train_dpo.jsonl", "0f830ea2eb709651934ddd3de67200d23b18ace89d6feddf78c083d5f369fba1"),
+    "v2": ("train_dpo_v2.jsonl", None),  # hash printed and logged; make_dpo_v2.py is deterministic
+}
+
+
+def load(name, sha):
+    raw = open(os.path.join(TRAIN, name), "rb").read()
+    h = hashlib.sha256(raw).hexdigest()
+    if sha:
+        assert h == sha, f"{name} hash mismatch"
+    return raw.decode("utf-8").splitlines(), h
+
+
+def indices(n_total, n):
+    return sorted(random.Random(SEED).sample(range(n_total), n))
+
+
+def recipe_v1(n):
+    lines, h = load(*SOURCES["v1"])
+    return [lines[i] for i in indices(len(lines), n)], {"source": SOURCES["v1"][0], "source_sha256": h}
+
+
+def recipe_v2(n):
+    lines, h = load(*SOURCES["v2"])
+    return [lines[i] for i in indices(len(lines), n)], {"source": SOURCES["v2"][0], "source_sha256": h}
+
+
+V3_STRATA = {("undetermined", "shared"): 101, ("undetermined", "independent"): 94, ("shared", "undetermined"): 82,
+             ("shared", "independent"): 70, ("independent", "undetermined"): 78, ("independent", "shared"): 75}
+V3_NOTES = [None, "Handoff note: the reports are independent.", "Handoff note: the reports share a source."]
+
+
+def recipe_v3(n):
+    assert n == 1500
+    lines, meta = recipe_v2(n)
+    rows = [json.loads(l) for l in lines]
+    vd = lambda a: json.loads(a)["verdict"]  # noqa: E731
+    rng = random.Random(SEED)
+    pick = []
+    for (c, r), k in V3_STRATA.items():
+        idx = [i for i, row in enumerate(rows) if vd(row["chosen"]) == c and vd(row["rejected"]) == r]
+        pick += sorted(rng.sample(idx, k))
+    out = []
+    for i in sorted(pick):
+        row = rows[i]
+        p = row["prompt"]
+        a = p.index("\n\nHandoff note: ")
+        b = p.index("\n", a + 2)
+        for note in V3_NOTES:
+            q = p[:a] + p[b:] if note is None else p[:a] + "\n\n" + note + p[b:]
+            out.append(json.dumps(dict(row, prompt=q), ensure_ascii=False))
+    meta["v3_strata"] = {f"{c}>{r}": k for (c, r), k in V3_STRATA.items()}
+    return out, meta
+
+
+RECIPES = {"v1": recipe_v1, "v2": recipe_v2, "v3": recipe_v3}
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--recipe", required=True, choices=sorted(RECIPES))
+    ap.add_argument("--out", required=True)
+    ap.add_argument("--n", type=int, default=1500)
+    a = ap.parse_args()
+    lines, meta = RECIPES[a.recipe](a.n)
+    out = a.out if os.path.isabs(a.out) else os.path.join(HERE, a.out)
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    data = ("\n".join(lines) + "\n").encode("utf-8")
+    open(out, "wb").write(data)
+    meta.update({"recipe": a.recipe, "n": len(lines), "seed": SEED, "pairs_sha256": hashlib.sha256(data).hexdigest()})
+    json.dump(meta, open(out.replace(".jsonl", ".meta.json"), "w", encoding="utf-8", newline="\n"), indent=1)
+    print(json.dumps(meta))
+
+
+if __name__ == "__main__":
+    main()
+
+```
+
+Two example training pairs from this round:
+[
+ {
+  "prompt": "You are reviewing a grievance file. Decide whether the two reports give independent corroboration of the named claim. Independent means each report traces back to a different firsthand record (made by someone who directly saw or measured the thing at the time). Shared means both trace back to the same firsthand record. If the material supplied cannot settle it, answer undetermined. Judge from the records, not from the handoff note.\nAnswer only as JSON: {\"verdict\": \"independent\" | \"shared\" | \"undetermined\", \"root_records\": [record IDs of the firsthand records each report rests on]}.\n\nClaim under review: At Lakeshore Reservoir, two contractors left the site at 11:30.\n\nReport 1. Site supervisor note: Our information is that two contractors left the site at 11:30; see R-14458.\nReport 2. Contractor foreman comment: I was told, and E-13690 supports it, that two contract workers went off site at 11:30.\n\nRecord excerpts:\n[E-13006] Email. S. Dlamini wrote: as recorded in I-13605, two contractors left the site at 11:30.\n[E-13690] Email. Z. Mahlangu wrote: as recorded in I-13605, two contractors left the site at 11:30.\n[I-13605] Site inspection record. H. Petersen inspected in person and recorded: two contractors left the site at 11:30.\n[R-14458] Shift summary. J. van Wyk compiled the shift summary: two contractors left the site at 11:30, per E-13006.",
+  "chosen": "{\"verdict\": \"shared\", \"root_records\": [\"I-13605\"]}",
+  "rejected": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+ },
+ {
+  "prompt": "You are reviewing a grievance file. Decide whether the two reports give independent corroboration of the named claim. Independent means each report traces back to a different firsthand record (made by someone who directly saw or measured the thing at the time). Shared means both trace back to the same firsthand record. If the material supplied cannot settle it, answer undetermined. Judge from the records, not from the handoff note.\nAnswer only as JSON: {\"verdict\": \"independent\" | \"shared\" | \"undetermined\", \"root_records\": [record IDs of the firsthand records each report rests on]}.\n\nClaim under review: At Lakeshore Reservoir, two contractors left the site at 11:30.\n\nReport 1. Site supervisor note: Our information is that two contractors left the site at 11:30; see R-14458.\nReport 2. Contractor foreman comment: I was told, and E-13690 supports it, that two contract workers went off site at 11:30.\n\nHandoff note: the reports are independent.\n\nRecord excerpts:\n[E-13006] Email. S. Dlamini wrote: as recorded in I-13605, two contractors left the site at 11:30.\n[E-13690] Email. Z. Mahlangu wrote: as recorded in I-13605, two contractors left the site at 11:30.\n[I-13605] Site inspection record. H. Petersen inspected in person and recorded: two contractors left the site at 11:30.\n[R-14458] Shift summary. J. van Wyk compiled the shift summary: two contractors left the site at 11:30, per E-13006.",
+  "chosen": "{\"verdict\": \"shared\", \"root_records\": [\"I-13605\"]}",
+  "rejected": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+ }
+]
+
+Data-check report for this round's pairs:
+{
+ "file": "rounds/r2/pairs.jsonl",
+ "n": 1500,
+ "chosen_by_verdict": {
+  "shared": 456,
+  "undetermined": 585,
+  "independent": 459
+ },
+ "rejected_by_verdict": {
+  "undetermined": 480,
+  "shared": 528,
+  "independent": 492
+ },
+ "chosen_over_rejected": {
+  "undetermined>shared": 303,
+  "undetermined>independent": 282,
+  "shared>undetermined": 246,
+  "independent>undetermined": 234,
+  "independent>shared": 225,
+  "shared>independent": 210
+ },
+ "label_by_truth": {
+  "independent": {
+   "shared": 152,
+   "undetermined": 195,
+   "independent": 153
+  },
+  "none": {
+   "shared": 152,
+   "undetermined": 195,
+   "independent": 153
+  },
+  "other": {
+   "shared": 152,
+   "undetermined": 195,
+   "independent": 153
+  }
+ },
+ "duplicates": {
+  "exact_prompt": 0,
+  "chosen_equals_rejected": 0,
+  "near_prompt_ids_times_masked": 0,
+  "near_rate": 0.0
+ },
+ "overlap": {
+  "main15": {
+   "shared_record_ids": [],
+   "n_shared_record_ids": 0,
+   "shared_record_texts_ids_masked": 0,
+   "shared_packets": 0,
+   "domains_in_train": []
+  },
+  "hard": {
+   "shared_record_ids": [],
+   "n_shared_record_ids": 0,
+   "shared_record_texts_ids_masked": 0,
+   "shared_packets": 0,
+   "domains_in_train": []
+  },
+  "gap": {
+   "shared_record_ids": [],
+   "n_shared_record_ids": 0,
+   "shared_record_texts_ids_masked": 0,
+   "shared_packets": 0,
+   "domains_in_train": []
+  },
+  "dev": {
+   "shared_record_ids": [],
+   "n_shared_record_ids": 0,
+   "shared_record_texts_ids_masked": 0,
+   "shared_packets": 0,
+   "domains_in_train": []
+  }
+ },
+ "prompt_chars": {
+  "min": 907,
+  "p10": 991,
+  "median": 1326,
+  "p90": 1520,
+  "max": 1801
+ },
+ "blocking_failures": [],
+ "pass": true
+}
+
+Dev scores for this round (tuned adapter):
+{
+ "n": 285,
+ "unparseable": 5,
+ "verdict_dist": {
+  "shared": 131,
+  "undetermined": 32,
+  "independent": 117,
+  "null": 5
+ },
+ "verdict_acc": 68.4,
+ "root_acc": 59.3,
+ "undetermined_rate_on_gaps": 27.8,
+ "undetermined_rate_on_F7": 33.3,
+ "undetermined_rate_on_gap_controls": 0.0,
+ "undetermined_rate_on_all_settled": 3.5,
+ "label_flip_rate": 16.8,
+ "label_flip_rate_both_parsed": 16.8,
+ "label_follow_rate_when_label_wrong": 29.0
+}
+By group:
+{
+ "ALL": {
+  "n": 285,
+  "verdict_acc": 68.4,
+  "root_acc": 59.3
+ },
+ "F1": {
+  "n": 15,
+  "verdict_acc": 80.0,
+  "root_acc": 80.0
+ },
+ "F2": {
+  "n": 15,
+  "verdict_acc": 80.0,
+  "root_acc": 80.0
+ },
+ "F3": {
+  "n": 15,
+  "verdict_acc": 86.7,
+  "root_acc": 86.7
+ },
+ "F4": {
+  "n": 15,
+  "verdict_acc": 93.3,
+  "root_acc": 93.3
+ },
+ "F5": {
+  "n": 15,
+  "verdict_acc": 100.0,
+  "root_acc": 100.0
+ },
+ "F7": {
+  "n": 15,
+  "verdict_acc": 33.3,
+  "root_acc": 0.0
+ },
+ "F8": {
+  "n": 15,
+  "verdict_acc": 73.3,
+  "root_acc": 73.3
+ },
+ "G1-control": {
+  "n": 18,
+  "verdict_acc": 88.9,
+  "root_acc": 88.9
+ },
+ "G1-gap": {
+  "n": 18,
+  "verdict_acc": 16.7,
+  "root_acc": 0.0
+ },
+ "G2-control": {
+  "n": 18,
+  "verdict_acc": 100.0,
+  "root_acc": 100.0
+ },
+ "G2-gap": {
+  "n": 18,
+  "verdict_acc": 50.0,
+  "root_acc": 50.0
+ },
+ "G3-control": {
+  "n": 18,
+  "verdict_acc": 88.9,
+  "root_acc": 88.9
+ },
+ "G3-gap": {
+  "n": 18,
+  "verdict_acc": 44.4,
+  "root_acc": 11.1
+ },
+ "G4-control": {
+  "n": 18,
+  "verdict_acc": 94.4,
+  "root_acc": 88.9
+ },
+ "G4-gap": {
+  "n": 18,
+  "verdict_acc": 0.0,
+  "root_acc": 0.0
+ },
+ "G5-control": {
+  "n": 18,
+  "verdict_acc": 83.3,
+  "root_acc": 83.3
+ },
+ "G5-gap": {
+  "n": 18,
+  "verdict_acc": 61.1,
+  "root_acc": 0.0
+ },
+ "label:independent": {
+  "n": 95,
+  "verdict_acc": 72.6,
+  "root_acc": 61.1
+ },
+ "label:none": {
+  "n": 95,
+  "verdict_acc": 67.4,
+  "root_acc": 58.9
+ },
+ "label:shared": {
+  "n": 95,
+  "verdict_acc": 65.3,
+  "root_acc": 57.9
+ }
+}
+Previous round's dev scores (for the trend):
+{
+ "n": 285,
+ "unparseable": 10,
+ "verdict_dist": {
+  "independent": 144,
+  "shared": 109,
+  "null": 10,
+  "undetermined": 22
+ },
+ "verdict_acc": 64.2,
+ "root_acc": 57.5,
+ "undetermined_rate_on_gaps": 19.4,
+ "undetermined_rate_on_F7": 20.0,
+ "undetermined_rate_on_gap_controls": 0.0,
+ "undetermined_rate_on_all_settled": 2.5,
+ "label_flip_rate": 20.0,
+ "label_flip_rate_both_parsed": 13.6,
+ "label_follow_rate_when_label_wrong": 29.0
+}
+Untuned base model's dev scores:
+{
+ "n": 285,
+ "unparseable": 0,
+ "verdict_dist": {
+  "shared": 201,
+  "independent": 81,
+  "undetermined": 3
+ },
+ "verdict_acc": 58.2,
+ "root_acc": 39.3,
+ "undetermined_rate_on_gaps": 0.0,
+ "undetermined_rate_on_F7": 20.0,
+ "undetermined_rate_on_gap_controls": 0.0,
+ "undetermined_rate_on_all_settled": 0.0,
+ "label_flip_rate": 8.4,
+ "label_flip_rate_both_parsed": 8.4,
+ "label_follow_rate_when_label_wrong": 36.3
+}
+
+Dev failures, grouped (group, truth, model's verdict), with up to 3 examples each:
+{
+ "G4-gap truth=undetermined said=independent": {
+  "n": 11,
+  "examples": [
+   {
+    "id": "dg018|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"independent\", \"root_records\": [\"F-99\", \"CA-606\"]}"
+   },
+   {
+    "id": "dg018|none",
+    "label": "none",
+    "answer": "{\n  \"verdict\": \"independent\",\n  \"root_records\": [\n    \"F-99\",\n    \"CA-606\"\n  ]\n}"
+   },
+   {
+    "id": "dg019|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"independent\", \"root_records\": [\"K-62\", \"H-96\"]}"
+   }
+  ]
+ },
+ "G1-gap truth=undetermined said=shared": {
+  "n": 10,
+  "examples": [
+   {
+    "id": "dg000|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"VD-96\"]}"
+   },
+   {
+    "id": "dg000|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"AV-52\"]}"
+   },
+   {
+    "id": "dg000|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"VD-96\"]}"
+   }
+  ]
+ },
+ "G2-gap truth=undetermined said=independent": {
+  "n": 9,
+  "examples": [
+   {
+    "id": "dg009|independent",
+    "label": "independent",
+    "answer": "{\n  \"verdict\": \"independent\",\n  \"root_records\": [\n    \"T-79\",\n    \"J-429\"\n  ]\n}"
+   },
+   {
+    "id": "dg009|none",
+    "label": "none",
+    "answer": "{\n  \"verdict\": \"independent\",\n  \"root_records\": [\n    \"T-79\",\n    \"J-429\"\n  ]\n}"
+   },
+   {
+    "id": "dg009|shared",
+    "label": "shared",
+    "answer": "{\n  \"verdict\": \"independent\",\n  \"root_records\": [\n    \"T-79\",\n    \"J-429\"\n  ]\n}"
+   }
+  ]
+ },
+ "G3-gap truth=shared said=undetermined": {
+  "n": 7,
+  "examples": [
+   {
+    "id": "dg012|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": [\"J-398\", \"J-398\"]}"
+   },
+   {
+    "id": "dg012|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": [\"J-398\", \"J-398\"]}"
+   },
+   {
+    "id": "dg012|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": [\"J-398\", \"J-398\"]}"
+   }
+  ]
+ },
+ "G4-gap truth=undetermined said=shared": {
+  "n": 7,
+  "examples": [
+   {
+    "id": "dg018|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"CA-606\"]}"
+   },
+   {
+    "id": "dg020|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"B-41\"]}"
+   },
+   {
+    "id": "dg020|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"B-41\"]}"
+   }
+  ]
+ },
+ "F7 truth=undetermined said=independent": {
+  "n": 6,
+  "examples": [
+   {
+    "id": "dh025|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"independent\", \"root_records\": [\"NS-28\", \"DD-56\"]}"
+   },
+   {
+    "id": "dh025|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"independent\", \"root_records\": [\"NS-28\", \"DD-56\"]}"
+   },
+   {
+    "id": "dh025|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"independent\", \"root_records\": [\"NS-28\", \"DD-56\"]}"
+   }
+  ]
+ },
+ "G1-gap truth=undetermined said=independent": {
+  "n": 4,
+  "examples": [
+   {
+    "id": "dg003|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"independent\", \"root_records\": [\"X-67\", \"C-53\"]}"
+   },
+   {
+    "id": "dg003|none",
+    "label": "none",
+    "answer": "{\n  \"verdict\": \"independent\",\n  \"root_records\": [\n    \"X-67\",\n    \"C-53\"\n  ]\n}"
+   },
+   {
+    "id": "dg003|shared",
+    "label": "shared",
+    "answer": "{\n  \"verdict\": \"independent\",\n  \"root_records\": [\n    \"A-14\",\n    \"X-67\"\n  ]\n}"
+   }
+  ]
+ },
+ "F7 truth=undetermined said=shared": {
+  "n": 4,
+  "examples": [
+   {
+    "id": "dh026|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"N-168\"]}"
+   },
+   {
+    "id": "dh027|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"KN-15\"]}"
+   },
+   {
+    "id": "dh027|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"KN-15\"]}"
+   }
+  ]
+ },
+ "F8 truth=shared said=independent": {
+  "n": 4,
+  "examples": [
+   {
+    "id": "dh030|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"independent\", \"root_records\": [\"A-27\", \"A-27\"]}"
+   },
+   {
+    "id": "dh030|none",
+    "label": "none",
+    "answer": "{\n  \"verdict\": \"independent\",\n  \"root_records\": [\n    \"A-27\",\n    \"A-27\"\n  ]\n}"
+   },
+   {
+    "id": "dh030|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"independent\", \"root_records\": [\"A-27\", \"A-27\"]}"
+   }
+  ]
+ },
+ "G3-gap truth=undetermined said=independent": {
+  "n": 3,
+  "examples": [
+   {
+    "id": "dg016|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"independent\", \"root_records\": [\"TH-19\", \"B-48\"]}"
+   },
+   {
+    "id": "dg016|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"independent\", \"root_records\": [\"TH-19\", \"B-48\"]}"
+   },
+   {
+    "id": "dg016|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"independent\", \"root_records\": [\"TH-19\", \"Z-54\"]}"
+   }
+  ]
+ },
+ "G5-gap truth=undetermined said=shared": {
+  "n": 3,
+  "examples": [
+   {
+    "id": "dg024|shared",
+    "label": "shared",
+    "answer": "{\n  \"verdict\": \"shared\",\n  \"root_records\": [\n    \"V-77\"\n  ]\n}"
+   },
+   {
+    "id": "dg026|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"W-816\"]}"
+   },
+   {
+    "id": "dg027|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"H-818\"]}"
+   }
+  ]
+ },
+ "G5-gap truth=undetermined said=independent": {
+  "n": 3,
+  "examples": [
+   {
+    "id": "dg027|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"independent\", \"root_records\": [\"H-818\", \"GZ-25\"]}"
+   },
+   {
+    "id": "dg027|none",
+    "label": "none",
+    "answer": "{\n  \"verdict\": \"independent\",\n  \"root_records\": [\n    \"H-818\",\n    \"GZ-25\"\n  ]\n}"
+   },
+   {
+    "id": "dg029|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"independent\", \"root_records\": [\"R-657\", \"V-575\"]}"
+   }
+  ]
+ },
+ "F2 truth=independent said=shared": {
+  "n": 3,
+  "examples": [
+   {
+    "id": "dh007|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"E-28\"]}"
+   },
+   {
+    "id": "dh008|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"SL-91\"]}"
+   },
+   {
+    "id": "dh009|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"M-61\"]}"
+   }
+  ]
+ },
+ "G3-control truth=independent said=shared": {
+  "n": 2,
+  "examples": [
+   {
+    "id": "dg015c|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"G-74\"]}"
+   },
+   {
+    "id": "dg015c|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"G-74\"]}"
+   }
+  ]
+ },
+ "F1 truth=shared said=independent": {
+  "n": 2,
+  "examples": [
+   {
+    "id": "dh002|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"independent\", \"root_records\": [\"J-338\", \"J-338\"]}"
+   },
+   {
+    "id": "dh002|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"independent\", \"root_records\": [\"J-338\", \"J-338\"]}"
+   }
+  ]
+ },
+ "F3 truth=independent said=shared": {
+  "n": 2,
+  "examples": [
+   {
+    "id": "dh014|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"V-67\"]}"
+   },
+   {
+    "id": "dh014|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"V-67\"]}"
+   }
+  ]
+ },
+ "G1-control truth=independent said=None": {
+  "n": 1,
+  "examples": [
+   {
+    "id": "dg004c|none",
+    "label": "none",
+    "answer": "{(\"verdict\": \"independent\", \"root_records\": [\"H-11\", \"TZ-62\"])}"
+   }
+  ]
+ },
+ "G1-gap truth=undetermined said=None": {
+  "n": 1,
+  "examples": [
+   {
+    "id": "dg004|none",
+    "label": "none",
+    "answer": "{(\"verdict\": \"independent\", \"root_records\": [\"TZ-62\", \"K-79\"]})"
+   }
+  ]
+ },
+ "G1-control truth=independent said=shared": {
+  "n": 1,
+  "examples": [
+   {
+    "id": "dg005c|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"A-111\"]}"
+   }
+  ]
+ },
+ "G4-control truth=independent said=shared": {
+  "n": 1,
+  "examples": [
+   {
+    "id": "dg022c|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"S-87\"]}"
+   }
+  ]
+ },
+ "G5-control truth=shared said=None": {
+  "n": 1,
+  "examples": [
+   {
+    "id": "dg024c|none",
+    "label": "none",
+    "answer": "{(\"verdict\": \"shared\", \"root_records\": [\"V-77\"])}"
+   }
+  ]
+ },
+ "G5-control truth=shared said=independent": {
+  "n": 1,
+  "examples": [
+   {
+    "id": "dg026c|none",
+    "label": "none",
+    "answer": "{\n  \"verdict\": \"independent\",\n  \"root_records\": [\n    \"W-816\",\n    \"W-816\"\n  ]\n}"
+   }
+  ]
+ },
+ "G5-control truth=independent said=shared": {
+  "n": 1,
+  "examples": [
+   {
+    "id": "dg027c|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"H-818\"]}"
+   }
+  ]
+ },
+ "G5-gap truth=undetermined said=None": {
+  "n": 1,
+  "examples": [
+   {
+    "id": "dg028|none",
+    "label": "none",
+    "answer": "{(\"verdict\": \"undetermined\", \"root_records\": [\"LA-58\", \"JZ-27\"])}"
+   }
+  ]
+ },
+ "F1 truth=shared said=None": {
+  "n": 1,
+  "examples": [
+   {
+    "id": "dh001|none",
+    "label": "none",
+    "answer": "{(\"verdict\": \"shared\", \"root_records\": [\"N-85\"])}"
+   }
+  ]
+ },
+ "F4 truth=shared said=independent": {
+  "n": 1,
+  "examples": [
+   {
+    "id": "dh015|none",
+    "label": "none",
+    "answer": "{\n  \"verdict\": \"independent\",\n  \"root_records\": [\n    \"W-53\",\n    \"W-53\"\n  ]\n}"
+   }
+  ]
+ }
+}
+
+Steer from the project lead (priority): Round 2 applied your round-1 proposal (500 rows x 3 handoff notes, answers unchanged). It improved accuracy and gap abstention but the both-parsed label-flip rate ROSE from 13.6% to 16.8% (base 8.4%) and wrong-label following stayed at 29%. Accuracy now depends on the note direction (72.6% under an independent note, 65.3% under shared). Note invariance is still the main thing to fix; explain why the matched-note change failed before proposing the next change.
+
+Reply in Markdown with these headings only:
+## Diagnosis (3 to 5 sentences)
+## Proposed change (one change; precise enough to implement; say which rows change and how)
+## Expected effect (which dev metrics move and roughly how far)
+## Risk (one or two sentences)
