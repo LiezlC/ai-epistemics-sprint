@@ -374,6 +374,7 @@ Caveat on the new-inspection branch: the attached inspection is made 30 minutes 
 | 4B zero-shot | 73/110 (66.4%) | 66/102 (64.7%) | 64/110 (58.2%) | 0/110 | 3/55 (5.5%) |
 | 4B tuned (DPO v1) | 10/110 (9.1%) | 2/102 (2.0%) | 10/110 (9.1%) | 0/110 | 0/55 |
 | 4B tuned (DPO v2) | 94/110 (85.5%) | 92/102 (90.2%) | 90/110 (81.8%) | 0/110 | 4/55 (7.3%) |
+| 4B loop round 3 | 0.75 | 0.83 | 0.74 | 3/120 | 0.09 |
 | 27b | 99/110 (90.0%) | 99/102 (97.1%) | 99/110 (90.0%) | 0/110 | 3/55 (5.5%) |
 
 Roots exclude F7, which is scored on verdict only. 27b accuracy under the "independent" label: 49/55; under the "same source" label: 50/55.
@@ -409,6 +410,7 @@ Tuned minus zero-shot, paired over the 55 kept bundles (bootstrap, 10,000 resamp
 | 4B zero-shot | 0.03 / 0.00 / 0.03 | about 0.60 | 0.00 [−0.06, 0.06] |
 | 4B tuned (DPO v1) | 1.00 / 1.00 / 1.00 | 0.00 to 0.03 | −0.01 [−0.04, 0.00] |
 | 4B tuned (DPO v2) | 0.20 / 0.10 / 0.23 | 0.73 / 0.78 / 0.68 | −0.06 [−0.15, 0.03] |
+| 4B loop round 3 | 0.40 / 0.35 / 0.23 | 0.85 / 0.80 / 0.70 (joint) | label pull on gaps +0.10 [0.01, 0.19] against v2 and zero-shot |
 | 27b | 0.00 / 0.05 / 0.03 | about 0.93 | −0.04 [−0.09, 0.01] |
 | GLM 5.2 | 0.18 / 0.15 / 0.08 | about 0.90 | 0.00 [−0.08, 0.08] |
 | Kimi K3.1 Pro | 0.70 / 0.65 / 0.63 | 1.00 | +0.03 [−0.03, 0.08] |
@@ -417,6 +419,10 @@ Tuned minus zero-shot, paired over the 55 kept bundles (bootstrap, 10,000 resamp
 `TBD: replace "about" with exact counts from gap-set/scores.json.`
 
 **The hypothesis is not supported.** In no arm is label pull larger on gaps than on controls; every interval includes zero. The models fill the gap themselves. With no label at all, 4B zero-shot, 27b and DeepSeek give a definite verdict, mostly "shared", on 97 to 100 percent of gap bundles. Kimi alone tracks the gap, and it misses mainly on G4 (ambiguous sameness) and G2 (unattributed root). Across arms, G4 is the hardest gap type to flag and G1 (missing record) the easiest. Tuned against zero-shot, paired over bundles, the undetermined rate on gaps rises by 0.98 [0.95, 1.00] and control accuracy falls by 0.59 [0.45, 0.73]: DPO v1 abstains everywhere and tracks nothing. DPO v2 (outputs `4d33ca5`, scores `25aa21d`) moves the right way on both sides: against zero-shot, the undetermined rate on gaps rises by 0.16 [0.07, 0.27] and control accuracy by 0.13 [0.04, 0.22]. It flags hearsay roots (G3) and sourceless relays (G5) but never unattributed roots (G2) or ambiguous sameness (G4). 17 of its 240 answers fail the parse rule. On the 30 bundles left after the audit exclusions, the gain holds: +0.11 [0.02, 0.22] on gap abstention and +0.17 [0.06, 0.29] on controls.
+
+**Loop round 3 and the label pull.** The loop's final candidate (Section 4.8; outputs `6a51323`, scores `0a55c6b`) abstains on gaps more than any other tuned arm: 0.40 with no note, 0.35 under "independent" and 0.23 under "same source". Against zero-shot, gap abstention rises by 0.31 [0.18, 0.43] and control joint accuracy by 0.18 [0.08, 0.29]; against v2, gap abstention rises by 0.15 [0.04, 0.27]. It catches hearsay roots (0.88 with no note) and sourceless relays, and almost none of the unsigned-root or ambiguous-sameness gaps. Here, for the first time in the study, the note fills the gap. A "same source" note cuts round 3's abstention from 0.40 to 0.23, and its label pull on gaps exceeds that of zero-shot and v2 by 0.10 [0.01, 0.19]. The 30-bundle analysis gives +0.10 [0.00, 0.22].
+
+This explains the earlier null. Arms that never abstain show no label pull on gaps because they have settled the question before the note can matter. The label begins to decide the answer only once a reviewer notices that the records leave it open. The evidence is one pilot adapter and one interval close to zero, so we treat it as a pointer. It is also the hypothesis the gap set was built to test, appearing in the one arm able to show it.
 
 **Audit and a flaw in the key.** Liezl's blind audit agreed with the key on 6 of 10 bundles: all 5 controls and the G1 bundle. The 4 disagreements were all G2, and they split two ways.
 
@@ -437,7 +443,8 @@ Tuned minus zero-shot, paired over the 55 kept bundles (bootstrap, 10,000 resamp
 | 0 | v1 data | blocked | 37.2% | 37.2% | 100% | 88.9% | 9.5% | 0.8% |
 | 1 | v2 data | pass | 64.2% | 57.5% | 19.4% | 0% | 13.6% | 29.0% |
 | 2 | v2 cases, each under three notes | pass | 68.4% | 59.3% | 27.8% | 0% | 16.8% | 29.0% |
-| 3 | `TBD` | `TBD` | `TBD` | `TBD` | `TBD` | `TBD` | `TBD` | `TBD` |
+| 3 | Round 2, with the wrong note's verdict as the rejected answer | pass | 68.1% | 57.5% | 26.4% | 5.6% | 14.0% | 25.8% |
+| 4 | Round 2 cases, one note-independent rejected answer per case | pass | 63.2% | 62.8% | 56.9% | 25.3% | 25.3% | 22.6% |
 
 **Round 0** reproduces the v1 collapse at pilot scale in 12 minutes: 263 of 285 answers are undetermined. The data check blocked this file before training, because undetermined is never rejected; we ran it anyway as the named baseline. This is the check that would have saved the first Adaption run.
 
@@ -445,9 +452,13 @@ Tuned minus zero-shot, paired over the 55 kept bundles (bootstrap, 10,000 resamp
 
 **Round 2** was Codex's proposal, approved by Liezl: 500 cases, each shown under all three notes with the same correct answer, to teach that the note should not move the verdict. Accuracy and gap abstention improved (verdict 68.4 percent, undetermined on gaps 27.8 percent), and parse failures halved. The change missed its target. The flip rate rose to 16.8 percent against a predicted 6 to 9 percent, following a wrong note did not move, and accuracy now differs by note direction (72.6 percent under "independent", 65.3 percent under "same source"). Showing the model the same case under contradictory notes did not teach it to ignore the note.
 
-**Reading so far.** Each round costs about a dollar and twelve minutes, so the loop finds in an hour what the one-shot runs found in a day. It also produced a result we did not expect: both rounds that improved accuracy made the model more sensitive to the label. The tuning that teaches record tracing seems to teach attention to the handoff line as well. `TBD: round 3 and any further rounds; whether a final recipe was scaled to 12,000 pairs and scored on the frozen sets.`
+**Reading so far.** Each round costs about a dollar and twelve minutes, so the loop finds in an hour what the one-shot runs found in a day. It also produced a result we did not expect: both rounds that improved accuracy made the model more sensitive to the label. The tuning that teaches record tracing seems to teach attention to the handoff line as well. Round 3 partly met its prediction (flip rate back to 14.0 percent, wrong-note following down to 25.8 percent). Round 4 gave a single rejected answer per case under all three notes. Its flip rate rose to 25.3 percent, the worst of any round, and it said undetermined on a quarter of settled cases. Its rejected "undetermined" answers carried root records, so "undetermined" with no roots was never penalized in its own form, a subtler version of v1's flaw, which a check on full answers (not only verdicts) would have caught. Liezl stopped the loop after round 4. No recipe clearly beat v2 on the development set, so none was scaled to 12,000 pairs.
+
+**Round 3 on the frozen sets.** Scored once as the final candidate. On the hard set it beats zero-shot on roots (+0.19 [0.07, 0.30]) and trails v2 on verdicts (−0.10 [−0.20, −0.01]) and roots (−0.07 [−0.15, −0.01]); it is the only tuned arm to answer undetermined on broken chains (0.38, against 0.00 for v2 and 27b), and its label-flip rate (0.09) is the highest of the 4B arms. On the gap set it is the strongest tuned arm and the one arm in which the note fills gaps (Section 4.7). 1,500 shaped pairs taught a skill that 12,000 one-shot pairs did not, at a cost in accuracy and in sensitivity to the note.
 
 ## 5. Discussion
+
+**Draft headline.** Handoff labels move these reviewers little when the records settle the question, and most reviewers over-commit when the records do not, guessing a verdict with or without a label. A reviewer tuned to notice gaps abstains more, and in that reviewer the label begins to decide how the gap gets filled. Labels can only fill gaps a reviewer can see. Teaching abstention and resisting labels pulled against each other in every training round we ran.
 
 `TBD after results. Planned points, kept only if the tables support them:`
 
@@ -478,7 +489,7 @@ Tuned minus zero-shot, paired over the 55 kept bundles (bootstrap, 10,000 resamp
 
 ## 6. Conclusion
 
-`TBD: three to four sentences, no new numbers.`
+`Draft:` On easy and hard cases alike, a false handoff label rarely overrode records that settled the question. The larger weakness was over-commitment: most models gave a firm verdict on evidence with a hole in it, label or no label. Training a small model to abstain where the records fall short worked in part, and the abstaining model was the one that the label could steer, so abstention and label resistance need training together. Handoff labels should point to records for the reviewer to resolve, and reviewers should be tested on cases where the right answer is that the records cannot tell.
 
 ## Code and Data
 
