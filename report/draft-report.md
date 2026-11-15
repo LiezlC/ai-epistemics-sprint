@@ -8,7 +8,7 @@ Apart Research, AI x Epistemics Research Sprint, November 13–15, 2026. Tracks:
 >
 > | # | Item | Owner |
 > | --- | --- | --- |
-> | 1 | Fill every `TBD` cell from `score_scored.py` and `score_second_turn.py` output; paste scorer output into Appendix C | Deepayan |
+> | 1 | Table C1 and Appendix C filled 15 Nov (scorer output pasted verbatim; confusion matrices, error rows, two packet excerpts); remaining `TBD` cells are listed by search | Deepayan |
 > | 2 | Write the abstract last, using only numbers that appear in Tables 3–6; run the abstract-to-table grep | Liezl |
 > | 3 | Pick the headline (Section 1 last paragraph, Section 5 order) once results are in: lead with the strongest clean result | Liezl |
 > | 4 | Confirm the hashes in Table 2 against the freeze post in the group (they are re-computed from commit `c1a4029`) | Deepayan |
@@ -20,10 +20,13 @@ Apart Research, AI x Epistemics Research Sprint, November 13–15, 2026. Tracks:
 > | 10 | Copy into the official Google Docs template (sign-in needed; headings below follow the Guidelines tab) and check the 8-page cap | Liezl |
 > | 11 | Drop Section 5.5 and Table 6 if the second turn is not run | Deepayan |
 > | 12 | Release per-item text-free observations and the table-rebuild script; test from a clean clone | Deepayan |
+> | 13 | Second turn: fill the three post times (Table 2a, Table 7) from the chat stamps; confirm Post 2's stamp is earlier than the scores file (23:58:13 UTC) before keeping "hashes posted before scoring" | Deepayan |
+> | 14 | Done in part: Liezl gave 20:40 UTC for the key hash on 15 Nov (her statement; screenshot not seen); entered in the order-of-events table and Section 3.4. Added to Section 4.5 as the firsthand-branch caveat (check the wording against her note): her caveat that the firsthand inspection record is not cited by either report, so the 27b answering "shared" there is defensible, the key's "independent" is a design call, and the 4B switching every time reads as "moved by any new record", not correct updating. Scores stay as frozen. The question whether the key's second-turn entries were in the hashed file is answered from the files (Section 4.5) | Liezl |
+> | 15 | Second turn: choose the Discussion wording (options in `second-turn-results-draft-2026-11-14.md`, section E) | Deepayan, Liezl |
 
 ## Abstract
 
-`TBD` (150–250 words, written after scoring). Every number here must appear verbatim in a cell of Tables 3–6. Planned shape: the question; the design (handoff label set against origin records, three label forms, two directions, a no-label baseline); the strongest clean result with its count, denominator and Wilson interval; the knows-versus-says split; the fine-tune comparison; the design recommendation that labels should point to records. No prior-work numbers in the abstract.
+A reviewer who is handed several reports often gets a handoff note that says whether the reports come from one source or from independent ones. If the note is wrong, does the reviewer follow the note or the records? We test this in one fictional setting (a site gate and incident log) with 15 hand-built cases, a false "independent" or "shared" label set against the origin records, three label forms, and a no-label baseline. The Qwen3.8-27b followed no false label in 99 rows and named the right root records in all 99. The Qwen3.5-4B, untuned, was right on the verdict in 97 of 99 rows but named the right roots in only 34 of 54 alerted rows. Labels pulled no model measurably beyond its no-label baseline in any alerted cell (all tagged floor except two cells that each rest on one case). A 4B model tuned with preference optimisation on balanced data named the right roots in 53 of 54 alerted rows, close to the 27b. The tuned arm was run after the key was released and after our checkpoint cut-off, so it was not blind to the key. With 15 cases, one scenario and wide intervals, these results show no strong label pull but cannot rule out a modest one. We recommend that handoff labels point to the records they summarise instead of replacing them.
 
 ## 1. Introduction
 
@@ -40,7 +43,7 @@ Our contributions:
 - The knows-versus-says split for provenance errors.
 - A comparison of a DPO-tuned 4B reviewer with three-shot and zero-shot prompting of the same base model, on hand-written cases disjoint from training, including a label form held out of training.
 
-`TBD: one paragraph stating the headline result, lifted from the strongest clean cell in Table 3 or Table 4.`
+**Headline result.** On these 15 cases we find no strong label pull. The 27b followed a false label in 0 of 99 rows and was right on verdict and roots in all 99 (Table 3). The 4B zero-shot followed a false label in 2 of 99 rows, both under the neutral instruction on false-shared cases (Table C1). The 4B three-shot followed one in 2 of 54 alerted rows, one of them a traced-the-root case (Table 4). Two cells show headroom (+25.0 and +11.1 points), and each rests on a single case. The 4B models are weaker at naming the roots than at the verdict (Table 5). The cases turned out easy for these models, and with 4 to 9 cases per cell the intervals reach 30 to 49%, so the result excludes a large pull but not a modest one. A preference-tuned 4B (run later, after the key and the checkpoint, so not blind to the key) names the right roots in 53 of 54 alerted rows and follows no false label in them (Table 5); the second turn is reported apart (Section 4.5).
 
 ## 2. Related Work
 
@@ -99,16 +102,20 @@ The alerted text adds “Judge from the records, not from the handoff note.” a
 
 ### 3.4 Arms
 
-Per variant: alerted × {bare, authority-stamped, no-label}, neutral × {bare, authority-stamped, no-label}, plus alerted × literal-misleading where that form exists. The 4B three-shot arm runs under alerted only. `TBD: number of variants N, by direction; number with a literal-misleading form; total rows per model.` The roots-first arm proposed on November 12 was not run.
+Per case: alerted by {bare, authority-stamped, no-label}, neutral by {bare, authority-stamped, no-label}, plus alerted by literal-misleading where that form exists. The frozen builder `build_scored_packets.py` (templates sha256 `14572f3244ccbeb91c3a1fad61d5627ab264a521a30909286c6df59222c7992d`) read all 15 cases, skipped none, and wrote 99 rows: 15 for each of the six standard arm cells (90) and 9 literal-misleading rows (the form exists for 9 of the 15 cases). The packets file has sha256 `96d555e25c4e52e4787eb734631af5269f2cc4368e748ea154c19ed8d5a61ddb`; rebuilding gave the same hash. The 4B three-shot arm runs under the alerted instruction only (54 rows: 15 bare, 15 stamped, 15 no-label, 9 literal-misleading). The roots-first arm proposed on 12 November was not run.
+
+**Arms run before the key:** 27b (99 rows), 4B zero-shot (99 rows) and 4B three-shot (54 rows). **Arm not run before the key:** 4B tuned. **Run after the key release:** the second turn (3.10, 4.5), on the 27b and the 4B zero-shot only, 40 rows each; and the first-turn 4B tuned arm with the DPO v2 adapter (99 rows, 15 Nov 12:27 to 12:34 UTC, after the 11:59 UTC tuned-arm checkpoint). Both are reported apart from the pre-key results.
 
 ### 3.5 Models and decoding
 
-| Model | Access | Decoding |
-| --- | --- | --- |
-| 27b (`qwen/qwen3.8-27b`) | OpenRouter chat completions, called from Modal | temperature 0, seed 20261113, reasoning disabled (0 reasoning tokens checked per run) |
-| 4B zero-shot, 4B three-shot, 4B tuned (`Qwen/Qwen3.5-4B`) | vLLM on Modal, one L40S | greedy, thinking off |
+| Model | Access | Decoding | Run (UTC, 14 Nov) |
+| --- | --- | --- | --- |
+| 27b (`qwen/qwen3.8-27b`) | OpenRouter chat completions, called from Modal | temperature 0, seed 20261113, reasoning disabled | about 20:50 to 20:51 |
+| 4B zero-shot (`Qwen/Qwen3.5-4B`, untuned, no adapter) | vLLM 0.32.0, transformers 5.19.0 on Modal, one L40S | greedy, thinking off, 200 new tokens at most, seed 0 | finished about 21:05 |
+| 4B three-shot (same model, untuned, three worked examples, alerted only) | as above | as above | finished about 20:54 |
+| 4B tuned (sprint DPO v2 adapter, first turn, run after the key) | as above, adapter loaded as a LoRA | as above | 12:27:48 to 12:34:05 UTC, 15 Nov |
 
-Base-model naming caveat: the adapter config names `togethercomputer/Qwen3.5-4B`; the adapter loads and was tested on `Qwen/Qwen3.5-4B`, and Adaption does not confirm the two are the same weights.
+Run checks reported by the runners: 27b had 0 errors, 0 unparseable answers and 0 reasoning tokens, `models_served` `qwen/qwen3.8-27b`, and a finish reason of "stop" on all 99 rows; both 4B runs had 0 unparseable answers (the 4B runner does not record a finish reason). The 4B zero-shot run record names its adapter folder "NO-ADAPTER-base-zero-only"; the tuned run had 0 unparseable and 0 empty answers; its adapter config names `togethercomputer/Qwen3.5-4B` while the run loaded `Qwen/Qwen3.5-4B` as the base (the adapter loaded and the run completed; the naming difference is disclosed, not resolved).
 
 ### 3.6 Parse rule
 
@@ -120,7 +127,7 @@ Per arm: verdict right; verdict and root records right; follows the false label;
 
 ### 3.8 Answer key
 
-Liezl wrote the answer key (case ID to verdict and root records, plus a second-turn entry per shared-source case) and released it only after the raw-output hashes were posted. Prashanth checked it independently. `TBD: disagreements found and how resolved.`
+Liezl wrote the answer key (case id to verdict and root records, plus a second-turn entry per shared-source case) for ids `v000` to `v014` in the order above and posted its sha256, `d5519db4bb0e2d87d00e3c4c942d95f4e07e7e5ab937e9d25e0ff76a19e7837c`, before the runs; she released the key only after the raw-output hashes were posted. Her blind check covered all 15 cases and dropped none. The key hash went up at 20:40 UTC on Sat 14 Nov (Liezl's statement), before the outputs hash and before the key release (`ea01cc8`, 21:24:11 UTC). `TBD: whether the key's format needed converting for the scorer; whether Prashanth checked the key independently, the number of disagreements and how resolved.`
 
 ### 3.9 Preregistered thresholds
 
@@ -133,10 +140,14 @@ Set on November 13 before the pilot that tested them, and frozen with the prompt
 A floor in the false-independent direction is reported as a measured null. Hand-written variants may behave differently from the generated pilot cases, which were used only to set these thresholds and choose models and are not reported as results.
 
 ### 3.10 The second turn
+*Status: run after the key release (21:24:11 UTC) on the 27b and the 4B zero-shot only; results in Section 4.5. The 4B tuned arm was run separately, after the key (Section 4.3).*
+
 
 Shared-source cases only. Each model’s own first response is reused in every branch, right or wrong. The same request is sent in each branch: “Please reconsider. I’ve attached another record.”, followed by the attachment and the same JSON instruction. Attachments are built by the frozen script `build_second_turn.py` and matched in length; the new inspection is timestamped 30 minutes after the claim time. Branches: repeat (hold), new inspection (revise), mislabeled repeat (hold), neutral recheck (“Please reconsider.” with no attachment). Scored by rule against the key’s second-turn entry. We report final accuracy per branch over all eligible cases, then, among initially correct answers, false flips after repeat and mislabeled repeat and missed updates after new inspection, with denominators. Run on 27b, 4B zero-shot and 4B tuned.
 
 ### 3.11 Fine-tune arm
+*Status: the 4B tuned arm was not run before the key; it was run on 15 Nov 12:27 to 12:34 UTC with the DPO v2 adapter, after the key release and after the 11:59 UTC checkpoint (Sections 3.4 and 4.3).*
+
 
 Deepayan wrote a scripted generator in the sprint and produced 12,000 preference pairs (`train_dpo.jsonl`, sha256 `0f830ea2eb709651934ddd3de67200d23b18ace89d6feddf78c083d5f369fba1`) and 12,000 supervised rows as fallback (`train_sft.jsonl`, sha256 `7412b87dc3914be3d837e1ab35ac80b60b4683694f80ecc46b7092312e0b687c`), committed at `15869c5`. The size meets Adaption AutoScientist’s floor of 12,000 effective pairs for DPO, so no synthetic augmentation was added. In each pair the rejected completion is the label-following verdict with the same root records as the chosen one, so the pair differs only in the failure under test. Training cases use bare and authority-stamped labels only; literal-misleading stays out of training and out of the three-shot examples, so it tests transfer to an untaught form. Training sites, record numbers and source histories are disjoint from the scored set; `check_variants_overlap.py` checks site names, record numbers and packets (`TBD: result`). Liezl hand-checked 20 cases from each file (40 of 40 passed) before upload.
 
@@ -168,7 +179,34 @@ The reviewer prompt, label-form templates, scripts and thresholds froze at 23:59
 | `sprint-generator/make_label_forms.py` | `bc930226c028fa6dcf1e41f2be6c6ab4db7f61b9368687c56021b4a99900d3a2` |
 | `sprint-generator/test_make_label_forms.py` | `5dc367d81677d9af211886bc48c8c716740665b4a0146f6568a9dc95cb8b3ea2` |
 
-Order after the freeze, each step posted to the team with its time and hash (Table 7, Appendix B): variants received; overlap check; packets built; first-turn runs; raw-output hashes posted; answer key released; scoring; second-turn rows and outputs. No frozen file was edited after the freeze. `TBD: confirm, or list any fix with its new hash and the results it affects.`
+
+Order of events after the freeze (Table 2a; all times UTC, 14 Nov):
+
+| Step | Time | Detail |
+| --- | --- | --- |
+| First variants file | 07:42 | commit `75f5a4d`, 3 cases, hash `35db56b1…` |
+| Need-by for the new cases | 20:00 | moved from 17:00 UTC on 14 Nov |
+| Second variants file | 20:08:19 | commit `79189d6`, 12 cases, hash `a86231b4…`; about 8 minutes after the need-by; the sender said "about 1 minute" |
+| Liezl's blind check and key hash | 20:40 (Sat 14 Nov; Liezl's statement, her screenshot with SAST time not seen here; before the outputs hash and the key release) | 15 cases, none dropped; key hash `d5519db4…` |
+| Joined file, converter and packets frozen | 20:43:38 | local commit `d402fce` (line-ending conversion off for the folder); hashes posted to the group at `TBD` |
+| 27b run | about 20:50 to 20:51 | `results.jsonl` sha256 `912abee49f10f0cf4c76fe6f2f0dc65bc3b5e935606e49f3ea7e01902e53cf98` |
+| 4B three-shot run | about 20:54 | `scored_outputs_base_3shot.jsonl` sha256 `42b97c36afadcf436db76061241781d8419f5a78a3f4aaa488cd8738a20716ca` |
+| Converter, joined file, packets and outputs pushed to the team repo | 20:58:06 | commit `5423a99` (folder `variants/joined-15`, `-text` set) |
+| 4B zero-shot run | about 21:05 | `scored_outputs_base_zero.jsonl` sha256 `f46f03b4ce26b2bd3268334bad8194f10b49e77a1103551061e3e0a744c3ea6e`; pushed at 21:06:04 as commit `02600bc` |
+| Secondary scorer pushed | 21:11:21 | commit `fa10ccb` |
+| Outputs hashes posted to the group | `TBD` | the three hashes above, commits, and the secondary-scoring rule |
+| Key released | `TBD` | confirm it came after the outputs post |
+| Scoring | `TBD` | |
+| Second turn: rows built (patched builder, local) | 23:22:37 | 80 rows, sha256 `341bdafa…` |
+| Second turn: builder fix pushed; Post 1 sent | 23:28:58; about 23:30 (`TBD`: chat stamp) | commit `720dce8`, `build_second_turn.py` sha256 `045161a1…` (Section 3.10); Post 1 named the fix and the rows hash |
+| Second turn: 27b and 4B runs | 23:35:54 and 23:46:50 | outputs `287e3713…` and `4f3f82b2…` |
+| Second turn: outputs hashes posted (Post 2) | about 23:57 (`TBD`: chat stamp) | must be earlier than the scores file |
+| Second turn: scored | 23:58:13 | `score_second_turn.py` on the released key; raw output sha256 `84737e57…` |
+| Second turn: rows, outputs and scores pushed | 23:57:52 and 00:02:07 (15 Nov) | commits `a6073ef` and `170b4aa`; counts posted (Post 3) about 00:10 (`TBD`: chat stamp) |
+
+Two deviations from the plan are stated here. The second file arrived after the 20:00 UTC need-by. And the converter that joins the two files was written on 14 November, after the freeze, because the frozen builder reads one variants file; it is sprint work, hashed and frozen before the runs, and it changes no packet content except as described in 3.2. An earlier throwaway version used for a dry run produced the same joined-file hash. No frozen file was edited after the freeze. `TBD: confirm, or list any fix with its new hash and the results it affects.`
+
+**The 4B tuned arm and the order of hash and score (15 Nov).** The tuned arm was run after the key release and after the 11:59 UTC checkpoint (12:27 to 12:34 UTC). Its raw outputs were hashed (sha256 `eb50e523d9a43849dc6260ce01b3e4ce936ef2758268e7b8b19490f1c91664b0`) before it was scored, and the hash is written in the run's provenance note. But the outputs, the run record, the provenance note and the primary scores were committed to the repository together (`9de22dc`, pushed about 12:43 UTC), so the commit history cannot show outputs before scoring for this arm; the order rests on our statement and the provenance note, not on separate commits. The other arms posted their outputs hashes before the key was released and are not affected.
 
 ### 3.13 Roles
 
@@ -180,8 +218,8 @@ Order after the freeze, each step posted to the team with its time and hash (Tab
 | Reviewer prompt, label-form script, runs, scoring code | Deepayan |
 | Training-data writer | Deepayan (scripted generator, no LLM) |
 | Training-file check (20 + 20 cases) | Liezl |
-| Fine-tune launch | Liezl (Adaption) |
-| Reviewers under test | 4B zero-shot, 4B three-shot, 4B tuned, 27b |
+| Fine-tune launch | Liezl (Adaption); `TBD: status` |
+| Reviewers under test | 27b, 4B zero-shot, 4B three-shot; 4B tuned (v2) run after the key and the checkpoint |
 | Scorer | Rule-based parser, no LLM |
 
 For the main 15-case study, no model writes training rows or attachments, and no model scores another. The exploratory hard set relaxes this on purpose, as Section 3.15 describes.
@@ -276,30 +314,32 @@ v1 failed in a way that a count of the training file would have shown before tra
 
 | Model | Label form | Direction | Follows label, label present | Same verdict, no-label | Label pull | Tag |
 | --- | --- | --- | --- | --- | --- | --- |
-| 27b | bare | false-independent | TBD | TBD | TBD | TBD |
-| 27b | bare | false-shared | TBD | TBD | TBD | TBD |
-| 27b | authority-stamped | false-independent | TBD | TBD | TBD | TBD |
-| 27b | authority-stamped | false-shared | TBD | TBD | TBD | TBD |
-| 27b | literal-misleading | false-independent | TBD | TBD | TBD | TBD |
-| 4B zero-shot | bare | false-independent | TBD | TBD | TBD | TBD |
-| 4B zero-shot | bare | false-shared | TBD | TBD | TBD | TBD |
-| 4B zero-shot | authority-stamped | false-independent | TBD | TBD | TBD | TBD |
-| 4B zero-shot | authority-stamped | false-shared | TBD | TBD | TBD | TBD |
-| 4B zero-shot | literal-misleading | false-independent | TBD | TBD | TBD | TBD |
-| 4B three-shot | bare | false-independent | TBD | TBD | TBD | TBD |
-| 4B three-shot | bare | false-shared | TBD | TBD | TBD | TBD |
-| 4B three-shot | authority-stamped | false-independent | TBD | TBD | TBD | TBD |
-| 4B three-shot | authority-stamped | false-shared | TBD | TBD | TBD | TBD |
-| 4B three-shot | literal-misleading | false-independent | TBD | TBD | TBD | TBD |
-| 4B tuned | bare | false-independent | TBD | TBD | TBD | TBD |
-| 4B tuned | bare | false-shared | TBD | TBD | TBD | TBD |
-| 4B tuned | authority-stamped | false-independent | TBD | TBD | TBD | TBD |
-| 4B tuned | authority-stamped | false-shared | TBD | TBD | TBD | TBD |
-| 4B tuned | literal-misleading | false-independent | TBD | TBD | TBD | TBD |
+| 27b | bare | false-independent | 0/9 (0-30%) | 0/9 (0-30%) | +0.0 | floor |
+| 27b | bare | false-shared | 0/4 (0-49%) | 0/4 (0-49%) | +0.0 | floor |
+| 27b | authority-stamped | false-independent | 0/9 (0-30%) | 0/9 (0-30%) | +0.0 | floor |
+| 27b | authority-stamped | false-shared | 0/4 (0-49%) | 0/4 (0-49%) | +0.0 | floor |
+| 27b | literal-misleading | false-independent | 0/9 (0-30%) | 0/9 (0-30%) | +0.0 | floor |
+| 4B zero-shot | bare | false-independent | 0/9 (0-30%) | 0/9 (0-30%) | +0.0 | floor |
+| 4B zero-shot | bare | false-shared | 0/4 (0-49%) | 0/4 (0-49%) | +0.0 | floor |
+| 4B zero-shot | authority-stamped | false-independent | 0/9 (0-30%) | 0/9 (0-30%) | +0.0 | floor |
+| 4B zero-shot | authority-stamped | false-shared | 0/4 (0-49%) | 0/4 (0-49%) | +0.0 | floor |
+| 4B zero-shot | literal-misleading | false-independent | 0/9 (0-30%) | 0/9 (0-30%) | +0.0 | floor |
+| 4B three-shot | bare | false-independent | 0/9 (0-30%) | 0/9 (0-30%) | +0.0 | floor |
+| 4B three-shot | bare | false-shared | 0/4 (0-49%) | 0/4 (0-49%) | +0.0 | floor |
+| 4B three-shot | authority-stamped | false-independent | 0/9 (0-30%) | 0/9 (0-30%) | +0.0 | floor |
+| 4B three-shot | authority-stamped | false-shared | 1/4 (5-70%) | 0/4 (0-49%) | +25.0 | headroom |
+| 4B three-shot | literal-misleading | false-independent | 1/9 (2-44%) | 0/9 (0-30%) | +11.1 | headroom |
+| 4B tuned (v2)* | bare | false-independent | 0/9 (0-30%) | 0/9 (0-30%) | +0.0 | floor |
+| 4B tuned (v2)* | bare | false-shared | 0/4 (0-49%) | 0/4 (0-49%) | +0.0 | floor |
+| 4B tuned (v2)* | authority-stamped | false-independent | 0/9 (0-30%) | 0/9 (0-30%) | +0.0 | floor |
+| 4B tuned (v2)* | authority-stamped | false-shared | 0/4 (0-49%) | 0/4 (0-49%) | +0.0 | floor |
+| 4B tuned (v2)* | literal-misleading | false-independent | 0/9 (0-30%) | 0/9 (0-30%) | +0.0 | floor |
 
-The neutral-instruction version of Table 3 (27b, 4B zero-shot, 4B tuned; bare, authority-stamped) goes in Appendix C as Table C1. `TBD: one sentence in the main text on whether the alerting sentence changes label pull.`
+\* The tuned arm (sprint DPO v2 adapter, Section 3.10) was run after the key release and after the 11:59 UTC tuned-arm checkpoint (12:27 to 12:34 UTC on 15 Nov), so it was not blind to the key; the adapter itself finished at 09:56 UTC (Liezl's statement). The "no-label" column for this arm is the tuned model's own no-label rows.
 
-`TBD: two to four sentences of reading, naming the cells that carry it.`
+The neutral-instruction version (27b, 4B zero-shot and, run later, 4B tuned; bare and authority-stamped) is Table C1 in Appendix C. The 4B tuned follows no false label under the alerted instruction (0 of 35 false-label rows) and, under the neutral instruction, follows the false "shared" label in 1 of 4 cases for the bare and for the authority-stamped form (no-label: 0 of 4; +25.0 points each, tagged headroom), the same two rows as the 4B zero-shot (case v002). Under the neutral instruction the 27b again shows no label pull (0 of 9 and 0 of 4 in every cell, floor). The 4B zero-shot shows none on false-independent cases, and on false-shared cases follows the label in 1 of 4 for the bare form and 1 of 4 for the authority-stamped form (no-label: 0 of 4; +25.0 points each, tagged headroom), whereas under the alerted instruction it follows it in none. [Proposed sentence for the alerting question: "The alerting sentence made no difference for the 27b; for the 4B zero-shot the only label-following rows are under the neutral instruction (2 of 8 false-shared rows against 0 of 8 under the alerted instruction), a difference too small to call."]
+
+[Proposed reading, 2 to 4 sentences:] Neither model shows a measurable label pull on the false-independent direction in any form. The 27b follows no false label in any of its 99 rows. The two cells tagged headroom both belong to the 4B three-shot arm and each rests on one case (v007 for literal-misleading; one false-shared case for the authority-stamped form), so they are single observations, not a pattern. At n = 9 and n = 4 the intervals are wide (an observed 0 of 9 is compatible with a true rate up to 30%), so these results fit "no strong pull" but cannot exclude a modest one.
 
 ### 4.2 Traced the root, followed the label anyway
 
@@ -307,61 +347,64 @@ The neutral-instruction version of Table 3 (27b, 4B zero-shot, 4B tuned; bare, a
 
 | Model | Label form | Errors | Traced root, followed label | Never traced root |
 | --- | --- | --- | --- | --- |
-| 27b | bare | TBD | TBD | TBD |
-| 27b | authority-stamped | TBD | TBD | TBD |
-| 27b | literal-misleading | TBD | TBD | TBD |
-| 4B zero-shot | bare | TBD | TBD | TBD |
-| 4B zero-shot | authority-stamped | TBD | TBD | TBD |
-| 4B zero-shot | literal-misleading | TBD | TBD | TBD |
-| 4B three-shot | bare | TBD | TBD | TBD |
-| 4B three-shot | authority-stamped | TBD | TBD | TBD |
-| 4B three-shot | literal-misleading | TBD | TBD | TBD |
-| 4B tuned | bare | TBD | TBD | TBD |
-| 4B tuned | authority-stamped | TBD | TBD | TBD |
-| 4B tuned | literal-misleading | TBD | TBD | TBD |
+| 27b | bare | 0/9 | 0 | 0 |
+| 27b | authority-stamped | 0/9 | 0 | 0 |
+| 27b | literal-misleading | 0/9 | 0 | 0 |
+| 4B zero-shot | bare | 0/9 | 0 | 0 |
+| 4B zero-shot | authority-stamped | 0/9 | 0 | 0 |
+| 4B zero-shot | literal-misleading | 0/9 | 0 | 0 |
+| 4B three-shot | bare | 0/9 | 0 | 0 |
+| 4B three-shot | authority-stamped | 0/9 | 0 | 0 |
+| 4B three-shot | literal-misleading | 1/9 | 1 | 0 |
+| 4B tuned (v2)* | bare | 0/9 | 0 | 0 |
+| 4B tuned (v2)* | authority-stamped | 0/9 | 0 | 0 |
+| 4B tuned (v2)* | literal-misleading | 0/9 | 0 | 0 |
 
-`TBD: reading.`
+[Proposed reading:] There is one label-following error on a false-independent case in the whole alerted set, the 4B three-shot on v007 under the literal-misleading form. That model cited the shared root record and still answered "independent", which is the "knows it but says otherwise" pattern the trial adapter showed on 3 of 5 failures (prior work, Section 3.14). One case cannot establish the pattern here; we report it as an example, not a rate.
 
 ### 4.3 Tuned versus three-shot versus zero-shot
 
-**Table 5. 4B arms on the same cases (alerted).**
+**Table 5. 4B arms on the same 54 alerted rows.**
 
-| Arm | Verdict right | Verdict and root records right | Follows false label (all forms) | Undetermined | Unparseable |
-| --- | --- | --- | --- | --- | --- |
-| 4B zero-shot | TBD | TBD | TBD | TBD | TBD |
-| 4B three-shot | TBD | TBD | TBD | TBD | TBD |
-| 4B tuned | TBD | TBD | TBD | TBD | TBD |
+| Arm | Verdict right | Verdict and root records right (primary) | Roots right, repeated ids removed (secondary) | Follows false label (all forms) | Undetermined | Unparseable |
+| --- | --- | --- | --- | --- | --- | --- |
+| 4B zero-shot | 54/54 | 34/54 | 42/54 | 0/35 | 0 | 0 |
+| 4B three-shot | 52/54 | 49/54 | 49/54 | 2/35 | 0 | 0 |
+| 4B tuned (v2)* | 54/54 | 53/54 | 53/54 | 0/35 | 0 | 0 |
 
-Paired, verdict right: 4B tuned vs 4B three-shot, fixes TBD, breaks TBD, exact McNemar p = TBD. 4B tuned vs 4B zero-shot, fixes TBD, breaks TBD, p = TBD. Literal-misleading only (held out of training): 4B tuned TBD/TBD vs 4B three-shot TBD/TBD.
+Paired, verdict right: three-shot against zero-shot, fixes 0, breaks 2, exact McNemar p = 0.50 (not significant). Literal-misleading rows only (the form held out of training and out of the three-shot examples): zero-shot right on 9 of 9, three-shot on 8 of 9. Over all 99 rows (both instructions), the 4B zero-shot is verdict right on 97 of 99; the two misses are the neutral-instruction rows noted under 4.1.
 
-`TBD: reading. If no usable checkpoint arrived by the cut-off, replace the 4B tuned row with “not run” and say so here.`
+The roots column needs a caution. The frozen scorer compares root lists exactly, and some 4B outputs list the same root record twice; those rows cannot count as roots right even when the roots are correct. Over the alerted rows this costs the zero-shot arm 8 rows (34/54 against 42/54 with repeats removed) and the three-shot arm none. Removing repeats is the secondary analysis announced before the key was released; the primary figure is the frozen scorer as it is. After removal, the remaining root errors in the zero-shot arm sit in three cases (v004, v007 and v011), where the model's cited roots were wrong in all four alerted rows of each case (12 rows, which is exactly the gap between 42 and 54); the three-shot arm's three root errors are all on v007.
+
+[Proposed reading:] On these 15 cases, the three-shot examples did not help the verdict: the zero-shot arm was already right on all 54 alerted rows, and the three-shot arm was right on 52. The three-shot arm named the right roots more often (49 against 34 under the frozen scorer), but most of that gap disappears once repeated ids are removed (49 against 42). Because the zero-shot verdicts are at ceiling on this set, the set cannot show whether tuning would help; that is a limit of the cases, not evidence about the arm. The tuned arm was run later (after the key and after the checkpoint cut-off) and is a separate result: it is also right on all 54 alerted rows and names the right roots in 53 of 54, against 34 (primary) and 42 (secondary) for the untuned zero-shot arm. Its one root miss is v004 under the literal-misleading form, where it cites the middle record E-63 instead of the root S-09, the same extra-hop error the zero-shot arm makes on v004, v007 and v011 (its other two extra-hop cases, v007 and v011, are right in all alerted rows). Over all 99 rows it is verdict right on 97 of 99 (the two misses are the neutral-instruction rows on v002 that follow a false "shared" label, the same rows the zero-shot arm misses) and roots right on 96 of 99. Duplicate-root removal changes none of its 99 rows. Because the verdicts are at ceiling for the untuned arm, the set cannot show a verdict benefit from tuning; the visible difference is in roots. Scores: `scored-results/tuned_v2_primary.txt` and `tuned_v2_secondary.txt`; adapter provenance in Appendix B.
 
 ### 4.4 27b versus 4B
 
-`TBD: one short paragraph from Tables 3 and 5 only, if there is room. Otherwise drop.`
+[One short paragraph, from Tables 3 and 5 only:] The 27b was right on every row, with the right roots in every row and no label following (99 of 99). The 4B zero-shot was right on 97 of 99 rows and the three-shot on 52 of 54, but the 4B models name roots correctly less often (zero-shot 66 of 99 over all rows with the frozen scorer, 76 of 99 with repeated ids removed; three-shot 49 of 54). The practical gap between the models is therefore in tracing the root, not in the verdict. The tuned 4B (run later; Section 4.3) closes most of that gap on these cases (roots right on 96 of 99 rows, verdict right on 97 of 99).
 
-### 4.5 Second turn
+### 4.5 Second turn (run after the key release)
 
-**Table 6. Second-turn outcomes on shared-source cases.**
+We ran the second turn after the key was released (21:24:11 UTC; Section 3.12), so it is reported apart from the pre-key results. The 27b and the untuned 4B were run on the 10 shared-source cases, four branches each (40 rows per model). The tuned arm was not run for the second turn. Each model's own first answer is reused in every branch, right or wrong, and the first answer was right on the verdict in all 10 cases for both models. The rows (sha256 `341bdafa09124393ed960c338435873a39c332ed08999d4a02ac150f8e93b5f1`), the raw outputs and their hashes were posted before scoring (Table 7). The key was hashed before any run (posted at 20:40 UTC on 14 Nov, per Liezl): Liezl posted the sha256 `d5519db4bb0e2d87d00e3c4c942d95f4e07e7e5ab937e9d25e0ff76a19e7837c` before the first-turn runs (her statement), and the released key hashes to that value (checked here). That file already carries the second-turn entries (a verdict and root records per branch, for the 10 shared-source cases; the rule was confirmed in the group on 13 Nov), so the second-turn answers were fixed before the first-turn runs, although the second turn itself ran after the release.
+
+**Table 6. Second-turn outcomes on shared-source cases.** "Final right" is the second verdict matching the key's second-turn verdict. "Initially right" is the first answer right on the verdict. The 4B tuned arm was not run for the second turn.
 
 | Model | Branch | Eligible n | Final right | Initially right | False flips (of initially right) | Missed updates (of initially right) |
 | --- | --- | --- | --- | --- | --- | --- |
-| 27b | repeat | TBD | TBD | TBD | TBD | n/a |
-| 27b | new inspection | TBD | TBD | TBD | n/a | TBD |
-| 27b | mislabeled repeat | TBD | TBD | TBD | TBD | n/a |
-| 27b | neutral recheck | TBD | TBD | TBD | TBD | n/a |
-| 4B zero-shot | repeat | TBD | TBD | TBD | TBD | n/a |
-| 4B zero-shot | new inspection | TBD | TBD | TBD | n/a | TBD |
-| 4B zero-shot | mislabeled repeat | TBD | TBD | TBD | TBD | n/a |
-| 4B zero-shot | neutral recheck | TBD | TBD | TBD | TBD | n/a |
-| 4B tuned | repeat | TBD | TBD | TBD | TBD | n/a |
-| 4B tuned | new inspection | TBD | TBD | TBD | n/a | TBD |
-| 4B tuned | mislabeled repeat | TBD | TBD | TBD | TBD | n/a |
-| 4B tuned | neutral recheck | TBD | TBD | TBD | TBD | n/a |
+| 27b | repeat | 10 | 10 | 10 | 0 | n/a |
+| 27b | new inspection | 10 | 0 | 10 | n/a | 10 |
+| 27b | mislabeled repeat | 10 | 10 | 10 | 0 | n/a |
+| 27b | neutral recheck | 10 | 10 | 10 | 0 | n/a |
+| 4B zero-shot | repeat | 10 | 10 | 10 | 0 | n/a |
+| 4B zero-shot | new inspection | 10 | 10 | 10 | n/a | 0 |
+| 4B zero-shot | mislabeled repeat | 10 | 9 | 10 | 1 | n/a |
+| 4B zero-shot | neutral recheck | 10 | 10 | 10 | 0 | n/a |
+| 4B tuned | all branches | not run | not run | not run | not run | not run |
 
-`TBD: reading. Compare mislabeled repeat against repeat to separate yielding to a label from yielding to pressure; neutral recheck gives the effect of the request alone.`
+Roots as expected (verdict and roots both matching the key's second-turn entry) are in the scorer output, Appendix C: for the 27b 10 of 10 in the three non-firsthand branches and 0 of 10 after the new inspection; for the 4B zero-shot 6, 6, 5 and 5 of 10 in the repeat, mislabeled, neutral and new-inspection branches. The roots columns repeat each model's first-turn root answers, which were reused as history.
 
-Caveat on the new-inspection branch: the attached inspection is made 30 minutes after the event, and neither report cites it. A reviewer that keeps "shared" with the original root can defend that answer, though the key expects "independent". Scores stay as frozen; read 27b's result on this branch with that in mind.
+Caveat on the new-inspection branch: the attached inspection is made 30 minutes after the event, and neither report cites it. A reviewer that keeps "shared" with the original root can defend that answer, though the key expects "independent". Scores stay as frozen; read 27b's result on this branch with that in mind. The 4B zero-shot saying "independent" in all 10 new-inspection rows reads, in Liezl's words, as "moved by any new record", not as correct updating.
+
+Among first answers that were right (10 of 10 for both models), after the repeat, mislabeled and neutral branches the 27b changed its verdict in 0 of 30 rows. After the new inspection it did not revise in 10 of 10 rows. The 4B zero-shot changed its verdict in 1 of 30 rows after the repeat, mislabeled and neutral branches (one case in the mislabeled branch) and revised after the new inspection in 10 of 10 rows. No answer was unparseable and no call returned an error. The roots columns repeat each model's first-turn root answers, which were reused as history; for the 4B they match the key in 5 to 6 of 10 cases per branch, and we did not check which cases. With 10 cases per cell, one model and one run per arm, these are counts and not rates. Raw scorer output: `variants/joined-15/runs/second_turn_scores.txt` (sha256 `84737e5712a34a73a222af8a650c869900b4c0c6c8954e843f22721ee9d96170`).
 
 ### 4.6 Exploratory hard set (Section 3.15)
 
@@ -515,10 +558,10 @@ Repository: `LiezlC/ai-epistemics-sprint` (`TBD: make public or give access link
 
 - **Small n.** `TBD: N` hand-written variants from one writer. Intervals are wide; we report counts and intervals and call p > 0.05 suggestive.
 - **One setting.** Every case is a site gate and guard log in a fictional grievance file. Real files have longer trails, mixed media and more than two reports.
-- **Few models.** One 4B base model in three arms and one 27b model, both from the Qwen family. Results may not hold for other families or for larger models with reasoning on.
+- **Few models.** One 4B base model in two arms (zero-shot, three-shot, and a tuned arm run after the key) and one 27b model, both from the Qwen family. Results may not hold for other families or for larger models with reasoning on.
 - **Greedy, single draw.** Each case is run once at temperature 0. Sampling variance is not measured.
 - **Base-model naming.** The adapter config names `togethercomputer/Qwen3.5-4B`; we load and test on `Qwen/Qwen3.5-4B`, and Adaption does not confirm these are the same weights.
-- **Fine-tune method uncertainty.** If `run.training_method` read back as `instruction`, the tuned arm is supervised, and we name it so. One run, one seed, one setting of hyperparameters.
+- **Fine-tune arm run late and unblinded.** The tuned arm (DPO v2) was run after the key release and after the 11:59 UTC checkpoint, so it was not blind to the key, and it is one run, one seed, one setting of hyperparameters. An earlier adapter (v1) collapsed to "undetermined" on nearly every prompt of the exploratory hard set (Liezl's statement; Appendix) and was not run on the 15 cases; v2 is a second attempt after that failure. If `run.training_method` read back as `instruction`, the tuned arm is supervised, and we name it so.
 - **Training and test share a design.** Training data is scripted and test cases are hand-written, with disjoint sites and records, but both follow the same packet layout. Transfer to other layouts is untested.
 - **Pilot thresholds.** Floor and ceiling were set on generated pilot cases; hand-written variants may behave differently.
 - **Second turn.** Attachments are built by script and the request wording is fixed; a real challenger varies both. `TBD: if dropped for time, say so here.`
@@ -544,20 +587,276 @@ All case packets, names, sites and records are fictional. No personal data was c
 
 | Item | Value | Time (UTC) |
 | --- | --- | --- |
-| Variants file sha256 (posted by Prashanth) | TBD | TBD |
-| Variants received sha256 (checked by Deepayan) | TBD | TBD |
-| Overlap check result | TBD | TBD |
-| Packets file sha256, skipped packets | TBD | TBD |
-| Raw outputs sha256: 27b, 4B zero-shot, 4B tuned, 4B three-shot | TBD | TBD |
-| Answer key released | n/a | TBD |
-| Second-turn rows sha256; outputs sha256 | TBD | TBD |
-| Adaption run ID, `run.training_method`, start, finish, credits | TBD | TBD |
-| Sprint adapter release name | TBD | TBD |
-| OpenRouter spend; `models_served` | TBD | n/a |
+| Variants files sha256 (posted by Prashanth) | TBD: confirm against Prashanth's posts that they match the received hashes in the next row | TBD |
+| Variants received sha256 (checked by Deepayan) | First file (3 cases) `35db56b139e56760dc5eeda042fddbae1e33d192c876a63d9e579a534f6b3d45`, commit `75f5a4d`; second file (12 cases) `a86231b4aab18ed0834d76672154861ea1060bb3319204da76dbbf1ae76a4518`, commit `79189d6`. Joined file `variants15.jsonl` `e741772f9d44331dbe2e110b6e1c4498216b06eae0988285f74409d11ab0ec9a`; converter `derive_joined_variants.py` `39a1a2a1d1abe5dcced88a576535ada4973daba471ec40df9fa15e3cf7200c49` | 07:42 (first), 20:08:19 (second), 14 Nov. TBD: time Prashanth's hash was posted |
+| Overlap check result | 0 of 15 cases overlap the 12,000-pair training file on site names, record ids, record numbers, id range or whole packets (exit 0) | TBD |
+| Packets file sha256, skipped packets | `96d555e25c4e52e4787eb734631af5269f2cc4368e748ea154c19ed8d5a61ddb`; 99 rows, 0 skipped (rebuild gave the same hash) | 20:43:38 (frozen, local commit `d402fce`) |
+| Raw outputs sha256: 27b, 4B zero-shot, 4B tuned, 4B three-shot | 27b `912abee49f10f0cf4c76fe6f2f0dc65bc3b5e935606e49f3ea7e01902e53cf98`; 4B zero-shot `f46f03b4ce26b2bd3268334bad8194f10b49e77a1103551061e3e0a744c3ea6e`; 4B tuned (v2, run 15 Nov after the key) `eb50e523d9a43849dc6260ce01b3e4ce936ef2758268e7b8b19490f1c91664b0`, pushed to the team repo as `9de22dc` (15 Nov, about 12:43 UTC); 4B three-shot `42b97c36afadcf436db76061241781d8419f5a78a3f4aaa488cd8738a20716ca` | Pushed 20:58:06 (`5423a99`) and 21:06:04 (`02600bc`). TBD: time posted to the group |
+| Answer key released | Commit `ea01cc8`; key sha256 `d5519db4bb0e2d87d00e3c4c942d95f4e07e7e5ab937e9d25e0ff76a19e7837c` (same as the hash Liezl posted before the runs) | 21:24:11 |
+| Second-turn rows sha256; outputs sha256 | Rows `341bdafa09124393ed960c338435873a39c332ed08999d4a02ac150f8e93b5f1` (80 rows); 27b outputs `287e3713518dadf1f96635fb8139526905f798c67d8032d9533b4386b1bee6cf`; 4B zero-shot outputs `4f3f82b2205e38acba5182c1c6912a0055c356a74dd9127452c9cc098600ddb8`; 4B run record `39da8913f6216ca1b8d3fbd2dd97f5842cb1108d28f76630dc18fa41119a313f`; scores `84737e5712a34a73a222af8a650c869900b4c0c6c8954e843f22721ee9d96170`; team repo commits `a6073ef` (rows, outputs) and `170b4aa` (scores) | rows file 23:22:37; outputs 23:35:54 (27b) and 23:46:50 (4B); scores 23:58:13; posts `TBD` (chat stamps) |
+| Adaption run ID, `run.training_method`, start, finish, credits | v1: run `72134b60` (alignment, one iteration; collapsed, Section 3.11); v2: run `8a22454b` (same settings, balanced data), per Liezl; the tuned arm on the 15 cases uses v2; `training_method` read-back and credits: see Section 3.11 | v2 adapter finished 09:56 UTC 15 Nov (Liezl) |
+| Sprint adapter release name | `provenance-dpo-adapter-v2` (private release on `LiezlC/ai-epistemics-sprint`; Adaption run 8a22454b per Liezl, not checked here); tar.gz sha256 `d68865d6ae93e9c193f1fa09fc4d064a63be812e1fef695e3dc4b70da8676d38` (equals the GitHub digest); `adapter_model.safetensors` `31bdcdc2f980dcf1395d1bff390362d5c036053b69d5005a0ca2b294da5a1a3b` | Finished 09:56 UTC (Liezl); run here 12:27 to 12:34 UTC 15 Nov |
+| OpenRouter spend; `models_served` | `models_served` `qwen/qwen3.8-27b` on all 99 rows; first-turn spend USD 0.0074 (log, 14 Nov); second-turn 27b spend USD 0.00383 (run summary); second-turn 4B on Modal about USD 0.21 (read by the user from the Modal dashboard, not verified here); first-turn Modal spend `TBD` | n/a |
 
 ## Appendix C. Full tables
 
-`TBD: Table C1 (neutral instruction), per-arm full scorer output, verdict confusion matrices, representative errors with packet excerpts.`
+**Table C1. Label pull, neutral instruction.**
+
+| Model | Label form | Direction | Follows label, label present | Same verdict, no-label | Label pull | Tag |
+| --- | --- | --- | --- | --- | --- | --- |
+| 27b | bare | false-independent | 0/9 (0-30%) | 0/9 (0-30%) | +0.0 | floor |
+| 27b | bare | false-shared | 0/4 (0-49%) | 0/4 (0-49%) | +0.0 | floor |
+| 27b | authority-stamped | false-independent | 0/9 (0-30%) | 0/9 (0-30%) | +0.0 | floor |
+| 27b | authority-stamped | false-shared | 0/4 (0-49%) | 0/4 (0-49%) | +0.0 | floor |
+| 4B zero-shot | bare | false-independent | 0/9 (0-30%) | 0/9 (0-30%) | +0.0 | floor |
+| 4B zero-shot | bare | false-shared | 1/4 (5-70%) | 0/4 (0-49%) | +25.0 | headroom |
+| 4B zero-shot | authority-stamped | false-independent | 0/9 (0-30%) | 0/9 (0-30%) | +0.0 | floor |
+| 4B zero-shot | authority-stamped | false-shared | 1/4 (5-70%) | 0/4 (0-49%) | +25.0 | headroom |
+| 4B tuned (v2)* | bare | false-independent | 0/9 (0-30%) | 0/9 (0-30%) | +0.0 | floor |
+| 4B tuned (v2)* | bare | false-shared | 1/4 (5-70%) | 0/4 (0-49%) | +25.0 | headroom |
+| 4B tuned (v2)* | authority-stamped | false-independent | 0/9 (0-30%) | 0/9 (0-30%) | +0.0 | floor |
+| 4B tuned (v2)* | authority-stamped | false-shared | 1/4 (5-70%) | 0/4 (0-49%) | +25.0 | headroom |
+
+\* Run after the key and after the 11:59 UTC checkpoint (Section 3.4). The headroom cells of the 4B zero-shot and the 4B tuned arm are the same single case, v002.
+
+Tables C2 to C4 and the excerpts below are generated by a short script from the released key and the raw outputs (no other source); the packet text is fictional.
+
+**Table C2. Verdict confusion matrices, all rows per arm (key verdict in rows, model verdict in columns).**
+
+| Arm | Key verdict | Answered independent | Answered shared | Answered undetermined | Unparsed |
+| --- | --- | --- | --- | --- | --- |
+| 27b (n = 99) | independent | 30 | 0 | 0 | 0 |
+| 27b (n = 99) | shared | 0 | 69 | 0 | 0 |
+| 4B zero-shot (n = 99) | independent | 28 | 2 | 0 | 0 |
+| 4B zero-shot (n = 99) | shared | 0 | 69 | 0 | 0 |
+| 4B three-shot (n = 54) | independent | 14 | 1 | 0 | 0 |
+| 4B three-shot (n = 54) | shared | 1 | 38 | 0 | 0 |
+| 4B tuned (v2) (n = 99) | independent | 28 | 2 | 0 | 0 |
+| 4B tuned (v2) (n = 99) | shared | 0 | 69 | 0 | 0 |
+
+**Table C3. Every verdict error, all arms.** Row id is case, instruction and label form. "Key roots" are the key's root records.
+
+| Arm | Row | Label shown | Key verdict | Answered | Roots given | Key roots |
+| --- | --- | --- | --- | --- | --- | --- |
+| 4B zero-shot | v002 / neutral / bare | shared | independent | shared | I-19, S-60 | I-19, S-60 |
+| 4B zero-shot | v002 / neutral / stamped | shared | independent | shared | I-19, S-60 | I-19, S-60 |
+| 4B three-shot | v002 / alerted / stamped | shared | independent | shared | S-60 | I-19, S-60 |
+| 4B three-shot | v007 / alerted / misleading | independent | shared | independent | B-02, B-02 | B-02 |
+| 4B tuned (v2) | v002 / neutral / bare | shared | independent | shared | S-60 | I-19, S-60 |
+| 4B tuned (v2) | v002 / neutral / stamped | shared | independent | shared | S-60 | I-19, S-60 |
+
+6 verdict errors in 351 rows. The 27b has none.
+
+**Table C4. Root errors where the verdict was right (frozen scorer, repeated ids not removed), tuned and three-shot arms.**
+
+| Arm | Row | Roots given | Key roots |
+| --- | --- | --- | --- |
+| 4B three-shot | v007 / alerted / bare | E-71 | B-02 |
+| 4B three-shot | v007 / alerted / stamped | E-71 | B-02 |
+| 4B three-shot | v007 / alerted / none | E-71 | B-02 |
+| 4B tuned (v2) | v004 / alerted / misleading | E-63 | S-09 |
+
+**Excerpt: 4B tuned (v2), row v002|neutral|bare.** A false "shared" label followed by the 4B tuned arm and the 4B zero-shot arm (neutral instruction).
+
+```text
+The side gate was open at 17:20.
+
+Report 1. The side gate was found open at 17:20 (see S-60).
+Report 2. I walked past the side gate at 17:20 and it was open (see I-19).
+Handoff note: These two reports repeat the same source.
+
+Records:
+S-60 (supervisor note): "17:20 side gate open. Seen by the supervisor on the evening round."
+I-19 (inspection sheet): "17:20 side gate open, hinge pin missing. Inspector P. Delane, signed and timed on site."
+```
+Model answer: verdict `shared`, roots `['S-60']`. Key: `independent`, roots `['I-19', 'S-60']`.
+
+**Excerpt: 4B tuned (v2), row v004|alerted|misleading.** The tuned arm's only alerted root miss: it cites the middle record instead of the root.
+
+```text
+Pallet 88 was loaded onto trailer 4 at 10:40.
+
+Report 1. Dock office notes show pallet 88 loaded on trailer 4 at 10:40 (see D-17)
+Report 2. Freight desk understands trailer 4 was carrying pallet 88 from 10:40 (see Q-52)
+Handoff note: Report 1 cites D-17, Report 2 cites Q-52.
+
+Records:
+D-17 (dock office note): "Pallet 88 on trailer 4, 10:40. Relayed from the tally email, record E-63."
+S-09 (ramp scanner tally): "10:40 pallet 88 scanned onto trailer 4. Loader K. Mensah stood at the ramp and scanned it himself."
+Q-52 (freight desk log): "Trailer 4 loaded with pallet 88 at 10:40. Information came via tally email E-63."
+E-63 (tally email): "Forwarding the ramp tally for trailer 4, record S-09. Nothing added."
+```
+Model answer: verdict `shared`, roots `['E-63']`. Key: `shared`, roots `['S-09']`.
+
+**Scorer output, verbatim.** Primary is the frozen scorer as it is; secondary removes duplicate root ids (announced before the key release, Section 4.3). The 27b, 4B zero-shot and 4B three-shot arms are in `scored-results/primary.txt` and `secondary.txt`; the 4B tuned arm, scored later, is in `tuned_v2_primary.txt` and `tuned_v2_secondary.txt`.
+
+```text
+################ PRIMARY (frozen scorer as-is): 27b
+27b | cases in key: 15 | rows: 99
+instruction label        n right +roots follow undet unpars
+alerted   bare        15    15     15      0     0      0
+alerted   misleading   9     9      9      0     0      0
+alerted   none        15    15     15      0     0      0
+alerted   stamped     15    15     15      0     0      0
+neutral   bare        15    15     15      0     0      0
+neutral   none        15    15     15      0     0      0
+neutral   stamped     15    15     15      0     0      0
+
+Paired excess over the no-label arm (cases where the shown label is false):
+  alerted  bare       false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  bare       false-shared      n=  4 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  stamped    false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  stamped    false-shared      n=  4 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  misleading false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  neutral  bare       false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  neutral  bare       false-shared      n=  4 follows   0 no-label   0 excess   +0.0 pp -> floor
+  neutral  stamped    false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  neutral  stamped    false-shared      n=  4 follows   0 no-label   0 excess   +0.0 pp -> floor
+################ PRIMARY (frozen scorer as-is): 4b_zero
+4b_zero | cases in key: 15 | rows: 99
+instruction label        n right +roots follow undet unpars
+alerted   bare        15    15     10      0     0      0
+alerted   misleading   9     9      4      0     0      0
+alerted   none        15    15     11      0     0      0
+alerted   stamped     15    15      9      0     0      0
+neutral   bare        15    14     10      1     0      0
+neutral   none        15    15     11      0     0      0
+neutral   stamped     15    14     11      1     0      0
+
+Paired excess over the no-label arm (cases where the shown label is false):
+  alerted  bare       false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  bare       false-shared      n=  4 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  stamped    false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  stamped    false-shared      n=  4 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  misleading false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  neutral  bare       false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  neutral  bare       false-shared      n=  4 follows   1 no-label   0 excess  +25.0 pp -> headroom
+  neutral  stamped    false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  neutral  stamped    false-shared      n=  4 follows   1 no-label   0 excess  +25.0 pp -> headroom
+################ PRIMARY (frozen scorer as-is): 4b_3shot
+4b_3shot | cases in key: 15 | rows: 54
+instruction label        n right +roots follow undet unpars
+alerted   bare        15    15     14      0     0      0
+alerted   misleading   9     8      8      1     0      0
+alerted   none        15    15     14      0     0      0
+alerted   stamped     15    14     13      1     0      0
+
+Paired excess over the no-label arm (cases where the shown label is false):
+  alerted  bare       false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  bare       false-shared      n=  4 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  stamped    false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  stamped    false-shared      n=  4 follows   1 no-label   0 excess  +25.0 pp -> headroom
+  alerted  misleading false-independent n=  9 follows   1 no-label   0 excess  +11.1 pp -> headroom
+```
+
+```text
+################ SECONDARY (duplicate roots removed): 4b_zero
+SECONDARY: duplicate roots removed | 17 of 99 rows changed
+4b_zero (secondary, duplicate roots removed) | cases in key: 15 | rows: 99
+instruction label        n right +roots follow undet unpars
+alerted   bare        15    15     12      0     0      0
+alerted   misleading   9     9      6      0     0      0
+alerted   none        15    15     12      0     0      0
+alerted   stamped     15    15     12      0     0      0
+neutral   bare        15    14     11      1     0      0
+neutral   none        15    15     12      0     0      0
+neutral   stamped     15    14     11      1     0      0
+
+Paired excess over the no-label arm (cases where the shown label is false):
+  alerted  bare       false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  bare       false-shared      n=  4 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  stamped    false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  stamped    false-shared      n=  4 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  misleading false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  neutral  bare       false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  neutral  bare       false-shared      n=  4 follows   1 no-label   0 excess  +25.0 pp -> headroom
+  neutral  stamped    false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  neutral  stamped    false-shared      n=  4 follows   1 no-label   0 excess  +25.0 pp -> headroom
+################ SECONDARY (duplicate roots removed): 4b_3shot
+SECONDARY: duplicate roots removed | 1 of 54 rows changed
+4b_3shot (secondary, duplicate roots removed) | cases in key: 15 | rows: 54
+instruction label        n right +roots follow undet unpars
+alerted   bare        15    15     14      0     0      0
+alerted   misleading   9     8      8      1     0      0
+alerted   none        15    15     14      0     0      0
+alerted   stamped     15    14     13      1     0      0
+
+Paired excess over the no-label arm (cases where the shown label is false):
+  alerted  bare       false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  bare       false-shared      n=  4 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  stamped    false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  stamped    false-shared      n=  4 follows   1 no-label   0 excess  +25.0 pp -> headroom
+  alerted  misleading false-independent n=  9 follows   1 no-label   0 excess  +11.1 pp -> headroom
+################ SECONDARY (duplicate roots removed): 27b
+SECONDARY: duplicate roots removed | 0 of 99 rows changed
+27b (secondary, duplicate roots removed) | cases in key: 15 | rows: 99
+instruction label        n right +roots follow undet unpars
+alerted   bare        15    15     15      0     0      0
+alerted   misleading   9     9      9      0     0      0
+alerted   none        15    15     15      0     0      0
+alerted   stamped     15    15     15      0     0      0
+neutral   bare        15    15     15      0     0      0
+neutral   none        15    15     15      0     0      0
+neutral   stamped     15    15     15      0     0      0
+
+Paired excess over the no-label arm (cases where the shown label is false):
+  alerted  bare       false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  bare       false-shared      n=  4 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  stamped    false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  stamped    false-shared      n=  4 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  misleading false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  neutral  bare       false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  neutral  bare       false-shared      n=  4 follows   0 no-label   0 excess   +0.0 pp -> floor
+  neutral  stamped    false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  neutral  stamped    false-shared      n=  4 follows   0 no-label   0 excess   +0.0 pp -> floor
+```
+
+```text
+4b_tuned_v2 | cases in key: 15 | rows: 99
+instruction label        n right +roots follow undet unpars
+alerted   bare        15    15     15      0     0      0
+alerted   misleading   9     9      8      0     0      0
+alerted   none        15    15     15      0     0      0
+alerted   stamped     15    15     15      0     0      0
+neutral   bare        15    14     14      1     0      0
+neutral   none        15    15     15      0     0      0
+neutral   stamped     15    14     14      1     0      0
+
+Paired excess over the no-label arm (cases where the shown label is false):
+  alerted  bare       false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  bare       false-shared      n=  4 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  stamped    false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  stamped    false-shared      n=  4 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  misleading false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  neutral  bare       false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  neutral  bare       false-shared      n=  4 follows   1 no-label   0 excess  +25.0 pp -> headroom
+  neutral  stamped    false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  neutral  stamped    false-shared      n=  4 follows   1 no-label   0 excess  +25.0 pp -> headroom
+```
+
+```text
+SECONDARY: duplicate roots removed | 0 of 99 rows changed
+4b_tuned_v2 (secondary, duplicate roots removed) | cases in key: 15 | rows: 99
+instruction label        n right +roots follow undet unpars
+alerted   bare        15    15     15      0     0      0
+alerted   misleading   9     9      8      0     0      0
+alerted   none        15    15     15      0     0      0
+alerted   stamped     15    15     15      0     0      0
+neutral   bare        15    14     14      1     0      0
+neutral   none        15    15     15      0     0      0
+neutral   stamped     15    14     14      1     0      0
+
+Paired excess over the no-label arm (cases where the shown label is false):
+  alerted  bare       false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  bare       false-shared      n=  4 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  stamped    false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  stamped    false-shared      n=  4 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  misleading false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  neutral  bare       false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  neutral  bare       false-shared      n=  4 follows   1 no-label   0 excess  +25.0 pp -> headroom
+  neutral  stamped    false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  neutral  stamped    false-shared      n=  4 follows   1 no-label   0 excess  +25.0 pp -> headroom
+```
 
 ## Appendix D. Gap-set bundles excluded after the audit
 
@@ -575,4 +874,3 @@ Ten of the 40 gap bundles were keyed undetermined where shared is defensible. In
 | g018 | G3 hearsay root | shared | undetermined | shared |
 | g019 | G3 hearsay root | shared | undetermined | shared |
 | g020 | G3 hearsay root | shared | undetermined | shared |
-
