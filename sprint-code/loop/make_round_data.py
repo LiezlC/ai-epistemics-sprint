@@ -11,6 +11,7 @@ Both source files are checked against their sha256 first.
 Usage: python -I make_round_data.py --recipe v1 --out rounds/r0/pairs.jsonl [--n 1500]
 """
 import argparse
+import collections
 import hashlib
 import json
 import os
@@ -99,7 +100,30 @@ def recipe_v4(n):
     return out, meta
 
 
-RECIPES = {"v1": recipe_v1, "v2": recipe_v2, "v3": recipe_v3, "v4": recipe_v4}
+def recipe_v5(n):
+    """Round 4 (critic proposal on round 3, approved by Liezl 15 Nov 2026: "Yes, run round 4"). The v3 files, notes and
+    chosen answers; every rejected answer replaced by one note-independent negative per file: within each chosen-verdict
+    group (files in source order), file j gets sorted(other two verdicts)[j % 2], with the chosen root_records copied.
+    The same rejected answer is used for all three note variants."""
+    lines, meta = recipe_v3(n)
+    rows = [json.loads(l) for l in lines]
+    assert len(rows) % 3 == 0
+    seen = collections.Counter()
+    out = []
+    for f in range(0, len(rows), 3):
+        trio = rows[f:f + 3]
+        ch = json.loads(trio[0]["chosen"])
+        assert all(json.loads(r["chosen"]) == ch for r in trio)
+        j = seen[ch["verdict"]]
+        seen[ch["verdict"]] += 1
+        rv = sorted({"independent", "shared", "undetermined"} - {ch["verdict"]})[j % 2]
+        rej = json.dumps({"verdict": rv, "root_records": ch["root_records"]}, ensure_ascii=False)
+        out += [json.dumps(dict(r, rejected=rej), ensure_ascii=False) for r in trio]
+    meta["v5_files_by_chosen"] = dict(seen)
+    return out, meta
+
+
+RECIPES = {"v1": recipe_v1, "v2": recipe_v2, "v3": recipe_v3, "v4": recipe_v4, "v5": recipe_v5}
 
 
 def main():

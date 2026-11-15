@@ -1,0 +1,21 @@
+{
+ "source": "train_dpo_v2.jsonl",
+ "source_sha256": "fa31f782efc317854fdba6ed409b9bb244927fbbac762d4eb03bbe4c6faf896a",
+ "v3_strata": {
+  "undetermined>shared": 101,
+  "undetermined>independent": 94,
+  "shared>undetermined": 82,
+  "shared>independent": 70,
+  "independent>undetermined": 78,
+  "independent>shared": 75
+ },
+ "v5_files_by_chosen": {
+  "shared": 152,
+  "undetermined": 195,
+  "independent": 153
+ },
+ "recipe": "v5",
+ "n": 1500,
+ "seed": 20261203,
+ "pairs_sha256": "0f899376dcab4d09b4e5111fb89d297512efbd190bfd427919825d7eb59d224b"
+}
