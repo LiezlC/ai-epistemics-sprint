@@ -1,0 +1,251 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gap Set Audit</title><style>
+:root{--bg:#fafaf7;--fg:#1d1d1b;--mut:#666;--card:#fff;--line:#ddd;--ok:#1d7a3a;--bad:#b3261e;--acc:#2f5fb3}
+@media (prefers-color-scheme:dark){:root{--bg:#161615;--fg:#eee;--mut:#aaa;--card:#202020;--line:#3a3a3a;--ok:#5fc27e;--bad:#ff8a80;--acc:#8fb2ff}}
+body{background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,sans-serif;margin:0;padding:16px;max-width:860px;margin-inline:auto}
+.case{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:18px 0}
+pre{white-space:pre-wrap;word-wrap:break-word;font:14px/1.45 ui-monospace,Consolas,monospace;background:transparent;border-left:3px solid var(--line);padding-left:10px}
+fieldset{border:none;padding:0;margin:10px 0} legend{font-weight:600;margin-bottom:4px}
+label{display:block;margin:3px 0;cursor:pointer} .chip{display:inline-block;margin-right:14px}
+.tag{display:none} .note input{width:100%;box-sizing:border-box;padding:6px;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:6px}
+button{font:inherit;padding:10px 18px;border-radius:8px;border:1px solid var(--acc);background:var(--acc);color:#fff;cursor:pointer;margin-right:10px}
+.result{margin-top:8px;font-weight:600} .ok{color:var(--ok)} .bad{color:var(--bad)} .mut{color:var(--mut)}
+</style></head><body>
+<h1>Gap set audit: 10 cases</h1>
+<p class="mut">For each case, read the records and decide whether they settle where each report's information comes from. A firsthand root is a record whose named maker saw or measured the event. If any report's trail runs out (a missing record, no maker, hearsay, no source, or two records that may be one observation), choose "No". Your answers save in this browser. The key appears only after you press Submit.</p>
+<section class="case" data-q="Q1">
+<h2>Case 1 <span class="tag">g013</span></h2>
+<pre>Claim under review: At 10:15, the dental clinic’s sterilizer door opened.
+
+Report 1. The dental clinic’s sterilizer door opened at 10:15 (see AZ-39).
+Report 2. At 10:15, the sterilizer door in the dental clinic swung open (see B-409).
+
+Records:
+B-409 (reception summary note): &quot;10:15: Dental clinic sterilizer door opened. I did not witness this event. This information is taken from record Z-54.&quot;
+Z-54 (sterilization room log): &quot;10:15: I saw the dental clinic’s sterilizer door open. C. Rossi.&quot;
+AZ-39 (clinic handover entry): &quot;The dental clinic’s sterilizer door opened at 10:15. I was not present. This information is taken from record T-55.&quot;
+T-55 (equipment observation note): &quot;10:15: The dental clinic’s sterilizer door opened.&quot;</pre>
+<fieldset><legend>Do the records settle whether the two reports share a firsthand source?</legend>
+<label><input type="radio" name="Q1-settled" value="yes"> Yes, the records settle it</label>
+<label><input type="radio" name="Q1-settled" value="no"> No, they leave it open (undetermined)</label></fieldset>
+<fieldset class="ifyes"><legend>If yes: verdict</legend>
+<label><input type="radio" name="Q1-verdict" value="shared"> Shared root</label>
+<label><input type="radio" name="Q1-verdict" value="independent"> Independent roots</label></fieldset>
+<fieldset class="ifyes"><legend>If yes: tick the firsthand root record(s)</legend><label class="chip"><input type="checkbox" name="Q1-root" value="B-409"> B-409</label><label class="chip"><input type="checkbox" name="Q1-root" value="Z-54"> Z-54</label><label class="chip"><input type="checkbox" name="Q1-root" value="AZ-39"> AZ-39</label><label class="chip"><input type="checkbox" name="Q1-root" value="T-55"> T-55</label></fieldset>
+<label class="note">Note (optional) <input type="text" name="Q1-note"></label>
+<div class="result"></div>
+</section><section class="case" data-q="Q2">
+<h2>Case 2 <span class="tag">g001</span></h2>
+<pre>Claim under review: At 07:15, the west bay door at Brindlewick Fire Station closed fully.
+
+Report 1. The west bay door at Brindlewick Fire Station closed fully at 07:15 (see S-25).
+Report 2. At 07:15, Brindlewick Fire Station’s west bay door reached its fully closed position (see Z-64).
+
+Records:
+S-25 (shift summary note): &quot;07:15 Brindlewick Fire Station west bay door closed fully. I did not witness the closure. This information is taken from record DC-36.&quot;
+G-297 (bay inspection log): &quot;07:15 I, A. Kariuki, watched the west bay door at Brindlewick Fire Station close fully against the floor.&quot;
+Z-64 (station status bulletin): &quot;07:15 closure of Brindlewick Fire Station’s west bay door completed. Information taken from record G-297. I was away from the bay and did not observe the event.&quot;</pre>
+<fieldset><legend>Do the records settle whether the two reports share a firsthand source?</legend>
+<label><input type="radio" name="Q2-settled" value="yes"> Yes, the records settle it</label>
+<label><input type="radio" name="Q2-settled" value="no"> No, they leave it open (undetermined)</label></fieldset>
+<fieldset class="ifyes"><legend>If yes: verdict</legend>
+<label><input type="radio" name="Q2-verdict" value="shared"> Shared root</label>
+<label><input type="radio" name="Q2-verdict" value="independent"> Independent roots</label></fieldset>
+<fieldset class="ifyes"><legend>If yes: tick the firsthand root record(s)</legend><label class="chip"><input type="checkbox" name="Q2-root" value="S-25"> S-25</label><label class="chip"><input type="checkbox" name="Q2-root" value="G-297"> G-297</label><label class="chip"><input type="checkbox" name="Q2-root" value="Z-64"> Z-64</label></fieldset>
+<label class="note">Note (optional) <input type="text" name="Q2-note"></label>
+<div class="result"></div>
+</section><section class="case" data-q="Q3">
+<h2>Case 3 <span class="tag">g035</span></h2>
+<pre>Claim under review: At 21:15, the mash pump stopped at Brindlewick Brewery.
+
+Report 1. The mash pump at Brindlewick Brewery stopped at 21:15 (see N-41).
+Report 2. At 21:15, Brindlewick Brewery’s mash pump came to a stop (see WJ-811).
+
+Records:
+N-41 (shift summary): &quot;21:15: Mash pump stopped at Brindlewick Brewery. Information taken from record S-54. I did not witness the stoppage.&quot;
+DW-437 (brewhouse operator log): &quot;21:15, Brindlewick Brewery: I saw the mash pump stop. M. Szabo, brewhouse operator.&quot;
+S-54 (maintenance desk log): &quot;Brindlewick Brewery mash pump stopped at 21:15. Details taken from record DW-437. I was away from the brewhouse and did not see it stop.&quot;
+WJ-811 (production handover note): &quot;Mash pump stoppage at Brindlewick Brewery, 21:15. Information taken from record DW-437; I did not see the event.&quot;</pre>
+<fieldset><legend>Do the records settle whether the two reports share a firsthand source?</legend>
+<label><input type="radio" name="Q3-settled" value="yes"> Yes, the records settle it</label>
+<label><input type="radio" name="Q3-settled" value="no"> No, they leave it open (undetermined)</label></fieldset>
+<fieldset class="ifyes"><legend>If yes: verdict</legend>
+<label><input type="radio" name="Q3-verdict" value="shared"> Shared root</label>
+<label><input type="radio" name="Q3-verdict" value="independent"> Independent roots</label></fieldset>
+<fieldset class="ifyes"><legend>If yes: tick the firsthand root record(s)</legend><label class="chip"><input type="checkbox" name="Q3-root" value="N-41"> N-41</label><label class="chip"><input type="checkbox" name="Q3-root" value="DW-437"> DW-437</label><label class="chip"><input type="checkbox" name="Q3-root" value="S-54"> S-54</label><label class="chip"><input type="checkbox" name="Q3-root" value="WJ-811"> WJ-811</label></fieldset>
+<label class="note">Note (optional) <input type="text" name="Q3-note"></label>
+<div class="result"></div>
+</section><section class="case" data-q="Q4">
+<h2>Case 4 <span class="tag">g022</span></h2>
+<pre>Claim under review: At 02:16, the dome shutter at Velrune Observatory closed fully.
+
+Report 1. The dome shutter at Velrune Observatory reached full closure at 02:16 (see D-59).
+Report 2. At 02:16, Velrune Observatory’s dome shutter shut completely (see E-63).
+
+Records:
+L-27 (operations summary): &quot;Velrune Observatory dome shutter closed fully at 02:16. Information taken from record L-83. I did not witness the closure.&quot;
+D-59 (overnight status report): &quot;Information taken from record W-634: Velrune Observatory dome shutter closed fully at 02:16. I did not see the event.&quot;
+W-634 (dome operator log): &quot;02:16, Velrune Observatory. I, R. Halvorsen, watched the dome shutter reach its fully closed position.&quot;
+L-83 (night observation log): &quot;I, E. Haddad, saw the dome shutter close completely at Velrune Observatory at 02:16.&quot;
+E-63 (morning handover note): &quot;I did not observe the closure. Information taken from record L-27: the dome shutter at Velrune Observatory closed fully at 02:16.&quot;</pre>
+<fieldset><legend>Do the records settle whether the two reports share a firsthand source?</legend>
+<label><input type="radio" name="Q4-settled" value="yes"> Yes, the records settle it</label>
+<label><input type="radio" name="Q4-settled" value="no"> No, they leave it open (undetermined)</label></fieldset>
+<fieldset class="ifyes"><legend>If yes: verdict</legend>
+<label><input type="radio" name="Q4-verdict" value="shared"> Shared root</label>
+<label><input type="radio" name="Q4-verdict" value="independent"> Independent roots</label></fieldset>
+<fieldset class="ifyes"><legend>If yes: tick the firsthand root record(s)</legend><label class="chip"><input type="checkbox" name="Q4-root" value="L-27"> L-27</label><label class="chip"><input type="checkbox" name="Q4-root" value="D-59"> D-59</label><label class="chip"><input type="checkbox" name="Q4-root" value="W-634"> W-634</label><label class="chip"><input type="checkbox" name="Q4-root" value="L-83"> L-83</label><label class="chip"><input type="checkbox" name="Q4-root" value="E-63"> E-63</label></fieldset>
+<label class="note">Note (optional) <input type="text" name="Q4-note"></label>
+<div class="result"></div>
+</section><section class="case" data-q="Q5">
+<h2>Case 5 <span class="tag">g012</span></h2>
+<pre>Claim under review: At 14:20, the baler discharge chute jammed at Veskora Recycling Plant.
+
+Report 1. The baler discharge chute at Veskora Recycling Plant jammed at 14:20 (see M-85).
+Report 2. At 14:20, a jam occurred in the baler discharge chute at Veskora Recycling Plant (see B-87).
+
+Records:
+B-87 (maintenance desk log): &quot;14:20, Veskora Recycling Plant: baler discharge chute jammed. Information taken from record VH-39. I was offsite and did not see the event.&quot;
+VH-39 (baler operator log): &quot;14:20, Veskora Recycling Plant: baler discharge chute jammed as a bale lodged across its outlet.&quot;
+M-85 (shift office summary): &quot;Baler discharge chute jammed at Veskora Recycling Plant at 14:20. This information comes from record VH-39. I did not witness the jam.&quot;</pre>
+<fieldset><legend>Do the records settle whether the two reports share a firsthand source?</legend>
+<label><input type="radio" name="Q5-settled" value="yes"> Yes, the records settle it</label>
+<label><input type="radio" name="Q5-settled" value="no"> No, they leave it open (undetermined)</label></fieldset>
+<fieldset class="ifyes"><legend>If yes: verdict</legend>
+<label><input type="radio" name="Q5-verdict" value="shared"> Shared root</label>
+<label><input type="radio" name="Q5-verdict" value="independent"> Independent roots</label></fieldset>
+<fieldset class="ifyes"><legend>If yes: tick the firsthand root record(s)</legend><label class="chip"><input type="checkbox" name="Q5-root" value="B-87"> B-87</label><label class="chip"><input type="checkbox" name="Q5-root" value="VH-39"> VH-39</label><label class="chip"><input type="checkbox" name="Q5-root" value="M-85"> M-85</label></fieldset>
+<label class="note">Note (optional) <input type="text" name="Q5-note"></label>
+<div class="result"></div>
+</section><section class="case" data-q="Q6">
+<h2>Case 6 <span class="tag">g019</span></h2>
+<pre>Claim under review: At 06:45, the mash tun overflowed at Brindlefen Brewery.
+
+Report 1. The mash tun at Brindlefen Brewery overflowed at 06:45 (see N-41).
+Report 2. At 06:45, mash spilled over the rim of the mash tun at Brindlefen Brewery (see JC-91).
+
+Records:
+N-41 (shift summary): &quot;06:45 mash tun overflow at Brindlefen Brewery. Information taken from record Z-65. I was offsite and did not witness it.&quot;
+Z-65 (brewhouse operator log): &quot;06:45, Brindlefen Brewery: I, B. Halvorsen, saw mash spill over the mash tun rim onto the floor.&quot;
+JC-91 (production incident register): &quot;Brindlefen Brewery mash tun overflowed at 06:45. This information is taken from record Z-65. I did not see the incident.&quot;</pre>
+<fieldset><legend>Do the records settle whether the two reports share a firsthand source?</legend>
+<label><input type="radio" name="Q6-settled" value="yes"> Yes, the records settle it</label>
+<label><input type="radio" name="Q6-settled" value="no"> No, they leave it open (undetermined)</label></fieldset>
+<fieldset class="ifyes"><legend>If yes: verdict</legend>
+<label><input type="radio" name="Q6-verdict" value="shared"> Shared root</label>
+<label><input type="radio" name="Q6-verdict" value="independent"> Independent roots</label></fieldset>
+<fieldset class="ifyes"><legend>If yes: tick the firsthand root record(s)</legend><label class="chip"><input type="checkbox" name="Q6-root" value="N-41"> N-41</label><label class="chip"><input type="checkbox" name="Q6-root" value="Z-65"> Z-65</label><label class="chip"><input type="checkbox" name="Q6-root" value="JC-91"> JC-91</label></fieldset>
+<label class="note">Note (optional) <input type="text" name="Q6-note"></label>
+<div class="result"></div>
+</section><section class="case" data-q="Q7">
+<h2>Case 7 <span class="tag">g014</span></h2>
+<pre>Claim under review: At 22:14, the dome shutter at Veyra Observatory closed fully.
+
+Report 1. The dome shutter at Veyra Observatory closed fully at 22:14 (see NX-71).
+Report 2. At 22:14, Veyra Observatory’s dome shutter reached its fully closed position (see PS-23).
+
+Records:
+SC-32 (dome operator log): &quot;22:14, Veyra Observatory. I watched the dome shutter close fully. T. Novak, dome operator.&quot;
+C-24 (night inspection log): &quot;22:14 at Veyra Observatory: dome shutter reached its fully closed position.&quot;
+NX-71 (operations desk summary): &quot;Veyra Observatory’s dome shutter closed fully at 22:14. I did not witness the closure. This information is taken from record SC-32.&quot;
+PS-23 (morning status bulletin): &quot;At 22:14, the dome shutter at Veyra Observatory closed fully. I was absent during the event. This information is taken from record C-24.&quot;</pre>
+<fieldset><legend>Do the records settle whether the two reports share a firsthand source?</legend>
+<label><input type="radio" name="Q7-settled" value="yes"> Yes, the records settle it</label>
+<label><input type="radio" name="Q7-settled" value="no"> No, they leave it open (undetermined)</label></fieldset>
+<fieldset class="ifyes"><legend>If yes: verdict</legend>
+<label><input type="radio" name="Q7-verdict" value="shared"> Shared root</label>
+<label><input type="radio" name="Q7-verdict" value="independent"> Independent roots</label></fieldset>
+<fieldset class="ifyes"><legend>If yes: tick the firsthand root record(s)</legend><label class="chip"><input type="checkbox" name="Q7-root" value="SC-32"> SC-32</label><label class="chip"><input type="checkbox" name="Q7-root" value="C-24"> C-24</label><label class="chip"><input type="checkbox" name="Q7-root" value="NX-71"> NX-71</label><label class="chip"><input type="checkbox" name="Q7-root" value="PS-23"> PS-23</label></fieldset>
+<label class="note">Note (optional) <input type="text" name="Q7-note"></label>
+<div class="result"></div>
+</section><section class="case" data-q="Q8">
+<h2>Case 8 <span class="tag">g021</span></h2>
+<pre>Claim under review: At 14:20, the ceiling light fell in the treatment room at Vellune Dental Clinic.
+
+Report 1. At 14:20, the ceiling light fell in Vellune Dental Clinic’s treatment room (see F-41).
+Report 2. The treatment room ceiling light at Vellune Dental Clinic fell at 14:20 (see Z-34).
+
+Records:
+W-783 (chairside incident log): &quot;14:20, Vellune Dental Clinic treatment room. I, H. Brennan, saw the ceiling light fall onto the floor beside the dental chair.&quot;
+NC-24 (dental assistant note): &quot;Vellune Dental Clinic, 14:20. I, D. Marrow, watched the treatment room ceiling light detach and fall to the floor.&quot;
+F-41 (reception incident summary): &quot;I did not witness the event. Information taken from record W-783: the treatment room ceiling light at Vellune Dental Clinic fell at 14:20.&quot;
+R-94 (facilities intake note): &quot;Information taken from record NC-24: at 14:20, the ceiling light fell in Vellune Dental Clinic’s treatment room. I was absent and did not see it.&quot;
+Z-34 (management event brief): &quot;I did not see the incident. Information taken from record R-94 states that Vellune Dental Clinic’s treatment room ceiling light fell at 14:20.&quot;</pre>
+<fieldset><legend>Do the records settle whether the two reports share a firsthand source?</legend>
+<label><input type="radio" name="Q8-settled" value="yes"> Yes, the records settle it</label>
+<label><input type="radio" name="Q8-settled" value="no"> No, they leave it open (undetermined)</label></fieldset>
+<fieldset class="ifyes"><legend>If yes: verdict</legend>
+<label><input type="radio" name="Q8-verdict" value="shared"> Shared root</label>
+<label><input type="radio" name="Q8-verdict" value="independent"> Independent roots</label></fieldset>
+<fieldset class="ifyes"><legend>If yes: tick the firsthand root record(s)</legend><label class="chip"><input type="checkbox" name="Q8-root" value="W-783"> W-783</label><label class="chip"><input type="checkbox" name="Q8-root" value="NC-24"> NC-24</label><label class="chip"><input type="checkbox" name="Q8-root" value="F-41"> F-41</label><label class="chip"><input type="checkbox" name="Q8-root" value="R-94"> R-94</label><label class="chip"><input type="checkbox" name="Q8-root" value="Z-34"> Z-34</label></fieldset>
+<label class="note">Note (optional) <input type="text" name="Q8-note"></label>
+<div class="result"></div>
+</section><section class="case" data-q="Q9">
+<h2>Case 9 <span class="tag">g037</span></h2>
+<pre>Claim under review: At 14:20, the autoclave door opened at Velmora Dental Clinic.
+
+Report 1. The autoclave door opened at Velmora Dental Clinic at 14:20 (see P-64).
+Report 2. At 14:20, Velmora Dental Clinic’s autoclave door opened (see JB-66).
+
+Records:
+S-72 (sterilization room log): &quot;14:20, Velmora Dental Clinic. I watched the autoclave door open while standing beside the unit. T. Lindqvist.&quot;
+G-75 (shift handover note): &quot;Information taken from record S-72: the autoclave door opened at 14:20 at Velmora Dental Clinic. I did not witness the event.&quot;
+P-64 (daily operations summary): &quot;Velmora Dental Clinic: autoclave door opened at 14:20. This information is taken from record G-75. I was absent when it happened.&quot;
+D-93 (equipment observation log): &quot;At 14:20 at Velmora Dental Clinic, I saw the autoclave door swing open from my position facing the unit. C. Duarte.&quot;
+JB-66 (maintenance intake note): &quot;Autoclave door opened at 14:20 at Velmora Dental Clinic. Information taken from record D-93; I did not see it happen.&quot;</pre>
+<fieldset><legend>Do the records settle whether the two reports share a firsthand source?</legend>
+<label><input type="radio" name="Q9-settled" value="yes"> Yes, the records settle it</label>
+<label><input type="radio" name="Q9-settled" value="no"> No, they leave it open (undetermined)</label></fieldset>
+<fieldset class="ifyes"><legend>If yes: verdict</legend>
+<label><input type="radio" name="Q9-verdict" value="shared"> Shared root</label>
+<label><input type="radio" name="Q9-verdict" value="independent"> Independent roots</label></fieldset>
+<fieldset class="ifyes"><legend>If yes: tick the firsthand root record(s)</legend><label class="chip"><input type="checkbox" name="Q9-root" value="S-72"> S-72</label><label class="chip"><input type="checkbox" name="Q9-root" value="G-75"> G-75</label><label class="chip"><input type="checkbox" name="Q9-root" value="P-64"> P-64</label><label class="chip"><input type="checkbox" name="Q9-root" value="D-93"> D-93</label><label class="chip"><input type="checkbox" name="Q9-root" value="JB-66"> JB-66</label></fieldset>
+<label class="note">Note (optional) <input type="text" name="Q9-note"></label>
+<div class="result"></div>
+</section><section class="case" data-q="Q10">
+<h2>Case 10 <span class="tag">g009</span></h2>
+<pre>Claim under review: At 06:40, the east bay door at Brindlewick Fire Station jammed halfway open.
+
+Report 1. Brindlewick Fire Station’s east bay door jammed halfway open at 06:40 (see VB-65).
+Report 2. At 06:40, a jam left the east bay door halfway open at Brindlewick Fire Station (see BB-58).
+
+Records:
+BB-58 (shift summary): &quot;06:40, Brindlewick Fire Station: east bay door jammed halfway open. Information taken from record E-62. I did not witness the event.&quot;
+E-62 (maintenance intake note): &quot;Brindlewick Fire Station, 06:40: east bay door jammed halfway open. Information taken from record CT-18; I was off site.&quot;
+VB-65 (operations desk log): &quot;Information taken from record CT-18: east bay door at Brindlewick Fire Station jammed halfway open at 06:40. I did not see it happen.&quot;
+CT-18 (bay inspection log): &quot;06:40, Brindlewick Fire Station. East bay door jammed halfway open.&quot;</pre>
+<fieldset><legend>Do the records settle whether the two reports share a firsthand source?</legend>
+<label><input type="radio" name="Q10-settled" value="yes"> Yes, the records settle it</label>
+<label><input type="radio" name="Q10-settled" value="no"> No, they leave it open (undetermined)</label></fieldset>
+<fieldset class="ifyes"><legend>If yes: verdict</legend>
+<label><input type="radio" name="Q10-verdict" value="shared"> Shared root</label>
+<label><input type="radio" name="Q10-verdict" value="independent"> Independent roots</label></fieldset>
+<fieldset class="ifyes"><legend>If yes: tick the firsthand root record(s)</legend><label class="chip"><input type="checkbox" name="Q10-root" value="BB-58"> BB-58</label><label class="chip"><input type="checkbox" name="Q10-root" value="E-62"> E-62</label><label class="chip"><input type="checkbox" name="Q10-root" value="VB-65"> VB-65</label><label class="chip"><input type="checkbox" name="Q10-root" value="CT-18"> CT-18</label></fieldset>
+<label class="note">Note (optional) <input type="text" name="Q10-note"></label>
+<div class="result"></div>
+</section>
+<p><button id="submit">Submit and show key</button><button id="export">Download answers</button></p>
+<p id="summary"></p>
+<script>
+const STORE="gap-audit-answers-20261115-a7f3",KEY=JSON.parse(atob("eyJRMSI6IHsiY2FzZSI6ICJnMDEzIiwgInZlcnNpb24iOiAiZ2FwIiwgImdhcF90eXBlIjogIkcyIiwgInNldHRsZWQiOiBmYWxzZSwgInZlcmRpY3QiOiAidW5kZXRlcm1pbmVkIiwgInJvb3RfcmVjb3JkcyI6IFtdfSwgIlEyIjogeyJjYXNlIjogImcwMDEiLCAidmVyc2lvbiI6ICJnYXAiLCAiZ2FwX3R5cGUiOiAiRzEiLCAic2V0dGxlZCI6IGZhbHNlLCAidmVyZGljdCI6ICJ1bmRldGVybWluZWQiLCAicm9vdF9yZWNvcmRzIjogW119LCAiUTMiOiB7ImNhc2UiOiAiZzAzNWMiLCAidmVyc2lvbiI6ICJjb250cm9sIiwgImdhcF90eXBlIjogIkc1IiwgInNldHRsZWQiOiB0cnVlLCAidmVyZGljdCI6ICJzaGFyZWQiLCAicm9vdF9yZWNvcmRzIjogWyJEVy00MzciXX0sICJRNCI6IHsiY2FzZSI6ICJnMDIyYyIsICJ2ZXJzaW9uIjogImNvbnRyb2wiLCAiZ2FwX3R5cGUiOiAiRzMiLCAic2V0dGxlZCI6IHRydWUsICJ2ZXJkaWN0IjogImluZGVwZW5kZW50IiwgInJvb3RfcmVjb3JkcyI6IFsiTC04MyIsICJXLTYzNCJdfSwgIlE1IjogeyJjYXNlIjogImcwMTIiLCAidmVyc2lvbiI6ICJnYXAiLCAiZ2FwX3R5cGUiOiAiRzIiLCAic2V0dGxlZCI6IGZhbHNlLCAidmVyZGljdCI6ICJ1bmRldGVybWluZWQiLCAicm9vdF9yZWNvcmRzIjogW119LCAiUTYiOiB7ImNhc2UiOiAiZzAxOWMiLCAidmVyc2lvbiI6ICJjb250cm9sIiwgImdhcF90eXBlIjogIkczIiwgInNldHRsZWQiOiB0cnVlLCAidmVyZGljdCI6ICJzaGFyZWQiLCAicm9vdF9yZWNvcmRzIjogWyJaLTY1Il19LCAiUTciOiB7ImNhc2UiOiAiZzAxNCIsICJ2ZXJzaW9uIjogImdhcCIsICJnYXBfdHlwZSI6ICJHMiIsICJzZXR0bGVkIjogZmFsc2UsICJ2ZXJkaWN0IjogInVuZGV0ZXJtaW5lZCIsICJyb290X3JlY29yZHMiOiBbXX0sICJROCI6IHsiY2FzZSI6ICJnMDIxYyIsICJ2ZXJzaW9uIjogImNvbnRyb2wiLCAiZ2FwX3R5cGUiOiAiRzMiLCAic2V0dGxlZCI6IHRydWUsICJ2ZXJkaWN0IjogImluZGVwZW5kZW50IiwgInJvb3RfcmVjb3JkcyI6IFsiTkMtMjQiLCAiVy03ODMiXX0sICJROSI6IHsiY2FzZSI6ICJnMDM3YyIsICJ2ZXJzaW9uIjogImNvbnRyb2wiLCAiZ2FwX3R5cGUiOiAiRzUiLCAic2V0dGxlZCI6IHRydWUsICJ2ZXJkaWN0IjogImluZGVwZW5kZW50IiwgInJvb3RfcmVjb3JkcyI6IFsiRC05MyIsICJTLTcyIl19LCAiUTEwIjogeyJjYXNlIjogImcwMDkiLCAidmVyc2lvbiI6ICJnYXAiLCAiZ2FwX3R5cGUiOiAiRzIiLCAic2V0dGxlZCI6IGZhbHNlLCAidmVyZGljdCI6ICJ1bmRldGVybWluZWQiLCAicm9vdF9yZWNvcmRzIjogW119fQ=="));
+function collect(){const a={};document.querySelectorAll(".case").forEach(s=>{const q=s.dataset.q;
+const g=n=>{const e=s.querySelector(`input[name="${q}-${n}"]:checked`);return e?e.value:null};
+a[q]={settled:g("settled"),verdict:g("verdict"),roots:[...s.querySelectorAll(`input[name="${q}-root"]:checked`)].map(e=>e.value),note:s.querySelector(`input[name="${q}-note"]`).value}});return a}
+function save(){try{localStorage.setItem(STORE,JSON.stringify({answers:collect(),submitted:window.SUB||false}))}catch(e){}}
+function restore(){let d=null;try{d=JSON.parse(localStorage.getItem(STORE))}catch(e){}if(!d)return;
+for(const[q,v]of Object.entries(d.answers||{})){const s=document.querySelector(`.case[data-q="${q}"]`);if(!s)continue;
+for(const n of["settled","verdict"])if(v[n]){const e=s.querySelector(`input[name="${q}-${n}"][value="${v[n]}"]`);if(e)e.checked=true}
+(v.roots||[]).forEach(r=>{const e=s.querySelector(`input[name="${q}-root"][value="${r}"]`);if(e)e.checked=true});
+s.querySelector(`input[name="${q}-note"]`).value=v.note||""}if(d.submitted)reveal()}
+function agree(a,k){if(a.settled===null)return null;const s=a.settled==="yes";if(s!==k.settled)return false;if(!s)return true;
+return a.verdict===k.verdict&&[...a.roots].sort().join()==[...k.root_records].sort().join()}
+function reveal(){window.SUB=true;const a=collect();let n=0,ok=0;for(const[q,k]of Object.entries(KEY)){const s=document.querySelector(`.case[data-q="${q}"]`);
+const r=agree(a[q],k);if(r!==null){n++;ok+=r?1:0}s.querySelector(".tag").style.display="inline";
+s.querySelector(".result").innerHTML=`<span class="${r?"ok":"bad"}">${r===null?"not answered":r?"agrees with key":"differs from key"}</span> <span class="mut">key: ${k.version} ${k.gap_type}, ${k.settled?k.verdict+" "+k.root_records.join(", "):"undetermined"}</span>`}
+document.getElementById("summary").textContent=`Agreement: ${ok} of ${n} answered.`;save()}
+function exportAns(){const blob=new Blob([JSON.stringify({sheet:"gap-audit",store:STORE,submitted:window.SUB||false,answers:collect(),key:window.SUB?KEY:null,exported_utc:new Date().toISOString()},null,1)],{type:"application/json"});
+const u=URL.createObjectURL(blob),l=document.createElement("a");l.href=u;l.download="gap-audit-answers.json";l.click();URL.revokeObjectURL(u)}
+document.addEventListener("change",save);document.addEventListener("input",save);
+document.getElementById("submit").onclick=()=>{if(confirm("Submit and reveal the key? Answers are locked in your export."))reveal()};
+document.getElementById("export").onclick=exportAns;restore();
+</script></body></html>

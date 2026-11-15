@@ -1,0 +1,110 @@
+{
+ "seed": 20261117,
+ "order": [
+  "g013",
+  "g001",
+  "g035c",
+  "g022c",
+  "g012",
+  "g019c",
+  "g014",
+  "g021c",
+  "g037c",
+  "g009"
+ ],
+ "key": {
+  "Q1": {
+   "case": "g013",
+   "version": "gap",
+   "gap_type": "G2",
+   "settled": false,
+   "verdict": "undetermined",
+   "root_records": []
+  },
+  "Q2": {
+   "case": "g001",
+   "version": "gap",
+   "gap_type": "G1",
+   "settled": false,
+   "verdict": "undetermined",
+   "root_records": []
+  },
+  "Q3": {
+   "case": "g035c",
+   "version": "control",
+   "gap_type": "G5",
+   "settled": true,
+   "verdict": "shared",
+   "root_records": [
+    "DW-437"
+   ]
+  },
+  "Q4": {
+   "case": "g022c",
+   "version": "control",
+   "gap_type": "G3",
+   "settled": true,
+   "verdict": "independent",
+   "root_records": [
+    "L-83",
+    "W-634"
+   ]
+  },
+  "Q5": {
+   "case": "g012",
+   "version": "gap",
+   "gap_type": "G2",
+   "settled": false,
+   "verdict": "undetermined",
+   "root_records": []
+  },
+  "Q6": {
+   "case": "g019c",
+   "version": "control",
+   "gap_type": "G3",
+   "settled": true,
+   "verdict": "shared",
+   "root_records": [
+    "Z-65"
+   ]
+  },
+  "Q7": {
+   "case": "g014",
+   "version": "gap",
+   "gap_type": "G2",
+   "settled": false,
+   "verdict": "undetermined",
+   "root_records": []
+  },
+  "Q8": {
+   "case": "g021c",
+   "version": "control",
+   "gap_type": "G3",
+   "settled": true,
+   "verdict": "independent",
+   "root_records": [
+    "NC-24",
+    "W-783"
+   ]
+  },
+  "Q9": {
+   "case": "g037c",
+   "version": "control",
+   "gap_type": "G5",
+   "settled": true,
+   "verdict": "independent",
+   "root_records": [
+    "D-93",
+    "S-72"
+   ]
+  },
+  "Q10": {
+   "case": "g009",
+   "version": "gap",
+   "gap_type": "G2",
+   "settled": false,
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ }
+}

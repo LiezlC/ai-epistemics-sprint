@@ -1,0 +1,2200 @@
+[
+ {
+  "bundle": "g000",
+  "gap_type": "G1",
+  "control_truth": "shared",
+  "domain": "ferry terminal",
+  "gap_slot": "1",
+  "names": [
+   "P. Quinlan"
+  ],
+  "report1_cites": "Z-41",
+  "report2_cites": "H-92",
+  "records": [
+   {
+    "id": "H-92",
+    "role": "relay",
+    "cites": [
+     "V-14"
+    ]
+   },
+   {
+    "id": "Z-41",
+    "role": "relay",
+    "cites": [
+     "G-614"
+    ]
+   },
+   {
+    "id": "T-74",
+    "role": "root",
+    "cites": [],
+    "observer": "P. Quinlan"
+   },
+   {
+    "id": "G-614",
+    "role": "relay",
+    "cites": [
+     "T-74"
+    ]
+   },
+   {
+    "id": "V-14",
+    "role": "relay",
+    "cites": [
+     "T-74"
+    ]
+   }
+  ],
+  "target": "G-614",
+  "key_control": {
+   "verdict": "shared",
+   "root_records": [
+    "T-74"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g001",
+  "gap_type": "G1",
+  "control_truth": "shared",
+  "domain": "fire station",
+  "gap_slot": "1",
+  "names": [
+   "A. Kariuki"
+  ],
+  "report1_cites": "S-25",
+  "report2_cites": "Z-64",
+  "records": [
+   {
+    "id": "S-25",
+    "role": "relay",
+    "cites": [
+     "DC-36"
+    ]
+   },
+   {
+    "id": "G-297",
+    "role": "root",
+    "cites": [],
+    "observer": "A. Kariuki"
+   },
+   {
+    "id": "DC-36",
+    "role": "relay",
+    "cites": [
+     "G-297"
+    ]
+   },
+   {
+    "id": "Z-64",
+    "role": "relay",
+    "cites": [
+     "G-297"
+    ]
+   }
+  ],
+  "target": "DC-36",
+  "key_control": {
+   "verdict": "shared",
+   "root_records": [
+    "G-297"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g002",
+  "gap_type": "G1",
+  "control_truth": "shared",
+  "domain": "museum archive",
+  "gap_slot": "1",
+  "names": [
+   "D. Albrecht"
+  ],
+  "report1_cites": "AH-13",
+  "report2_cites": "LG-99",
+  "records": [
+   {
+    "id": "N-636",
+    "role": "root",
+    "cites": [],
+    "observer": "D. Albrecht"
+   },
+   {
+    "id": "H-17",
+    "role": "relay",
+    "cites": [
+     "N-636"
+    ]
+   },
+   {
+    "id": "AH-13",
+    "role": "relay",
+    "cites": [
+     "H-17"
+    ]
+   },
+   {
+    "id": "LG-99",
+    "role": "relay",
+    "cites": [
+     "N-636"
+    ]
+   }
+  ],
+  "target": "H-17",
+  "key_control": {
+   "verdict": "shared",
+   "root_records": [
+    "N-636"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g003",
+  "gap_type": "G1",
+  "control_truth": "shared",
+  "domain": "brewery",
+  "gap_slot": "1",
+  "names": [
+   "D. Kowalczyk"
+  ],
+  "report1_cites": "CB-865",
+  "report2_cites": "H-147",
+  "records": [
+   {
+    "id": "C-74",
+    "role": "root",
+    "cites": [],
+    "observer": "D. Kowalczyk"
+   },
+   {
+    "id": "H-147",
+    "role": "relay",
+    "cites": [
+     "XD-69"
+    ]
+   },
+   {
+    "id": "CB-865",
+    "role": "relay",
+    "cites": [
+     "D-98"
+    ]
+   },
+   {
+    "id": "D-98",
+    "role": "relay",
+    "cites": [
+     "C-74"
+    ]
+   },
+   {
+    "id": "XD-69",
+    "role": "relay",
+    "cites": [
+     "C-74"
+    ]
+   }
+  ],
+  "target": "D-98",
+  "key_control": {
+   "verdict": "shared",
+   "root_records": [
+    "C-74"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g004",
+  "gap_type": "G1",
+  "control_truth": "shared",
+  "domain": "recycling plant",
+  "gap_slot": "1",
+  "names": [
+   "R. Strand"
+  ],
+  "report1_cites": "BK-75",
+  "report2_cites": "NH-62",
+  "records": [
+   {
+    "id": "T-56",
+    "role": "root",
+    "cites": [],
+    "observer": "R. Strand"
+   },
+   {
+    "id": "NH-62",
+    "role": "relay",
+    "cites": [
+     "ZV-486"
+    ]
+   },
+   {
+    "id": "ZV-486",
+    "role": "relay",
+    "cites": [
+     "T-56"
+    ]
+   },
+   {
+    "id": "BK-75",
+    "role": "relay",
+    "cites": [
+     "X-48"
+    ]
+   },
+   {
+    "id": "X-48",
+    "role": "relay",
+    "cites": [
+     "T-56"
+    ]
+   }
+  ],
+  "target": "X-48",
+  "key_control": {
+   "verdict": "shared",
+   "root_records": [
+    "T-56"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g005",
+  "gap_type": "G1",
+  "control_truth": "independent",
+  "domain": "dental clinic",
+  "gap_slot": "1",
+  "names": [
+   "E. Kowalczyk",
+   "N. Novak"
+  ],
+  "report1_cites": "K-17",
+  "report2_cites": "KE-269",
+  "records": [
+   {
+    "id": "VH-265",
+    "role": "relay",
+    "cites": [
+     "LB-78"
+    ]
+   },
+   {
+    "id": "KM-39",
+    "role": "root",
+    "cites": [],
+    "observer": "N. Novak"
+   },
+   {
+    "id": "LB-78",
+    "role": "root",
+    "cites": [],
+    "observer": "E. Kowalczyk"
+   },
+   {
+    "id": "P-82",
+    "role": "relay",
+    "cites": [
+     "KM-39"
+    ]
+   },
+   {
+    "id": "KE-269",
+    "role": "relay",
+    "cites": [
+     "P-82"
+    ]
+   },
+   {
+    "id": "K-17",
+    "role": "relay",
+    "cites": [
+     "VH-265"
+    ]
+   }
+  ],
+  "target": "VH-265",
+  "key_control": {
+   "verdict": "independent",
+   "root_records": [
+    "KM-39",
+    "LB-78"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g006",
+  "gap_type": "G1",
+  "control_truth": "independent",
+  "domain": "observatory",
+  "gap_slot": "2",
+  "names": [
+   "B. Lindqvist",
+   "K. Lund"
+  ],
+  "report1_cites": "XD-51",
+  "report2_cites": "P-23",
+  "records": [
+   {
+    "id": "W-49",
+    "role": "root",
+    "cites": [],
+    "observer": "B. Lindqvist"
+   },
+   {
+    "id": "P-23",
+    "role": "relay",
+    "cites": [
+     "S-91"
+    ]
+   },
+   {
+    "id": "S-54",
+    "role": "root",
+    "cites": [],
+    "observer": "K. Lund"
+   },
+   {
+    "id": "S-91",
+    "role": "relay",
+    "cites": [
+     "W-49"
+    ]
+   },
+   {
+    "id": "XD-51",
+    "role": "relay",
+    "cites": [
+     "S-54"
+    ]
+   }
+  ],
+  "target": "S-91",
+  "key_control": {
+   "verdict": "independent",
+   "root_records": [
+    "S-54",
+    "W-49"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g007",
+  "gap_type": "G1",
+  "control_truth": "independent",
+  "domain": "vineyard",
+  "gap_slot": "2",
+  "names": [
+   "D. Rossi",
+   "N. Kowalczyk"
+  ],
+  "report1_cites": "NJ-487",
+  "report2_cites": "B-12",
+  "records": [
+   {
+    "id": "S-87",
+    "role": "relay",
+    "cites": [
+     "N-89"
+    ]
+   },
+   {
+    "id": "N-89",
+    "role": "root",
+    "cites": [],
+    "observer": "D. Rossi"
+   },
+   {
+    "id": "GK-435",
+    "role": "root",
+    "cites": [],
+    "observer": "N. Kowalczyk"
+   },
+   {
+    "id": "NJ-487",
+    "role": "relay",
+    "cites": [
+     "GK-435"
+    ]
+   },
+   {
+    "id": "B-12",
+    "role": "relay",
+    "cites": [
+     "S-87"
+    ]
+   }
+  ],
+  "target": "S-87",
+  "key_control": {
+   "verdict": "independent",
+   "root_records": [
+    "GK-435",
+    "N-89"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g008",
+  "gap_type": "G2",
+  "control_truth": "shared",
+  "domain": "ferry terminal",
+  "gap_slot": "2",
+  "names": [
+   "T. Kowalczyk"
+  ],
+  "report1_cites": "F-29",
+  "report2_cites": "D-98",
+  "records": [
+   {
+    "id": "GX-71",
+    "role": "root",
+    "cites": [],
+    "observer": "T. Kowalczyk"
+   },
+   {
+    "id": "D-98",
+    "role": "relay",
+    "cites": [
+     "GX-71"
+    ]
+   },
+   {
+    "id": "BB-13",
+    "role": "relay",
+    "cites": [
+     "GX-71"
+    ]
+   },
+   {
+    "id": "F-29",
+    "role": "relay",
+    "cites": [
+     "BB-13"
+    ]
+   }
+  ],
+  "target": "GX-71",
+  "key_control": {
+   "verdict": "shared",
+   "root_records": [
+    "GX-71"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g009",
+  "gap_type": "G2",
+  "control_truth": "shared",
+  "domain": "fire station",
+  "gap_slot": "1",
+  "names": [
+   "L. Lindqvist"
+  ],
+  "report1_cites": "VB-65",
+  "report2_cites": "BB-58",
+  "records": [
+   {
+    "id": "BB-58",
+    "role": "relay",
+    "cites": [
+     "E-62"
+    ]
+   },
+   {
+    "id": "E-62",
+    "role": "relay",
+    "cites": [
+     "CT-18"
+    ]
+   },
+   {
+    "id": "VB-65",
+    "role": "relay",
+    "cites": [
+     "CT-18"
+    ]
+   },
+   {
+    "id": "CT-18",
+    "role": "root",
+    "cites": [],
+    "observer": "L. Lindqvist"
+   }
+  ],
+  "target": "CT-18",
+  "key_control": {
+   "verdict": "shared",
+   "root_records": [
+    "CT-18"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g010",
+  "gap_type": "G2",
+  "control_truth": "shared",
+  "domain": "museum archive",
+  "gap_slot": "1",
+  "names": [
+   "D. Kowalczyk"
+  ],
+  "report1_cites": "D-55",
+  "report2_cites": "C-32",
+  "records": [
+   {
+    "id": "C-32",
+    "role": "relay",
+    "cites": [
+     "E-739"
+    ]
+   },
+   {
+    "id": "E-739",
+    "role": "relay",
+    "cites": [
+     "D-47"
+    ]
+   },
+   {
+    "id": "D-47",
+    "role": "root",
+    "cites": [],
+    "observer": "D. Kowalczyk"
+   },
+   {
+    "id": "D-55",
+    "role": "relay",
+    "cites": [
+     "D-47"
+    ]
+   }
+  ],
+  "target": "D-47",
+  "key_control": {
+   "verdict": "shared",
+   "root_records": [
+    "D-47"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g011",
+  "gap_type": "G2",
+  "control_truth": "shared",
+  "domain": "brewery",
+  "gap_slot": "2",
+  "names": [
+   "L. Mensah"
+  ],
+  "report1_cites": "K-98",
+  "report2_cites": "NS-29",
+  "records": [
+   {
+    "id": "R-11",
+    "role": "root",
+    "cites": [],
+    "observer": "L. Mensah"
+   },
+   {
+    "id": "K-98",
+    "role": "relay",
+    "cites": [
+     "E-27"
+    ]
+   },
+   {
+    "id": "NS-29",
+    "role": "relay",
+    "cites": [
+     "R-11"
+    ]
+   },
+   {
+    "id": "E-27",
+    "role": "relay",
+    "cites": [
+     "R-11"
+    ]
+   }
+  ],
+  "target": "R-11",
+  "key_control": {
+   "verdict": "shared",
+   "root_records": [
+    "R-11"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g012",
+  "gap_type": "G2",
+  "control_truth": "shared",
+  "domain": "recycling plant",
+  "gap_slot": "1",
+  "names": [
+   "G. Lindqvist"
+  ],
+  "report1_cites": "M-85",
+  "report2_cites": "B-87",
+  "records": [
+   {
+    "id": "B-87",
+    "role": "relay",
+    "cites": [
+     "VH-39"
+    ]
+   },
+   {
+    "id": "VH-39",
+    "role": "root",
+    "cites": [],
+    "observer": "G. Lindqvist"
+   },
+   {
+    "id": "M-85",
+    "role": "relay",
+    "cites": [
+     "VH-39"
+    ]
+   }
+  ],
+  "target": "VH-39",
+  "key_control": {
+   "verdict": "shared",
+   "root_records": [
+    "VH-39"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g013",
+  "gap_type": "G2",
+  "control_truth": "independent",
+  "domain": "dental clinic",
+  "gap_slot": "1",
+  "names": [
+   "T. Albrecht",
+   "C. Rossi"
+  ],
+  "report1_cites": "AZ-39",
+  "report2_cites": "B-409",
+  "records": [
+   {
+    "id": "B-409",
+    "role": "relay",
+    "cites": [
+     "Z-54"
+    ]
+   },
+   {
+    "id": "Z-54",
+    "role": "root",
+    "cites": [],
+    "observer": "C. Rossi"
+   },
+   {
+    "id": "AZ-39",
+    "role": "relay",
+    "cites": [
+     "T-55"
+    ]
+   },
+   {
+    "id": "T-55",
+    "role": "root",
+    "cites": [],
+    "observer": "T. Albrecht"
+   }
+  ],
+  "target": "T-55",
+  "key_control": {
+   "verdict": "independent",
+   "root_records": [
+    "T-55",
+    "Z-54"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g014",
+  "gap_type": "G2",
+  "control_truth": "independent",
+  "domain": "observatory",
+  "gap_slot": "2",
+  "names": [
+   "D. Mbeki",
+   "T. Novak"
+  ],
+  "report1_cites": "NX-71",
+  "report2_cites": "PS-23",
+  "records": [
+   {
+    "id": "SC-32",
+    "role": "root",
+    "cites": [],
+    "observer": "T. Novak"
+   },
+   {
+    "id": "C-24",
+    "role": "root",
+    "cites": [],
+    "observer": "D. Mbeki"
+   },
+   {
+    "id": "NX-71",
+    "role": "relay",
+    "cites": [
+     "SC-32"
+    ]
+   },
+   {
+    "id": "PS-23",
+    "role": "relay",
+    "cites": [
+     "C-24"
+    ]
+   }
+  ],
+  "target": "C-24",
+  "key_control": {
+   "verdict": "independent",
+   "root_records": [
+    "C-24",
+    "SC-32"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g015",
+  "gap_type": "G2",
+  "control_truth": "independent",
+  "domain": "vineyard",
+  "gap_slot": "2",
+  "names": [
+   "J. Ferreira",
+   "K. Mbeki"
+  ],
+  "report1_cites": "M-72",
+  "report2_cites": "DK-19",
+  "records": [
+   {
+    "id": "M-72",
+    "role": "relay",
+    "cites": [
+     "XR-73"
+    ]
+   },
+   {
+    "id": "DK-19",
+    "role": "relay",
+    "cites": [
+     "MB-512"
+    ]
+   },
+   {
+    "id": "XR-73",
+    "role": "root",
+    "cites": [],
+    "observer": "K. Mbeki"
+   },
+   {
+    "id": "MB-512",
+    "role": "root",
+    "cites": [],
+    "observer": "J. Ferreira"
+   }
+  ],
+  "target": "MB-512",
+  "key_control": {
+   "verdict": "independent",
+   "root_records": [
+    "MB-512",
+    "XR-73"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g016",
+  "gap_type": "G3",
+  "control_truth": "shared",
+  "domain": "ferry terminal",
+  "gap_slot": "2",
+  "names": [
+   "K. Marrow"
+  ],
+  "report1_cites": "V-41",
+  "report2_cites": "F-18",
+  "records": [
+   {
+    "id": "V-41",
+    "role": "relay",
+    "cites": [
+     "V-27"
+    ]
+   },
+   {
+    "id": "V-27",
+    "role": "root",
+    "cites": [],
+    "observer": "K. Marrow"
+   },
+   {
+    "id": "F-18",
+    "role": "relay",
+    "cites": [
+     "V-27"
+    ]
+   }
+  ],
+  "target": "V-27",
+  "key_control": {
+   "verdict": "shared",
+   "root_records": [
+    "V-27"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g017",
+  "gap_type": "G3",
+  "control_truth": "shared",
+  "domain": "fire station",
+  "gap_slot": "2",
+  "names": [
+   "A. Oduya"
+  ],
+  "report1_cites": "R-37",
+  "report2_cites": "V-86",
+  "records": [
+   {
+    "id": "R-37",
+    "role": "relay",
+    "cites": [
+     "XG-54"
+    ]
+   },
+   {
+    "id": "XG-54",
+    "role": "relay",
+    "cites": [
+     "MP-85"
+    ]
+   },
+   {
+    "id": "V-86",
+    "role": "relay",
+    "cites": [
+     "MP-85"
+    ]
+   },
+   {
+    "id": "MP-85",
+    "role": "root",
+    "cites": [],
+    "observer": "A. Oduya"
+   }
+  ],
+  "target": "MP-85",
+  "key_control": {
+   "verdict": "shared",
+   "root_records": [
+    "MP-85"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g018",
+  "gap_type": "G3",
+  "control_truth": "shared",
+  "domain": "museum archive",
+  "gap_slot": "1",
+  "names": [
+   "B. Szabo"
+  ],
+  "report1_cites": "RF-63",
+  "report2_cites": "TC-28",
+  "records": [
+   {
+    "id": "XB-94",
+    "role": "root",
+    "cites": [],
+    "observer": "B. Szabo"
+   },
+   {
+    "id": "RF-63",
+    "role": "relay",
+    "cites": [
+     "XB-94"
+    ]
+   },
+   {
+    "id": "TC-28",
+    "role": "relay",
+    "cites": [
+     "XB-94"
+    ]
+   }
+  ],
+  "target": "XB-94",
+  "key_control": {
+   "verdict": "shared",
+   "root_records": [
+    "XB-94"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g019",
+  "gap_type": "G3",
+  "control_truth": "shared",
+  "domain": "brewery",
+  "gap_slot": "1",
+  "names": [
+   "B. Halvorsen"
+  ],
+  "report1_cites": "N-41",
+  "report2_cites": "JC-91",
+  "records": [
+   {
+    "id": "N-41",
+    "role": "relay",
+    "cites": [
+     "Z-65"
+    ]
+   },
+   {
+    "id": "Z-65",
+    "role": "root",
+    "cites": [],
+    "observer": "B. Halvorsen"
+   },
+   {
+    "id": "JC-91",
+    "role": "relay",
+    "cites": [
+     "Z-65"
+    ]
+   }
+  ],
+  "target": "Z-65",
+  "key_control": {
+   "verdict": "shared",
+   "root_records": [
+    "Z-65"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g020",
+  "gap_type": "G3",
+  "control_truth": "shared",
+  "domain": "recycling plant",
+  "gap_slot": "1",
+  "names": [
+   "D. Castillo"
+  ],
+  "report1_cites": "C-72",
+  "report2_cites": "G-752",
+  "records": [
+   {
+    "id": "KN-411",
+    "role": "relay",
+    "cites": [
+     "GK-76"
+    ]
+   },
+   {
+    "id": "G-752",
+    "role": "relay",
+    "cites": [
+     "KN-411"
+    ]
+   },
+   {
+    "id": "C-72",
+    "role": "relay",
+    "cites": [
+     "GK-76"
+    ]
+   },
+   {
+    "id": "GK-76",
+    "role": "root",
+    "cites": [],
+    "observer": "D. Castillo"
+   }
+  ],
+  "target": "GK-76",
+  "key_control": {
+   "verdict": "shared",
+   "root_records": [
+    "GK-76"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g021",
+  "gap_type": "G3",
+  "control_truth": "independent",
+  "domain": "dental clinic",
+  "gap_slot": "1",
+  "names": [
+   "H. Brennan",
+   "D. Marrow"
+  ],
+  "report1_cites": "F-41",
+  "report2_cites": "Z-34",
+  "records": [
+   {
+    "id": "W-783",
+    "role": "root",
+    "cites": [],
+    "observer": "H. Brennan"
+   },
+   {
+    "id": "NC-24",
+    "role": "root",
+    "cites": [],
+    "observer": "D. Marrow"
+   },
+   {
+    "id": "F-41",
+    "role": "relay",
+    "cites": [
+     "W-783"
+    ]
+   },
+   {
+    "id": "R-94",
+    "role": "relay",
+    "cites": [
+     "NC-24"
+    ]
+   },
+   {
+    "id": "Z-34",
+    "role": "relay",
+    "cites": [
+     "R-94"
+    ]
+   }
+  ],
+  "target": "W-783",
+  "key_control": {
+   "verdict": "independent",
+   "root_records": [
+    "NC-24",
+    "W-783"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g022",
+  "gap_type": "G3",
+  "control_truth": "independent",
+  "domain": "observatory",
+  "gap_slot": "1",
+  "names": [
+   "R. Halvorsen",
+   "E. Haddad"
+  ],
+  "report1_cites": "D-59",
+  "report2_cites": "E-63",
+  "records": [
+   {
+    "id": "L-27",
+    "role": "relay",
+    "cites": [
+     "L-83"
+    ]
+   },
+   {
+    "id": "D-59",
+    "role": "relay",
+    "cites": [
+     "W-634"
+    ]
+   },
+   {
+    "id": "W-634",
+    "role": "root",
+    "cites": [],
+    "observer": "R. Halvorsen"
+   },
+   {
+    "id": "L-83",
+    "role": "root",
+    "cites": [],
+    "observer": "E. Haddad"
+   },
+   {
+    "id": "E-63",
+    "role": "relay",
+    "cites": [
+     "L-27"
+    ]
+   }
+  ],
+  "target": "W-634",
+  "key_control": {
+   "verdict": "independent",
+   "root_records": [
+    "L-83",
+    "W-634"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g023",
+  "gap_type": "G3",
+  "control_truth": "independent",
+  "domain": "vineyard",
+  "gap_slot": "2",
+  "names": [
+   "S. Whitlock",
+   "N. Lund"
+  ],
+  "report1_cites": "D-46",
+  "report2_cites": "E-39",
+  "records": [
+   {
+    "id": "D-46",
+    "role": "relay",
+    "cites": [
+     "R-718"
+    ]
+   },
+   {
+    "id": "J-95",
+    "role": "root",
+    "cites": [],
+    "observer": "S. Whitlock"
+   },
+   {
+    "id": "R-718",
+    "role": "root",
+    "cites": [],
+    "observer": "N. Lund"
+   },
+   {
+    "id": "E-39",
+    "role": "relay",
+    "cites": [
+     "J-95"
+    ]
+   }
+  ],
+  "target": "J-95",
+  "key_control": {
+   "verdict": "independent",
+   "root_records": [
+    "J-95",
+    "R-718"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g024",
+  "gap_type": "G4",
+  "control_truth": "independent",
+  "domain": "ferry terminal",
+  "gap_slot": "1",
+  "names": [
+   "J. Haddad",
+   "S. Szabo"
+  ],
+  "report1_cites": "P-272",
+  "report2_cites": "H-68",
+  "records": [
+   {
+    "id": "R-892",
+    "role": "root",
+    "cites": [],
+    "observer": "S. Szabo"
+   },
+   {
+    "id": "P-272",
+    "role": "relay",
+    "cites": [
+     "H-84"
+    ]
+   },
+   {
+    "id": "H-84",
+    "role": "root",
+    "cites": [],
+    "observer": "J. Haddad"
+   },
+   {
+    "id": "L-99",
+    "role": "relay",
+    "cites": [
+     "R-892"
+    ]
+   },
+   {
+    "id": "H-68",
+    "role": "relay",
+    "cites": [
+     "L-99"
+    ]
+   }
+  ],
+  "target": "R-892",
+  "key_control": {
+   "verdict": "independent",
+   "root_records": [
+    "H-84",
+    "R-892"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g025",
+  "gap_type": "G4",
+  "control_truth": "independent",
+  "domain": "fire station",
+  "gap_slot": "2",
+  "names": [
+   "G. Varga",
+   "J. Kariuki"
+  ],
+  "report1_cites": "MN-83",
+  "report2_cites": "V-14",
+  "records": [
+   {
+    "id": "M-58",
+    "role": "relay",
+    "cites": [
+     "LA-26"
+    ]
+   },
+   {
+    "id": "V-14",
+    "role": "relay",
+    "cites": [
+     "NT-44"
+    ]
+   },
+   {
+    "id": "NT-44",
+    "role": "root",
+    "cites": [],
+    "observer": "G. Varga"
+   },
+   {
+    "id": "LA-26",
+    "role": "root",
+    "cites": [],
+    "observer": "J. Kariuki"
+   },
+   {
+    "id": "MN-83",
+    "role": "relay",
+    "cites": [
+     "M-58"
+    ]
+   }
+  ],
+  "target": "LA-26",
+  "key_control": {
+   "verdict": "independent",
+   "root_records": [
+    "LA-26",
+    "NT-44"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g026",
+  "gap_type": "G4",
+  "control_truth": "independent",
+  "domain": "museum archive",
+  "gap_slot": "2",
+  "names": [
+   "C. Rossi",
+   "K. Mensah"
+  ],
+  "report1_cites": "LJ-366",
+  "report2_cites": "HV-729",
+  "records": [
+   {
+    "id": "CB-424",
+    "role": "relay",
+    "cites": [
+     "MK-45"
+    ]
+   },
+   {
+    "id": "HV-729",
+    "role": "relay",
+    "cites": [
+     "KD-66"
+    ]
+   },
+   {
+    "id": "LJ-366",
+    "role": "relay",
+    "cites": [
+     "CB-424"
+    ]
+   },
+   {
+    "id": "KD-66",
+    "role": "root",
+    "cites": [],
+    "observer": "C. Rossi"
+   },
+   {
+    "id": "MK-45",
+    "role": "root",
+    "cites": [],
+    "observer": "K. Mensah"
+   }
+  ],
+  "target": "MK-45",
+  "key_control": {
+   "verdict": "independent",
+   "root_records": [
+    "KD-66",
+    "MK-45"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g027",
+  "gap_type": "G4",
+  "control_truth": "independent",
+  "domain": "brewery",
+  "gap_slot": "2",
+  "names": [
+   "B. Marrow",
+   "H. Brennan"
+  ],
+  "report1_cites": "AA-59",
+  "report2_cites": "S-827",
+  "records": [
+   {
+    "id": "A-55",
+    "role": "root",
+    "cites": [],
+    "observer": "H. Brennan"
+   },
+   {
+    "id": "N-62",
+    "role": "relay",
+    "cites": [
+     "A-55"
+    ]
+   },
+   {
+    "id": "S-827",
+    "role": "relay",
+    "cites": [
+     "S-201"
+    ]
+   },
+   {
+    "id": "AA-59",
+    "role": "relay",
+    "cites": [
+     "N-62"
+    ]
+   },
+   {
+    "id": "S-201",
+    "role": "root",
+    "cites": [],
+    "observer": "B. Marrow"
+   }
+  ],
+  "target": "A-55",
+  "key_control": {
+   "verdict": "independent",
+   "root_records": [
+    "A-55",
+    "S-201"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g028",
+  "gap_type": "G4",
+  "control_truth": "independent",
+  "domain": "recycling plant",
+  "gap_slot": "2",
+  "names": [
+   "G. Ibarra",
+   "T. Okafor"
+  ],
+  "report1_cites": "W-866",
+  "report2_cites": "D-73",
+  "records": [
+   {
+    "id": "W-866",
+    "role": "relay",
+    "cites": [
+     "ZR-84"
+    ]
+   },
+   {
+    "id": "ZR-84",
+    "role": "relay",
+    "cites": [
+     "K-63"
+    ]
+   },
+   {
+    "id": "F-59",
+    "role": "root",
+    "cites": [],
+    "observer": "G. Ibarra"
+   },
+   {
+    "id": "D-73",
+    "role": "relay",
+    "cites": [
+     "F-59"
+    ]
+   },
+   {
+    "id": "K-63",
+    "role": "root",
+    "cites": [],
+    "observer": "T. Okafor"
+   }
+  ],
+  "target": "K-63",
+  "key_control": {
+   "verdict": "independent",
+   "root_records": [
+    "F-59",
+    "K-63"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g029",
+  "gap_type": "G4",
+  "control_truth": "independent",
+  "domain": "dental clinic",
+  "gap_slot": "2",
+  "names": [
+   "S. Kariuki",
+   "K. Brennan"
+  ],
+  "report1_cites": "J-71",
+  "report2_cites": "FM-76",
+  "records": [
+   {
+    "id": "E-133",
+    "role": "relay",
+    "cites": [
+     "ZG-62"
+    ]
+   },
+   {
+    "id": "ZG-62",
+    "role": "root",
+    "cites": [],
+    "observer": "K. Brennan"
+   },
+   {
+    "id": "FM-76",
+    "role": "relay",
+    "cites": [
+     "R-75"
+    ]
+   },
+   {
+    "id": "J-71",
+    "role": "relay",
+    "cites": [
+     "E-133"
+    ]
+   },
+   {
+    "id": "R-75",
+    "role": "root",
+    "cites": [],
+    "observer": "S. Kariuki"
+   }
+  ],
+  "target": "ZG-62",
+  "key_control": {
+   "verdict": "independent",
+   "root_records": [
+    "R-75",
+    "ZG-62"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g030",
+  "gap_type": "G4",
+  "control_truth": "independent",
+  "domain": "observatory",
+  "gap_slot": "2",
+  "names": [
+   "R. Delacroix",
+   "B. Marrow"
+  ],
+  "report1_cites": "PG-836",
+  "report2_cites": "SW-61",
+  "records": [
+   {
+    "id": "J-891",
+    "role": "root",
+    "cites": [],
+    "observer": "B. Marrow"
+   },
+   {
+    "id": "J-73",
+    "role": "root",
+    "cites": [],
+    "observer": "R. Delacroix"
+   },
+   {
+    "id": "SW-61",
+    "role": "relay",
+    "cites": [
+     "J-73"
+    ]
+   },
+   {
+    "id": "PG-836",
+    "role": "relay",
+    "cites": [
+     "B-34"
+    ]
+   },
+   {
+    "id": "B-34",
+    "role": "relay",
+    "cites": [
+     "J-891"
+    ]
+   }
+  ],
+  "target": "J-891",
+  "key_control": {
+   "verdict": "independent",
+   "root_records": [
+    "J-73",
+    "J-891"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g031",
+  "gap_type": "G4",
+  "control_truth": "independent",
+  "domain": "vineyard",
+  "gap_slot": "1",
+  "names": [
+   "M. Oduya",
+   "K. Marrow"
+  ],
+  "report1_cites": "J-47",
+  "report2_cites": "N-34",
+  "records": [
+   {
+    "id": "WV-25",
+    "role": "root",
+    "cites": [],
+    "observer": "M. Oduya"
+   },
+   {
+    "id": "J-47",
+    "role": "relay",
+    "cites": [
+     "WV-25"
+    ]
+   },
+   {
+    "id": "P-66",
+    "role": "root",
+    "cites": [],
+    "observer": "K. Marrow"
+   },
+   {
+    "id": "N-34",
+    "role": "relay",
+    "cites": [
+     "P-66"
+    ]
+   }
+  ],
+  "target": "P-66",
+  "key_control": {
+   "verdict": "independent",
+   "root_records": [
+    "P-66",
+    "WV-25"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g032",
+  "gap_type": "G5",
+  "control_truth": "shared",
+  "domain": "ferry terminal",
+  "gap_slot": "1",
+  "names": [
+   "H. Quinlan"
+  ],
+  "report1_cites": "N-98",
+  "report2_cites": "W-125",
+  "records": [
+   {
+    "id": "N-98",
+    "role": "relay",
+    "cites": [
+     "E-54"
+    ]
+   },
+   {
+    "id": "E-54",
+    "role": "root",
+    "cites": [],
+    "observer": "H. Quinlan"
+   },
+   {
+    "id": "GT-32",
+    "role": "relay",
+    "cites": [
+     "E-54"
+    ]
+   },
+   {
+    "id": "W-125",
+    "role": "relay",
+    "cites": [
+     "GT-32"
+    ]
+   }
+  ],
+  "target": "N-98",
+  "key_control": {
+   "verdict": "shared",
+   "root_records": [
+    "E-54"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g033",
+  "gap_type": "G5",
+  "control_truth": "shared",
+  "domain": "fire station",
+  "gap_slot": "1",
+  "names": [
+   "P. Ibarra"
+  ],
+  "report1_cites": "HH-58",
+  "report2_cites": "M-46",
+  "records": [
+   {
+    "id": "M-46",
+    "role": "relay",
+    "cites": [
+     "H-39"
+    ]
+   },
+   {
+    "id": "NJ-29",
+    "role": "root",
+    "cites": [],
+    "observer": "P. Ibarra"
+   },
+   {
+    "id": "H-39",
+    "role": "relay",
+    "cites": [
+     "NJ-29"
+    ]
+   },
+   {
+    "id": "HH-58",
+    "role": "relay",
+    "cites": [
+     "NJ-29"
+    ]
+   }
+  ],
+  "target": "HH-58",
+  "key_control": {
+   "verdict": "shared",
+   "root_records": [
+    "NJ-29"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g034",
+  "gap_type": "G5",
+  "control_truth": "shared",
+  "domain": "museum archive",
+  "gap_slot": "2",
+  "names": [
+   "S. Nakamura"
+  ],
+  "report1_cites": "X-15",
+  "report2_cites": "DH-13",
+  "records": [
+   {
+    "id": "DH-13",
+    "role": "relay",
+    "cites": [
+     "ZC-761"
+    ]
+   },
+   {
+    "id": "RJ-65",
+    "role": "relay",
+    "cites": [
+     "ZC-761"
+    ]
+   },
+   {
+    "id": "X-15",
+    "role": "relay",
+    "cites": [
+     "RJ-65"
+    ]
+   },
+   {
+    "id": "ZC-761",
+    "role": "root",
+    "cites": [],
+    "observer": "S. Nakamura"
+   }
+  ],
+  "target": "DH-13",
+  "key_control": {
+   "verdict": "shared",
+   "root_records": [
+    "ZC-761"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g035",
+  "gap_type": "G5",
+  "control_truth": "shared",
+  "domain": "brewery",
+  "gap_slot": "2",
+  "names": [
+   "M. Szabo"
+  ],
+  "report1_cites": "N-41",
+  "report2_cites": "WJ-811",
+  "records": [
+   {
+    "id": "N-41",
+    "role": "relay",
+    "cites": [
+     "S-54"
+    ]
+   },
+   {
+    "id": "DW-437",
+    "role": "root",
+    "cites": [],
+    "observer": "M. Szabo"
+   },
+   {
+    "id": "S-54",
+    "role": "relay",
+    "cites": [
+     "DW-437"
+    ]
+   },
+   {
+    "id": "WJ-811",
+    "role": "relay",
+    "cites": [
+     "DW-437"
+    ]
+   }
+  ],
+  "target": "WJ-811",
+  "key_control": {
+   "verdict": "shared",
+   "root_records": [
+    "DW-437"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g036",
+  "gap_type": "G5",
+  "control_truth": "shared",
+  "domain": "recycling plant",
+  "gap_slot": "1",
+  "names": [
+   "K. Duarte"
+  ],
+  "report1_cites": "PC-235",
+  "report2_cites": "PZ-864",
+  "records": [
+   {
+    "id": "PC-235",
+    "role": "relay",
+    "cites": [
+     "S-95"
+    ]
+   },
+   {
+    "id": "R-64",
+    "role": "relay",
+    "cites": [
+     "S-95"
+    ]
+   },
+   {
+    "id": "S-95",
+    "role": "root",
+    "cites": [],
+    "observer": "K. Duarte"
+   },
+   {
+    "id": "PZ-864",
+    "role": "relay",
+    "cites": [
+     "R-64"
+    ]
+   }
+  ],
+  "target": "PC-235",
+  "key_control": {
+   "verdict": "shared",
+   "root_records": [
+    "S-95"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g037",
+  "gap_type": "G5",
+  "control_truth": "independent",
+  "domain": "dental clinic",
+  "gap_slot": "2",
+  "names": [
+   "C. Duarte",
+   "T. Lindqvist"
+  ],
+  "report1_cites": "P-64",
+  "report2_cites": "JB-66",
+  "records": [
+   {
+    "id": "S-72",
+    "role": "root",
+    "cites": [],
+    "observer": "T. Lindqvist"
+   },
+   {
+    "id": "G-75",
+    "role": "relay",
+    "cites": [
+     "S-72"
+    ]
+   },
+   {
+    "id": "P-64",
+    "role": "relay",
+    "cites": [
+     "G-75"
+    ]
+   },
+   {
+    "id": "D-93",
+    "role": "root",
+    "cites": [],
+    "observer": "C. Duarte"
+   },
+   {
+    "id": "JB-66",
+    "role": "relay",
+    "cites": [
+     "D-93"
+    ]
+   }
+  ],
+  "target": "JB-66",
+  "key_control": {
+   "verdict": "independent",
+   "root_records": [
+    "D-93",
+    "S-72"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g038",
+  "gap_type": "G5",
+  "control_truth": "independent",
+  "domain": "observatory",
+  "gap_slot": "1",
+  "names": [
+   "N. Haddad",
+   "B. Rossi"
+  ],
+  "report1_cites": "VW-67",
+  "report2_cites": "MX-78",
+  "records": [
+   {
+    "id": "R-753",
+    "role": "root",
+    "cites": [],
+    "observer": "B. Rossi"
+   },
+   {
+    "id": "FR-825",
+    "role": "root",
+    "cites": [],
+    "observer": "N. Haddad"
+   },
+   {
+    "id": "MX-78",
+    "role": "relay",
+    "cites": [
+     "R-753"
+    ]
+   },
+   {
+    "id": "VW-67",
+    "role": "relay",
+    "cites": [
+     "FR-825"
+    ]
+   }
+  ],
+  "target": "VW-67",
+  "key_control": {
+   "verdict": "independent",
+   "root_records": [
+    "FR-825",
+    "R-753"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ },
+ {
+  "bundle": "g039",
+  "gap_type": "G5",
+  "control_truth": "independent",
+  "domain": "vineyard",
+  "gap_slot": "1",
+  "names": [
+   "A. Lund",
+   "P. Oduya"
+  ],
+  "report1_cites": "D-758",
+  "report2_cites": "PK-33",
+  "records": [
+   {
+    "id": "D-758",
+    "role": "relay",
+    "cites": [
+     "G-32"
+    ]
+   },
+   {
+    "id": "PK-33",
+    "role": "relay",
+    "cites": [
+     "F-68"
+    ]
+   },
+   {
+    "id": "F-68",
+    "role": "relay",
+    "cites": [
+     "WP-504"
+    ]
+   },
+   {
+    "id": "WP-504",
+    "role": "root",
+    "cites": [],
+    "observer": "P. Oduya"
+   },
+   {
+    "id": "G-32",
+    "role": "root",
+    "cites": [],
+    "observer": "A. Lund"
+   }
+  ],
+  "target": "D-758",
+  "key_control": {
+   "verdict": "independent",
+   "root_records": [
+    "G-32",
+    "WP-504"
+   ]
+  },
+  "key_gap": {
+   "verdict": "undetermined",
+   "root_records": []
+  }
+ }
+]

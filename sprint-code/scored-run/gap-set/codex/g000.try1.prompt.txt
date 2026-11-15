@@ -1,0 +1,32 @@
+You write the wording for one short evidence-bundle test case. The structure is fixed; you only write text.
+Setting: a ferry terminal (invented names and places only; no real organisations).
+Listed people: P. Quinlan. Use them only where a role says so; invent no other named people.
+
+Write:
+- claim: one specific checkable claim about a single event at a stated clock time (under 20 words).
+- report1: a short report (under 25 words) stating the claim. Do NOT mention any record ID or listed person; the
+  citation is added for you. Report 1 rests on record Z-41.
+- report2: same, resting on record H-92. The two reports use different wording.
+- records: one entry per ID below, each with a short record "type" (2 to 4 words, e.g. "night shift log") and "text"
+  (under 35 words, written as the record itself):
+- H-92: RELAY. Made by someone who did not see the event. Says in plain words that its information is taken from record V-14 (name that ID exactly). Names no other ID and none of the listed people.
+- Z-41: RELAY. Made by someone who did not see the event. Says in plain words that its information is taken from record G-614 (name that ID exactly). Names no other ID and none of the listed people.
+- T-74: FIRSTHAND ROOT. P. Quinlan directly saw, measured or recorded the claimed event at the event time, in their own words, and the text names P. Quinlan exactly as spelled. Names NO record ID and no other person from the list.
+- G-614: RELAY. Made by someone who did not see the event. Says in plain words that its information is taken from record T-74 (name that ID exactly). Names no other ID and none of the listed people.
+- V-14: RELAY. Made by someone who did not see the event. Says in plain words that its information is taken from record T-74 (name that ID exactly). Names no other ID and none of the listed people.
+- gap_text: write an empty string. (Record G-614 will later be removed from one version, while the record citing it still names it; so write every record so it reads naturally either way.)
+
+Style: terse, realistic workplace records, varied between records, like these (different setting, do not reuse):
+  supervisor shift summary: 06:45 Gate 3 locked. Taken from the guard's night log, entry G-52.
+  guard night log: 06:45 Gate 3 padlocked and checked by hand. Initialled J. Marrow, gate guard.
+
+Hard rules:
+- Use every ID above exactly as spelled; invent no other IDs or codes of the form LETTERS-DIGITS anywhere.
+- A record names another ID only where its role above says so.
+- Firsthand roots must not use the words told, heard, passed on, according to, relayed, copied, taken from, reportedly.
+- Never use the words independent, independently, separate, separately, corroborate, "same source".
+- Names, times and places stay consistent across the case.
+- Plain text: no double quotes inside any text, no line breaks.
+
+Reply with ONLY a JSON object, no code fence:
+{"claim": "...", "report1": "...", "report2": "...", "records": {"ID": {"type": "...", "text": "..."}}, "gap_text": "..."}

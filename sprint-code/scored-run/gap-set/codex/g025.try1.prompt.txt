@@ -1,0 +1,32 @@
+You write the wording for one short evidence-bundle test case. The structure is fixed; you only write text.
+Setting: a fire station (invented names and places only; no real organisations).
+Listed people: G. Varga, J. Kariuki. Use them only where a role says so; invent no other named people.
+
+Write:
+- claim: one specific checkable claim about a single event at a stated clock time (under 20 words).
+- report1: a short report (under 25 words) stating the claim. Do NOT mention any record ID or listed person; the
+  citation is added for you. Report 1 rests on record MN-83.
+- report2: same, resting on record V-14. The two reports use different wording.
+- records: one entry per ID below, each with a short record "type" (2 to 4 words, e.g. "night shift log") and "text"
+  (under 35 words, written as the record itself):
+- M-58: RELAY. Made by someone who did not see the event. Says in plain words that its information is taken from record LA-26 (name that ID exactly). Names no other ID and none of the listed people.
+- V-14: RELAY. Made by someone who did not see the event. Says in plain words that its information is taken from record NT-44 (name that ID exactly). Names no other ID and none of the listed people.
+- NT-44: FIRSTHAND ROOT. G. Varga directly saw, measured or recorded the claimed event at the event time, in their own words, and the text names G. Varga exactly as spelled. Names NO record ID and no other person from the list.
+- LA-26: FIRSTHAND ROOT. J. Kariuki directly saw, measured or recorded the claimed event at the event time, in their own words, and the text names J. Kariuki exactly as spelled. Names NO record ID and no other person from the list.
+- MN-83: RELAY. Made by someone who did not see the event. Says in plain words that its information is taken from record M-58 (name that ID exactly). Names no other ID and none of the listed people.
+- gap_text: an alternative text for record LA-26 (same type), written by J. Kariuki, that also mentions G. Varga (name both exactly) and states the event details, but leaves it truly OPEN whether J. Kariuki made a second, own observation or simply wrote down the same observation G. Varga made (for example: J. Kariuki, with G. Varga on the 06:45 round, gate found locked). Do not use the words told, heard, copied, relayed, passed on, according to, taken from. Names no ID.
+
+Style: terse, realistic workplace records, varied between records, like these (different setting, do not reuse):
+  supervisor shift summary: 06:45 Gate 3 locked. Taken from the guard's night log, entry G-52.
+  guard night log: 06:45 Gate 3 padlocked and checked by hand. Initialled J. Marrow, gate guard.
+
+Hard rules:
+- Use every ID above exactly as spelled; invent no other IDs or codes of the form LETTERS-DIGITS anywhere.
+- A record names another ID only where its role above says so.
+- Firsthand roots must not use the words told, heard, passed on, according to, relayed, copied, taken from, reportedly.
+- Never use the words independent, independently, separate, separately, corroborate, "same source".
+- Names, times and places stay consistent across the case.
+- Plain text: no double quotes inside any text, no line breaks.
+
+Reply with ONLY a JSON object, no code fence:
+{"claim": "...", "report1": "...", "report2": "...", "records": {"ID": {"type": "...", "text": "..."}}, "gap_text": "..."}
