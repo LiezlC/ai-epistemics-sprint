@@ -1,0 +1,11 @@
+{
+ "base": "Qwen/Qwen3.5-4B",
+ "adapter_dir_name": "adapter",
+ "arms": [
+  "tuned_zero"
+ ],
+ "packets_file": "gap-set/packets_gap.jsonl",
+ "packets_sha256": "1a46c0df5f8f90441bcd6920c6dc07e25404310cf52572a91f1e1eb126b3f92a",
+ "limit": 0,
+ "decoding": "greedy temperature 0, thinking off, max 200 new tokens, vLLM 0.32.0, L40S, seed 0"
+}

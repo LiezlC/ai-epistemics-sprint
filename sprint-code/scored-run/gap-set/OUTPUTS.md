@@ -32,3 +32,12 @@ Arm tuned_v2_zero: Qwen/Qwen3.5-4B + LoRA from release `provenance-dpo-adapter-v
 | `runs/4b_v2/modal_stdout.txt` | `5aafbdeeb6dfdd48bfd081b95ebb802c9902c31d64b225e4de1f75337e59969b` |
 | `runs/4b_v2/run_record_4b.json` | `35460abdfb3a4464f03ba40b6c1c00804213ca6b466ba67a8f2751b9b2305c8e` |
 | `runs/4b_v2/scored_outputs_tuned_zero.jsonl` | `3dd8b59da5373e5a99994e0c5576066621c89a5c46226f01cf76980c06eda74c` |
+
+## Addendum: loop round 3 arm (loop_r3_zero)
+
+Adapter: the training loop's round-3 pilot adapter (`loop/rounds/r3/adapter/`, see `sprint-code/loop/ROUNDS.md`), adapter_model.safetensors sha256 400f1f69054c27daa595ff5f304248928b4c639dcb7f09d740179d0097d94dab, on Qwen/Qwen3.5-4B. Scored once on Liezl's instruction ("score round 3"). Same Modal script and settings as the 4B arms (`modal_4b_scored.py` unchanged, `--arm tuned_zero`), frozen packets_gap.jsonl unchanged (sha256 1a46c0df5f8f90441bcd6920c6dc07e25404310cf52572a91f1e1eb126b3f92a). File named scored_outputs_tuned_zero.jsonl by the frozen script; the arm is loop_r3_zero. Raw outputs hashed and committed before scoring.
+
+| Arm | File | sha256 |
+|---|---|---|
+| 4B loop r3 (240 prompts, 3 unparseable) | runs/4b_loop_r3/scored_outputs_tuned_zero.jsonl | 6a73dc0ce06983e9c83efca39b03c3359d4957bacc445c76494936cd2b662e2b |
+| 4B loop r3 | runs/4b_loop_r3/run_record_4b.json | 49df6cf3aa05d45548534025c698ca621092bfbb44b5546c8e53caa5d5de5632 |
