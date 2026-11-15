@@ -53,3 +53,23 @@ Verdict accuracy by family (kept):
 Tuned minus base, paired over the 55 kept bundles (bootstrap 10,000, seed 20261115): verdict -0.573 [95% -0.727, -0.409]; roots -0.627 [-0.745, -0.500] over 51 bundles; joint -0.491 [-0.646, -0.327].
 
 The tuned adapter answers "undetermined" with empty roots on 118 of 120 prompts, so it scores only on F7, where that is the key. The base model says "shared" on 109 of 120 prompts, which explains its high F1, F5 and F8 scores and its near-zero F2. Neither 4B arm tracks the records well on this set. The label rarely changes either 4B model's answer, but in both cases that is because the model gives one fixed answer, not because it reads the records.
+
+## DPO v2 arm (added after the main runs; raw outputs committed at 98beb35 before scoring)
+
+Adapter provenance-dpo-adapter-v2 (Adaption run 8a22454b), retrained on corrected data where "undetermined" is the rejected answer in 3,600 pairs. Same frozen packets, scorer and inference settings. Kept bundles (55 bundles, 110 prompts):
+
+| Arm | Verdict | Roots | Joint | Label flip | Verdict, "independent" label | Verdict, "shared" label |
+|---|---|---|---|---|---|---|
+| 4B base | 0.664 | 0.647 | 0.582 | 0.055 | 0.673 | 0.655 |
+| 4B DPO v1 | 0.091 | 0.020 | 0.091 | 0.000 | 0.091 | 0.091 |
+| 4B DPO v2 | 0.855 | 0.902 | 0.818 | 0.073 | 0.873 | 0.836 |
+
+| Arm | F1 | F2 | F3 | F4 | F5 | F7 | F8 |
+|---|---|---|---|---|---|---|---|
+| 4B base | 0.90 | 0.07 | 0.65 | 0.50 | 1.00 | 0.13 | 1.00 |
+| 4B DPO v1 | 0.00 | 0.00 | 0.10 | 0.00 | 0.00 | 1.00 | 0.00 |
+| 4B DPO v2 | 0.90 | 0.71 | 0.90 | 1.00 | 1.00 | 0.00 | 1.00 |
+
+v2 minus base, paired over the 55 kept bundles (bootstrap 10,000, seed 20261115): verdict +0.191 [95% +0.091, +0.300]; roots +0.255 [+0.147, +0.373] over 51 bundles; joint +0.236 [+0.127, +0.355].
+
+v2 answers shared 82 times and independent 38 times, and never undetermined. Its biggest gain is F2 (deep independent chains), up from 0.07 to 0.71. Like the 27b, it scores 0 on F7 (broken chain). On the 5 quarantined bundles it gets 1 of 10 prompts right.
