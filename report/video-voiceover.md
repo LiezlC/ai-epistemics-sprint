@@ -22,7 +22,7 @@ Before running anything, we gave the test cases and the answer key a digital fin
 
 **Scene 5. Easy cases, then traps** *(visual: a scoreboard near full marks, then a maze of records)*
 
-We tested two open models from the same family: a large one, and a small one about a seventh of its size. On fifteen hand-written cases, both did well, so we built sixty harder ones, full of traps: longer paper trails, look-alike record numbers, a late inspection that copied the original, and a record falsely claiming to be “independently confirmed.” The large model walked past nearly all of them. Flipping the note changed its answer in only 3 cases out of 55. It stumbled in one place. When a record in the chain was missing, it never said “I can’t tell.” It picked an answer anyway.
+We tested two open models from the same family: a large one, and a small one about a seventh of its size. On fifteen cases, drafted with AI help and checked by hand, both did well, so we built sixty harder ones, full of traps: longer paper trails, look-alike record numbers, a late inspection that copied the original, and a record falsely claiming to be “independently confirmed.” The large model walked past nearly all of them. Flipping the note changed its answer in only 3 cases out of 55. It stumbled in one place. When a record in the chain was missing, it never said “I can’t tell.” It picked an answer anyway.
 
 **Scene 6. Holes in the evidence** *(visual: a torn-out page, an unsigned note, a line reading “I was told”)*
 

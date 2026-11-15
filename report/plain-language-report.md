@@ -14,7 +14,7 @@ Before running anything, we locked the test cases and the answer key with a digi
 
 ## Fifteen easy cases
 
-A teammate wrote fifteen cases by hand, with AI help, and checked each one. Claude drafted the answer key, and Liezl checked it blind, without seeing the draft first. They agreed on all fifteen.
+Claude drafted fifteen cases, and a teammate checked each one by hand. Claude drafted the answer key, and Liezl checked it blind, without seeing the draft first. They agreed on all fifteen.
 
 The larger model, Qwen at 27 billion parameters, got every case right. The small one, at 4 billion, got the verdicts right almost every time but often stopped one step short on longer paper trails, naming a middle record as the source. The handoff note hardly moved either model. The cases were too easy to show much, so we built harder ones.
 
