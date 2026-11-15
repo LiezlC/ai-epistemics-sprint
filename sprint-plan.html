@@ -33,7 +33,7 @@ h1{font-size:1.5rem;margin:0 0 4px;text-wrap:balance}
 </style>
 
 <h1>Epistemics Sprint Plan</h1>
-<p class="sub">Who did what and what comes next, Apart AI x Epistemics sprint. All times UTC. Submission closes Mon 16 Nov 11:59 UTC (13:59 SAST). Solid bars are done, dashed bars are still to come. As of Sun 15 Nov, 12:25 UTC. Draft headline: labels rarely override records that settle the question; the consistent weakness is over-commitment, firm verdicts when records leave a gap. Exploratory pointer: in the one tuned model that abstains, a label can move its abstention. Handover: HANDOVER.md in the repo.</p>
+<p class="sub">Who did what and what comes next, Apart AI x Epistemics sprint. All times UTC. Submission closes Mon 16 Nov 11:59 UTC (13:59 SAST). Solid bars are done, dashed bars are still to come. As of Sun 15 Nov, 13:50 UTC. Draft headline: labels rarely override records that settle the question; the consistent weakness is over-commitment, firm verdicts when records leave a gap. Exploratory pointer: in the one tuned model that abstains, a label can move its abstention. Handover: HANDOVER.md in the repo.</p>
 <div class="legend">
 <span><i class="sw" style="background:var(--li)"></i>Liezl</span>
 <span><i class="sw" style="background:var(--dp)"></i>Deepayan</span>
@@ -43,10 +43,10 @@ h1{font-size:1.5rem;margin:0 0 4px;text-wrap:balance}
 <span>◆ deadline or hand-off</span>
 </div>
 <div class="wrap"><div class="g" id="g"></div></div>
-<p class="note">Open items: Deepayan: the 4B tuned arm on the 15 cases with v2 (and v1), then Tables 3 to 6 and Appendix B; the abstract follows from those. Then a final read, PDF and video by Monday 10:00 UTC. The hard set, gap set and loop are model-built and reported apart from the main result.</p>
+<p class="note">Open items: post-time stamps in the order-of-events table (Deepayan); abstract trim to 250 words and an abstract-to-table numbers check; Google Docs template and 8-page check; final read, PDF and video by Monday 10:00 UTC; Liezl decides on making the repo public. The hard set, gap set and loop are model-built and reported apart from the main result.</p>
 
 <script>
-const S=Date.UTC(2026,10,12,0),E=Date.UTC(2026,10,16,14),NOW=Date.UTC(2026,10,15,12.4);
+const S=Date.UTC(2026,10,12,0),E=Date.UTC(2026,10,16,14),NOW=Date.UTC(2026,10,15,13.8);
 const t=(d,h)=>Date.UTC(2026,10,d,h);
 const C={L:"--li",D:"--dp",P:"--pv",T:"--team",C:"--ses"},N={L:"LC",D:"DS",P:"PV",T:"ALL",C:"AI"};
 const rows=[
@@ -70,7 +70,7 @@ const rows=[
 ["Second turn: run, hashes, scores (170b4aa)","D",t(14,23),t(15,0.2),1],
 ["DPO fine-tune on Adaption (1 h 53 min)","L",t(14,21.98),t(14,23.87),1],
 ["Adapter release provenance-dpo-adapter","C",t(15,7.5),t(15,8),1],
-["4B tuned arm on the 15 cases","D",t(15,10),t(15,14),0],
+["4B tuned v2 on the 15 cases: roots 96/99 (untuned 66/99), 9de22dc","D",t(15,12.45),t(15,12.72),1],
 ["Checkpoint cut-off","L",t(15,11.98),0,1,"ms"],
 ["Exploratory hard set (60 paired cases)"],
 ["Design sheet, Codex review, spec v2","L",t(15,7.8),t(15,8.3),1],
@@ -101,8 +101,10 @@ const rows=[
 ["Write-up and submit"],
 ["Handover note and report draft pushed (cea6f6c)","C",t(15,11.35),0,1,"ms"],
 ["Report: hard-set sections and future work drafted","C",t(15,8.8),t(15,9),1],
-["Fill results, figures, TODOs in report","T",t(15,11),t(16,8),0],
-["Roles table and LLM usage statement","T",t(15,12),t(16,8),0],
+["Tables 3 to 6, Appendices B and C, abstract (Deepayan's branch)","D",t(15,12.8),t(15,13.4),1],
+["Branch merged; abstract and intro extended (7c66f34)","C",t(15,13.6),0,1,"ms"],
+["Remaining TBDs: post times, abstract trim, numbers check","T",t(15,13.8),t(16,8),0],
+["Roles table and AI-use statement (drafted, checked)","T",t(15,13.4),t(15,13.7),1],
 ["Final read, PDF, repo tidy","L",t(16,8),t(16,11),0],
 ["Submission closes","T",t(16,11.98),0,0,"ms"]];
 const pct=x=>((x-S)/(E-S)*100)+"%";
