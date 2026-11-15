@@ -157,7 +157,7 @@ Launch: Adaption AutoScientist, `Qwen/Qwen3.5-4B`, `training_method="alignment"`
 
 **DPO v2.** We retrained once with a corrected file, `train_dpo_v2.jsonl`, built by the committed script `make_dpo_v2.py`. All prompts and chosen answers stay the same. In half of the 7,200 pairs whose chosen verdict is independent or shared, the rejected answer becomes "undetermined" with no roots, so "undetermined" is rejected 3,600 times and each other verdict about 4,200 times. Settings match v1, so the data is the only change. The file (sha256 `fa31f782efc317854fdba6ed409b9bb244927fbbac762d4eb03bbe4c6faf896a`) was committed at `c70ffa7` before upload. Run `8a22454b-eb49-4f11-b717-d235b588ce41` trained from 09:19 to 09:56 UTC on November 15, read back as alignment, with v1's hyperparameters passed explicitly. Adaption's judge win rate was 0.474 (v1: 0.421), again not our metric. The adapter is release `provenance-dpo-adapter-v2` (archive sha256 `d68865d6ae93e9c193f1fa09fc4d064a63be812e1fef695e3dc4b70da8676d38`). v2 finished before the checkpoint cut-off, but we disclose it as a second attempt made after v1's failure was seen.
 
-Over-correction check: the tuned model should still say undetermined on label-only and incomplete packets and stay right on consistent ones. `TBD: whether the scored set includes such packets; if not, list as a limitation.`
+Over-correction check: the tuned model should still say undetermined on label-only and incomplete packets and stay right on consistent ones. The scored set does not include such packets: the key holds only "independent" (5 cases) and "shared" (10 cases), and in every case the records settle the verdict. Over-correction is therefore untested on the main set and is listed as a limitation (Appendix A); the exploratory hard and gap sets (Sections 4.6 and 4.7) are the only evidence on abstention here.
 
 ### 3.12 Order of events and freeze
 
@@ -556,7 +556,7 @@ Repository: `LiezlC/ai-epistemics-sprint` (`TBD: make public or give access link
 
 ### Limitations
 
-- **Small n.** `TBD: N` hand-written variants from one writer. Intervals are wide; we report counts and intervals and call p > 0.05 suggestive.
+- **Small n.** 15 hand-written variants (3 in the first file, 12 in the second) from one writer, Prashanth, drafted with Claude and blind-checked by Liezl. Intervals are wide; we report counts and intervals and call p > 0.05 suggestive.
 - **One setting.** Every case is a site gate and guard log in a fictional grievance file. Real files have longer trails, mixed media and more than two reports.
 - **Few models.** One 4B base model in two arms (zero-shot, three-shot, and a tuned arm run after the key) and one 27b model, both from the Qwen family. Results may not hold for other families or for larger models with reasoning on.
 - **Greedy, single draw.** Each case is run once at temperature 0. Sampling variance is not measured.
@@ -565,7 +565,7 @@ Repository: `LiezlC/ai-epistemics-sprint` (`TBD: make public or give access link
 - **Training and test share a design.** Training data is scripted and test cases are hand-written, with disjoint sites and records, but both follow the same packet layout. Transfer to other layouts is untested.
 - **Pilot thresholds.** Floor and ceiling were set on generated pilot cases; hand-written variants may behave differently.
 - **Second turn.** Attachments are built by script and the request wording is fixed; a real challenger varies both. `TBD: if dropped for time, say so here.`
-- **Over-correction.** `TBD: whether label-only and incomplete packets were in the scored set.`
+- **Over-correction.** The 15 scored cases contain no label-only or incomplete packets (the key has no "undetermined" verdict), so we cannot say whether the tuned arm over-abstains on the main set. The exploratory sets bear on it only indirectly: they are model-built, have no human review, and show that the tuned arms abstain unevenly (Sections 4.6 and 4.7).
 - **Gap set key.** 10 of 40 gap bundles (shared G2 and G3) were keyed undetermined where shared is defensible, found by the human audit after the freeze. Section 4.7 gives the analysis without them; the finding does not change.
 - **Hard set is model-checked only.** The exploratory hard set (Section 3.15) has no human review, its key comes from a script, validator agreement stands in for a person, and one assistant built, ran and scored it. Its results point to where the effect may lie and need repeating under the full protocol.
 
@@ -579,7 +579,7 @@ All case packets, names, sites and records are fictional. No personal data was c
 
 ### Use of AI tools
 
-`TBD: state which AI tools helped with code, drafting and literature search, and that the authors checked all content.`
+[Brackets below mark items still to confirm.] We used AI tools in this work. Claude (Anthropic; Claude Code) helped with code (the scoring, table-rebuild and second-turn builder scripts, and the run scripts for the Modal and OpenRouter calls), with drafting and editing the report text and the wiki notes behind it, with a first draft of the answer key for the 15 cases (checked blind by Liezl), and with Prashanth's drafting of the hand-written variants. Gemini, run through the Antigravity agent, executed and scored the second turn and recomputed hashes, under a written plan; the main session re-ran the scorer and checked its output. Codex helped Liezl scope the exploratory sets and review their design and proposed the changes in the training loop, and GLM, Kimi and DeepSeek answered the exploratory cases blind to validate their keys [Liezl to confirm]. The training used the Adaption AutoScientist platform. [Literature search: tool to be named.] The Qwen models we evaluated are the objects of study, not tools. No AI tool chose the research question, wrote the answer key without human checking, or edited a raw output. All authors checked the content, numbers and citations in this report, and the authors are responsible for any errors.
 
 ## Appendix B. Run record
 
