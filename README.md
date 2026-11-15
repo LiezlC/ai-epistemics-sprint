@@ -29,7 +29,7 @@ The official resource library contains **24 PDFs**, including the standards. The
 
 ## Prior work and new work
 
-The sprint opened on 13 November 2026. Everything in the table below was made before that date and is not a sprint result. Numbers from the trial in this subsection are **(prior work)**, from 11 November.
+The sprint opened on 13 November 2026. Everything in the table below was made before that date and is not a sprint result. Numbers from the trial are **(prior work)**, from 11 November.
 
 **Prior work (before 13 November).**
 
