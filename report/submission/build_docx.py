@@ -17,8 +17,6 @@ abstract = s[a:b].split("\n", 1)[1].strip()
 body = s[b:]
 body = body.replace("(moved from Appendix H.1 to H.3 and 4.6 to 4.8)", "(moved from Sections 3.15 to 3.17 and 4.6 to 4.8)")
 # drop duplicate figure inside Appendix K
-k = body.index("## Appendix K.")
-body = body[:k] + re.sub(r"!\[[^\]]*\]\([^)]*\)\n", "", body[k:])
 md = TMP + "/body.md"
 open(md, "w", encoding="utf-8").write(body)
 pd = TMP + "/body.docx"
