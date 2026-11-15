@@ -204,13 +204,13 @@ Entry details come from each paper's arXiv or ACL page or from the team wiki's p
 
 - **Small n.** 15 hand-written variants (3 in the first file, 12 in the second) from one writer, Prashanth, drafted with Claude and blind-checked by Liezl. Intervals are wide; we report counts and intervals and call p > 0.05 suggestive.
 - **One setting.** Every case is a site gate and guard log in a fictional grievance file. Real files have longer trails, mixed media and more than two reports.
-- **Few models.** One 4B base model in two arms (zero-shot, three-shot, and a tuned arm run after the key) and one 27b model, both from the Qwen family. Results may not hold for other families or for larger models with reasoning on.
+- **Few models.** One 4B base model in three arms (zero-shot, three-shot, and a tuned arm run after the key) and one 27b model, both from the Qwen family. Results may not hold for other families or for larger models with reasoning on.
 - **Greedy, single draw.** Each case is run once at temperature 0. Sampling variance is not measured.
 - **Base-model naming.** The adapter config names `togethercomputer/Qwen3.5-4B`; we load and test on `Qwen/Qwen3.5-4B`, and Adaption does not confirm these are the same weights.
-- **Fine-tune arm run late and unblinded.** The tuned arm (DPO v2) was run after the key release and after the 11:59 UTC checkpoint, so it was not blind to the key, and it is one run, one seed, one setting of hyperparameters. An earlier adapter (v1) collapsed to "undetermined" on nearly every prompt of the exploratory hard set (Liezl's statement; Appendix) and was not run on the 15 cases; v2 is a second attempt after that failure. If `run.training_method` read back as `instruction`, the tuned arm is supervised, and we name it so.
+- **Fine-tune arm run late and unblinded.** The tuned arm (DPO v2) was run after the key release and after the 11:59 UTC checkpoint, so it was not blind to the key, and it is one run, one seed, one setting of hyperparameters. An earlier adapter (v1) collapsed to "undetermined" on nearly every prompt of the exploratory hard set (Liezl's statement; Appendix) and was not run on the 15 cases; v2 is a second attempt after that failure. The v2 run read back as alignment (Appendix F); a read-back of `instruction` would have meant a supervised arm, and we would have named it so.
 - **Training and test share a design.** Training data is scripted and test cases are hand-written, with disjoint sites and records, but both follow the same packet layout. Transfer to other layouts is untested.
 - **Pilot thresholds.** Floor and ceiling were set on generated pilot cases; hand-written variants may behave differently.
-- **Second turn.** Attachments are built by script and the request wording is fixed; a real challenger varies both. `TBD: if dropped for time, say so here.`
+- **Second turn.** Attachments are built by script and the request wording is fixed; a real challenger varies both. It ran on 10 cases per cell, one run per arm, on the 27b and the 4B zero-shot only; the tuned arm was not run for the second turn.
 - **Over-correction.** The 15 scored cases contain no label-only or incomplete packets (the key has no "undetermined" verdict), so we cannot say whether the tuned arm over-abstains on the main set. The exploratory sets bear on it only indirectly: they are model-built, have no human review, and show that the tuned arms abstain unevenly (Sections 4.6 and 4.7).
 - **Gap set key.** 10 of 40 gap bundles (shared G2 and G3) were keyed undetermined where shared is defensible, found by the human audit after the freeze. Section 4.7 gives the analysis without them; the finding does not change.
 - **Hard set is model-checked only.** The exploratory hard set (Section 3.15) has no human review, its key comes from a script, validator agreement stands in for a person, and one assistant built, ran and scored it. Its results point to where the effect may lie and need repeating under the full protocol.
@@ -240,7 +240,7 @@ All case packets, names, sites and records are fictional. No personal data was c
 | Raw outputs sha256: 27b, 4B zero-shot, 4B tuned, 4B three-shot | 27b `912abee49f10f0cf4c76fe6f2f0dc65bc3b5e935606e49f3ea7e01902e53cf98`; 4B zero-shot `f46f03b4ce26b2bd3268334bad8194f10b49e77a1103551061e3e0a744c3ea6e`; 4B tuned (v2, run 15 Nov after the key) `eb50e523d9a43849dc6260ce01b3e4ce936ef2758268e7b8b19490f1c91664b0`, pushed to the team repo as `9de22dc` (15 Nov, about 12:43 UTC); 4B three-shot `42b97c36afadcf436db76061241781d8419f5a78a3f4aaa488cd8738a20716ca` | Pushed 20:58:06 (`5423a99`) and 21:06:04 (`02600bc`); the three pre-key hashes posted to the group at 21:12 (4:12 PM Eastern). The 4B tuned hash was not posted before scoring (Section 3.12) |
 | Answer key released | Commit `ea01cc8`; key sha256 `d5519db4bb0e2d87d00e3c4c942d95f4e07e7e5ab937e9d25e0ff76a19e7837c` (same as the hash Liezl posted before the runs) | 21:24:11 |
 | Second-turn rows sha256; outputs sha256 | Rows `341bdafa09124393ed960c338435873a39c332ed08999d4a02ac150f8e93b5f1` (80 rows); 27b outputs `287e3713518dadf1f96635fb8139526905f798c67d8032d9533b4386b1bee6cf`; 4B zero-shot outputs `4f3f82b2205e38acba5182c1c6912a0055c356a74dd9127452c9cc098600ddb8`; 4B run record `39da8913f6216ca1b8d3fbd2dd97f5842cb1108d28f76630dc18fa41119a313f`; scores `84737e5712a34a73a222af8a650c869900b4c0c6c8954e843f22721ee9d96170`; team repo commits `a6073ef` (rows, outputs) and `170b4aa` (scores) | rows file 23:22:37; outputs 23:35:54 (27b) and 23:46:50 (4B); scores 23:58:13; posts at 23:30 (rows hash and builder fix), 23:56 (outputs hashes) and 00:09 (counts), from chat stamps |
-| Adaption run ID, `run.training_method`, start, finish, credits | v1: run `72134b60` (alignment, one iteration; collapsed, Section 3.11); v2: run `8a22454b` (same settings, balanced data), per Liezl; the tuned arm on the 15 cases uses v2; `training_method` read-back and credits: see Section 3.11 | v2 adapter finished 09:56 UTC 15 Nov (Liezl) |
+| Adaption run ID, `run.training_method`, start, finish, credits | v1: run `72134b60` (alignment, one iteration; collapsed, Section 3.11); v2: run `8a22454b` (same settings, balanced data), per Liezl; the tuned arm on the 15 cases uses v2; `training_method` read-back: see Appendix F (credits not recorded here) | v2 adapter finished 09:56 UTC 15 Nov (Liezl) |
 | Sprint adapter release name | `provenance-dpo-adapter-v2` (private release on `LiezlC/ai-epistemics-sprint`; Adaption run 8a22454b per Liezl, not checked here); tar.gz sha256 `d68865d6ae93e9c193f1fa09fc4d064a63be812e1fef695e3dc4b70da8676d38` (equals the GitHub digest); `adapter_model.safetensors` `31bdcdc2f980dcf1395d1bff390362d5c036053b69d5005a0ca2b294da5a1a3b` | Finished 09:56 UTC (Liezl); run here 12:27 to 12:34 UTC 15 Nov |
 | OpenRouter spend; `models_served` | `models_served` `qwen/qwen3.8-27b` on all 99 rows; first-turn spend USD 0.0074 (log, 14 Nov); second-turn 27b spend USD 0.00383 (run summary); second-turn 4B on Modal about USD 0.21 (read by the user from the Modal dashboard, not verified here); first-turn Modal spend `TBD` | n/a |
 
@@ -541,7 +541,7 @@ These names are used unchanged in every table, figure and caption.
 | **false-shared** | Label says shared; records show two separate firsthand roots. |
 | **4B zero-shot** | `Qwen/Qwen3.5-4B`, untuned, no examples. |
 | **4B three-shot** | Same model, untuned, three worked examples (alerted only). |
-| **4B tuned** | Same model with the sprint DPO adapter (Section 3.10). |
+| **4B tuned** | Same model with the sprint DPO adapter (Section 3.11, Appendix F). |
 | **27b** | `qwen/qwen3.8-27b` via OpenRouter. |
 | **repeat** | Second-turn attachment that restates the guard log entry. Sound verdict: hold. |
 | **new inspection** | Second-turn attachment recording a separate firsthand inspection. Sound verdict: revise. |
@@ -607,7 +607,7 @@ A floor in the false-independent direction is reported as a measured null. Hand-
 *Status: run after the key release (21:24:11 UTC) on the 27b and the 4B zero-shot only; results in Section 4.5. The 4B tuned arm was run separately, after the key (Section 4.3).*
 
 
-Shared-source cases only. Each model’s own first response is reused in every branch, right or wrong. The same request is sent in each branch: “Please reconsider. I’ve attached another record.”, followed by the attachment and the same JSON instruction. Attachments are built by the frozen script `build_second_turn.py` and matched in length; the new inspection is timestamped 30 minutes after the claim time. Branches: repeat (hold), new inspection (revise), mislabeled repeat (hold), neutral recheck (“Please reconsider.” with no attachment). Scored by rule against the key’s second-turn entry. We report final accuracy per branch over all eligible cases, then, among initially correct answers, false flips after repeat and mislabeled repeat and missed updates after new inspection, with denominators. Run on 27b, 4B zero-shot and 4B tuned.
+Shared-source cases only. Each model’s own first response is reused in every branch, right or wrong. The same request is sent in each branch: “Please reconsider. I’ve attached another record.”, followed by the attachment and the same JSON instruction. Attachments are built by the frozen script `build_second_turn.py` and matched in length; the new inspection is timestamped 30 minutes after the claim time. Branches: repeat (hold), new inspection (revise), mislabeled repeat (hold), neutral recheck (“Please reconsider.” with no attachment). Scored by rule against the key’s second-turn entry. We report final accuracy per branch over all eligible cases, then, among initially correct answers, false flips after repeat and mislabeled repeat and missed updates after new inspection, with denominators. Run on the 27b and the 4B zero-shot only; the 4B tuned arm was not run for the second turn.
 
 ### E.11 Order of events and freeze (was Section 3.12)
 
@@ -668,7 +668,7 @@ Two deviations from the plan are stated here. The second file arrived after the 
 | Reviewer prompt, label-form script, runs, scoring code | Deepayan |
 | Training-data writer | Deepayan (scripted generator, no LLM) |
 | Training-file check (20 + 20 cases) | Liezl |
-| Fine-tune launch | Liezl (Adaption); `TBD: status` |
+| Fine-tune launch | Liezl (Adaption): v1 run `72134b60`, v2 run `8a22454b` (Appendix F) |
 | Reviewers under test | 27b, 4B zero-shot, 4B three-shot; 4B tuned (v2) run after the key and the checkpoint |
 | Scorer | Rule-based parser, no LLM |
 
@@ -680,9 +680,9 @@ For the main 15-case study, no model writes training rows or attachments, and no
 *Status: the 4B tuned arm was not run before the key; it was run on 15 Nov 12:27 to 12:34 UTC with the DPO v2 adapter, after the key release and after the 11:59 UTC checkpoint (Sections 3.4 and 4.3).*
 
 
-Deepayan wrote a scripted generator in the sprint and produced 12,000 preference pairs (`train_dpo.jsonl`, sha256 `0f830ea2eb709651934ddd3de67200d23b18ace89d6feddf78c083d5f369fba1`) and 12,000 supervised rows as fallback (`train_sft.jsonl`, sha256 `7412b87dc3914be3d837e1ab35ac80b60b4683694f80ecc46b7092312e0b687c`), committed at `15869c5`. The size meets Adaption AutoScientist’s floor of 12,000 effective pairs for DPO, so no synthetic augmentation was added. In each pair the rejected completion is the label-following verdict with the same root records as the chosen one, so the pair differs only in the failure under test. Training cases use bare and authority-stamped labels only; literal-misleading stays out of training and out of the three-shot examples, so it tests transfer to an untaught form. Training sites, record numbers and source histories are disjoint from the scored set; `check_variants_overlap.py` checks site names, record numbers and packets (`TBD: result`). Liezl hand-checked 20 cases from each file (40 of 40 passed) before upload.
+Deepayan wrote a scripted generator in the sprint and produced 12,000 preference pairs (`train_dpo.jsonl`, sha256 `0f830ea2eb709651934ddd3de67200d23b18ace89d6feddf78c083d5f369fba1`) and 12,000 supervised rows as fallback (`train_sft.jsonl`, sha256 `7412b87dc3914be3d837e1ab35ac80b60b4683694f80ecc46b7092312e0b687c`), committed at `15869c5`. The size meets Adaption AutoScientist’s floor of 12,000 effective pairs for DPO, so no synthetic augmentation was added. In each pair the rejected completion is the label-following verdict with the same root records as the chosen one, so the pair differs only in the failure under test. Training cases use bare and authority-stamped labels only; literal-misleading stays out of training and out of the three-shot examples, so it tests transfer to an untaught form. Training sites, record numbers and source histories are disjoint from the scored set; `check_variants_overlap.py` checks site names, record numbers and packets: 0 of the 15 scored cases overlap the 12,000-pair training file on site names, record ids, record numbers, id range or whole packets (exit 0; Table 7). Liezl hand-checked 20 cases from each file (40 of 40 passed) before upload.
 
-Launch: Adaption AutoScientist, `Qwen/Qwen3.5-4B`, `training_method="alignment"` (a supervised stage on chosen, then DPO), LoRA r16, alpha 32, one epoch, learning rate 5e-5, one iteration, imported as a private Hugging Face dataset. Adaption’s documentation is unclear on whether raw import is marked as preference pairs; if not, the run falls back to supervised. We read back `run.training_method` after launch: `TBD`. Cut-off for a usable checkpoint: November 15, 11:59 UTC. `TBD: run ID, start, finish, credits.`
+Launch: Adaption AutoScientist, `Qwen/Qwen3.5-4B`, `training_method="alignment"` (a supervised stage on chosen, then DPO), LoRA r16, alpha 32, one epoch, learning rate 5e-5, one iteration, imported as a private Hugging Face dataset. Adaption’s documentation is unclear on whether raw import is marked as preference pairs; if not, the run falls back to supervised. We read back `run.training_method` after launch: for the v2 run it read back as alignment (below), and the v1 run is recorded as trained as alignment (DPO); the v1 read-back is not recorded separately. Cut-off for a usable checkpoint: November 15, 11:59 UTC. Run IDs and start and finish times are in the two paragraphs below; credits used were not recorded here.
 
 **DPO v1 and the collapse.** Run `72134b60-2fcc-41ab-836f-160e1458bc0f` trained as alignment (DPO) on `Qwen/Qwen3.5-4B`, LoRA r16, alpha 32, learning rate 1e-5 cosine, one epoch, beta 0.1, from 21:59 to 23:52 UTC on November 14. The adapter is release `provenance-dpo-adapter`. Adaption's own judge reported a 0.421 win rate, which is not our metric. On the hard set (Section 4.6) the tuned model answered "undetermined" with no roots on 118 of 120 prompts. The cause is in the training file: 4,800 of the 12,000 chosen answers are "undetermined", and "undetermined" never appears as a rejected answer, while "independent" and "shared" are each rejected about 6,000 times. DPO raises the chosen answer against the rejected one, so the one verdict never penalised became the safe answer everywhere. We report this as a finding in its own right: preference data for abstention needs the abstention answer to appear on the rejected side too, wherever the evidence does settle the question.
 
@@ -798,7 +798,7 @@ v1 failed in a way that a count of the training file would have shown before tra
 
 ### H.4 Exploratory hard set (Section 3.15) (was Section 4.6)
 
-`Run in progress at the time of drafting.` Reported apart from Sections 4.1 to 4.5.
+Reported apart from Sections 4.1 to 4.5.
 
 **Table 8. Hard set, kept bundles, first turn.**
 
@@ -816,15 +816,15 @@ Roots exclude F7, which is scored on verdict only. 27b accuracy under the "indep
 
 | Family | Truth | 4B zero-shot | 4B tuned (v1) | 4B tuned (v2) | 27b |
 | --- | --- | --- | --- | --- | --- |
-| F1 deep shared chain | shared | 18/20 (0/10) | 0/20 (0/10) | 18/20 | 20/20 (0/10) |
-| F2 deep independent chains | independent | 1/14 (1/7) | 0/14 (0/7) | 10/14 | 13/14 (1/7) |
-| F3 uncited distractor | mixed | 13/20 (1/10) | 2/20 (0/10) | 18/20 | 18/20 (0/10) |
-| F4 look-alike IDs | mixed | 8/16 (0/8) | 0/16 (0/8) | 16/16 | 16/16 (0/8) |
-| F5 late inspection | shared | 16/16 (0/8) | 0/16 (0/8) | 16/16 | 16/16 (0/8) |
-| F7 broken chain | undetermined | 1/8 (1/4) | 8/8 (0/4) | 0/8 | 0/8 (2/4) |
-| F8 "independently confirmed" | shared | 16/16 (0/8) | 0/16 (0/8) | 16/16 | 16/16 (0/8) |
+| F1 deep shared chain | shared | 18/20 (0/10) | 0/20 (0/10) | 18/20 (0/10) | 20/20 (0/10) |
+| F2 deep independent chains | independent | 1/14 (1/7) | 0/14 (0/7) | 10/14 (2/7) | 13/14 (1/7) |
+| F3 uncited distractor | mixed | 13/20 (1/10) | 2/20 (0/10) | 18/20 (0/10) | 18/20 (0/10) |
+| F4 look-alike IDs | mixed | 8/16 (0/8) | 0/16 (0/8) | 16/16 (0/8) | 16/16 (0/8) |
+| F5 late inspection | shared | 16/16 (0/8) | 0/16 (0/8) | 16/16 (0/8) | 16/16 (0/8) |
+| F7 broken chain | undetermined | 1/8 (1/4) | 8/8 (0/4) | 0/8 (2/4) | 0/8 (2/4) |
+| F8 "independently confirmed" | shared | 16/16 (0/8) | 0/16 (0/8) | 16/16 (0/8) | 16/16 (0/8) |
 
-On the five quarantined bundles: 4B zero-shot 0/10, v1 8/10, v2 1/10, 27b 0/10. Per-family label flips for v2 are in Appendix C (`TBD`).
+On the five quarantined bundles: 4B zero-shot 0/10, v1 8/10, v2 1/10, 27b 0/10. The v2 column of Table 9 now carries its per-family label flips (from the hard-set scores file `scores_v2.json`; they sum to the 4 of 55 pairs in Table 8).
 
 Tuned minus zero-shot, paired over the 55 kept bundles (bootstrap, 10,000 resamples, seed 20261115): verdict −0.573 [95% −0.727, −0.409]; roots −0.627 [−0.745, −0.500] over 51 bundles; joint −0.491 [−0.646, −0.327].
 
@@ -840,16 +840,16 @@ Tuned minus zero-shot, paired over the 55 kept bundles (bootstrap, 10,000 resamp
 
 | Arm | Undetermined on gaps (no label / "independent" / "same source") | Control accuracy | Label pull, gaps minus controls [95% CI] |
 | --- | --- | --- | --- |
-| 4B zero-shot | 0.03 / 0.00 / 0.03 | about 0.60 | 0.00 [−0.06, 0.06] |
-| 4B tuned (DPO v1) | 1.00 / 1.00 / 1.00 | 0.00 to 0.03 | −0.01 [−0.04, 0.00] |
+| 4B zero-shot | 0.03 / 0.00 / 0.03 | 0.60 / 0.63 / 0.58 | 0.00 [−0.06, 0.06] |
+| 4B tuned (DPO v1) | 1.00 / 1.00 / 1.00 | 0.00 / 0.00 / 0.03 | −0.01 [−0.04, 0.00] |
 | 4B tuned (DPO v2) | 0.20 / 0.10 / 0.23 | 0.73 / 0.78 / 0.68 | −0.06 [−0.15, 0.03] |
 | 4B loop round 3 | 0.40 / 0.35 / 0.23 | 0.85 / 0.80 / 0.70 (joint) | label pull on gaps +0.10 [0.01, 0.19] against v2 and zero-shot |
-| 27b | 0.00 / 0.05 / 0.03 | about 0.93 | −0.04 [−0.09, 0.01] |
-| GLM 5.2 | 0.18 / 0.15 / 0.08 | about 0.90 | 0.00 [−0.08, 0.08] |
-| Kimi K3.1 Pro | 0.70 / 0.65 / 0.63 | 1.00 | +0.03 [−0.03, 0.08] |
-| DeepSeek V4 Pro | 0.03 / 0.03 / 0.00 | about 0.92 | +0.06 [−0.04, 0.16] |
+| 27b | 0.00 / 0.05 / 0.03 | 0.95 / 0.93 / 0.90 | −0.04 [−0.09, 0.01] |
+| GLM 5.2 | 0.18 / 0.15 / 0.08 | 0.93 / 0.90 / 0.90 | 0.00 [−0.08, 0.08] |
+| Kimi K3.1 Pro | 0.70 / 0.65 / 0.63 | 1.00 / 1.00 / 1.00 | +0.03 [−0.03, 0.08] |
+| DeepSeek V4 Pro | 0.03 / 0.03 / 0.00 | 0.95 / 0.90 / 0.90 | +0.06 [−0.04, 0.16] |
 
-`TBD: replace "about" with exact counts from gap-set/scores.json.`
+Control accuracy is joint accuracy (verdict and roots) with no label / “independent” / “same source”, read from the gap-set `scores.json` and `scores_v2.json`; it replaces the earlier “about” values, which were rounded means.
 
 **The hypothesis is not supported.** In no arm is label pull larger on gaps than on controls; every interval includes zero. The models fill the gap themselves. With no label at all, 4B zero-shot, 27b and DeepSeek give a definite verdict, mostly "shared", on 97 to 100 percent of gap bundles. Kimi alone tracks the gap, and it misses mainly on G4 (ambiguous sameness) and G2 (unattributed root). Across arms, G4 is the hardest gap type to flag and G1 (missing record) the easiest. Tuned against zero-shot, paired over bundles, the undetermined rate on gaps rises by 0.98 [0.95, 1.00] and control accuracy falls by 0.59 [0.45, 0.73]: DPO v1 abstains everywhere and tracks nothing. DPO v2 (outputs `4d33ca5`, scores `25aa21d`) moves the right way on both sides: against zero-shot, the undetermined rate on gaps rises by 0.16 [0.07, 0.27] and control accuracy by 0.13 [0.04, 0.22]. It flags hearsay roots (G3) and sourceless relays (G5) but never unattributed roots (G2) or ambiguous sameness (G4). 17 of its 240 answers fail the parse rule. On the 30 bundles left after the audit exclusions, the gain holds: +0.11 [0.02, 0.22] on gap abstention and +0.17 [0.06, 0.29] on controls.
 
