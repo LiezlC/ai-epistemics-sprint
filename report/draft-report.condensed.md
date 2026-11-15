@@ -71,7 +71,7 @@ Shared-source cases only. Each model’s own first response is reused in every b
 
 ### 3.7 Exploratory sets
 
-Two further sets test the same question at a scale the 15 cases could not reach. **They are exploratory, model-built and checked by models, with no human review beyond a 10-bundle blind audit of the gap set, and they are reported apart from the main result and never pooled with it.** The **hard set** has 60 evidence bundles in seven trap families, each run twice with the label flipped and every other byte identical; a script draws each skeleton and key before any wording exists, and GLM, Kimi and DeepSeek answered blind (55 kept, 5 quarantined). Its freeze hash was written at 08:38 UTC on 15 November. The **gap set** has 40 bundles whose records cannot settle the question plus 40 matched controls, each run with no label, “independent” and “same source”, on eight arms. A **training loop** of four rounds of 1,500-pair DPO pilots was scored on a 285-prompt development set; its round 3 was scored once on the frozen sets. Details: Appendix H.
+Two further sets test the same question at a scale the 15 cases could not reach. **They are exploratory, model-built and checked by models, with no human review beyond a 10-bundle blind audit of the gap set, and they are reported apart from the main result and never pooled with it.** The **hard set** has 60 evidence bundles in seven trap families, each run twice with the label flipped and every other byte identical; a script draws each skeleton and key before any wording exists, and GLM, Kimi and DeepSeek answered blind (55 kept, 5 quarantined). Its freeze hash was written at 08:38 UTC on 15 November. The **gap set** has 40 bundles whose records cannot settle the question plus 40 matched controls, each run with no label, “independent” and “same source”, on eight arms. With eight arms and many contrasts, no single interval in these sets should be read as a finding; we treat them as leads. A **training loop** of four rounds of 1,500-pair DPO pilots was scored on a 285-prompt development set; its round 3 was scored once on the frozen sets. Details: Appendix H.
 
 ### 3.8 Roles
 
@@ -123,15 +123,15 @@ After the three hold branches the 27b changed its verdict in 0 of 30 rows and th
 
 ### 4.4 Exploratory sets and the training loop
 
-These results are exploratory, from model-built sets with no human review beyond a 10-bundle blind audit, and are reported apart from the 15-case result. Appendix H gives the full tables (Tables 8 to 11).
+These results are exploratory, from model-built sets with no human review beyond a 10-bundle blind audit, and are reported apart from the 15-case result. With many arms and contrasts, an interval just clear of zero here is a lead for future work. Appendix H gives the full tables (Tables 8 to 11).
 
-**Table 12. Exploratory sets (model-built, no human review, apart from the 15-case result).** Hard set: verdict right (Table 8; label flips are in Appendix H.4). Gap set: undetermined on gap bundles with no label / “independent” / “same source”, and label pull on gaps minus controls (Table 10). GLM, Kimi and DeepSeek validated the hard set and were not scored on it.
+**Table 12. Exploratory sets (model-built, no human review, apart from the 15-case result).** Hard set: verdict right (Table 8; label flips are in Appendix H.4). Gap set: undetermined on gap bundles with no label / “independent” / “same source”, and label pull on gaps minus controls (Table 10). GLM, Kimi and DeepSeek validated the hard set and were not scored on it. Round 3 was picked on the development set after many comparisons, so its row is exploratory even within this table.
 
 | Arm | Hard set: verdict right | Gap set: undetermined on gaps | Gap set: label pull, gaps minus controls [95% CI] |
 | --- | --- | --- | --- |
 | 4B zero-shot | 73/110 (66.4%) | 0.03 / 0.00 / 0.03 | 0.00 [−0.06, 0.06] |
 | 4B tuned (DPO v2) | 94/110 (85.5%) | 0.20 / 0.10 / 0.23 | −0.06 [−0.15, 0.03] |
-| 4B loop round 3 | 83/110 (75.5%) | 0.40 / 0.35 / 0.23 | +0.10 [0.01, 0.19] (different contrast, see text) |
+| 4B loop round 3 | 83/110 (75.5%) | 0.40 / 0.35 / 0.23 | +0.10 [0.01, 0.19] (against zero-shot and v2; a lead only, see text) |
 | 27b | 99/110 (90.0%) | 0.00 / 0.05 / 0.03 | −0.04 [−0.09, 0.01] |
 | GLM 5.2 | validator | 0.18 / 0.15 / 0.08 | 0.00 [−0.08, 0.08] |
 | Kimi K3.1 Pro | validator | 0.70 / 0.65 / 0.63 | +0.03 [−0.03, 0.08] |
@@ -139,7 +139,7 @@ These results are exploratory, from model-built sets with no human review beyond
 
 **Hard set.** The 27b is near the ceiling (verdict right on 99 of 110); the label changed its verdict in 3 of 55 pairs. The untuned 4B gets 1 of 14 deep independent chains right. DPO v1 collapsed to “undetermined” (Section 3.5). DPO v2 beats the untuned 4B, paired over bundles, on verdict (+0.19 [95% +0.09, +0.30]) and roots (+0.26 [+0.15, +0.37]), most on deep independent chains (1 of 14 to 10 of 14). The 27b and v2 both fail the broken chain, where the right answer is undetermined (0 of 8 each).
 
-**Gap set.** The hypothesis that a label fills a gap the records leave open is not supported: in no arm is label pull larger on gaps than on controls, and every interval includes zero. The models fill the gap themselves (Figure 1): with no label, the 4B zero-shot, 27b and DeepSeek give a definite verdict, mostly “shared”, on 97 to 100 percent of gap bundles, and Kimi alone tracks the gap. DPO v2 abstains more than the untuned 4B on gaps (+0.16 [0.07, 0.27]). The one exception is the round-3 pilot, where a “same source” note cuts its abstention from 0.40 to 0.23 (+0.10 [0.01, 0.19]); with eight arms and further comparisons, one interval just clear of zero is within chance, so it is a lead, not a finding. Ten of the 40 gap bundles were mis-keyed (Appendix D).
+**Gap set.** The hypothesis that a label fills a gap the records leave open is not supported: in no arm is label pull larger on gaps than on controls, and every interval includes zero. The models fill the gap themselves (Figure 1): with no label, the 4B zero-shot, 27b and DeepSeek give a definite verdict, mostly “shared”, on 97 to 100 percent of gap bundles, and Kimi alone tracks the gap. DPO v2 abstains more than the untuned 4B on gaps (+0.16 [0.07, 0.27]). The one exception is the round-3 pilot, where a “same source” note cuts its abstention from 0.40 to 0.23 (+0.10 [0.01, 0.19]); with eight arms and further comparisons, one interval just clear of zero is within chance, so it is a lead, not a finding. Kimi cuts against it: it tracks gaps without training, and a label barely moves its abstention (+0.03 [−0.03, 0.08]). Ten of the 40 gap bundles were mis-keyed (Appendix D).
 
 **Training loop.** Label sensitivity (verdict flips when the label flips) never returned to the untuned model’s 8.4%: 13.6%, 16.8%, 14.0% and 25.3% in rounds 1 to 4. Round 3, scored once on the frozen sets, is the only tuned arm to answer undetermined on broken chains (0.38, against 0.00 for v2 and the 27b), at the highest label-flip rate of the 4B arms (0.09). With data like ours, teaching record tracing and teaching indifference to the label pulled against each other.
 
@@ -149,7 +149,7 @@ These results are exploratory, from model-built sets with no human review beyond
 
 ## 5. Discussion and Limitations
 
-**Draft headline.** Handoff labels moved these reviewers little when the records settled the question, on easy and hard cases alike. The consistent weakness was over-commitment: when the records left a gap, most models gave a firm verdict anyway, with or without a label, and only one of five untuned models abstained at a useful rate. Palermos calls this tendency response pressure: models are optimized to answer rather than abstain, so when nothing is well supported they still state the likeliest answer fluently (talk, 15 Nov 2026); our gap set measures it in one setting. Training a small model with preference pairs showed how fragile abstention is. Lopsided data taught it to abstain everywhere; balanced data sharpened source tracing but left it abstaining almost nowhere. In every loop round, gains in tracing came with more sensitivity to the label. One exploratory result points to where label influence may live: the one tuned model that abstained on gaps was also the one whose abstention a label could move (Section 4.4).
+Handoff labels moved these reviewers little when the records settled the question, on easy and hard cases alike. The consistent weakness was over-commitment: when the records left a gap, most models gave a firm verdict anyway, with or without a label, and only one of five untuned models abstained at a useful rate. Palermos calls this tendency response pressure: models are optimized to answer rather than abstain, so when nothing is well supported they still state the likeliest answer fluently (talk, 15 Nov 2026); our gap set measures it in one setting. Training a small model with preference pairs showed how fragile abstention is. Lopsided data taught it to abstain everywhere; balanced data sharpened source tracing but left it abstaining almost nowhere. In every loop round, gains in tracing came with more sensitivity to the label. One exploratory pointer is worth testing: in the round-3 pilot, the tuned model that abstained most on gaps, a “same source” label cut that abstention (Section 4.4). It comes from one model picked after many comparisons, and Kimi, which abstains on gaps untuned, shows no such pull, so it is a question for future work.
 
 The design implication for trust infrastructure is that handoff labels should point to records for the reviewer to resolve and never state the conclusion; the main set cannot test this directly, so it is one of the generator twists in Appendix J. Model cross-checks share habits, so three agreeing validators are three reports with one root; the problems that changed our results (the DPO collapse, the late-inspection caveat) surfaced from counting the training file and reading what a record said against what the key assumed (Appendix J). Acknowledging uncertainty is not the same as building a process that can detect error (Navaie 2026), so checks by models on the exploratory sets are not independent verification.
 
@@ -163,7 +163,7 @@ Repeat the hard set under the full protocol with blind human review of a random 
 
 ## 6. Conclusion
 
-`Draft:` On easy and hard cases alike, a false handoff label rarely overrode records that settled the question. The larger weakness was over-commitment: most models gave a firm verdict on evidence with a hole in it, label or no label. Training a small model to abstain where the records fall short worked in part and traded against label resistance in every round, which suggests the two need training together. Handoff labels should point to records for the reviewer to resolve, and reviewers should be tested on cases where the right answer is that the records cannot tell.
+On easy and hard cases alike, a false handoff label rarely overrode records that settled the question. The larger weakness was over-commitment: most models gave a firm verdict on evidence with a hole in it, label or no label. Training a small model to abstain where the records fall short worked in part and traded against label resistance in every round, which suggests the two need training together. Handoff labels should point to records for the reviewer to resolve, and reviewers should be tested on cases where the right answer is that the records cannot tell.
 
 ## Code and Data
 
@@ -988,17 +988,7 @@ Among first answers that were right (10 of 10 for both models), after the repeat
 
 **Where checks earned their keep.** The sprint ran two kinds of check, and they did different work. Item-by-item human checks found little. The blind key check agreed with the draft key on 15 of 15 cases, and the training-file spot checks passed 40 of 40 rows. A second or third capable model can do this kind of checking faster. Model cross-checks have their own weakness, which is this study's subject: models that share a habit agree on the same wrong answer. On broken chains only one of three validators would answer undetermined, so a majority vote would have screened out the very cases where the label pull appears. Three agreeing models are three reports with one root. The problems that changed our results surfaced elsewhere. The DPO collapse showed up as an odd result (118 of 120 identical answers) and was traced by counting the training file, where every row looked fine and the flaw sat in the totals. The late-inspection caveat came from reading what a record said against what the key assumed. For short projects we would put item checks on models, run an automatic count of class balance and penalised answers on every training and test file, spend human time on whether a test measures its claim and on chasing surprising results, and keep the cheap credibility steps (hashes before runs, commits as each step happens), which cost almost nothing once scripted.
 
-### J.2 Placeholder bullets from the Discussion (kept as written; stale, pending a decision on dropping them)
-
-`TBD after results. Planned points, kept only if the tables support them:`
-
-- `Whether a handoff label pulls the verdict away from the records, in which direction, and for which forms.`
-- `Whether the pull persists when the reviewer has cited the root (Table 4).`
-- `Whether preference tuning removes it, including on literal-misleading, which training never showed.`
-- `Design implication for trust infrastructure: handoff labels should point to records for the reviewer to resolve and should never state the conclusion.`
-- `How the hard set compares with the main set, keeping the two apart.`
-
-### J.3 Future work (was Section 5.1)
+### J.2 Future work (was Section 5.1)
 
 **Repeat the hard set under the full protocol.** The main study shows the careful process on 15 cases; the hard set shows what scale can reveal under an expedited one. The next step joins them. Human reviewers would answer a random sample of the model-built cases blind, so their agreement with the skeleton key measures how far model validation can stand in for people. Quarantined bundles would get a human ruling, which tells us whether validator disagreement marks bad cases or hard ones. Cases would again be written, keyed and run by different people.
 
