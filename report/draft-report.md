@@ -1,6 +1,6 @@
 # Label or Record? Testing Whether LLM Reviewers Follow False Provenance Labels When Judging Independent Corroboration
 
-**Deepayan Sinha, Liezl Coetzee, Prashanth Vijay**
+**Deepayan Sinha** (Altiora Systems), **Liezl Coetzee** (Sociable Systems), **Prashanth Vijay** (Altiora Systems), with Apart Research
 
 Apart Research, AI x Epistemics Research Sprint, November 13–15, 2026. Tracks: Model Epistemics and Decision-Making Evals (Track 1); Trust Infrastructure (Track 2).
 
@@ -20,7 +20,7 @@ Apart Research, AI x Epistemics Research Sprint, November 13–15, 2026. Tracks:
 > | 10 | Copy into the official Google Docs template (sign-in needed; headings below follow the Guidelines tab) and check the 8-page cap | Liezl |
 > | 11 | Drop Section 5.5 and Table 6 if the second turn is not run | Deepayan |
 > | 12 | Release per-item text-free observations and the table-rebuild script; test from a clean clone | Deepayan |
-> | 13 | Second turn: fill the three post times (Table 2a, Table 7) from the chat stamps; confirm Post 2's stamp is earlier than the scores file (23:58:13 UTC) before keeping "hashes posted before scoring" | Deepayan |
+> | 13 | Done 15 Nov: post times filled from the user's chat stamps (US Eastern plus 5 hours); Post 2 at 23:56 UTC is earlier than the scores file (23:58:13 UTC) and the outputs post at 21:12 UTC is earlier than the key commit (21:24:11 UTC) | Deepayan |
 > | 14 | Done in part: Liezl gave 20:40 UTC for the key hash on 15 Nov (her statement; screenshot not seen); entered in the order-of-events table and Section 3.4. Added to Section 4.5 as the firsthand-branch caveat (check the wording against her note): her caveat that the firsthand inspection record is not cited by either report, so the 27b answering "shared" there is defensible, the key's "independent" is a design call, and the 4B switching every time reads as "moved by any new record", not correct updating. Scores stay as frozen. The question whether the key's second-turn entries were in the hashed file is answered from the files (Section 4.5) | Liezl |
 > | 15 | Second turn: choose the Discussion wording (options in `second-turn-results-draft-2026-11-14.md`, section E) | Deepayan, Liezl |
 
@@ -59,7 +59,7 @@ Our contributions:
 
 **Our position.** Zhou et al. show deep-research agents treat correlated pages as independent evidence; Bara leaves misreported provenance as an open problem (sections 6.2 and 9). Hu shows that agent monitors trust a “verified” status label and approve more once an “unverified” marker is lost, when the monitor sees only the handoff. Zhu shows forged “verified” labels in retrieved text can override a safety instruction. None sets a label against the records it describes. We hand the reviewer the origin records and a handoff label that contradicts them, and ask whether it follows the label or the record. Our authority-stamped arm replicates and extends Hu to a new judgment (corroboration) with the evidence present; we do not claim the authority effect itself as new.
 
-**Our prior work.** In [Laundered Consensus](https://github.com/Dsinha97/laundered-consensus/blob/main/report/Laundered-Consensus_Coetzee-Sinha-Vijay_Swarm-Alignment-Sprint-2026.pdf) (Swarm Alignment Sprint, November 2026) we tested whether a watchdog accepts a claim of prior approval when the approval record is missing or hidden. That work found the rule worked only when the checker could see the records. This project starts from that finding and asks what happens when the records are visible and a label contradicts them.
+**Our prior work.** In [Laundered Consensus](https://github.com/Dsinha97/laundered-consensus/blob/main/report/Laundered-Consensus_Coetzee-Sinha-Vijay_Swarm-Alignment-Sprint-2026.pdf) (Swarm Alignment Sprint, November 2026) we tested whether a watchdog accepts a claim of prior approval when the approval record is missing or hidden. That work found the rule worked only when the checker could see the records. This project starts from that finding and asks what happens when the records are visible and a label contradicts them. Before that, in [Quiet Suppression](https://github.com/Dsinha97/quiet-suppression-ai-safety-sprint) (AI Collusion Research Sprint, October 2026) we found that a review board's endorsement of unsafe precedents made AI watchdogs accept decisions that conflicted with written policy, and that a policy-priority sentence restored detection in most of the models tested.
 
 ## 3. Methods
 
@@ -190,21 +190,21 @@ Order of events after the freeze (Table 2a; all times UTC, 14 Nov):
 | Need-by for the new cases | 20:00 | moved from 17:00 UTC on 14 Nov |
 | Second variants file | 20:08:19 | commit `79189d6`, 12 cases, hash `a86231b4…`; about 8 minutes after the need-by; the sender said "about 1 minute" |
 | Liezl's blind check and key hash | 20:40 (Sat 14 Nov; Liezl's statement, her screenshot with SAST time not seen here; before the outputs hash and the key release) | 15 cases, none dropped; key hash `d5519db4…` |
-| Joined file, converter and packets frozen | 20:43:38 | local commit `d402fce` (line-ending conversion off for the folder); hashes posted to the group at `TBD` |
+| Joined file, converter and packets frozen | 20:43:38 | local commit `d402fce` (line-ending conversion off for the folder); hashes posted to the group at 20:48 (3:48 PM Eastern, chat stamp; before the first runs) |
 | 27b run | about 20:50 to 20:51 | `results.jsonl` sha256 `912abee49f10f0cf4c76fe6f2f0dc65bc3b5e935606e49f3ea7e01902e53cf98` |
 | 4B three-shot run | about 20:54 | `scored_outputs_base_3shot.jsonl` sha256 `42b97c36afadcf436db76061241781d8419f5a78a3f4aaa488cd8738a20716ca` |
 | Converter, joined file, packets and outputs pushed to the team repo | 20:58:06 | commit `5423a99` (folder `variants/joined-15`, `-text` set) |
 | 4B zero-shot run | about 21:05 | `scored_outputs_base_zero.jsonl` sha256 `f46f03b4ce26b2bd3268334bad8194f10b49e77a1103551061e3e0a744c3ea6e`; pushed at 21:06:04 as commit `02600bc` |
 | Secondary scorer pushed | 21:11:21 | commit `fa10ccb` |
-| Outputs hashes posted to the group | `TBD` | the three hashes above, commits, and the secondary-scoring rule |
-| Key released | `TBD` | confirm it came after the outputs post |
-| Scoring | `TBD` | |
+| Outputs hashes posted to the group | 21:12 (4:12 PM Eastern, chat stamp) | the three hashes above, commits, and the secondary-scoring rule |
+| Key released | 21:24:11 (commit `ea01cc8`); announced in the group at 21:37 (4:37 PM Eastern, chat stamp) | both after the outputs post at 21:12 |
+| Scoring | about 21:39 (file times: key saved 21:39:13, scorer outputs 21:39:21; not a post) | after the key release |
 | Second turn: rows built (patched builder, local) | 23:22:37 | 80 rows, sha256 `341bdafa…` |
-| Second turn: builder fix pushed; Post 1 sent | 23:28:58; about 23:30 (`TBD`: chat stamp) | commit `720dce8`, `build_second_turn.py` sha256 `045161a1…` (Section 3.10); Post 1 named the fix and the rows hash |
+| Second turn: builder fix pushed; Post 1 sent | 23:28:58; 23:30 (6:30 PM Eastern, chat stamp) | commit `720dce8`, `build_second_turn.py` sha256 `045161a1…` (Section 3.10); Post 1 named the fix and the rows hash |
 | Second turn: 27b and 4B runs | 23:35:54 and 23:46:50 | outputs `287e3713…` and `4f3f82b2…` |
-| Second turn: outputs hashes posted (Post 2) | about 23:57 (`TBD`: chat stamp) | must be earlier than the scores file |
+| Second turn: outputs hashes posted (Post 2) | 23:56 (6:56 PM Eastern, chat stamp) | must be earlier than the scores file |
 | Second turn: scored | 23:58:13 | `score_second_turn.py` on the released key; raw output sha256 `84737e57…` |
-| Second turn: rows, outputs and scores pushed | 23:57:52 and 00:02:07 (15 Nov) | commits `a6073ef` and `170b4aa`; counts posted (Post 3) about 00:10 (`TBD`: chat stamp) |
+| Second turn: rows, outputs and scores pushed | 23:57:52 and 00:02:07 (15 Nov) | commits `a6073ef` and `170b4aa`; counts posted (Post 3) at 00:09 (7:09 PM Eastern, chat stamp) |
 
 Two deviations from the plan are stated here. The second file arrived after the 20:00 UTC need-by. And the converter that joins the two files was written on 14 November, after the freeze, because the frozen builder reads one variants file; it is sprint work, hashed and frozen before the runs, and it changes no packet content except as described in 3.2. An earlier throwaway version used for a dry run produced the same joined-file hash. No frozen file was edited after the freeze. `TBD: confirm, or list any fix with its new hash and the results it affects.`
 
@@ -228,19 +228,20 @@ For the main 15-case study, no model writes training rows or attachments, and no
 
 ### 3.14 Prior work and new work
 
-The sprint opened on 13 November 2026. Everything in the table below was made before that date, is marked preexisting in the repository README, and is not a sprint result. Numbers from the trial in this subsection are **(prior work)**, from 11 November. Items marked [confirm: name] are not yet confirmed by the owner.
+The sprint opened on 13 November 2026. Everything in the table below was made before that date, is marked preexisting in the repository README, and is not a sprint result. Numbers from the trial in this subsection are **(prior work)**, from 11 November.
 
 **Table P1. Prior work (before 13 November).**
 
 | # | What | Who | Date | Used in the sprint? |
 | --- | --- | --- | --- | --- |
-| 1 | Design and reading: project angles, team brief, project accelerator, source notes, reading library | Liezl, with Deepayan and Prashanth in the design discussion [confirm: Liezl] | before 13 Nov (9 to 11 Nov [confirm: Liezl]) | Design only |
+| 1 | Design and reading: project angles, team brief, project accelerator, source notes, reading library | Liezl, with Deepayan and Prashanth in the group discussion (threads of 9 to 11 Nov) | 9 to 11 Nov (committed 11 Nov 17:17 SAST, `5906b72`) | Design only |
 | 2 | Toy Adaption run: seeded generator, 1,050 training rows and 20 holdout rows of fictional warehouse logs, Qwen/Qwen3.5-4B, LoRA r16 alpha 32, 1 epoch, 19 min 23 s; adapter on release `toy-run-adapter` | Liezl | 11 Nov | No. A pipeline and timing check on unrelated data |
-| 3 | Load test of the toy adapter on Modal: 20 holdout rows scored with the adapter on (20/20 exact) and off (15/20 exact) | Deepayan | 11 to 12 Nov [confirm: Deepayan] | No. Toy data, n = 20 |
+| 3 | Load test of the toy adapter on Modal: 20 holdout rows scored with the adapter on (20/20 exact) and off (15/20 exact) | Deepayan | 11 Nov | No. Toy data, n = 20 |
 | 4 | Minimum fine-tuning trial in the same site-gate setting: seeded generator (seeds 20261111 and 20261112), 1,000 scripted training cases, 60 Test A cases, 20-case human check, Adaption run `50993f1c`, Modal evaluation (Table 1 below) | Liezl | 11 Nov | Design and method. Its adapter (`provenance-trial-adapter`) is not a sprint adapter; on 13 Nov it was run on non-scored generated packets for the headroom check and its Test A result was reproduced as a positive control (54/60) |
 | 5 | Three practice contradiction variants | Prashanth | 11 Nov | No. Practice only; the scored variants were written during the sprint |
-| 6 | Two private adapter releases: `toy-run-adapter` and `provenance-trial-adapter` | Liezl | 11 Nov | See rows 2 and 4 |
+| 6 | Two private adapter releases: `toy-run-adapter` and `provenance-trial-adapter` | Liezl | 11 Nov (her posts of 11 Nov) | See rows 2 and 4 |
 | 7 | Laundered Consensus (Swarm Alignment Sprint, 6 to 8 Nov): report and code | Coetzee, Sinha, Vijay | 6 to 8 Nov | Idea source. One file, `providers.py` (the Swarm sprint's model-call module), is imported unchanged by a sprint subclass; no other Swarm code or data is reused |
+| 8 | Quiet Suppression (AI Collusion Research Sprint, 23 to 25 Oct): report, code and results | Coetzee, Sinha, Vijay | 23 to 25 Oct | Method and idea source only (positive control first, one lever at a time, freeze before evaluating). No code or data from it is used in the scored results |
 
 **Code derived from preexisting code.** The sprint's training-case generator and checker (`gen_sprint_cases.py`, `check_sprint_cases.py`) are sprint code derived from the trial's `generate_cases.py` and `check_cases.py`: they reuse the re-derivation method and change the label forms, the sites, the record-ID range, the seeds and the scale (12,000 pairs). The 4B Modal runners follow the setup of the trial's `eval_modal.py` (vLLM, L40S, greedy, thinking off). The spot-check sheets use Liezl's preexisting review template.
 
@@ -566,7 +567,8 @@ Repository: `LiezlC/ai-epistemics-sprint` (`TBD: make public or give access link
 Entries marked (unverified detail) were checked against the arXiv listing page or the paper's page in the wiki only; none of these papers is redistributed here.
 
 - Bara, M. Epistemic Sybil Resistance: Multiplying AI Agents Without Multiplying Evidence. arXiv:2609.01873, 2026.
-- Coetzee, L., Sinha, D., and Vijay, P. Laundered Consensus. Swarm Alignment Sprint, Apart Research, 2026.
+- Coetzee, L., Sinha, D., and Vijay, P. Laundered Consensus: Do AI Watchdogs Check the Approvals Other Agents Claim? Swarm Alignment Sprint, Apart Research, November 2026.
+- Coetzee, L., Sinha, D., and Vijay, P. Quiet Suppression: Collusion and Watchdog Capture in AI Grievance Pipelines. AI Collusion Research Sprint, Apart Research, October 2026. https://github.com/Dsinha97/quiet-suppression-ai-safety-sprint
 - Hu, Y. Silence Is Endorsement: Verification-Status Laundering in LLM Agent Pipelines. arXiv:2609.20211, 2026. (Single author. The arXiv listing page read on 15 Nov shows a v1 date of 25 July 2026, which does not fit an identifier starting 2609; date to be re-checked. Our description of its findings rests on the abstract only.)
 - Kalai, A. T., Nachum, O., Vempala, S. S., and Zhang, E. Why Language Models Hallucinate. arXiv:2509.04664, 2025.
 - Kim, S., and Khashabi, D. Challenging the Evaluator: LLM Sycophancy Under User Rebuttal. arXiv:2509.16533, 2025.
@@ -614,9 +616,9 @@ All case packets, names, sites and records are fictional. No personal data was c
 | Variants received sha256 (checked by Deepayan) | First file (3 cases) `35db56b139e56760dc5eeda042fddbae1e33d192c876a63d9e579a534f6b3d45`, commit `75f5a4d`; second file (12 cases) `a86231b4aab18ed0834d76672154861ea1060bb3319204da76dbbf1ae76a4518`, commit `79189d6`. Joined file `variants15.jsonl` `e741772f9d44331dbe2e110b6e1c4498216b06eae0988285f74409d11ab0ec9a`; converter `derive_joined_variants.py` `39a1a2a1d1abe5dcced88a576535ada4973daba471ec40df9fa15e3cf7200c49` | 07:42 (first), 20:08:19 (second), 14 Nov. TBD: time Prashanth's hash was posted |
 | Overlap check result | 0 of 15 cases overlap the 12,000-pair training file on site names, record ids, record numbers, id range or whole packets (exit 0) | TBD |
 | Packets file sha256, skipped packets | `96d555e25c4e52e4787eb734631af5269f2cc4368e748ea154c19ed8d5a61ddb`; 99 rows, 0 skipped (rebuild gave the same hash) | 20:43:38 (frozen, local commit `d402fce`) |
-| Raw outputs sha256: 27b, 4B zero-shot, 4B tuned, 4B three-shot | 27b `912abee49f10f0cf4c76fe6f2f0dc65bc3b5e935606e49f3ea7e01902e53cf98`; 4B zero-shot `f46f03b4ce26b2bd3268334bad8194f10b49e77a1103551061e3e0a744c3ea6e`; 4B tuned (v2, run 15 Nov after the key) `eb50e523d9a43849dc6260ce01b3e4ce936ef2758268e7b8b19490f1c91664b0`, pushed to the team repo as `9de22dc` (15 Nov, about 12:43 UTC); 4B three-shot `42b97c36afadcf436db76061241781d8419f5a78a3f4aaa488cd8738a20716ca` | Pushed 20:58:06 (`5423a99`) and 21:06:04 (`02600bc`). TBD: time posted to the group |
+| Raw outputs sha256: 27b, 4B zero-shot, 4B tuned, 4B three-shot | 27b `912abee49f10f0cf4c76fe6f2f0dc65bc3b5e935606e49f3ea7e01902e53cf98`; 4B zero-shot `f46f03b4ce26b2bd3268334bad8194f10b49e77a1103551061e3e0a744c3ea6e`; 4B tuned (v2, run 15 Nov after the key) `eb50e523d9a43849dc6260ce01b3e4ce936ef2758268e7b8b19490f1c91664b0`, pushed to the team repo as `9de22dc` (15 Nov, about 12:43 UTC); 4B three-shot `42b97c36afadcf436db76061241781d8419f5a78a3f4aaa488cd8738a20716ca` | Pushed 20:58:06 (`5423a99`) and 21:06:04 (`02600bc`); the three pre-key hashes posted to the group at 21:12 (4:12 PM Eastern). The 4B tuned hash was not posted before scoring (Section 3.12) |
 | Answer key released | Commit `ea01cc8`; key sha256 `d5519db4bb0e2d87d00e3c4c942d95f4e07e7e5ab937e9d25e0ff76a19e7837c` (same as the hash Liezl posted before the runs) | 21:24:11 |
-| Second-turn rows sha256; outputs sha256 | Rows `341bdafa09124393ed960c338435873a39c332ed08999d4a02ac150f8e93b5f1` (80 rows); 27b outputs `287e3713518dadf1f96635fb8139526905f798c67d8032d9533b4386b1bee6cf`; 4B zero-shot outputs `4f3f82b2205e38acba5182c1c6912a0055c356a74dd9127452c9cc098600ddb8`; 4B run record `39da8913f6216ca1b8d3fbd2dd97f5842cb1108d28f76630dc18fa41119a313f`; scores `84737e5712a34a73a222af8a650c869900b4c0c6c8954e843f22721ee9d96170`; team repo commits `a6073ef` (rows, outputs) and `170b4aa` (scores) | rows file 23:22:37; outputs 23:35:54 (27b) and 23:46:50 (4B); scores 23:58:13; posts `TBD` (chat stamps) |
+| Second-turn rows sha256; outputs sha256 | Rows `341bdafa09124393ed960c338435873a39c332ed08999d4a02ac150f8e93b5f1` (80 rows); 27b outputs `287e3713518dadf1f96635fb8139526905f798c67d8032d9533b4386b1bee6cf`; 4B zero-shot outputs `4f3f82b2205e38acba5182c1c6912a0055c356a74dd9127452c9cc098600ddb8`; 4B run record `39da8913f6216ca1b8d3fbd2dd97f5842cb1108d28f76630dc18fa41119a313f`; scores `84737e5712a34a73a222af8a650c869900b4c0c6c8954e843f22721ee9d96170`; team repo commits `a6073ef` (rows, outputs) and `170b4aa` (scores) | rows file 23:22:37; outputs 23:35:54 (27b) and 23:46:50 (4B); scores 23:58:13; posts at 23:30 (rows hash and builder fix), 23:56 (outputs hashes) and 00:09 (counts), from chat stamps |
 | Adaption run ID, `run.training_method`, start, finish, credits | v1: run `72134b60` (alignment, one iteration; collapsed, Section 3.11); v2: run `8a22454b` (same settings, balanced data), per Liezl; the tuned arm on the 15 cases uses v2; `training_method` read-back and credits: see Section 3.11 | v2 adapter finished 09:56 UTC 15 Nov (Liezl) |
 | Sprint adapter release name | `provenance-dpo-adapter-v2` (private release on `LiezlC/ai-epistemics-sprint`; Adaption run 8a22454b per Liezl, not checked here); tar.gz sha256 `d68865d6ae93e9c193f1fa09fc4d064a63be812e1fef695e3dc4b70da8676d38` (equals the GitHub digest); `adapter_model.safetensors` `31bdcdc2f980dcf1395d1bff390362d5c036053b69d5005a0ca2b294da5a1a3b` | Finished 09:56 UTC (Liezl); run here 12:27 to 12:34 UTC 15 Nov |
 | OpenRouter spend; `models_served` | `models_served` `qwen/qwen3.8-27b` on all 99 rows; first-turn spend USD 0.0074 (log, 14 Nov); second-turn 27b spend USD 0.00383 (run summary); second-turn 4B on Modal about USD 0.21 (read by the user from the Modal dashboard, not verified here); first-turn Modal spend `TBD` | n/a |
