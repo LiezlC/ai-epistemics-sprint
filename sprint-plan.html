@@ -33,7 +33,7 @@ h1{font-size:1.5rem;margin:0 0 4px;text-wrap:balance}
 </style>
 
 <h1>Epistemics Sprint Plan</h1>
-<p class="sub">Who did what and what comes next, Apart AI x Epistemics sprint. All times UTC. Submission closes Mon 16 Nov 11:59 UTC (13:59 SAST). Solid bars are done, dashed bars are still to come. As of Sun 15 Nov, 12:25 UTC. Draft headline: labels move reviewers little when records settle the question; most models over-commit on gaps; a model tuned to notice gaps abstains more, and there the label decides how the gap gets filled. Labels can only fill gaps a reviewer can see. Handover: HANDOVER.md in the repo.</p>
+<p class="sub">Who did what and what comes next, Apart AI x Epistemics sprint. All times UTC. Submission closes Mon 16 Nov 11:59 UTC (13:59 SAST). Solid bars are done, dashed bars are still to come. As of Sun 15 Nov, 12:25 UTC. Draft headline: labels rarely override records that settle the question; the consistent weakness is over-commitment, firm verdicts when records leave a gap. Exploratory pointer: in the one tuned model that abstains, a label can move its abstention. Handover: HANDOVER.md in the repo.</p>
 <div class="legend">
 <span><i class="sw" style="background:var(--li)"></i>Liezl</span>
 <span><i class="sw" style="background:var(--dp)"></i>Deepayan</span>
@@ -95,7 +95,7 @@ const rows=[
 ["Round 2: same cases under 3 labels; accuracy up, label flips up","L",t(15,10.7),t(15,11.05),1],
 ["Round 3: wrong-label verdict as rejected (training)","L",t(15,11.1),t(15,11.5),0],
 ["Round 4: flips 25%, worst; loop stopped (b08f0c2)","L",t(15,11.5),t(15,11.9),1],
-["Round 3 on frozen sets: abstains on gaps, label fills them","C",t(15,11.9),t(15,12.2),1],
+["Round 3 on frozen sets: most gap abstention of tuned arms","C",t(15,11.9),t(15,12.2),1],
 ["Report, plain version, voiceover: new headline (f982c3f)","C",t(15,12.2),t(15,12.5),1],
 ["Optional 12k Adaption run of best recipe","L",t(15,17),t(15,20),0],
 ["Write-up and submit"],
