@@ -7,6 +7,7 @@ When an LLM reviewer has the origin records and a handoff label that contradicts
 ## Read
 
 - [Report (PDF)](report/submission/Phantom-Witnesses-submission.pdf), with its source in [`report/draft-report.condensed.md`](report/draft-report.condensed.md)
+- [Slides (PDF)](report/submission/Phantom-Witnesses-slides.pdf)
 - [Video overview (4:43)](report/submission/phantom-witnesses-overview-web.mp4)
 - [Plain-language version](report/plain-language-report.md)
 
