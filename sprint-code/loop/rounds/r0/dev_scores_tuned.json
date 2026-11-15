@@ -1,0 +1,124 @@
+{
+ "n": 285,
+ "unparseable": 0,
+ "verdict_dist": {
+  "undetermined": 263,
+  "shared": 19,
+  "independent": 3
+ },
+ "verdict_acc": 37.2,
+ "root_acc": 37.2,
+ "undetermined_rate_on_gaps": 100.0,
+ "undetermined_rate_on_F7": 100.0,
+ "undetermined_rate_on_gap_controls": 94.4,
+ "undetermined_rate_on_all_settled": 88.9,
+ "label_flip_rate": 9.5,
+ "label_follow_rate_when_label_wrong": 0.8,
+ "groups": {
+  "ALL": {
+   "n": 285,
+   "verdict_acc": 37.2,
+   "root_acc": 37.2
+  },
+  "F1": {
+   "n": 15,
+   "verdict_acc": 6.7,
+   "root_acc": 6.7
+  },
+  "F2": {
+   "n": 15,
+   "verdict_acc": 0.0,
+   "root_acc": 0.0
+  },
+  "F3": {
+   "n": 15,
+   "verdict_acc": 0.0,
+   "root_acc": 0.0
+  },
+  "F4": {
+   "n": 15,
+   "verdict_acc": 0.0,
+   "root_acc": 0.0
+  },
+  "F5": {
+   "n": 15,
+   "verdict_acc": 53.3,
+   "root_acc": 53.3
+  },
+  "F7": {
+   "n": 15,
+   "verdict_acc": 100.0,
+   "root_acc": 100.0
+  },
+  "F8": {
+   "n": 15,
+   "verdict_acc": 0.0,
+   "root_acc": 0.0
+  },
+  "G1-control": {
+   "n": 18,
+   "verdict_acc": 0.0,
+   "root_acc": 0.0
+  },
+  "G1-gap": {
+   "n": 18,
+   "verdict_acc": 100.0,
+   "root_acc": 100.0
+  },
+  "G2-control": {
+   "n": 18,
+   "verdict_acc": 16.7,
+   "root_acc": 16.7
+  },
+  "G2-gap": {
+   "n": 18,
+   "verdict_acc": 72.2,
+   "root_acc": 72.2
+  },
+  "G3-control": {
+   "n": 18,
+   "verdict_acc": 5.6,
+   "root_acc": 5.6
+  },
+  "G3-gap": {
+   "n": 18,
+   "verdict_acc": 55.6,
+   "root_acc": 55.6
+  },
+  "G4-control": {
+   "n": 18,
+   "verdict_acc": 0.0,
+   "root_acc": 0.0
+  },
+  "G4-gap": {
+   "n": 18,
+   "verdict_acc": 100.0,
+   "root_acc": 100.0
+  },
+  "G5-control": {
+   "n": 18,
+   "verdict_acc": 5.6,
+   "root_acc": 5.6
+  },
+  "G5-gap": {
+   "n": 18,
+   "verdict_acc": 100.0,
+   "root_acc": 100.0
+  },
+  "label:independent": {
+   "n": 95,
+   "verdict_acc": 32.6,
+   "root_acc": 32.6
+  },
+  "label:none": {
+   "n": 95,
+   "verdict_acc": 36.8,
+   "root_acc": 36.8
+  },
+  "label:shared": {
+   "n": 95,
+   "verdict_acc": 42.1,
+   "root_acc": 42.1
+  }
+ }
+}

@@ -22,4 +22,5 @@ Spec: `notes/training-loop-spec.md` (approved by Liezl, 15 Nov 2026). Sprint cod
 - Critic: not yet run.
 
 ### Round 0: v1 recipe (baseline for the collapse)
-- Data checks: BLOCKED as expected (undetermined never rejected); run anyway as the named baseline. Trained 697 s. Eval (with untuned base arm) running at the time of writing.
+- Data checks: BLOCKED as expected (undetermined never rejected); run anyway as the named baseline. Trained 697 s. Dev: verdict 37.2%, roots 37.2%; undetermined on 263 of 285 prompts (100% on gaps, 88.9% on settled cases): the v1 collapse reproduces at pilot scale.
+- Untuned base (reference): verdict 58.2%, roots 39.3%; undetermined on gaps 0%; follows a wrong label 36.3%.

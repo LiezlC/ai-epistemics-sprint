@@ -17,5 +17,9 @@
   "README.md": "57aab10b114f5ac4312230899bf8b85f36db71b370440260515275f0cea3264f",
   "adapter_config.json": "3faa5c49d7e16bd854bb9a37bbd74a88edd982682a549eb295c838737fe43f6f",
   "adapter_model.safetensors": "aa53b3b583fcb7f4f9c9713cdc1b5010242384d801fdb8a6cc129a88f6a805f3"
- }
+ },
+ "dev_sha256": "954c0c95088ff628134dee0a55c64c23901b61d51e8f2f7423b6d352234c425f",
+ "n_dev_prompts": 285,
+ "eval_wall_s": 398.7,
+ "decoding": "greedy temperature 0, thinking off, max 200 new tokens, vLLM 0.32.0, L40S, seed 0"
 }
