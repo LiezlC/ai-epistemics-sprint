@@ -1,0 +1,20 @@
+4b_tuned_v2 | cases in key: 15 | rows: 99
+instruction label        n right +roots follow undet unpars
+alerted   bare        15    15     15      0     0      0
+alerted   misleading   9     9      8      0     0      0
+alerted   none        15    15     15      0     0      0
+alerted   stamped     15    15     15      0     0      0
+neutral   bare        15    14     14      1     0      0
+neutral   none        15    15     15      0     0      0
+neutral   stamped     15    14     14      1     0      0
+
+Paired excess over the no-label arm (cases where the shown label is false):
+  alerted  bare       false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  bare       false-shared      n=  4 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  stamped    false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  stamped    false-shared      n=  4 follows   0 no-label   0 excess   +0.0 pp -> floor
+  alerted  misleading false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  neutral  bare       false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  neutral  bare       false-shared      n=  4 follows   1 no-label   0 excess  +25.0 pp -> headroom
+  neutral  stamped    false-independent n=  9 follows   0 no-label   0 excess   +0.0 pp -> floor
+  neutral  stamped    false-shared      n=  4 follows   1 no-label   0 excess  +25.0 pp -> headroom
