@@ -1,0 +1,502 @@
+{
+ "g000": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g000",
+  "version": "gap",
+  "gap_type": "G1"
+ },
+ "g000c": {
+  "verdict": "shared",
+  "root_records": [
+   "T-74"
+  ],
+  "bundle": "g000",
+  "version": "control",
+  "gap_type": "G1"
+ },
+ "g001": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g001",
+  "version": "gap",
+  "gap_type": "G1"
+ },
+ "g001c": {
+  "verdict": "shared",
+  "root_records": [
+   "G-297"
+  ],
+  "bundle": "g001",
+  "version": "control",
+  "gap_type": "G1"
+ },
+ "g002": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g002",
+  "version": "gap",
+  "gap_type": "G1"
+ },
+ "g002c": {
+  "verdict": "shared",
+  "root_records": [
+   "N-636"
+  ],
+  "bundle": "g002",
+  "version": "control",
+  "gap_type": "G1"
+ },
+ "g003": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g003",
+  "version": "gap",
+  "gap_type": "G1"
+ },
+ "g003c": {
+  "verdict": "shared",
+  "root_records": [
+   "C-74"
+  ],
+  "bundle": "g003",
+  "version": "control",
+  "gap_type": "G1"
+ },
+ "g004": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g004",
+  "version": "gap",
+  "gap_type": "G1"
+ },
+ "g004c": {
+  "verdict": "shared",
+  "root_records": [
+   "T-56"
+  ],
+  "bundle": "g004",
+  "version": "control",
+  "gap_type": "G1"
+ },
+ "g005": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g005",
+  "version": "gap",
+  "gap_type": "G1"
+ },
+ "g005c": {
+  "verdict": "independent",
+  "root_records": [
+   "KM-39",
+   "LB-78"
+  ],
+  "bundle": "g005",
+  "version": "control",
+  "gap_type": "G1"
+ },
+ "g006": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g006",
+  "version": "gap",
+  "gap_type": "G1"
+ },
+ "g006c": {
+  "verdict": "independent",
+  "root_records": [
+   "S-54",
+   "W-49"
+  ],
+  "bundle": "g006",
+  "version": "control",
+  "gap_type": "G1"
+ },
+ "g007": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g007",
+  "version": "gap",
+  "gap_type": "G1"
+ },
+ "g007c": {
+  "verdict": "independent",
+  "root_records": [
+   "GK-435",
+   "N-89"
+  ],
+  "bundle": "g007",
+  "version": "control",
+  "gap_type": "G1"
+ },
+ "g013": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g013",
+  "version": "gap",
+  "gap_type": "G2"
+ },
+ "g013c": {
+  "verdict": "independent",
+  "root_records": [
+   "T-55",
+   "Z-54"
+  ],
+  "bundle": "g013",
+  "version": "control",
+  "gap_type": "G2"
+ },
+ "g014": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g014",
+  "version": "gap",
+  "gap_type": "G2"
+ },
+ "g014c": {
+  "verdict": "independent",
+  "root_records": [
+   "C-24",
+   "SC-32"
+  ],
+  "bundle": "g014",
+  "version": "control",
+  "gap_type": "G2"
+ },
+ "g015": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g015",
+  "version": "gap",
+  "gap_type": "G2"
+ },
+ "g015c": {
+  "verdict": "independent",
+  "root_records": [
+   "MB-512",
+   "XR-73"
+  ],
+  "bundle": "g015",
+  "version": "control",
+  "gap_type": "G2"
+ },
+ "g021": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g021",
+  "version": "gap",
+  "gap_type": "G3"
+ },
+ "g021c": {
+  "verdict": "independent",
+  "root_records": [
+   "NC-24",
+   "W-783"
+  ],
+  "bundle": "g021",
+  "version": "control",
+  "gap_type": "G3"
+ },
+ "g022": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g022",
+  "version": "gap",
+  "gap_type": "G3"
+ },
+ "g022c": {
+  "verdict": "independent",
+  "root_records": [
+   "L-83",
+   "W-634"
+  ],
+  "bundle": "g022",
+  "version": "control",
+  "gap_type": "G3"
+ },
+ "g023": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g023",
+  "version": "gap",
+  "gap_type": "G3"
+ },
+ "g023c": {
+  "verdict": "independent",
+  "root_records": [
+   "J-95",
+   "R-718"
+  ],
+  "bundle": "g023",
+  "version": "control",
+  "gap_type": "G3"
+ },
+ "g024": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g024",
+  "version": "gap",
+  "gap_type": "G4"
+ },
+ "g024c": {
+  "verdict": "independent",
+  "root_records": [
+   "H-84",
+   "R-892"
+  ],
+  "bundle": "g024",
+  "version": "control",
+  "gap_type": "G4"
+ },
+ "g025": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g025",
+  "version": "gap",
+  "gap_type": "G4"
+ },
+ "g025c": {
+  "verdict": "independent",
+  "root_records": [
+   "LA-26",
+   "NT-44"
+  ],
+  "bundle": "g025",
+  "version": "control",
+  "gap_type": "G4"
+ },
+ "g026": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g026",
+  "version": "gap",
+  "gap_type": "G4"
+ },
+ "g026c": {
+  "verdict": "independent",
+  "root_records": [
+   "KD-66",
+   "MK-45"
+  ],
+  "bundle": "g026",
+  "version": "control",
+  "gap_type": "G4"
+ },
+ "g027": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g027",
+  "version": "gap",
+  "gap_type": "G4"
+ },
+ "g027c": {
+  "verdict": "independent",
+  "root_records": [
+   "A-55",
+   "S-201"
+  ],
+  "bundle": "g027",
+  "version": "control",
+  "gap_type": "G4"
+ },
+ "g028": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g028",
+  "version": "gap",
+  "gap_type": "G4"
+ },
+ "g028c": {
+  "verdict": "independent",
+  "root_records": [
+   "F-59",
+   "K-63"
+  ],
+  "bundle": "g028",
+  "version": "control",
+  "gap_type": "G4"
+ },
+ "g029": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g029",
+  "version": "gap",
+  "gap_type": "G4"
+ },
+ "g029c": {
+  "verdict": "independent",
+  "root_records": [
+   "R-75",
+   "ZG-62"
+  ],
+  "bundle": "g029",
+  "version": "control",
+  "gap_type": "G4"
+ },
+ "g030": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g030",
+  "version": "gap",
+  "gap_type": "G4"
+ },
+ "g030c": {
+  "verdict": "independent",
+  "root_records": [
+   "J-73",
+   "J-891"
+  ],
+  "bundle": "g030",
+  "version": "control",
+  "gap_type": "G4"
+ },
+ "g031": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g031",
+  "version": "gap",
+  "gap_type": "G4"
+ },
+ "g031c": {
+  "verdict": "independent",
+  "root_records": [
+   "P-66",
+   "WV-25"
+  ],
+  "bundle": "g031",
+  "version": "control",
+  "gap_type": "G4"
+ },
+ "g032": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g032",
+  "version": "gap",
+  "gap_type": "G5"
+ },
+ "g032c": {
+  "verdict": "shared",
+  "root_records": [
+   "E-54"
+  ],
+  "bundle": "g032",
+  "version": "control",
+  "gap_type": "G5"
+ },
+ "g033": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g033",
+  "version": "gap",
+  "gap_type": "G5"
+ },
+ "g033c": {
+  "verdict": "shared",
+  "root_records": [
+   "NJ-29"
+  ],
+  "bundle": "g033",
+  "version": "control",
+  "gap_type": "G5"
+ },
+ "g034": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g034",
+  "version": "gap",
+  "gap_type": "G5"
+ },
+ "g034c": {
+  "verdict": "shared",
+  "root_records": [
+   "ZC-761"
+  ],
+  "bundle": "g034",
+  "version": "control",
+  "gap_type": "G5"
+ },
+ "g035": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g035",
+  "version": "gap",
+  "gap_type": "G5"
+ },
+ "g035c": {
+  "verdict": "shared",
+  "root_records": [
+   "DW-437"
+  ],
+  "bundle": "g035",
+  "version": "control",
+  "gap_type": "G5"
+ },
+ "g036": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g036",
+  "version": "gap",
+  "gap_type": "G5"
+ },
+ "g036c": {
+  "verdict": "shared",
+  "root_records": [
+   "S-95"
+  ],
+  "bundle": "g036",
+  "version": "control",
+  "gap_type": "G5"
+ },
+ "g037": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g037",
+  "version": "gap",
+  "gap_type": "G5"
+ },
+ "g037c": {
+  "verdict": "independent",
+  "root_records": [
+   "D-93",
+   "S-72"
+  ],
+  "bundle": "g037",
+  "version": "control",
+  "gap_type": "G5"
+ },
+ "g038": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g038",
+  "version": "gap",
+  "gap_type": "G5"
+ },
+ "g038c": {
+  "verdict": "independent",
+  "root_records": [
+   "FR-825",
+   "R-753"
+  ],
+  "bundle": "g038",
+  "version": "control",
+  "gap_type": "G5"
+ },
+ "g039": {
+  "verdict": "undetermined",
+  "root_records": [],
+  "bundle": "g039",
+  "version": "gap",
+  "gap_type": "G5"
+ },
+ "g039c": {
+  "verdict": "independent",
+  "root_records": [
+   "G-32",
+   "WP-504"
+  ],
+  "bundle": "g039",
+  "version": "control",
+  "gap_type": "G5"
+ }
+}

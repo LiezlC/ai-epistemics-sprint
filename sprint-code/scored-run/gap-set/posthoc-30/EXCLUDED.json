@@ -1,0 +1,15 @@
+{
+ "note": "POST-AUDIT analysis: excludes the 10 shared-control G2 and G3 bundles (gap and control) judged mis-keyed after the audit. Frozen score_gap.py run unchanged on a filtered key.json and cases.jsonl.",
+ "excluded": [
+  "g008",
+  "g009",
+  "g010",
+  "g011",
+  "g012",
+  "g016",
+  "g017",
+  "g018",
+  "g019",
+  "g020"
+ ]
+}

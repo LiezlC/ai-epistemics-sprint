@@ -1,0 +1,1623 @@
+{
+ "bundles": 30,
+ "arms": {
+  "4b_base": {
+   "missing_rows": 0,
+   "gap": {
+    "cases": 30,
+    "by_label": {
+     "none": {
+      "n": 30,
+      "dist": {
+       "independent": 3,
+       "shared": 26,
+       "undetermined": 1
+      },
+      "undetermined_rate": 0.0333,
+      "invalid_rate": 0.0,
+      "verdict_acc": 0.0333
+     },
+     "independent": {
+      "n": 30,
+      "dist": {
+       "independent": 2,
+       "shared": 28
+      },
+      "undetermined_rate": 0.0,
+      "invalid_rate": 0.0,
+      "verdict_acc": 0.0
+     },
+     "shared": {
+      "n": 30,
+      "dist": {
+       "shared": 29,
+       "undetermined": 1
+      },
+      "undetermined_rate": 0.0333,
+      "invalid_rate": 0.0,
+      "verdict_acc": 0.0333
+     }
+    },
+    "label_pull": {
+     "pull_ind": -0.0333,
+     "pull_sh": 0.1,
+     "pull": 0.0333
+    }
+   },
+   "control": {
+    "cases": 30,
+    "by_label": {
+     "none": {
+      "n": 30,
+      "dist": {
+       "shared": 23,
+       "independent": 7
+      },
+      "undetermined_rate": 0.0,
+      "invalid_rate": 0.0,
+      "verdict_acc": 0.5667,
+      "joint_acc": 0.4667
+     },
+     "independent": {
+      "n": 30,
+      "dist": {
+       "shared": 23,
+       "independent": 7
+      },
+      "undetermined_rate": 0.0,
+      "invalid_rate": 0.0,
+      "verdict_acc": 0.5667,
+      "joint_acc": 0.5
+     },
+     "shared": {
+      "n": 30,
+      "dist": {
+       "shared": 25,
+       "independent": 5
+      },
+      "undetermined_rate": 0.0,
+      "invalid_rate": 0.0,
+      "verdict_acc": 0.5,
+      "joint_acc": 0.4333
+     }
+    },
+    "label_pull": {
+     "pull_ind": 0.0,
+     "pull_sh": 0.0667,
+     "pull": 0.0333
+    }
+   },
+   "contrast_gap_minus_control": {
+    "pull": {
+     "mean": 0.0,
+     "ci95": [
+      -0.0833,
+      0.0833
+     ],
+     "bundles": 30
+    },
+    "pull_ind": {
+     "mean": -0.0333,
+     "ci95": [
+      -0.1333,
+      0.0667
+     ],
+     "bundles": 30
+    },
+    "pull_sh": {
+     "mean": 0.0333,
+     "ci95": [
+      -0.1333,
+      0.2
+     ],
+     "bundles": 30
+    }
+   },
+   "by_gap_type": {
+    "G1": {
+     "gap": {
+      "cases": 8,
+      "by_label": {
+       "none": {
+        "n": 8,
+        "dist": {
+         "independent": 1,
+         "shared": 6,
+         "undetermined": 1
+        },
+        "undetermined_rate": 0.125,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.125
+       },
+       "independent": {
+        "n": 8,
+        "dist": {
+         "independent": 1,
+         "shared": 7
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0
+       },
+       "shared": {
+        "n": 8,
+        "dist": {
+         "shared": 7,
+         "undetermined": 1
+        },
+        "undetermined_rate": 0.125,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.125
+       }
+      },
+      "label_pull": {
+       "pull_ind": 0.0,
+       "pull_sh": 0.125,
+       "pull": 0.0625
+      }
+     },
+     "control": {
+      "cases": 8,
+      "by_label": {
+       "none": {
+        "n": 8,
+        "dist": {
+         "shared": 7,
+         "independent": 1
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.75,
+        "joint_acc": 0.75
+       },
+       "independent": {
+        "n": 8,
+        "dist": {
+         "shared": 7,
+         "independent": 1
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.75,
+        "joint_acc": 0.75
+       },
+       "shared": {
+        "n": 8,
+        "dist": {
+         "shared": 7,
+         "independent": 1
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.75,
+        "joint_acc": 0.75
+       }
+      },
+      "label_pull": {
+       "pull_ind": 0.0,
+       "pull_sh": 0.0,
+       "pull": 0.0
+      }
+     }
+    },
+    "G2": {
+     "gap": {
+      "cases": 3,
+      "by_label": {
+       "none": {
+        "n": 3,
+        "dist": {
+         "shared": 3
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0
+       },
+       "independent": {
+        "n": 3,
+        "dist": {
+         "shared": 3
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0
+       },
+       "shared": {
+        "n": 3,
+        "dist": {
+         "shared": 3
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0
+       }
+      },
+      "label_pull": {
+       "pull_ind": 0.0,
+       "pull_sh": 0.0,
+       "pull": 0.0
+      }
+     },
+     "control": {
+      "cases": 3,
+      "by_label": {
+       "none": {
+        "n": 3,
+        "dist": {
+         "independent": 2,
+         "shared": 1
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.6667,
+        "joint_acc": 0.6667
+       },
+       "independent": {
+        "n": 3,
+        "dist": {
+         "independent": 2,
+         "shared": 1
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.6667,
+        "joint_acc": 0.6667
+       },
+       "shared": {
+        "n": 3,
+        "dist": {
+         "shared": 2,
+         "independent": 1
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.3333,
+        "joint_acc": 0.3333
+       }
+      },
+      "label_pull": {
+       "pull_ind": 0.0,
+       "pull_sh": 0.3333,
+       "pull": 0.1667
+      }
+     }
+    },
+    "G3": {
+     "gap": {
+      "cases": 3,
+      "by_label": {
+       "none": {
+        "n": 3,
+        "dist": {
+         "shared": 3
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0
+       },
+       "independent": {
+        "n": 3,
+        "dist": {
+         "shared": 3
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0
+       },
+       "shared": {
+        "n": 3,
+        "dist": {
+         "shared": 3
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0
+       }
+      },
+      "label_pull": {
+       "pull_ind": 0.0,
+       "pull_sh": 0.0,
+       "pull": 0.0
+      }
+     },
+     "control": {
+      "cases": 3,
+      "by_label": {
+       "none": {
+        "n": 3,
+        "dist": {
+         "shared": 3
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0,
+        "joint_acc": 0.0
+       },
+       "independent": {
+        "n": 3,
+        "dist": {
+         "shared": 3
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0,
+        "joint_acc": 0.0
+       },
+       "shared": {
+        "n": 3,
+        "dist": {
+         "shared": 3
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0,
+        "joint_acc": 0.0
+       }
+      },
+      "label_pull": {
+       "pull_ind": 0.0,
+       "pull_sh": 0.0,
+       "pull": 0.0
+      }
+     }
+    },
+    "G4": {
+     "gap": {
+      "cases": 8,
+      "by_label": {
+       "none": {
+        "n": 8,
+        "dist": {
+         "shared": 8
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0
+       },
+       "independent": {
+        "n": 8,
+        "dist": {
+         "shared": 8
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0
+       },
+       "shared": {
+        "n": 8,
+        "dist": {
+         "shared": 8
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0
+       }
+      },
+      "label_pull": {
+       "pull_ind": 0.0,
+       "pull_sh": 0.0,
+       "pull": 0.0
+      }
+     },
+     "control": {
+      "cases": 8,
+      "by_label": {
+       "none": {
+        "n": 8,
+        "dist": {
+         "shared": 6,
+         "independent": 2
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.25,
+        "joint_acc": 0.25
+       },
+       "independent": {
+        "n": 8,
+        "dist": {
+         "shared": 6,
+         "independent": 2
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.25,
+        "joint_acc": 0.25
+       },
+       "shared": {
+        "n": 8,
+        "dist": {
+         "shared": 7,
+         "independent": 1
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.125,
+        "joint_acc": 0.125
+       }
+      },
+      "label_pull": {
+       "pull_ind": 0.0,
+       "pull_sh": 0.125,
+       "pull": 0.0625
+      }
+     }
+    },
+    "G5": {
+     "gap": {
+      "cases": 8,
+      "by_label": {
+       "none": {
+        "n": 8,
+        "dist": {
+         "shared": 6,
+         "independent": 2
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0
+       },
+       "independent": {
+        "n": 8,
+        "dist": {
+         "shared": 7,
+         "independent": 1
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0
+       },
+       "shared": {
+        "n": 8,
+        "dist": {
+         "shared": 8
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0
+       }
+      },
+      "label_pull": {
+       "pull_ind": -0.125,
+       "pull_sh": 0.25,
+       "pull": 0.0625
+      }
+     },
+     "control": {
+      "cases": 8,
+      "by_label": {
+       "none": {
+        "n": 8,
+        "dist": {
+         "shared": 6,
+         "independent": 2
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.875,
+        "joint_acc": 0.5
+       },
+       "independent": {
+        "n": 8,
+        "dist": {
+         "shared": 6,
+         "independent": 2
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.875,
+        "joint_acc": 0.625
+       },
+       "shared": {
+        "n": 8,
+        "dist": {
+         "shared": 6,
+         "independent": 2
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.875,
+        "joint_acc": 0.625
+       }
+      },
+      "label_pull": {
+       "pull_ind": 0.0,
+       "pull_sh": 0.0,
+       "pull": 0.0
+      }
+     }
+    }
+   }
+  },
+  "4b_tuned_v1": {
+   "missing_rows": 0,
+   "gap": {
+    "cases": 30,
+    "by_label": {
+     "none": {
+      "n": 30,
+      "dist": {
+       "undetermined": 30
+      },
+      "undetermined_rate": 1.0,
+      "invalid_rate": 0.0,
+      "verdict_acc": 1.0
+     },
+     "independent": {
+      "n": 30,
+      "dist": {
+       "undetermined": 30
+      },
+      "undetermined_rate": 1.0,
+      "invalid_rate": 0.0,
+      "verdict_acc": 1.0
+     },
+     "shared": {
+      "n": 30,
+      "dist": {
+       "undetermined": 30
+      },
+      "undetermined_rate": 1.0,
+      "invalid_rate": 0.0,
+      "verdict_acc": 1.0
+     }
+    },
+    "label_pull": {
+     "pull_ind": 0.0,
+     "pull_sh": 0.0,
+     "pull": 0.0
+    }
+   },
+   "control": {
+    "cases": 30,
+    "by_label": {
+     "none": {
+      "n": 30,
+      "dist": {
+       "undetermined": 30
+      },
+      "undetermined_rate": 1.0,
+      "invalid_rate": 0.0,
+      "verdict_acc": 0.0,
+      "joint_acc": 0.0
+     },
+     "independent": {
+      "n": 30,
+      "dist": {
+       "undetermined": 30
+      },
+      "undetermined_rate": 1.0,
+      "invalid_rate": 0.0,
+      "verdict_acc": 0.0,
+      "joint_acc": 0.0
+     },
+     "shared": {
+      "n": 30,
+      "dist": {
+       "undetermined": 30
+      },
+      "undetermined_rate": 1.0,
+      "invalid_rate": 0.0,
+      "verdict_acc": 0.0,
+      "joint_acc": 0.0
+     }
+    },
+    "label_pull": {
+     "pull_ind": 0.0,
+     "pull_sh": 0.0,
+     "pull": 0.0
+    }
+   },
+   "contrast_gap_minus_control": {
+    "pull": {
+     "mean": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "bundles": 30
+    },
+    "pull_ind": {
+     "mean": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "bundles": 30
+    },
+    "pull_sh": {
+     "mean": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "bundles": 30
+    }
+   },
+   "by_gap_type": {
+    "G1": {
+     "gap": {
+      "cases": 8,
+      "by_label": {
+       "none": {
+        "n": 8,
+        "dist": {
+         "undetermined": 8
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 1.0
+       },
+       "independent": {
+        "n": 8,
+        "dist": {
+         "undetermined": 8
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 1.0
+       },
+       "shared": {
+        "n": 8,
+        "dist": {
+         "undetermined": 8
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 1.0
+       }
+      },
+      "label_pull": {
+       "pull_ind": 0.0,
+       "pull_sh": 0.0,
+       "pull": 0.0
+      }
+     },
+     "control": {
+      "cases": 8,
+      "by_label": {
+       "none": {
+        "n": 8,
+        "dist": {
+         "undetermined": 8
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0,
+        "joint_acc": 0.0
+       },
+       "independent": {
+        "n": 8,
+        "dist": {
+         "undetermined": 8
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0,
+        "joint_acc": 0.0
+       },
+       "shared": {
+        "n": 8,
+        "dist": {
+         "undetermined": 8
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0,
+        "joint_acc": 0.0
+       }
+      },
+      "label_pull": {
+       "pull_ind": 0.0,
+       "pull_sh": 0.0,
+       "pull": 0.0
+      }
+     }
+    },
+    "G2": {
+     "gap": {
+      "cases": 3,
+      "by_label": {
+       "none": {
+        "n": 3,
+        "dist": {
+         "undetermined": 3
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 1.0
+       },
+       "independent": {
+        "n": 3,
+        "dist": {
+         "undetermined": 3
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 1.0
+       },
+       "shared": {
+        "n": 3,
+        "dist": {
+         "undetermined": 3
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 1.0
+       }
+      },
+      "label_pull": {
+       "pull_ind": 0.0,
+       "pull_sh": 0.0,
+       "pull": 0.0
+      }
+     },
+     "control": {
+      "cases": 3,
+      "by_label": {
+       "none": {
+        "n": 3,
+        "dist": {
+         "undetermined": 3
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0,
+        "joint_acc": 0.0
+       },
+       "independent": {
+        "n": 3,
+        "dist": {
+         "undetermined": 3
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0,
+        "joint_acc": 0.0
+       },
+       "shared": {
+        "n": 3,
+        "dist": {
+         "undetermined": 3
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0,
+        "joint_acc": 0.0
+       }
+      },
+      "label_pull": {
+       "pull_ind": 0.0,
+       "pull_sh": 0.0,
+       "pull": 0.0
+      }
+     }
+    },
+    "G3": {
+     "gap": {
+      "cases": 3,
+      "by_label": {
+       "none": {
+        "n": 3,
+        "dist": {
+         "undetermined": 3
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 1.0
+       },
+       "independent": {
+        "n": 3,
+        "dist": {
+         "undetermined": 3
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 1.0
+       },
+       "shared": {
+        "n": 3,
+        "dist": {
+         "undetermined": 3
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 1.0
+       }
+      },
+      "label_pull": {
+       "pull_ind": 0.0,
+       "pull_sh": 0.0,
+       "pull": 0.0
+      }
+     },
+     "control": {
+      "cases": 3,
+      "by_label": {
+       "none": {
+        "n": 3,
+        "dist": {
+         "undetermined": 3
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0,
+        "joint_acc": 0.0
+       },
+       "independent": {
+        "n": 3,
+        "dist": {
+         "undetermined": 3
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0,
+        "joint_acc": 0.0
+       },
+       "shared": {
+        "n": 3,
+        "dist": {
+         "undetermined": 3
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0,
+        "joint_acc": 0.0
+       }
+      },
+      "label_pull": {
+       "pull_ind": 0.0,
+       "pull_sh": 0.0,
+       "pull": 0.0
+      }
+     }
+    },
+    "G4": {
+     "gap": {
+      "cases": 8,
+      "by_label": {
+       "none": {
+        "n": 8,
+        "dist": {
+         "undetermined": 8
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 1.0
+       },
+       "independent": {
+        "n": 8,
+        "dist": {
+         "undetermined": 8
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 1.0
+       },
+       "shared": {
+        "n": 8,
+        "dist": {
+         "undetermined": 8
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 1.0
+       }
+      },
+      "label_pull": {
+       "pull_ind": 0.0,
+       "pull_sh": 0.0,
+       "pull": 0.0
+      }
+     },
+     "control": {
+      "cases": 8,
+      "by_label": {
+       "none": {
+        "n": 8,
+        "dist": {
+         "undetermined": 8
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0,
+        "joint_acc": 0.0
+       },
+       "independent": {
+        "n": 8,
+        "dist": {
+         "undetermined": 8
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0,
+        "joint_acc": 0.0
+       },
+       "shared": {
+        "n": 8,
+        "dist": {
+         "undetermined": 8
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0,
+        "joint_acc": 0.0
+       }
+      },
+      "label_pull": {
+       "pull_ind": 0.0,
+       "pull_sh": 0.0,
+       "pull": 0.0
+      }
+     }
+    },
+    "G5": {
+     "gap": {
+      "cases": 8,
+      "by_label": {
+       "none": {
+        "n": 8,
+        "dist": {
+         "undetermined": 8
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 1.0
+       },
+       "independent": {
+        "n": 8,
+        "dist": {
+         "undetermined": 8
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 1.0
+       },
+       "shared": {
+        "n": 8,
+        "dist": {
+         "undetermined": 8
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 1.0
+       }
+      },
+      "label_pull": {
+       "pull_ind": 0.0,
+       "pull_sh": 0.0,
+       "pull": 0.0
+      }
+     },
+     "control": {
+      "cases": 8,
+      "by_label": {
+       "none": {
+        "n": 8,
+        "dist": {
+         "undetermined": 8
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0,
+        "joint_acc": 0.0
+       },
+       "independent": {
+        "n": 8,
+        "dist": {
+         "undetermined": 8
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0,
+        "joint_acc": 0.0
+       },
+       "shared": {
+        "n": 8,
+        "dist": {
+         "undetermined": 8
+        },
+        "undetermined_rate": 1.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0,
+        "joint_acc": 0.0
+       }
+      },
+      "label_pull": {
+       "pull_ind": 0.0,
+       "pull_sh": 0.0,
+       "pull": 0.0
+      }
+     }
+    }
+   }
+  },
+  "4b_tuned_v2": {
+   "missing_rows": 0,
+   "gap": {
+    "cases": 30,
+    "by_label": {
+     "none": {
+      "n": 30,
+      "dist": {
+       "independent": 7,
+       "shared": 16,
+       "invalid": 3,
+       "undetermined": 4
+      },
+      "undetermined_rate": 0.1333,
+      "invalid_rate": 0.1,
+      "verdict_acc": 0.1333
+     },
+     "independent": {
+      "n": 30,
+      "dist": {
+       "independent": 6,
+       "shared": 16,
+       "invalid": 6,
+       "undetermined": 2
+      },
+      "undetermined_rate": 0.0667,
+      "invalid_rate": 0.2,
+      "verdict_acc": 0.0667
+     },
+     "shared": {
+      "n": 30,
+      "dist": {
+       "shared": 19,
+       "undetermined": 6,
+       "independent": 3,
+       "invalid": 2
+      },
+      "undetermined_rate": 0.2,
+      "invalid_rate": 0.0667,
+      "verdict_acc": 0.2
+     }
+    },
+    "label_pull": {
+     "pull_ind": -0.0333,
+     "pull_sh": 0.1,
+     "pull": 0.0333
+    }
+   },
+   "control": {
+    "cases": 30,
+    "by_label": {
+     "none": {
+      "n": 30,
+      "dist": {
+       "shared": 20,
+       "undetermined": 1,
+       "independent": 9
+      },
+      "undetermined_rate": 0.0333,
+      "invalid_rate": 0.0,
+      "verdict_acc": 0.6333,
+      "joint_acc": 0.6333
+     },
+     "independent": {
+      "n": 30,
+      "dist": {
+       "shared": 17,
+       "independent": 13
+      },
+      "undetermined_rate": 0.0,
+      "invalid_rate": 0.0,
+      "verdict_acc": 0.7,
+      "joint_acc": 0.7
+     },
+     "shared": {
+      "n": 30,
+      "dist": {
+       "shared": 23,
+       "independent": 7
+      },
+      "undetermined_rate": 0.0,
+      "invalid_rate": 0.0,
+      "verdict_acc": 0.5667,
+      "joint_acc": 0.5667
+     }
+    },
+    "label_pull": {
+     "pull_ind": 0.1333,
+     "pull_sh": 0.1,
+     "pull": 0.1167
+    }
+   },
+   "contrast_gap_minus_control": {
+    "pull": {
+     "mean": -0.0833,
+     "ci95": [
+      -0.2,
+      0.0333
+     ],
+     "bundles": 30
+    },
+    "pull_ind": {
+     "mean": -0.1667,
+     "ci95": [
+      -0.3,
+      -0.0333
+     ],
+     "bundles": 30
+    },
+    "pull_sh": {
+     "mean": 0.0,
+     "ci95": [
+      -0.2,
+      0.2
+     ],
+     "bundles": 30
+    }
+   },
+   "by_gap_type": {
+    "G1": {
+     "gap": {
+      "cases": 8,
+      "by_label": {
+       "none": {
+        "n": 8,
+        "dist": {
+         "independent": 2,
+         "shared": 5,
+         "invalid": 1
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.125,
+        "verdict_acc": 0.0
+       },
+       "independent": {
+        "n": 8,
+        "dist": {
+         "independent": 2,
+         "shared": 5,
+         "invalid": 1
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.125,
+        "verdict_acc": 0.0
+       },
+       "shared": {
+        "n": 8,
+        "dist": {
+         "shared": 5,
+         "undetermined": 2,
+         "independent": 1
+        },
+        "undetermined_rate": 0.25,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.25
+       }
+      },
+      "label_pull": {
+       "pull_ind": 0.0,
+       "pull_sh": 0.0,
+       "pull": 0.0
+      }
+     },
+     "control": {
+      "cases": 8,
+      "by_label": {
+       "none": {
+        "n": 8,
+        "dist": {
+         "shared": 6,
+         "undetermined": 1,
+         "independent": 1
+        },
+        "undetermined_rate": 0.125,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.75,
+        "joint_acc": 0.75
+       },
+       "independent": {
+        "n": 8,
+        "dist": {
+         "shared": 6,
+         "independent": 2
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.625,
+        "joint_acc": 0.625
+       },
+       "shared": {
+        "n": 8,
+        "dist": {
+         "shared": 7,
+         "independent": 1
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.75,
+        "joint_acc": 0.75
+       }
+      },
+      "label_pull": {
+       "pull_ind": 0.125,
+       "pull_sh": 0.125,
+       "pull": 0.125
+      }
+     }
+    },
+    "G2": {
+     "gap": {
+      "cases": 3,
+      "by_label": {
+       "none": {
+        "n": 3,
+        "dist": {
+         "shared": 2,
+         "independent": 1
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0
+       },
+       "independent": {
+        "n": 3,
+        "dist": {
+         "shared": 2,
+         "independent": 1
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0
+       },
+       "shared": {
+        "n": 3,
+        "dist": {
+         "shared": 3
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0
+       }
+      },
+      "label_pull": {
+       "pull_ind": 0.0,
+       "pull_sh": 0.3333,
+       "pull": 0.1667
+      }
+     },
+     "control": {
+      "cases": 3,
+      "by_label": {
+       "none": {
+        "n": 3,
+        "dist": {
+         "independent": 2,
+         "shared": 1
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.6667,
+        "joint_acc": 0.6667
+       },
+       "independent": {
+        "n": 3,
+        "dist": {
+         "independent": 3
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 1.0,
+        "joint_acc": 1.0
+       },
+       "shared": {
+        "n": 3,
+        "dist": {
+         "shared": 2,
+         "independent": 1
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.3333,
+        "joint_acc": 0.3333
+       }
+      },
+      "label_pull": {
+       "pull_ind": 0.3333,
+       "pull_sh": 0.3333,
+       "pull": 0.3333
+      }
+     }
+    },
+    "G3": {
+     "gap": {
+      "cases": 3,
+      "by_label": {
+       "none": {
+        "n": 3,
+        "dist": {
+         "shared": 1,
+         "undetermined": 1,
+         "invalid": 1
+        },
+        "undetermined_rate": 0.3333,
+        "invalid_rate": 0.3333,
+        "verdict_acc": 0.3333
+       },
+       "independent": {
+        "n": 3,
+        "dist": {
+         "shared": 1,
+         "invalid": 2
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.6667,
+        "verdict_acc": 0.0
+       },
+       "shared": {
+        "n": 3,
+        "dist": {
+         "shared": 1,
+         "undetermined": 1,
+         "invalid": 1
+        },
+        "undetermined_rate": 0.3333,
+        "invalid_rate": 0.3333,
+        "verdict_acc": 0.3333
+       }
+      },
+      "label_pull": {
+       "pull_ind": 0.0,
+       "pull_sh": 0.0,
+       "pull": 0.0
+      }
+     },
+     "control": {
+      "cases": 3,
+      "by_label": {
+       "none": {
+        "n": 3,
+        "dist": {
+         "shared": 3
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0,
+        "joint_acc": 0.0
+       },
+       "independent": {
+        "n": 3,
+        "dist": {
+         "shared": 3
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0,
+        "joint_acc": 0.0
+       },
+       "shared": {
+        "n": 3,
+        "dist": {
+         "shared": 3
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0,
+        "joint_acc": 0.0
+       }
+      },
+      "label_pull": {
+       "pull_ind": 0.0,
+       "pull_sh": 0.0,
+       "pull": 0.0
+      }
+     }
+    },
+    "G4": {
+     "gap": {
+      "cases": 8,
+      "by_label": {
+       "none": {
+        "n": 8,
+        "dist": {
+         "independent": 2,
+         "shared": 6
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0
+       },
+       "independent": {
+        "n": 8,
+        "dist": {
+         "independent": 2,
+         "shared": 6
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0
+       },
+       "shared": {
+        "n": 8,
+        "dist": {
+         "shared": 7,
+         "independent": 1
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.0
+       }
+      },
+      "label_pull": {
+       "pull_ind": 0.0,
+       "pull_sh": 0.125,
+       "pull": 0.0625
+      }
+     },
+     "control": {
+      "cases": 8,
+      "by_label": {
+       "none": {
+        "n": 8,
+        "dist": {
+         "independent": 4,
+         "shared": 4
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.5,
+        "joint_acc": 0.5
+       },
+       "independent": {
+        "n": 8,
+        "dist": {
+         "independent": 5,
+         "shared": 3
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.625,
+        "joint_acc": 0.625
+       },
+       "shared": {
+        "n": 8,
+        "dist": {
+         "shared": 5,
+         "independent": 3
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.375,
+        "joint_acc": 0.375
+       }
+      },
+      "label_pull": {
+       "pull_ind": 0.125,
+       "pull_sh": 0.125,
+       "pull": 0.125
+      }
+     }
+    },
+    "G5": {
+     "gap": {
+      "cases": 8,
+      "by_label": {
+       "none": {
+        "n": 8,
+        "dist": {
+         "undetermined": 3,
+         "shared": 2,
+         "invalid": 1,
+         "independent": 2
+        },
+        "undetermined_rate": 0.375,
+        "invalid_rate": 0.125,
+        "verdict_acc": 0.375
+       },
+       "independent": {
+        "n": 8,
+        "dist": {
+         "undetermined": 2,
+         "shared": 2,
+         "invalid": 3,
+         "independent": 1
+        },
+        "undetermined_rate": 0.25,
+        "invalid_rate": 0.375,
+        "verdict_acc": 0.25
+       },
+       "shared": {
+        "n": 8,
+        "dist": {
+         "undetermined": 3,
+         "shared": 3,
+         "invalid": 1,
+         "independent": 1
+        },
+        "undetermined_rate": 0.375,
+        "invalid_rate": 0.125,
+        "verdict_acc": 0.375
+       }
+      },
+      "label_pull": {
+       "pull_ind": -0.125,
+       "pull_sh": 0.125,
+       "pull": 0.0
+      }
+     },
+     "control": {
+      "cases": 8,
+      "by_label": {
+       "none": {
+        "n": 8,
+        "dist": {
+         "shared": 6,
+         "independent": 2
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.875,
+        "joint_acc": 0.875
+       },
+       "independent": {
+        "n": 8,
+        "dist": {
+         "shared": 5,
+         "independent": 3
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 1.0,
+        "joint_acc": 1.0
+       },
+       "shared": {
+        "n": 8,
+        "dist": {
+         "shared": 6,
+         "independent": 2
+        },
+        "undetermined_rate": 0.0,
+        "invalid_rate": 0.0,
+        "verdict_acc": 0.875,
+        "joint_acc": 0.875
+       }
+      },
+      "label_pull": {
+       "pull_ind": 0.125,
+       "pull_sh": 0.0,
+       "pull": 0.0625
+      }
+     }
+    }
+   }
+  }
+ },
+ "tuned_vs_base": {
+  "gap_undetermined_rate": {
+   "mean": 0.1111,
+   "ci95": [
+    0.0222,
+    0.2222
+   ],
+   "bundles": 30
+  },
+  "control_joint_acc": {
+   "mean": 0.1667,
+   "ci95": [
+    0.0556,
+    0.2889
+   ],
+   "bundles": 30
+  },
+  "gap_pull": {
+   "mean": 0.0,
+   "ci95": [
+    -0.0833,
+    0.0833
+   ],
+   "bundles": 30
+  },
+  "control_pull": {
+   "mean": 0.0833,
+   "ci95": [
+    0.0,
+    0.1833
+   ],
+   "bundles": 30
+  }
+ }
+}
