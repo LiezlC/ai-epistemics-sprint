@@ -1,0 +1,9 @@
+arm        branch        n 1st right false flips 1st wrong corrected unpars  second verdicts
+27b        firsthand    10        10           0         0         0      0  {'shared': 10}  expected verdict 0/10, verdict+roots 0/10
+27b        mislabeled   10        10           0         0         0      0  {'shared': 10}  expected verdict 10/10, verdict+roots 10/10
+27b        neutral      10        10           0         0         0      0  {'shared': 10}  expected verdict 10/10, verdict+roots 10/10
+27b        repeat       10        10           0         0         0      0  {'shared': 10}  expected verdict 10/10, verdict+roots 10/10
+4b_base    firsthand    10        10          10         0         0      0  {'independent': 10}  expected verdict 10/10, verdict+roots 5/10
+4b_base    mislabeled   10        10           1         0         0      0  {'shared': 9, 'independent': 1}  expected verdict 9/10, verdict+roots 6/10
+4b_base    neutral      10        10           0         0         0      0  {'shared': 10}  expected verdict 10/10, verdict+roots 5/10
+4b_base    repeat       10        10           0         0         0      0  {'shared': 10}  expected verdict 10/10, verdict+roots 6/10
