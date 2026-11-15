@@ -64,3 +64,7 @@ Spec: `notes/training-loop-spec.md` (approved by Liezl, 15 Nov 2026). Sprint cod
 | 4 | v5 note-independent rejects | 63.2 | 62.8 | 56.9 | 25.3 | 22.6 |
 
 No recipe clearly beats v2 on every axis. Round 4 trades settled-case accuracy (25% wrongly undetermined) for gap recognition. Rounds 2 and 3 gain about 4 points of verdict accuracy and 7 to 8 points of gap abstention, but no round brings the flip rate below base. Differences of 2 to 3 points are within one-pilot noise on 95 cases.
+
+## Loop stopped (Liezl, 15 Nov 2026)
+
+Stopped after round 4 on Liezl's decision. No recipe clearly beat v2 on every dev axis, so the spec's scale-up condition is not met and no 12k build or Adaption run follows from the loop. Best balance: round 3 (v4). Finding for the report: across four DPO recipes, no round brought the label-flip rate below the untuned base (8.4%); gap recognition and wrong-label following moved with the shape of the rejected answers. Modal spend about USD 6 of the 25 cap; OpenRouter USD 0.
