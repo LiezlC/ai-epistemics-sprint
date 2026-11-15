@@ -1,6 +1,6 @@
 # Handover: AI x Epistemics sprint (written Sun 15 Nov, about 11:10 UTC)
 
-For anyone, or anyone's Claude, picking up if Liezl's sessions stop. **Submission closes Mon 16 Nov, 11:59 UTC.** Tracker (Gantt): https://claude.ai/artifact/B6gjVd8q4tnEEpTDppS97x. Report draft: `report/draft-report.md`, with every open item marked `TBD`.
+For anyone, or anyone's Claude, picking up if Liezl's sessions stop. **Submission closes Mon 16 Nov, 11:59 UTC.** Tracker (Gantt): https://claude.ai/artifact/B6gjVd8q4tnEEpTDppS97x. Report draft: `report/draft-report.md`, with every open item marked `TBD`. The earlier lead-session handover from 12 Nov (team, tools, pre-sprint trial) replaced by this file is still in git: `git show 0f7917c:HANDOVER.md`.
 
 ## Rules we keep
 
