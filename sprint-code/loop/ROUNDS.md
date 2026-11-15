@@ -19,8 +19,11 @@ Spec: `notes/training-loop-spec.md` (approved by Liezl, 15 Nov 2026). Sprint cod
 - Dev: verdict 64.2%, roots 57.5%; undetermined on gaps 19.4%, on F7 20.0%, on gap controls 0.0%; label-flip 20.0%; follows a wrong label 29.0%.
 - Weakest: G4-gap 0%, G1-gap 16.7%, F7 20%, G5-gap 27.8%, F8 53.3%. Strong on settled cases (F2 100%, G2/G3/G4 controls 94 to 100%).
 - Reading: v2 removes the collapse but overshoots: the model now under-uses undetermined, as most models do on the gap set.
-- Critic: not yet run.
+- Unparseable answers (10): all formatting, not truncation. The model writes a stray parenthesis inside the JSON, e.g. `{("verdict": "shared", "root_records": ["P-68"])}`. The frozen parse rule counts them as wrong and they stay wrong in the official metrics. Read leniently (sensitivity only): verdict 66.3%, roots 59.6%, label-flip 14.7% (an unparseable answer under one label counted as a flip). The scorer now also reports label_flip_rate_both_parsed: round 1 13.6%, round 0 9.5%, base 8.4%. So about a third of round 1's 20% is parse failures, and the rest is a real rise over base.
+- Adapter (local `loop/rounds/r1/adapter/`, not in git, 85 MB): adapter_model.safetensors sha256 `34a0128080d828ea3936133da3285150971956a2b9e729e9accdf96d9ac685f7`, adapter_config.json `1f5ccd13276db5009a1574da0861d7b825bd3eec6eb45d56196cd02aa1ca7d17`.
+- Critic: run with Liezl's steer that the label-flip rate (20%, base 8.4%) is the main thing to fix.
 
 ### Round 0: v1 recipe (baseline for the collapse)
 - Data checks: BLOCKED as expected (undetermined never rejected); run anyway as the named baseline. Trained 697 s. Dev: verdict 37.2%, roots 37.2%; undetermined on 263 of 285 prompts (100% on gaps, 88.9% on settled cases): the v1 collapse reproduces at pilot scale.
+- Adapter (local `loop/rounds/r0/adapter/`, not in git): adapter_model.safetensors sha256 `aa53b3b583fcb7f4f9c9713cdc1b5010242384d801fdb8a6cc129a88f6a805f3`, adapter_config.json `3faa5c49d7e16bd854bb9a37bbd74a88edd982682a549eb295c838737fe43f6f`.
 - Untuned base (reference): verdict 58.2%, roots 39.3%; undetermined on gaps 0%; follows a wrong label 36.3%.

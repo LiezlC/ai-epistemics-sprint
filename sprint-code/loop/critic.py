@@ -29,6 +29,7 @@ def main():
     ap.add_argument("round")
     ap.add_argument("--prev", default=None)
     ap.add_argument("--run", action="store_true")
+    ap.add_argument("--note", default="", help="extra steer from Liezl, quoted in the prompt")
     a = ap.parse_args()
     scores = json.load(open(rd(a.round, "dev_scores_tuned.json"), encoding="utf-8"))
     prev = ""
@@ -81,7 +82,7 @@ By group:
 Dev failures, grouped (group, truth, model's verdict), with up to 3 examples each:
 {json.dumps(fails, indent=1, ensure_ascii=False)[:12000]}
 
-Reply in Markdown with these headings only:
+{("Steer from the project lead (priority): " + a.note + chr(10) + chr(10)) if a.note else ""}Reply in Markdown with these headings only:
 ## Diagnosis (3 to 5 sentences)
 ## Proposed change (one change; precise enough to implement; say which rows change and how)
 ## Expected effect (which dev metrics move and roughly how far)

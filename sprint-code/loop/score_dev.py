@@ -5,6 +5,7 @@ Metrics (spec): verdict accuracy and root accuracy (exact root set, counted only
 undetermined and on settled cases (gap controls, and all settled cases); label-flip rate = share of cases whose verdict
 under the "independent" handoff differs from the verdict under the "shared" handoff; label-follow rate = share of
 labelled prompts whose label disagrees with the key where the verdict equals the label. Unparseable counts as wrong.
+label_flip_rate counts an unparseable answer under one label as a flip; label_flip_rate_both_parsed does not.
 Writes rounds/<round>/dev_scores_<arm>.json and failures_<arm>.json (wrong answers grouped, with examples for the critic).
 Usage: python -I score_dev.py r0 [tuned|base]
 """
@@ -46,6 +47,9 @@ def score(rows):
             "undetermined_rate_on_gaps": und(gap_und), "undetermined_rate_on_F7": und(f7),
             "undetermined_rate_on_gap_controls": und(ctrl), "undetermined_rate_on_all_settled": und(settled),
             "label_flip_rate": pct(sum(c["independent"] != c["shared"] for c in flips), len(flips)),
+            "label_flip_rate_both_parsed": pct(sum(c["independent"] != c["shared"] for c in flips
+                                                   if c["independent"] and c["shared"]),
+                                               sum(1 for c in flips if c["independent"] and c["shared"])),
             "label_follow_rate_when_label_wrong": pct(sum(r["verdict"] == r["label"] for r in mis), len(mis)),
             "groups": groups}
 

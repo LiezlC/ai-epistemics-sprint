@@ -13,6 +13,7 @@
  "undetermined_rate_on_gap_controls": 94.4,
  "undetermined_rate_on_all_settled": 88.9,
  "label_flip_rate": 9.5,
+ "label_flip_rate_both_parsed": 9.5,
  "label_follow_rate_when_label_wrong": 0.8,
  "groups": {
   "ALL": {
