@@ -22,3 +22,13 @@ All arms: 240 prompts, 0 errors, 0 unparseable. OpenRouter spend USD 0.426 (27b 
 | `runs/z-ai_glm-5.2/results.jsonl` | `055a0b9adfc75c16895f5f36148d68453c475b3f2d172072e3b8fb9ae8cbe0bf` |
 | `runs/z-ai_glm-5.2/run_summary.json` | `10d71e29eb0ba696ad9f7a32e616eb1765415b686b958138c87d4fc74af91659` |
 | `runs/z-ai_glm-5.2/stdout.txt` | `284ff247f959be18bef1975e7eba19da1785d4ed3b85732be0c17b70010b7a1e` |
+
+## Addendum: tuned_v2_zero (15 Nov 2026, before scoring)
+
+Arm tuned_v2_zero: Qwen/Qwen3.5-4B + LoRA from release `provenance-dpo-adapter-v2` (archive sha256 `d68865d6ae93e9c193f1fa09fc4d064a63be812e1fef695e3dc4b70da8676d38`, folder `adapter/`), on the frozen `packets_gap.jsonl` (unchanged), via `modal_4b_scored.py` (unchanged) with `--arm tuned_zero`, same settings as the 4B arms; the script names its output file `scored_outputs_tuned_zero.jsonl`, kept in `runs/4b_v2/` so it does not collide with v1.
+
+| File | sha256 |
+|---|---|
+| `runs/4b_v2/modal_stdout.txt` | `5aafbdeeb6dfdd48bfd081b95ebb802c9902c31d64b225e4de1f75337e59969b` |
+| `runs/4b_v2/run_record_4b.json` | `35460abdfb3a4464f03ba40b6c1c00804213ca6b466ba67a8f2751b9b2305c8e` |
+| `runs/4b_v2/scored_outputs_tuned_zero.jsonl` | `3dd8b59da5373e5a99994e0c5576066621c89a5c46226f01cf76980c06eda74c` |

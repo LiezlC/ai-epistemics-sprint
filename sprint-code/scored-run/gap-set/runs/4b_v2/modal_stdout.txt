@@ -1,0 +1,425 @@
+✓ Initialized. View run at 
+https://modal.com/apps/liezlc/main/ap-xLrILq0wkq29kUA53R2twL
+✓ Created objects.
+├── ✓ Uploaded C:\Users\Liezl\Documents\Obsidian\06 Strategy\competitions\AI x 
+│   Epistemics Research Sprint\sprint-code\scored-run\modal_4b_scored.py
+├── ✓ Uploaded C:\Users\Liezl\Documents\Obsidian\06 Strategy\competitions\AI x 
+│   Epistemics Research Sprint\gap-set\adapter-v2-dl\adapter
+└── ✓ Created Function run.
+(MainProcess pid=2) INFO 11-15 10:37:36 [api_utils.py:286] non-default args: {'max_model_len': 8192, 'disable_log_stats': True, 'enable_lora': True, 'model': 'Qwen/Qwen3.5-4B'}
+(MainProcess pid=2) INFO 11-15 10:37:52 [model.py:733] Resolved architecture: Qwen3_5ForConditionalGeneration
+(MainProcess pid=2) INFO 11-15 10:37:52 [model.py:2152] Using max model len 8192
+
+[1AFetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]
+[1AFetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 1001.09it/s]
+(MainProcess pid=2) INFO 11-15 10:37:54 [scheduler.py:307] Chunked prefill is enabled with max_num_batched_tokens=8192.
+(MainProcess pid=2) INFO 11-15 10:37:54 [config.py:688] Mamba cache mode is set to 'align' for Qwen3_5ForConditionalGeneration by default when prefix caching is enabled
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+[1AParse safetensors files:   0%|          | 0/2 [00:00<?, ?it/s]
+[1AParse safetensors files:  50%|█████     | 1/2 [00:00<00:00,  6.51it/s]
+[1AParse safetensors files: 100%|██████████| 2/2 [00:00<00:00, 10.66it/s]
+(MainProcess pid=2) INFO 11-15 10:37:54 [kernel.py:467] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['triton', 'native'])
+(MainProcess pid=2) WARNING 11-15 10:38:05 [system_utils.py:153] We must use the `spawn` multiprocessing start method. Overriding VLLM_WORKER_MULTIPROC_METHOD to 'spawn'. See https://docs.vllm.ai/en/latest/usage/troubleshooting.html#python-multiprocessing for more information. Reasons: CUDA is initialized
+(EngineCore pid=61) INFO 11-15 10:38:16 [core.py:133] Initializing a V1 LLM engine (v0.32.0) with config: model='Qwen/Qwen3.5-4B', speculative_config=None, tokenizer='Qwen/Qwen3.5-4B', skip_tokenizer_init=False, tokenizer_mode=auto, revision=main, tokenizer_revision=main, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=8192, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=None, quantization_config=None, enforce_eager=False, aux_output_config=AuxOutputConfig(enable_return_routed_experts=False, max_bytes=None), kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, per_request_spec_decode_metrics='none', kv_cache_metrics=False, kv_cache_metrics_sample=0.01, custom_histogram_buckets=None, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=0, served_model_name=Qwen/Qwen3.5-4B, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'ir_enable_torch_wrap': True, 'splitting_ops': ['vllm::unified_attention_with_output', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::qwen4_exp_ple_short_conv', 'vllm::qwen4_exp_qsa_with_output', 'vllm::qwen4_exp_qsa_prepare_with_output', 'vllm::linear_attention', 'vllm::qwen_gdn_attention_core', 'vllm::qwen_gdn_attention_core_fused_norm_packed', 'vllm::gdn_attention_core_xpu', 'vllm::olmo_hybrid_gdn_full_forward', 'vllm::sparse_attn_indexer', 'vllm::rocm_aiter_sparse_attn_indexer', 'vllm::deepseek_v4_attention', 'vllm::hpc_rope_norm_forward', 'vllm::unified_kv_cache_update', 'vllm::unified_mla_kv_cache_update'], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'cudagraph_decoder_replay': True, 'decoder_replay_cudagraph_capture_sizes': [], 'decoder_replay_trim_threshold': 768, 'compile_sizes': [], 'compile_ranges_endpoints': [8192], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'fuse_allreduce_rms': False, 'enable_qk_norm_rope_fusion': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False, 'fuse_qk_norm_rope_kvcache': False}, 'max_cudagraph_capture_size': 512, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['triton', 'native']), enable_flashinfer_autotune=True, enable_rocm_segmented_attn_autotune=False, enable_cutedsl_warmup=True, enable_jit_warmup=True, moe_backend='auto', sparse_indexer_topk_backend='auto', linear_backend='auto', linear_backend_per_quant=None)
+(EngineCore pid=61) INFO 11-15 10:38:18 [parallel_state.py:1906] world_size=1 rank=0 local_rank=0 distributed_init_method=file:///tmp/vllm_dist_fba3cf469c8e44e8859fc8506524e2bd backend=nccl
+(EngineCore pid=61) INFO 11-15 10:38:18 [parallel_state.py:2350] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, ETP rank 0, EP rank N/A, EPLB rank N/A
+(EngineCore pid=61) INFO 11-15 10:38:18 [gpu_worker.py:518] Using V2 Model Runner
+(EngineCore pid=61) INFO 11-15 10:38:20 [model_runner.py:392] Loading model from scratch...
+
+[1AFetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]
+[1AFetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 1020.84it/s]
+(EngineCore pid=61) INFO 11-15 10:38:21 [cuda.py:565] Using backend AttentionBackendEnum.FLASH_ATTN for vit attention
+(EngineCore pid=61) INFO 11-15 10:38:21 [mm_encoder_attention.py:372] Using AttentionBackendEnum.FLASH_ATTN for MMEncoderAttention.
+(EngineCore pid=61) INFO 11-15 10:38:21 [qwen_gdn_linear_attn.py:221] Using Triton/FLA GDN prefill kernel (requested=auto, head_k_dim=128).
+(EngineCore pid=61) INFO 11-15 10:38:22 [cuda.py:506] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+(EngineCore pid=61) INFO 11-15 10:38:22 [flash_attn.py:1117] Using FlashAttention version 2
+[transformers] Qwen3VL video processing does not apply the per-frame pixel cap the reference implementation (qwen-vl-utils) applies, so some videos cost far more tokens than they would there. In v5.22 the capped behavior will become the default and `cap_pixels_per_frame` will be removed. Pass `cap_pixels_per_frame=True` to adopt the reference behavior now, or `False` to keep the current behavior and silence this warning.
+(EngineCore pid=61) INFO 11-15 10:38:23 [base_loader.py:82] Initializing model took 3.270434 seconds
+(MainProcess pid=2) INFO 11-15 10:38:23 [base.py:280] Multi-modal warmup completed in 18.242s
+(EngineCore pid=61) INFO 11-15 10:38:23 [weight_utils.py:1108] Filesystem type for checkpoints: 9P. Checkpoint size: 8.68 GiB. Available RAM: 327.85 GiB.
+(EngineCore pid=61) INFO 11-15 10:38:23 [weight_utils.py:1131] Auto-prefetch is disabled because the filesystem (9P) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
+Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:02<00:02,  2.52s/it]
+(EngineCore pid=61) WARNING 11-15 10:38:26 [utils.py:333] Attempted to load weight layers.0.linear_attn.norm.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+(EngineCore pid=61) WARNING 11-15 10:38:26 [utils.py:333] Attempted to load weight layers.1.linear_attn.norm.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+(EngineCore pid=61) WARNING 11-15 10:38:26 [utils.py:333] Attempted to load weight layers.10.linear_attn.norm.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+(EngineCore pid=61) WARNING 11-15 10:38:26 [utils.py:333] Attempted to load weight layers.12.linear_attn.norm.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+(EngineCore pid=61) WARNING 11-15 10:38:26 [utils.py:333] Attempted to load weight layers.13.linear_attn.norm.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+(EngineCore pid=61) WARNING 11-15 10:38:26 [utils.py:333] Attempted to load weight layers.14.linear_attn.norm.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+(EngineCore pid=61) WARNING 11-15 10:38:26 [utils.py:333] Attempted to load weight layers.16.linear_attn.norm.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+(EngineCore pid=61) WARNING 11-15 10:38:26 [utils.py:333] Attempted to load weight layers.17.linear_attn.norm.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+(EngineCore pid=61) WARNING 11-15 10:38:26 [utils.py:333] Attempted to load weight layers.18.linear_attn.norm.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+(EngineCore pid=61) WARNING 11-15 10:38:26 [utils.py:333] Attempted to load weight layers.2.linear_attn.norm.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+(EngineCore pid=61) WARNING 11-15 10:38:26 [utils.py:333] Attempted to load weight layers.20.linear_attn.norm.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+(EngineCore pid=61) WARNING 11-15 10:38:27 [utils.py:333] Attempted to load weight layers.21.linear_attn.norm.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+(EngineCore pid=61) WARNING 11-15 10:38:27 [utils.py:333] Attempted to load weight layers.22.linear_attn.norm.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+(EngineCore pid=61) WARNING 11-15 10:38:27 [utils.py:333] Attempted to load weight layers.24.linear_attn.norm.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+(EngineCore pid=61) WARNING 11-15 10:38:27 [utils.py:333] Attempted to load weight layers.25.linear_attn.norm.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+(EngineCore pid=61) WARNING 11-15 10:38:27 [utils.py:333] Attempted to load weight layers.26.linear_attn.norm.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+(EngineCore pid=61) WARNING 11-15 10:38:27 [utils.py:333] Attempted to load weight layers.28.linear_attn.norm.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+(EngineCore pid=61) WARNING 11-15 10:38:27 [utils.py:333] Attempted to load weight layers.29.linear_attn.norm.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+(EngineCore pid=61) WARNING 11-15 10:38:27 [utils.py:333] Attempted to load weight layers.30.linear_attn.norm.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+(EngineCore pid=61) WARNING 11-15 10:38:27 [utils.py:333] Attempted to load weight layers.4.linear_attn.norm.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+(EngineCore pid=61) WARNING 11-15 10:38:27 [utils.py:333] Attempted to load weight layers.5.linear_attn.norm.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+(EngineCore pid=61) WARNING 11-15 10:38:27 [utils.py:333] Attempted to load weight layers.6.linear_attn.norm.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+(EngineCore pid=61) WARNING 11-15 10:38:27 [utils.py:333] Attempted to load weight layers.8.linear_attn.norm.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+(EngineCore pid=61) WARNING 11-15 10:38:27 [utils.py:333] Attempted to load weight layers.9.linear_attn.norm.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:04<00:00,  2.19s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:04<00:00,  2.24s/it]
+
+(EngineCore pid=61) INFO 11-15 10:38:28 [default_loader.py:501] Loading weights took 4.60 seconds
+(EngineCore pid=61) INFO 11-15 10:38:29 [punica_selector.py:20] Using PunicaWrapperGPU.
+(EngineCore pid=61) INFO 11-15 10:38:29 [model_manager.py:242] Qwen3_5ForConditionalGeneration supports adding LoRA to the tower modules. If needed, please set `enable_tower_connector_lora=True`.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.merger.linear_fc1 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.merger.linear_fc2 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.0.attn.qkv will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.0.attn.proj will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.0.mlp.linear_fc1 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.0.mlp.linear_fc2 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.1.attn.qkv will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.1.attn.proj will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.1.mlp.linear_fc1 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.1.mlp.linear_fc2 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.2.attn.qkv will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.2.attn.proj will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.2.mlp.linear_fc1 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.2.mlp.linear_fc2 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.3.attn.qkv will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.3.attn.proj will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.3.mlp.linear_fc1 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.3.mlp.linear_fc2 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.4.attn.qkv will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.4.attn.proj will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.4.mlp.linear_fc1 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.4.mlp.linear_fc2 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.5.attn.qkv will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.5.attn.proj will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.5.mlp.linear_fc1 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.5.mlp.linear_fc2 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.6.attn.qkv will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.6.attn.proj will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.6.mlp.linear_fc1 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.6.mlp.linear_fc2 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.7.attn.qkv will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.7.attn.proj will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.7.mlp.linear_fc1 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.7.mlp.linear_fc2 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.8.attn.qkv will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.8.attn.proj will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.8.mlp.linear_fc1 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.8.mlp.linear_fc2 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.9.attn.qkv will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.9.attn.proj will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.9.mlp.linear_fc1 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.9.mlp.linear_fc2 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.10.attn.qkv will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.10.attn.proj will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.10.mlp.linear_fc1 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.10.mlp.linear_fc2 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.11.attn.qkv will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.11.attn.proj will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.11.mlp.linear_fc1 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.11.mlp.linear_fc2 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.12.attn.qkv will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.12.attn.proj will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.12.mlp.linear_fc1 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.12.mlp.linear_fc2 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.13.attn.qkv will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.13.attn.proj will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.13.mlp.linear_fc1 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.13.mlp.linear_fc2 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.14.attn.qkv will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.14.attn.proj will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.14.mlp.linear_fc1 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.14.mlp.linear_fc2 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.15.attn.qkv will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.15.attn.proj will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.15.mlp.linear_fc1 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.15.mlp.linear_fc2 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.16.attn.qkv will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.16.attn.proj will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.16.mlp.linear_fc1 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.16.mlp.linear_fc2 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.17.attn.qkv will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.17.attn.proj will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.17.mlp.linear_fc1 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.17.mlp.linear_fc2 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.18.attn.qkv will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.18.attn.proj will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.18.mlp.linear_fc1 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.18.mlp.linear_fc2 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.19.attn.qkv will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.19.attn.proj will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.19.mlp.linear_fc1 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.19.mlp.linear_fc2 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.20.attn.qkv will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.20.attn.proj will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.20.mlp.linear_fc1 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.20.mlp.linear_fc2 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.21.attn.qkv will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.21.attn.proj will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.21.mlp.linear_fc1 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.21.mlp.linear_fc2 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.22.attn.qkv will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.22.attn.proj will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.22.mlp.linear_fc1 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.22.mlp.linear_fc2 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.23.attn.qkv will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.23.attn.proj will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.23.mlp.linear_fc1 will be ignored.
+(EngineCore pid=61) WARNING 11-15 10:38:29 [model_manager.py:496] Regarding Qwen3_5ForConditionalGeneration, no matching PunicaWrapper is found; visual.blocks.23.mlp.linear_fc2 will be ignored.
+(EngineCore pid=61) INFO 11-15 10:38:29 [model_runner.py:424] Model loading took 8.65 GiB memory and 9.991294 seconds
+(EngineCore pid=61) INFO 11-15 10:38:29 [topk_topp_sampler.py:124] Using FlashInfer for top-p & top-k sampling.
+(EngineCore pid=61) INFO 11-15 10:38:29 [interface.py:1096] Setting attention block size to 528 tokens to ensure that attention page size is >= mamba page size.
+(EngineCore pid=61) INFO 11-15 10:38:29 [interface.py:1120] Padding mamba page size by 0.76% to ensure that mamba page size and attention page size are exactly equal.
+(EngineCore pid=61) INFO 11-15 10:38:29 [utils.py:347] Using LBNHC KV cache layout.
+(EngineCore pid=61) INFO 11-15 10:38:36 [encoder_runner.py:131] Encoder cache will be initialized with a budget of 16384 tokens, and profiled with 1 image items of the maximum feature size.
+(EngineCore pid=61) INFO 11-15 10:38:40 [monitor.py:40] [backbone] Starting torch.compile
+(EngineCore pid=61) INFO 11-15 10:38:55 [backends.py:1104] [backbone] Using cache directory: /root/.cache/vllm/torch_compile_cache/8ae5e2c0a2/rank_0_0/backbone for vLLM's torch.compile
+(EngineCore pid=61) INFO 11-15 10:38:55 [backends.py:1166] [backbone] Dynamo bytecode transform time: 15.41 s
+(EngineCore pid=61) INFO 11-15 10:39:30 [backends.py:398] [backbone] Compiling a graph for compile range (1, 8192) takes 34.79 s
+(EngineCore pid=61) INFO 11-15 10:39:40 [backends.py:927] collected artifacts: 33 entries, 13 artifacts, 25873385 bytes total
+(EngineCore pid=61) INFO 11-15 10:39:40 [decorators.py:743] [backbone] saved AOT compiled function to /root/.cache/vllm/torch_compile_cache/torch_aot_compile/eadc519e21754941d07ed9b8311da5d79c8c27102f20481c44febd0f83e09ea1/rank_0_0/model
+(EngineCore pid=61) INFO 11-15 10:39:40 [monitor.py:62] [backbone] torch.compile took 60.43 s in total
+(EngineCore pid=61) WARNING 11-15 10:39:40 [utils.py:276] Using default LoRA kernel configs
+(EngineCore pid=61) INFO 11-15 10:40:48 [monitor.py:91] [backbone] Initial profiling/warmup run took 68.05 s
+
+[1ACapturing CUDA graphs (PIECEWISE):   0%|          | 0/102 [00:00<?, ?it/s]
+[1ACapturing CUDA graphs (PIECEWISE):   1%|          | 1/102 [00:01<02:03,  1.22s/it]
+[1ACapturing CUDA graphs (PIECEWISE):   2%|▏         | 2/102 [00:02<01:44,  1.04s/it]
+[1ACapturing CUDA graphs (PIECEWISE):   3%|▎         | 3/102 [00:03<01:42,  1.03s/it]
+[1ACapturing CUDA graphs (PIECEWISE):   4%|▍         | 4/102 [00:03<01:28,  1.11it/s]
+[1ACapturing CUDA graphs (PIECEWISE):   5%|▍         | 5/102 [00:04<01:17,  1.26it/s]
+[1ACapturing CUDA graphs (PIECEWISE):   6%|▌         | 6/102 [00:05<01:11,  1.35it/s]
+[1ACapturing CUDA graphs (PIECEWISE):   7%|▋         | 7/102 [00:05<01:05,  1.45it/s]
+[1ACapturing CUDA graphs (PIECEWISE):   8%|▊         | 8/102 [00:06<01:02,  1.50it/s]
+[1ACapturing CUDA graphs (PIECEWISE):   9%|▉         | 9/102 [00:06<00:58,  1.58it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  10%|▉         | 10/102 [00:07<00:57,  1.60it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  11%|█         | 11/102 [00:08<00:54,  1.68it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  12%|█▏        | 12/102 [00:08<00:52,  1.71it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  13%|█▎        | 13/102 [00:09<00:50,  1.77it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  14%|█▎        | 14/102 [00:09<00:49,  1.78it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  15%|█▍        | 15/102 [00:10<00:46,  1.85it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  16%|█▌        | 16/102 [00:10<00:46,  1.86it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  17%|█▋        | 17/102 [00:11<00:45,  1.88it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  18%|█▊        | 18/102 [00:11<00:44,  1.89it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  19%|█▊        | 19/102 [00:12<00:41,  1.98it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  20%|█▉        | 20/102 [00:12<00:40,  2.03it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  21%|██        | 21/102 [00:13<00:37,  2.14it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  22%|██▏       | 22/102 [00:13<00:36,  2.19it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  23%|██▎       | 23/102 [00:13<00:33,  2.33it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  24%|██▎       | 24/102 [00:14<00:32,  2.38it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  25%|██▍       | 25/102 [00:14<00:31,  2.48it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  25%|██▌       | 26/102 [00:15<00:31,  2.42it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  26%|██▋       | 27/102 [00:15<00:28,  2.60it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  27%|██▋       | 28/102 [00:15<00:28,  2.60it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  28%|██▊       | 29/102 [00:15<00:25,  2.89it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  29%|██▉       | 30/102 [00:16<00:24,  2.94it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  30%|███       | 31/102 [00:16<00:21,  3.33it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  31%|███▏      | 32/102 [00:16<00:20,  3.41it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  32%|███▏      | 33/102 [00:17<00:33,  2.07it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  33%|███▎      | 34/102 [00:17<00:25,  2.63it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  34%|███▍      | 35/102 [00:18<00:22,  2.98it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  35%|███▌      | 36/102 [00:20<01:05,  1.00it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  37%|███▋      | 38/102 [00:20<00:37,  1.70it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  39%|███▉      | 40/102 [00:21<00:24,  2.51it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  41%|████      | 42/102 [00:21<00:17,  3.38it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  43%|████▎     | 44/102 [00:21<00:13,  4.32it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  45%|████▌     | 46/102 [00:21<00:10,  5.23it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  47%|████▋     | 48/102 [00:21<00:08,  6.08it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  49%|████▉     | 50/102 [00:22<00:07,  6.80it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  51%|█████     | 52/102 [00:22<00:06,  7.43it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  53%|█████▎    | 54/102 [00:22<00:06,  7.76it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  55%|█████▍    | 56/102 [00:22<00:05,  8.01it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  57%|█████▋    | 58/102 [00:23<00:05,  8.17it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  58%|█████▊    | 59/102 [00:23<00:05,  8.36it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  59%|█████▉    | 60/102 [00:23<00:05,  8.04it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  61%|██████    | 62/102 [00:23<00:04,  8.25it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  63%|██████▎   | 64/102 [00:23<00:04,  8.49it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  65%|██████▍   | 66/102 [00:23<00:04,  8.67it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  67%|██████▋   | 68/102 [00:25<00:11,  2.94it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  69%|██████▊   | 70/102 [00:27<00:15,  2.05it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  71%|███████   | 72/102 [00:27<00:11,  2.70it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  73%|███████▎  | 74/102 [00:27<00:08,  3.44it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  75%|███████▍  | 76/102 [00:27<00:06,  4.24it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  76%|███████▋  | 78/102 [00:28<00:04,  5.07it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  78%|███████▊  | 80/102 [00:28<00:03,  5.83it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  80%|████████  | 82/102 [00:28<00:03,  6.57it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  82%|████████▏ | 84/102 [00:28<00:02,  7.15it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  84%|████████▍ | 86/102 [00:29<00:02,  7.63it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  86%|████████▋ | 88/102 [00:29<00:01,  8.00it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  88%|████████▊ | 90/102 [00:29<00:01,  8.31it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  90%|█████████ | 92/102 [00:29<00:01,  8.55it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  92%|█████████▏| 94/102 [00:29<00:00,  8.73it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  94%|█████████▍| 96/102 [00:30<00:00,  8.91it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  96%|█████████▌| 98/102 [00:30<00:00,  9.05it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  98%|█████████▊| 100/102 [00:30<00:00,  9.12it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  99%|█████████▉| 101/102 [00:30<00:00,  7.53it/s]
+[1ACapturing CUDA graphs (PIECEWISE): 100%|██████████| 102/102 [00:33<00:00,  1.39it/s]
+[1ACapturing CUDA graphs (PIECEWISE): 100%|██████████| 102/102 [00:33<00:00,  3.02it/s]
+
+[1ACapturing CUDA graphs (FULL):   0%|          | 0/2 [00:00<?, ?it/s]
+[1ACapturing CUDA graphs (FULL): 100%|██████████| 2/2 [00:00<00:00,  9.84it/s]Capturing CUDA graphs (FULL): 100%|██████████| 2/2 [00:00<00:00,  9.83it/s]
+(EngineCore pid=61) INFO 11-15 10:41:26 [model_runner.py:1127] Graph capturing finished in 35 secs, took 0.88 GiB
+(EngineCore pid=61) INFO 11-15 10:41:27 [gpu_worker.py:759] Available KV cache memory: 29.19 GiB
+(EngineCore pid=61) INFO 11-15 10:41:27 [gpu_worker.py:774] CUDA graph memory profiling is enabled (default since v0.21.0). The current --gpu-memory-utilization=0.9200 is equivalent to --gpu-memory-utilization=0.8980 without CUDA graph memory profiling. To maintain the same effective KV cache size as before, increase --gpu-memory-utilization to 0.9420. To disable, set VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS=0.
+(EngineCore pid=61) INFO 11-15 10:41:27 [kv_cache_utils.py:2327] GPU KV cache size: 674,350 tokens, Maximum concurrency for 8,192 tokens per request: 82.32x
+(EngineCore pid=61) INFO 11-15 10:41:27 [kv_cache_utils.py:853] kv cache group sizes (528, 528, 528, 528)
+(EngineCore pid=61) INFO 11-15 10:41:27 [kv_cache_utils.py:854] kv lcm block sizes 528
+(EngineCore pid=61) INFO 11-15 10:41:27 [kernel_warmup.py:176] JIT kernel warmup starting.
+(EngineCore pid=61) INFO 11-15 10:41:27 [kernel_warmup.py:189] JIT kernel warmup finished in 0.00s.
+(EngineCore pid=61) INFO 11-15 10:41:27 [qwen_triton_warmup.py:296] Warming up Qwen GDN Triton kernels for model_type=qwen3_5_text.
+(EngineCore pid=61) INFO 11-15 10:41:28 [qwen_vl_triton_warmup.py:57] Warmed position embedding and vision rotary kernels on grids=[(1, 16, 16), (1, 16, 2), (1, 2, 16), (1, 2, 2)].
+(EngineCore pid=61) INFO 11-15 10:41:28 [mamba_triton_warmup.py:42] Warmed Mamba batch_memcpy_kernel.
+2026-11-15 10:41:31,673 - INFO - core.py:564 - flashinfer.jit: Building JIT module sampling; this can take several minutes on first use.
+
+[1ACapturing CUDA graphs (PIECEWISE):   0%|          | 0/102 [00:00<?, ?it/s]
+[1ACapturing CUDA graphs (PIECEWISE):   1%|          | 1/102 [00:00<01:21,  1.24it/s]
+[1ACapturing CUDA graphs (PIECEWISE):   2%|▏         | 2/102 [00:01<01:24,  1.18it/s]
+[1ACapturing CUDA graphs (PIECEWISE):   3%|▎         | 3/102 [00:02<01:19,  1.24it/s]
+[1ACapturing CUDA graphs (PIECEWISE):   4%|▍         | 4/102 [00:03<01:17,  1.27it/s]
+[1ACapturing CUDA graphs (PIECEWISE):   5%|▍         | 5/102 [00:03<01:13,  1.32it/s]
+[1ACapturing CUDA graphs (PIECEWISE):   6%|▌         | 6/102 [00:04<01:11,  1.35it/s]
+[1ACapturing CUDA graphs (PIECEWISE):   7%|▋         | 7/102 [00:05<01:07,  1.41it/s]
+[1ACapturing CUDA graphs (PIECEWISE):   8%|▊         | 8/102 [00:05<01:05,  1.44it/s]
+[1ACapturing CUDA graphs (PIECEWISE):   9%|▉         | 9/102 [00:06<01:02,  1.50it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  10%|▉         | 10/102 [00:07<01:00,  1.52it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  11%|█         | 11/102 [00:07<00:56,  1.61it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  12%|█▏        | 12/102 [00:08<00:54,  1.65it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  13%|█▎        | 13/102 [00:08<00:52,  1.71it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  14%|█▎        | 14/102 [00:09<00:50,  1.73it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  15%|█▍        | 15/102 [00:09<00:48,  1.80it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  16%|█▌        | 16/102 [00:10<00:46,  1.84it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  17%|█▋        | 17/102 [00:10<00:45,  1.88it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  18%|█▊        | 18/102 [00:11<00:44,  1.87it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  19%|█▊        | 19/102 [00:11<00:42,  1.95it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  20%|█▉        | 20/102 [00:12<00:40,  2.01it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  21%|██        | 21/102 [00:12<00:38,  2.12it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  22%|██▏       | 22/102 [00:13<00:36,  2.18it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  23%|██▎       | 23/102 [00:13<00:33,  2.33it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  24%|██▎       | 24/102 [00:13<00:32,  2.40it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  25%|██▍       | 25/102 [00:14<00:30,  2.49it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  25%|██▌       | 26/102 [00:14<00:30,  2.47it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  26%|██▋       | 27/102 [00:15<00:28,  2.61it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  27%|██▋       | 28/102 [00:15<00:27,  2.65it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  28%|██▊       | 29/102 [00:15<00:24,  2.95it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  29%|██▉       | 30/102 [00:15<00:23,  3.03it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  30%|███       | 31/102 [00:16<00:20,  3.44it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  31%|███▏      | 32/102 [00:16<00:20,  3.48it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  33%|███▎      | 34/102 [00:16<00:13,  4.94it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  35%|███▌      | 36/102 [00:16<00:10,  6.14it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  37%|███▋      | 38/102 [00:17<00:09,  7.09it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  39%|███▉      | 40/102 [00:17<00:07,  7.82it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  41%|████      | 42/102 [00:17<00:07,  8.38it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  43%|████▎     | 44/102 [00:17<00:06,  8.77it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  45%|████▌     | 46/102 [00:17<00:06,  9.05it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  47%|████▋     | 48/102 [00:18<00:05,  9.27it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  49%|████▉     | 50/102 [00:18<00:05,  9.45it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  51%|█████     | 52/102 [00:18<00:05,  9.55it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  53%|█████▎    | 54/102 [00:18<00:04,  9.64it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  55%|█████▍    | 56/102 [00:18<00:04,  9.71it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  57%|█████▋    | 58/102 [00:19<00:04,  9.72it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  59%|█████▉    | 60/102 [00:19<00:04,  9.77it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  61%|██████    | 62/102 [00:19<00:04,  9.72it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  63%|██████▎   | 64/102 [00:19<00:03,  9.76it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  65%|██████▍   | 66/102 [00:19<00:03,  9.70it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  67%|██████▋   | 68/102 [00:20<00:03,  9.65it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  69%|██████▊   | 70/102 [00:20<00:03,  9.73it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  71%|███████   | 72/102 [00:20<00:03,  9.79it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  73%|███████▎  | 74/102 [00:20<00:02,  9.81it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  75%|███████▍  | 76/102 [00:20<00:02,  9.68it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  76%|███████▋  | 78/102 [00:21<00:02,  9.50it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  78%|███████▊  | 80/102 [00:21<00:02,  9.51it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  80%|████████  | 82/102 [00:21<00:02,  9.64it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  82%|████████▏ | 84/102 [00:21<00:01,  9.70it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  84%|████████▍ | 86/102 [00:22<00:01,  9.78it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  86%|████████▋ | 88/102 [00:22<00:01,  9.76it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  88%|████████▊ | 90/102 [00:22<00:01,  9.78it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  90%|█████████ | 92/102 [00:22<00:01,  9.73it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  92%|█████████▏| 94/102 [00:22<00:00,  9.67it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  94%|█████████▍| 96/102 [00:23<00:00,  9.76it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  96%|█████████▌| 98/102 [00:23<00:00,  9.74it/s]
+[1ACapturing CUDA graphs (PIECEWISE):  98%|█████████▊| 100/102 [00:23<00:00,  9.69it/s]
+[1ACapturing CUDA graphs (PIECEWISE): 100%|██████████| 102/102 [00:23<00:00,  9.65it/s]Capturing CUDA graphs (PIECEWISE): 100%|██████████| 102/102 [00:23<00:00,  4.31it/s]
+
+[1ACapturing CUDA graphs (FULL):   0%|          | 0/70 [00:00<?, ?it/s]
+[1ACapturing CUDA graphs (FULL):   3%|▎         | 2/70 [00:00<00:06, 10.49it/s]
+[1ACapturing CUDA graphs (FULL):   6%|▌         | 4/70 [00:00<00:06, 10.41it/s]
+[1ACapturing CUDA graphs (FULL):   9%|▊         | 6/70 [00:00<00:06, 10.04it/s]
+[1ACapturing CUDA graphs (FULL):  11%|█▏        | 8/70 [00:00<00:06,  9.73it/s]
+[1ACapturing CUDA graphs (FULL):  14%|█▍        | 10/70 [00:01<00:06,  9.47it/s]
+[1ACapturing CUDA graphs (FULL):  17%|█▋        | 12/70 [00:01<00:05,  9.68it/s]
+[1ACapturing CUDA graphs (FULL):  20%|██        | 14/70 [00:01<00:05,  9.73it/s]
+[1ACapturing CUDA graphs (FULL):  23%|██▎       | 16/70 [00:01<00:05,  9.83it/s]
+[1ACapturing CUDA graphs (FULL):  26%|██▌       | 18/70 [00:01<00:05,  9.78it/s]
+[1ACapturing CUDA graphs (FULL):  29%|██▊       | 20/70 [00:02<00:05,  9.83it/s]
+[1ACapturing CUDA graphs (FULL):  31%|███▏      | 22/70 [00:02<00:04, 10.00it/s]
+[1ACapturing CUDA graphs (FULL):  34%|███▍      | 24/70 [00:02<00:04, 10.11it/s]
+[1ACapturing CUDA graphs (FULL):  37%|███▋      | 26/70 [00:02<00:04, 10.08it/s]
+[1ACapturing CUDA graphs (FULL):  40%|████      | 28/70 [00:02<00:04, 10.00it/s]
+[1ACapturing CUDA graphs (FULL):  43%|████▎     | 30/70 [00:03<00:04,  9.98it/s]
+[1ACapturing CUDA graphs (FULL):  46%|████▌     | 32/70 [00:03<00:03, 10.03it/s]
+[1ACapturing CUDA graphs (FULL):  49%|████▊     | 34/70 [00:03<00:03, 10.05it/s]
+[1ACapturing CUDA graphs (FULL):  51%|█████▏    | 36/70 [00:03<00:03, 10.13it/s]
+[1ACapturing CUDA graphs (FULL):  54%|█████▍    | 38/70 [00:03<00:03, 10.20it/s]
+[1ACapturing CUDA graphs (FULL):  57%|█████▋    | 40/70 [00:03<00:02, 10.34it/s]
+[1ACapturing CUDA graphs (FULL):  60%|██████    | 42/70 [00:04<00:02, 10.39it/s]
+[1ACapturing CUDA graphs (FULL):  63%|██████▎   | 44/70 [00:04<00:02, 10.49it/s]
+[1ACapturing CUDA graphs (FULL):  66%|██████▌   | 46/70 [00:04<00:02, 10.56it/s]
+[1ACapturing CUDA graphs (FULL):  69%|██████▊   | 48/70 [00:04<00:02, 10.62it/s]
+[1ACapturing CUDA graphs (FULL):  71%|███████▏  | 50/70 [00:04<00:01, 10.65it/s]
+[1ACapturing CUDA graphs (FULL):  74%|███████▍  | 52/70 [00:05<00:01, 10.60it/s]
+[1ACapturing CUDA graphs (FULL):  77%|███████▋  | 54/70 [00:05<00:01, 10.65it/s]
+[1ACapturing CUDA graphs (FULL):  80%|████████  | 56/70 [00:05<00:01, 10.65it/s]
+[1ACapturing CUDA graphs (FULL):  83%|████████▎ | 58/70 [00:05<00:01, 10.59it/s]
+[1ACapturing CUDA graphs (FULL):  86%|████████▌ | 60/70 [00:05<00:00, 10.62it/s]
+[1ACapturing CUDA graphs (FULL):  89%|████████▊ | 62/70 [00:06<00:00, 10.65it/s]
+[1ACapturing CUDA graphs (FULL):  91%|█████████▏| 64/70 [00:06<00:00, 10.68it/s]
+[1ACapturing CUDA graphs (FULL):  94%|█████████▍| 66/70 [00:06<00:00, 10.73it/s]
+[1ACapturing CUDA graphs (FULL):  97%|█████████▋| 68/70 [00:06<00:00, 10.77it/s]
+[1ACapturing CUDA graphs (FULL): 100%|██████████| 70/70 [00:06<00:00, 10.87it/s]
+[1ACapturing CUDA graphs (FULL): 100%|██████████| 70/70 [00:06<00:00, 10.30it/s]
+(EngineCore pid=61) INFO 11-15 10:43:18 [model_runner.py:1127] Graph capturing finished in 32 secs, took 0.51 GiB
+(EngineCore pid=61) INFO 11-15 10:43:18 [gpu_worker.py:971] CUDA graph pool memory: 0.51 GiB (actual), 0.98 GiB (estimated), difference: 0.46 GiB (90.3%).
+(EngineCore pid=61) INFO 11-15 10:43:18 [gpu_worker.py:1034] Free memory on device (44.02/44.44 GiB) on startup. Desired GPU memory utilization is (0.92, 40.89 GiB). Actual usage is 9.12 GiB for consumed memory (weights + non-torch), 2.58 GiB for peak activation, and 0.51 GiB for CUDAGraph memory. Replace gpu_memory_utilization config with `--kv-cache-memory=30634235966` (28.53 GiB) to fit into requested memory, or `--kv-cache-memory=33996492288` (31.66 GiB) to fully utilize gpu memory. Current kv cache memory in use is 29.19 GiB.
+(EngineCore pid=61) INFO 11-15 10:43:20 [jit_monitor.py:84] Kernel JIT monitor activated; monitored JIT compilations during inference will use mode=warn.
+(EngineCore pid=61) INFO 11-15 10:43:20 [core.py:395] init engine (profile, create kv cache, warmup model) took 290.80 s (compilation: 60.43 s)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+[1AParse safetensors files:   0%|          | 0/2 [00:00<?, ?it/s]
+[1AParse safetensors files:  50%|█████     | 1/2 [00:00<00:00,  9.10it/s]Parse safetensors files: 100%|██████████| 2/2 [00:00<00:00, 11.78it/s]
+(EngineCore pid=61) INFO 11-15 10:43:21 [kernel.py:467] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['triton', 'native'])
+(MainProcess pid=2) INFO 11-15 10:43:21 [hf.py:648] Detected the chat template content format to be 'openai'. You can set `--chat-template-content-format` to override this.
+
+(MainProcess pid=2) WARNING 11-15 10:43:21 [input_processor.py:289] vLLM has deprecated support for supporting different tokenizers for different LoRAs. By default, vLLM uses base model's tokenizer. If you are using a LoRA with its own tokenizer, consider specifying `--tokenizer [lora_path]` to use the LoRA tokenizer.
+[1ARendering conversations:   0%|          | 0/240 [00:00<?, ?it/s]
+[1ARendering conversations:  35%|███▌      | 85/240 [00:00<00:00, 846.40it/s]
+[1ARendering conversations:  71%|███████▏  | 171/240 [00:00<00:00, 849.21it/s]
+[1ARendering conversations: 100%|██████████| 240/240 [00:00<00:00, 856.90it/s]
+
+(EngineCore pid=61) WARNING 11-15 10:43:22 [jit_monitor.py:140] Triton kernel JIT compilation during inference: _lora_expand_kernel. This causes a latency spike; consider extending warmup to cover this shape/config.
+[1AProcessed prompts:   0%|          | 0/240 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]
+[1AProcessed prompts:   0%|          | 1/240 [00:07<28:43,  7.21s/it, est. speed input: 66.84 toks/s, output: 2.08 toks/s]
+[1AProcessed prompts:   1%|▏         | 3/240 [00:07<07:34,  1.92s/it, est. speed input: 188.56 toks/s, output: 6.54 toks/s]
+[1AProcessed prompts:  12%|█▏        | 29/240 [00:07<00:28,  7.43it/s, est. speed input: 1687.98 toks/s, output: 70.56 toks/s]
+[1AProcessed prompts:  25%|██▌       | 61/240 [00:07<00:09, 18.77it/s, est. speed input: 3436.46 toks/s, output: 144.86 toks/s]
+[1AProcessed prompts:  40%|███▉      | 95/240 [00:07<00:04, 34.58it/s, est. speed input: 5159.75 toks/s, output: 223.36 toks/s]
+[1AProcessed prompts:  58%|█████▊    | 140/240 [00:07<00:01, 60.63it/s, est. speed input: 7615.87 toks/s, output: 328.84 toks/s]
+[1AProcessed prompts:  80%|████████  | 192/240 [00:07<00:00, 97.25it/s, est. speed input: 10305.28 toks/s, output: 456.84 toks/s]
+[1AProcessed prompts:  93%|█████████▎| 224/240 [00:08<00:00, 118.17it/s, est. speed input: 11898.81 toks/s, output: 545.54 toks/s]
+[1AProcessed prompts: 100%|██████████| 240/240 [00:09<00:00, 118.17it/s, est. speed input: 11430.47 toks/s, output: 538.68 toks/s]
+[1AProcessed prompts: 100%|██████████| 240/240 [00:09<00:00, 26.61it/s, est. speed input: 11430.47 toks/s, output: 538.68 toks/s] 
+(MainProcess pid=2) INFO 11-15 10:43:31 [utils.py:628] [shutdown] Process manager: send sigterm to process EngineCore
+(EngineCore pid=61) INFO 11-15 10:43:31 [core.py:1454] [shutdown] EngineCore: trigger received signal=SIGTERM
+(EngineCore pid=61) INFO 11-15 10:43:31 [core.py:1635] [shutdown] EngineCore: start mode=abort timeout=0s
+(EngineCore pid=61) INFO 11-15 10:43:31 [core.py:1666] [shutdown] EngineCore: request processing complete; starting resource teardown
+(EngineCore pid=61) INFO 11-15 10:43:31 [core.py:1499] [shutdown] EngineCore: exiting busy loop
+(MainProcess pid=2) WARNING 11-15 10:43:36 [utils.py:648] [shutdown] Process manager: force killing remaining processes count=1
+(MainProcess pid=2) WARNING 11-15 10:43:36 [utils.py:653] [shutdown] Process manager: force killing remaining process EngineCore pid 61
+tuned_zero 240 packets, 17 unparseable
+wrote C:\Users\Liezl\Documents\Obsidian\06 Strategy\competitions\AI x Epistemics Research Sprint\gap-set\runs\4b_v2
+Stopping app - local entrypoint completed.
+[modal-client] 2026-11-15T10:43:36+0000 Detected 1 background thread(s) [ThreadPoolExecutor-6_0] still running after container exit. This will prevent runner shutdown for up to 30 seconds.
+✓ App completed. View run at 
+https://modal.com/apps/liezlc/main/ap-xLrILq0wkq29kUA53R2twL
