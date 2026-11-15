@@ -1,4 +1,4 @@
-# Label or Record? Testing Whether LLM Reviewers Follow False Provenance Labels When Judging Independent Corroboration
+# Phantom Witnesses: When LLM Reviewers Report a Source That Isn’t There
 
 **Liezl Coetzee** (Sociable Systems), **Deepayan Sinha** (Altiora Systems), **Prashanth Vijay** (Altiora Systems), with Apart Research
 

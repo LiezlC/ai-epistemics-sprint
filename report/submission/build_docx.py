@@ -4,7 +4,7 @@ import docx
 R = r"C:/Users/Liezl/Documents/Obsidian/06 Strategy/competitions/AI x Epistemics Research Sprint"
 SRC = R + "/report/draft-report.condensed.md"
 TPL = r"C:/Users/Liezl/Downloads/Copy of Apart Research hackathon submission template.docx"
-OUT = R + "/report/submission/Label-or-Record-submission.docx"
+OUT = R + "/report/submission/Phantom-Witnesses-submission.docx"
 TMP = os.path.dirname(os.path.abspath(__file__))
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 s = open(SRC, encoding="utf-8").read()
