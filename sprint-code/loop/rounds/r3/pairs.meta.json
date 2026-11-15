@@ -1,0 +1,17 @@
+{
+ "source": "train_dpo_v2.jsonl",
+ "source_sha256": "fa31f782efc317854fdba6ed409b9bb244927fbbac762d4eb03bbe4c6faf896a",
+ "v3_strata": {
+  "undetermined>shared": 101,
+  "undetermined>independent": 94,
+  "shared>undetermined": 82,
+  "shared>independent": 70,
+  "independent>undetermined": 78,
+  "independent>shared": 75
+ },
+ "v4_rejected_changed": 355,
+ "recipe": "v4",
+ "n": 1500,
+ "seed": 20261203,
+ "pairs_sha256": "7ea618eb1465e87e0467d8c0a0190dc6fbb96e9a55ef7cf6ad4c90a00b10f916"
+}

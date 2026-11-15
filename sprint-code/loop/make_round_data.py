@@ -75,7 +75,31 @@ def recipe_v3(n):
     return out, meta
 
 
-RECIPES = {"v1": recipe_v1, "v2": recipe_v2, "v3": recipe_v3}
+V4_NOTE_VERDICT = {V3_NOTES[1]: "independent", V3_NOTES[2]: "shared"}
+
+
+def recipe_v4(n):
+    """Round 3 (critic proposal on round 2, approved by Liezl 15 Nov 2026: "Yes, run round 3"). The v3 pairs; wherever
+    the handoff note's verdict differs from the chosen verdict, the rejected verdict becomes the note's verdict
+    (rejected root_records kept). Rows with no note or a correct note are unchanged."""
+    lines, meta = recipe_v3(n)
+    out, changed = [], 0
+    for l in lines:
+        row = json.loads(l)
+        note = next((v for k, v in V4_NOTE_VERDICT.items() if "\n\n" + k + "\n" in row["prompt"]), None)
+        ch = json.loads(row["chosen"])["verdict"]
+        if note is not None and note != ch:
+            rej = json.loads(row["rejected"])
+            if rej["verdict"] != note:
+                changed += 1
+            rej["verdict"] = note
+            row = dict(row, rejected=json.dumps(rej, ensure_ascii=False))
+        out.append(json.dumps(row, ensure_ascii=False))
+    meta["v4_rejected_changed"] = changed
+    return out, meta
+
+
+RECIPES = {"v1": recipe_v1, "v2": recipe_v2, "v3": recipe_v3, "v4": recipe_v4}
 
 
 def main():
