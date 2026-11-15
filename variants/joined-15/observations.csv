@@ -1,0 +1,352 @@
+model,row_id,case,instruction,label_form,label_shown,key_verdict,verdict,roots_cited,verdict_right,roots_right_exact,verdict_and_roots_right,parsed,prompt_sha256
+27b,v000|alerted|bare,v000,alerted,bare,independent,shared,shared,G-52,1,1,1,1,dd39e509a617895f5e9defbb512c561090b99fe213856dc030bbb57d2a391c21
+27b,v000|alerted|stamped,v000,alerted,stamped,independent,shared,shared,G-52,1,1,1,1,b58627dda13820194b2845a9a9c224217762f50fee4a558e293449e65c543275
+27b,v000|alerted|none,v000,alerted,none,,shared,shared,G-52,1,1,1,1,64b08a2d854cdb0cf8f63abf5f87ddeca529088f3a3589228d33676e999663d6
+27b,v000|alerted|misleading,v000,alerted,misleading,independent,shared,shared,G-52,1,1,1,1,50b1901297f2bc36f0bc1f4a85514827e6411dfa60cba6d10176551b5e45b4f2
+27b,v000|neutral|bare,v000,neutral,bare,independent,shared,shared,G-52,1,1,1,1,5ee5cbc778dd31112afc9e939357a2828464d17b233ff3d51106fc3ac18a5561
+27b,v000|neutral|stamped,v000,neutral,stamped,independent,shared,shared,G-52,1,1,1,1,39e3102c13b7133c4bcee61d8900b50df7d446bd255f195b6d5f05834b1621c4
+27b,v000|neutral|none,v000,neutral,none,,shared,shared,G-52,1,1,1,1,d0638c1e1a15d2b5bc31c4053205f1a8b16d678bdff490282376e38b0db7fe04
+27b,v001|alerted|bare,v001,alerted,bare,independent,shared,shared,E-09,1,1,1,1,ccb1c38bba32f1833b13fffd2ea45c2f63eb6f6dc7cee85174eb07194a836377
+27b,v001|alerted|stamped,v001,alerted,stamped,independent,shared,shared,E-09,1,1,1,1,09525e97a82368231d1e48f66901214cc52f5b09aeeffaac688cc2b24a999b4c
+27b,v001|alerted|none,v001,alerted,none,,shared,shared,E-09,1,1,1,1,501ce15bdcdd986a0dff4bd906999aec501e1cc0725a5647536c7ab465243de0
+27b,v001|alerted|misleading,v001,alerted,misleading,independent,shared,shared,E-09,1,1,1,1,fd473dd5afe87fdd7d4f8fe72a0fd1260de396b058e80427a24005f0c68d5ebd
+27b,v001|neutral|bare,v001,neutral,bare,independent,shared,shared,E-09,1,1,1,1,43f332b03ce54f41f7427c240d9415df33aef8370b13c008d6b3f833ba895976
+27b,v001|neutral|stamped,v001,neutral,stamped,independent,shared,shared,E-09,1,1,1,1,c38b4a16fcabef44046cdd2991de76049a39a15de02420892b6d084b3ae63b0e
+27b,v001|neutral|none,v001,neutral,none,,shared,shared,E-09,1,1,1,1,bca71ed32cfdc011a0801b9c1d1ec5a4170ae2f1b73d13201857bacfc78f3562
+27b,v002|alerted|bare,v002,alerted,bare,shared,independent,independent,I-19;S-60,1,1,1,1,5c9a04d9a651e76e70d42018ae26c6d09878276fa8032fe1fb2176d98e09644f
+27b,v002|alerted|stamped,v002,alerted,stamped,shared,independent,independent,I-19;S-60,1,1,1,1,b24b06a1a685a1f7dcc744e53f80eabfccd8cec4fbcd29346b2c7b11a44d4dc0
+27b,v002|alerted|none,v002,alerted,none,,independent,independent,I-19;S-60,1,1,1,1,a294321f152c7b1db6f3fc24225cb581a61642f216ad0832fa81b9cd13d7ae96
+27b,v002|neutral|bare,v002,neutral,bare,shared,independent,independent,I-19;S-60,1,1,1,1,7aa2d141e8cc6b45dd43dec67f86029470c974706c1f7cdd95a7780acfaab20d
+27b,v002|neutral|stamped,v002,neutral,stamped,shared,independent,independent,I-19;S-60,1,1,1,1,0e7c4a3b7cea8a9305d6e0b222310ead8e6da380fbb120dc56836842c13f29a2
+27b,v002|neutral|none,v002,neutral,none,,independent,independent,I-19;S-60,1,1,1,1,c5f93225df8e3fecf94024d076fc353e1d7211a35fe8acec0891e6db0f9f6448
+27b,v003|alerted|bare,v003,alerted,bare,independent,shared,shared,MC-206,1,1,1,1,bf6481a023788ee4082087b042e229c4b571f3ef253bfbb12835226f4cd62a30
+27b,v003|alerted|stamped,v003,alerted,stamped,independent,shared,shared,MC-206,1,1,1,1,a0ec04bd3f602a878a634f6f647a14183eca5bf57a428cdef145ae84816471ee
+27b,v003|alerted|none,v003,alerted,none,,shared,shared,MC-206,1,1,1,1,62cd617bcea5039c3677fb39f147d89f6a4e650f54d43d08f474dd41587693d7
+27b,v003|alerted|misleading,v003,alerted,misleading,independent,shared,shared,MC-206,1,1,1,1,46a58a3008f412c3434d584ab292110e5168a47085c4143c6479f4a6d64d34c7
+27b,v003|neutral|bare,v003,neutral,bare,independent,shared,shared,MC-206,1,1,1,1,389adb90187fd6a0d8ab11d2f60e565eedd7dd30c6e7aabcde69b635a27aa6e0
+27b,v003|neutral|stamped,v003,neutral,stamped,independent,shared,shared,MC-206,1,1,1,1,893c44ac87bfd2b5184cfb4f420e4de2025e8fa3197752411e959c5f0b56f6e1
+27b,v003|neutral|none,v003,neutral,none,,shared,shared,MC-206,1,1,1,1,e9fe1387b99d97e3b5574435254e9d1967787cf1b4fa47f20015b1c09fae4b24
+27b,v004|alerted|bare,v004,alerted,bare,independent,shared,shared,S-09,1,1,1,1,bc02463e93e12318deb020dcb923194de465e3d1aee0ccd26dfa25aef1a971c3
+27b,v004|alerted|stamped,v004,alerted,stamped,independent,shared,shared,S-09,1,1,1,1,6d7e6ffa83ef75cf941f377566535e2796c9be6c3008c8de3143b6e3361bff3d
+27b,v004|alerted|none,v004,alerted,none,,shared,shared,S-09,1,1,1,1,3505659ccb275bee49d416a619b9115ee789b0c2689917017329cff189e62b8d
+27b,v004|alerted|misleading,v004,alerted,misleading,independent,shared,shared,S-09,1,1,1,1,a8bd51aba3477f7598556e29e7de8df3b85b2bb46ff2dae39d5e62e2b2223ddf
+27b,v004|neutral|bare,v004,neutral,bare,independent,shared,shared,S-09,1,1,1,1,c5cdecde7e67d4b8d9fde64e86553a5dce1fb8bc4c4b31352e3a0e06046a6437
+27b,v004|neutral|stamped,v004,neutral,stamped,independent,shared,shared,S-09,1,1,1,1,c9e3c691629558eb7abd6910dd40b15edf2c482a60917e9adc2e243c15be0db6
+27b,v004|neutral|none,v004,neutral,none,,shared,shared,S-09,1,1,1,1,0cce9ecb4f6362accbc46a00455bdd507802c150df098ba605269364db38042a
+27b,v005|alerted|bare,v005,alerted,bare,shared,independent,independent,F-12;H-40,1,1,1,1,740ff7814265c0a6e21ba7c67d6c61ecd1863f42aeeac566ad9752689988de6e
+27b,v005|alerted|stamped,v005,alerted,stamped,shared,independent,independent,F-12;H-40,1,1,1,1,1ee9d14cf7d7d5813426b5db8ed010ddf7852deb7e7712936a909362c9b6c247
+27b,v005|alerted|none,v005,alerted,none,,independent,independent,F-12;H-40,1,1,1,1,4278374e5754a4821d632cd686c97be035a4e295279f830c7c6d8b348fc8234b
+27b,v005|neutral|bare,v005,neutral,bare,shared,independent,independent,F-12;H-40,1,1,1,1,8de26e9d5bc2da782c7d874c1f14571622fc43f6ebf6e70fc2a09658106d5abc
+27b,v005|neutral|stamped,v005,neutral,stamped,shared,independent,independent,F-12;H-40,1,1,1,1,2ab8b978228a077e0b4133ecc9f0ffa05eecdcd0ee1d4da3b27a0afbb4e159a2
+27b,v005|neutral|none,v005,neutral,none,,independent,independent,F-12;H-40,1,1,1,1,a6c4b83cf18da7f8df2285deb53e8f5d09c249302c5dc7fda9c29ae8cbe70600
+27b,v006|alerted|bare,v006,alerted,bare,independent,shared,shared,R-14,1,1,1,1,8618441b7afd94d2d42755e0bb4ce4cbf39be1e687232fb5ff3bc8967ead0a2f
+27b,v006|alerted|stamped,v006,alerted,stamped,independent,shared,shared,R-14,1,1,1,1,1dd4c6e690b0f215a8437c250e704aa3e638eda11ee40ef967a4b6a81447f228
+27b,v006|alerted|none,v006,alerted,none,,shared,shared,R-14,1,1,1,1,9f09a4fbef7b61728eb6193305eaedb25943117f9294fdb954aacff23ba511ff
+27b,v006|alerted|misleading,v006,alerted,misleading,independent,shared,shared,R-14,1,1,1,1,bfa54d0012319be29ebb6b6b7abc5f7a6727147a0d9140f638b70714850af444
+27b,v006|neutral|bare,v006,neutral,bare,independent,shared,shared,R-14,1,1,1,1,a5f3f9df1a3c35fd9491eaa391e6f2eb6e60a72377066e4c479c48dc649446ad
+27b,v006|neutral|stamped,v006,neutral,stamped,independent,shared,shared,R-14,1,1,1,1,5ff04d3c9dc5694acac42a2b5602453092ec41861c746281694328b3de2d3ebd
+27b,v006|neutral|none,v006,neutral,none,,shared,shared,R-14,1,1,1,1,c1d93c75eb248149cd6e21fa2c31331a015133e9ea4680af573d4f3e4787cc43
+27b,v007|alerted|bare,v007,alerted,bare,independent,shared,shared,B-02,1,1,1,1,0848dd9d70b382497ff6fa1385825aa0e5dd51c46e1c663f43290ee9c2c205f1
+27b,v007|alerted|stamped,v007,alerted,stamped,independent,shared,shared,B-02,1,1,1,1,34d664cde9e57aa0b87ad562a0f23c25fb736a2ef47f6beddfb6a38f1d8cfc70
+27b,v007|alerted|none,v007,alerted,none,,shared,shared,B-02,1,1,1,1,62e0e7a117c58f719850d412db36be1f38002cbcc4f9580367e160e969a562c3
+27b,v007|alerted|misleading,v007,alerted,misleading,independent,shared,shared,B-02,1,1,1,1,364eeddc5216da4d7b0eaf5ea5d33d55c72f42324a3dfe1f1a2eb56581416d43
+27b,v007|neutral|bare,v007,neutral,bare,independent,shared,shared,B-02,1,1,1,1,05c1702572b8dfdde3c017d3f7448e825c746868fe7cffb6ce0efe1b07752dc4
+27b,v007|neutral|stamped,v007,neutral,stamped,independent,shared,shared,B-02,1,1,1,1,07b5909704ddd8fb2e08488b956513e45e8bc1ff6a638e310f5e1f6bc6813f30
+27b,v007|neutral|none,v007,neutral,none,,shared,shared,B-02,1,1,1,1,d2cea3cff43b3f534d7338033ed68e7100615024c420db623a4e849b97641b17
+27b,v008|alerted|bare,v008,alerted,bare,shared,independent,independent,H-71;W-18,1,1,1,1,b3d63f8269a6404e3fa484dab5516fadb394a76c466ee4643a31184a46449d58
+27b,v008|alerted|stamped,v008,alerted,stamped,shared,independent,independent,H-71;W-18,1,1,1,1,703727ac192ca247745e0cb85078a0860e298e66dc10ec938e03d59b143fd51e
+27b,v008|alerted|none,v008,alerted,none,,independent,independent,H-71;W-18,1,1,1,1,8cfaa300a6e3cc1fe6701860bf41a05e1f86ef59ac3ca6343174cfddf23a34ac
+27b,v008|neutral|bare,v008,neutral,bare,shared,independent,independent,H-71;W-18,1,1,1,1,943aa5491515f73ba32dd6e8638554a0849fa3404d28fc4677b3777aadc80dbb
+27b,v008|neutral|stamped,v008,neutral,stamped,shared,independent,independent,H-71;W-18,1,1,1,1,04662e21d4c49accd24603428af21d90d83e5419e50b78d1d14a72b934fdd2c0
+27b,v008|neutral|none,v008,neutral,none,,independent,independent,H-71;W-18,1,1,1,1,60340e577dfdc808695a1b55db8c8b745cff3ac90982114b4fef9a01f92b50b4
+27b,v009|alerted|bare,v009,alerted,bare,independent,shared,shared,L-120,1,1,1,1,a69dfd0fd14bf42b167fc440223a6c67f47276eed3a1fdb20db63db91b5afdf9
+27b,v009|alerted|stamped,v009,alerted,stamped,independent,shared,shared,L-120,1,1,1,1,6f00a2e0273630c64152cdcb74c0acd4ea3a3ea1ef21c7fceeec0f526611aec7
+27b,v009|alerted|none,v009,alerted,none,,shared,shared,L-120,1,1,1,1,27d794693b95bc5e3e57a0e5b5ff18d8381d0fb6a0d9aa232ceadd6397d5f28d
+27b,v009|alerted|misleading,v009,alerted,misleading,independent,shared,shared,L-120,1,1,1,1,7c0ac3c5f93f02c3a952cb9e3c3319d1761c96b7439d72e5d45a01ff2851bf99
+27b,v009|neutral|bare,v009,neutral,bare,independent,shared,shared,L-120,1,1,1,1,a7b5df50a94d828a44854b2293ee72f7a91415e17519ef46d8687c8cb5ab60c4
+27b,v009|neutral|stamped,v009,neutral,stamped,independent,shared,shared,L-120,1,1,1,1,6ed6681235574e1b31734111c06c998098969fc2cda53485a70dce385a643014
+27b,v009|neutral|none,v009,neutral,none,,shared,shared,L-120,1,1,1,1,253a0757a2268fe6ce8f2814a6bd72deca02a473ca97ce63baad84417edbe857
+27b,v010|alerted|bare,v010,alerted,bare,shared,shared,shared,K-58,1,1,1,1,e8f10d4f3b8447bf6c74dff413c7984c16fafe13f034f6e38eacd88952ec3c4f
+27b,v010|alerted|stamped,v010,alerted,stamped,shared,shared,shared,K-58,1,1,1,1,0ac244748e318749e0762a48d0eb122e98ace42bf495a6d428de0cb061aa4f1d
+27b,v010|alerted|none,v010,alerted,none,,shared,shared,K-58,1,1,1,1,0959b9311c397be28099c860fccf08b9aebd27a60ceb58c1f3898b2022130cf9
+27b,v010|neutral|bare,v010,neutral,bare,shared,shared,shared,K-58,1,1,1,1,d27849cc8af56a5cd9987269168d9cbd6afac8fbc0340b3d91a0c10007547d43
+27b,v010|neutral|stamped,v010,neutral,stamped,shared,shared,shared,K-58,1,1,1,1,59eb26d9f18410c9ce466ca3886a7247631145c8b77cfc7190144b6148445c75
+27b,v010|neutral|none,v010,neutral,none,,shared,shared,K-58,1,1,1,1,dbdb457ed2e2572083dda900a135fbdc6caf94af44fde6aca35a8b9f4e4fc334
+27b,v011|alerted|bare,v011,alerted,bare,independent,shared,shared,WF-88,1,1,1,1,e54de68a34d765675be812cddd353740486886c2a7b85cde68833c41aa51c2f6
+27b,v011|alerted|stamped,v011,alerted,stamped,independent,shared,shared,WF-88,1,1,1,1,dee8fb5043cded5faccf8e2489f34aede419b3818fd3bcf40899d1c1ce48ad1e
+27b,v011|alerted|none,v011,alerted,none,,shared,shared,WF-88,1,1,1,1,f85563bd1bee6287e9997bd7dcf9055b68af10ea243d0705cb5a18c95efbd101
+27b,v011|alerted|misleading,v011,alerted,misleading,independent,shared,shared,WF-88,1,1,1,1,ddc20ea9bdfda1483ec2a1a69c2de46b97e8ac14c899a0fee488df0c76ce81de
+27b,v011|neutral|bare,v011,neutral,bare,independent,shared,shared,WF-88,1,1,1,1,5260d4bd8720143f7e511462d15c5fb83e01df3fb9c75c000d5d6d4af941f761
+27b,v011|neutral|stamped,v011,neutral,stamped,independent,shared,shared,WF-88,1,1,1,1,1ea540dc115d219c1e6e278c71b9828e5d61ede0585a2c8708249b60024cdc47
+27b,v011|neutral|none,v011,neutral,none,,shared,shared,WF-88,1,1,1,1,b40ed19eda82fccb990cb5ad70ff6b26e547f49a471f56e6a7bd29cb62b3434b
+27b,v012|alerted|bare,v012,alerted,bare,shared,independent,independent,Q-07;W-47,1,1,1,1,10d83f75127789dbac85335ce0d7418e31b7b87a390facd1a03bc813106e64ae
+27b,v012|alerted|stamped,v012,alerted,stamped,shared,independent,independent,Q-07;W-47,1,1,1,1,18a4303e05d24ed3dab1316e6f034124945f72ffe31669a121539593e9d8c9be
+27b,v012|alerted|none,v012,alerted,none,,independent,independent,Q-07;W-47,1,1,1,1,2b79c5586325f5b6344df49842c619593181df8a5dc7453c2c2db522f27ef16b
+27b,v012|neutral|bare,v012,neutral,bare,shared,independent,independent,Q-07;W-47,1,1,1,1,9415d486fdbd067976f0258e62c49455e48ef6cfbae1261aa7a260013d7262f6
+27b,v012|neutral|stamped,v012,neutral,stamped,shared,independent,independent,Q-07;W-47,1,1,1,1,4930823bf9e7b5f179057fe96a49134663c294cb227a2fa45ed6bac481caddea
+27b,v012|neutral|none,v012,neutral,none,,independent,independent,Q-07;W-47,1,1,1,1,63e40beecd054cce23e09d9c4667e03857355d0c2ffee1c8a8218e3abe0fa107
+27b,v013|alerted|bare,v013,alerted,bare,independent,independent,independent,C-24;T-61,1,1,1,1,0e261d9b186c725da20df4b33ecf45e9058220a4b70ee1d4353cf80dd9146c6c
+27b,v013|alerted|stamped,v013,alerted,stamped,independent,independent,independent,C-24;T-61,1,1,1,1,47dcaadda11ba9a4ea670d043cc2b028cdcf5597dc8f845c62a790f742c8e328
+27b,v013|alerted|none,v013,alerted,none,,independent,independent,C-24;T-61,1,1,1,1,ce128745c8d45dadb2c709e61f8b1cc35d4aaaf3d98fb0cf3025a468d79a067f
+27b,v013|neutral|bare,v013,neutral,bare,independent,independent,independent,C-24;T-61,1,1,1,1,632b13d79d5848058ad415c52c9384910b4c0789a46b375c0859d28b856c7bf1
+27b,v013|neutral|stamped,v013,neutral,stamped,independent,independent,independent,C-24;T-61,1,1,1,1,54d2adaada330deffe53061ff04ccc4afd4126f5e207de5a69fdd047a038794d
+27b,v013|neutral|none,v013,neutral,none,,independent,independent,C-24;T-61,1,1,1,1,52283b186055c61ef858e7efa2bbc1a7057f3d657e24edac83c0ae8fd992115b
+27b,v014|alerted|bare,v014,alerted,bare,independent,shared,shared,BR-5,1,1,1,1,55df33aac98f4c372228bbd5bc293e1f0592a4280811e6f3eef97e13c9369366
+27b,v014|alerted|stamped,v014,alerted,stamped,independent,shared,shared,BR-5,1,1,1,1,a6d6643202ad02a7fd9942e284b6d4ceb324ef65a3ec297d002affdc7651f0a9
+27b,v014|alerted|none,v014,alerted,none,,shared,shared,BR-5,1,1,1,1,adc49bb0e82134ba0c6cbe25f4ddc3b3e831018d8f30b2f30debbc98ff7f1b48
+27b,v014|alerted|misleading,v014,alerted,misleading,independent,shared,shared,BR-5,1,1,1,1,4ebecb3052100323da82ebe558e5dfdc7b2ab8d437b38630a6149e2b482293b6
+27b,v014|neutral|bare,v014,neutral,bare,independent,shared,shared,BR-5,1,1,1,1,5d877bdef214833af3e9e4ccfa4b27c0b01077af8078ecd058d877876cc2820c
+27b,v014|neutral|stamped,v014,neutral,stamped,independent,shared,shared,BR-5,1,1,1,1,c53e5a3c05e89dd203c2503ba265a9e65ca4ed7cdd96d1eb8ec71ff20231f27a
+27b,v014|neutral|none,v014,neutral,none,,shared,shared,BR-5,1,1,1,1,cc31d1610e56b82ee773cc4640d8489afd3aa1f6dbdfc532b823bb5614988fc5
+4B zero-shot,v000|alerted|bare,v000,alerted,bare,independent,shared,shared,G-52;G-52,1,0,0,1,dd39e509a617895f5e9defbb512c561090b99fe213856dc030bbb57d2a391c21
+4B zero-shot,v000|alerted|stamped,v000,alerted,stamped,independent,shared,shared,G-52;G-52,1,0,0,1,b58627dda13820194b2845a9a9c224217762f50fee4a558e293449e65c543275
+4B zero-shot,v000|alerted|none,v000,alerted,none,,shared,shared,G-52;G-52,1,0,0,1,64b08a2d854cdb0cf8f63abf5f87ddeca529088f3a3589228d33676e999663d6
+4B zero-shot,v000|alerted|misleading,v000,alerted,misleading,independent,shared,shared,G-52;G-52,1,0,0,1,50b1901297f2bc36f0bc1f4a85514827e6411dfa60cba6d10176551b5e45b4f2
+4B zero-shot,v000|neutral|bare,v000,neutral,bare,independent,shared,shared,G-52;G-52,1,0,0,1,5ee5cbc778dd31112afc9e939357a2828464d17b233ff3d51106fc3ac18a5561
+4B zero-shot,v000|neutral|stamped,v000,neutral,stamped,independent,shared,shared,G-52,1,1,1,1,39e3102c13b7133c4bcee61d8900b50df7d446bd255f195b6d5f05834b1621c4
+4B zero-shot,v000|neutral|none,v000,neutral,none,,shared,shared,G-52;G-52,1,0,0,1,d0638c1e1a15d2b5bc31c4053205f1a8b16d678bdff490282376e38b0db7fe04
+4B zero-shot,v001|alerted|bare,v001,alerted,bare,independent,shared,shared,E-09;E-09,1,0,0,1,ccb1c38bba32f1833b13fffd2ea45c2f63eb6f6dc7cee85174eb07194a836377
+4B zero-shot,v001|alerted|stamped,v001,alerted,stamped,independent,shared,shared,E-09;E-09,1,0,0,1,09525e97a82368231d1e48f66901214cc52f5b09aeeffaac688cc2b24a999b4c
+4B zero-shot,v001|alerted|none,v001,alerted,none,,shared,shared,E-09,1,1,1,1,501ce15bdcdd986a0dff4bd906999aec501e1cc0725a5647536c7ab465243de0
+4B zero-shot,v001|alerted|misleading,v001,alerted,misleading,independent,shared,shared,E-09;E-09,1,0,0,1,fd473dd5afe87fdd7d4f8fe72a0fd1260de396b058e80427a24005f0c68d5ebd
+4B zero-shot,v001|neutral|bare,v001,neutral,bare,independent,shared,shared,E-09,1,1,1,1,43f332b03ce54f41f7427c240d9415df33aef8370b13c008d6b3f833ba895976
+4B zero-shot,v001|neutral|stamped,v001,neutral,stamped,independent,shared,shared,E-09,1,1,1,1,c38b4a16fcabef44046cdd2991de76049a39a15de02420892b6d084b3ae63b0e
+4B zero-shot,v001|neutral|none,v001,neutral,none,,shared,shared,E-09,1,1,1,1,bca71ed32cfdc011a0801b9c1d1ec5a4170ae2f1b73d13201857bacfc78f3562
+4B zero-shot,v002|alerted|bare,v002,alerted,bare,shared,independent,independent,I-19;S-60,1,1,1,1,5c9a04d9a651e76e70d42018ae26c6d09878276fa8032fe1fb2176d98e09644f
+4B zero-shot,v002|alerted|stamped,v002,alerted,stamped,shared,independent,independent,I-19;S-60,1,1,1,1,b24b06a1a685a1f7dcc744e53f80eabfccd8cec4fbcd29346b2c7b11a44d4dc0
+4B zero-shot,v002|alerted|none,v002,alerted,none,,independent,independent,I-19;S-60,1,1,1,1,a294321f152c7b1db6f3fc24225cb581a61642f216ad0832fa81b9cd13d7ae96
+4B zero-shot,v002|neutral|bare,v002,neutral,bare,shared,independent,shared,I-19;S-60,0,1,0,1,7aa2d141e8cc6b45dd43dec67f86029470c974706c1f7cdd95a7780acfaab20d
+4B zero-shot,v002|neutral|stamped,v002,neutral,stamped,shared,independent,shared,I-19;S-60,0,1,0,1,0e7c4a3b7cea8a9305d6e0b222310ead8e6da380fbb120dc56836842c13f29a2
+4B zero-shot,v002|neutral|none,v002,neutral,none,,independent,independent,I-19;S-60,1,1,1,1,c5f93225df8e3fecf94024d076fc353e1d7211a35fe8acec0891e6db0f9f6448
+4B zero-shot,v003|alerted|bare,v003,alerted,bare,independent,shared,shared,MC-206,1,1,1,1,bf6481a023788ee4082087b042e229c4b571f3ef253bfbb12835226f4cd62a30
+4B zero-shot,v003|alerted|stamped,v003,alerted,stamped,independent,shared,shared,MC-206;MC-206,1,0,0,1,a0ec04bd3f602a878a634f6f647a14183eca5bf57a428cdef145ae84816471ee
+4B zero-shot,v003|alerted|none,v003,alerted,none,,shared,shared,MC-206,1,1,1,1,62cd617bcea5039c3677fb39f147d89f6a4e650f54d43d08f474dd41587693d7
+4B zero-shot,v003|alerted|misleading,v003,alerted,misleading,independent,shared,shared,MC-206,1,1,1,1,46a58a3008f412c3434d584ab292110e5168a47085c4143c6479f4a6d64d34c7
+4B zero-shot,v003|neutral|bare,v003,neutral,bare,independent,shared,shared,MC-206,1,1,1,1,389adb90187fd6a0d8ab11d2f60e565eedd7dd30c6e7aabcde69b635a27aa6e0
+4B zero-shot,v003|neutral|stamped,v003,neutral,stamped,independent,shared,shared,MC-206,1,1,1,1,893c44ac87bfd2b5184cfb4f420e4de2025e8fa3197752411e959c5f0b56f6e1
+4B zero-shot,v003|neutral|none,v003,neutral,none,,shared,shared,MC-206,1,1,1,1,e9fe1387b99d97e3b5574435254e9d1967787cf1b4fa47f20015b1c09fae4b24
+4B zero-shot,v004|alerted|bare,v004,alerted,bare,independent,shared,shared,E-63;E-63,1,0,0,1,bc02463e93e12318deb020dcb923194de465e3d1aee0ccd26dfa25aef1a971c3
+4B zero-shot,v004|alerted|stamped,v004,alerted,stamped,independent,shared,shared,E-63;E-63,1,0,0,1,6d7e6ffa83ef75cf941f377566535e2796c9be6c3008c8de3143b6e3361bff3d
+4B zero-shot,v004|alerted|none,v004,alerted,none,,shared,shared,E-63;E-63,1,0,0,1,3505659ccb275bee49d416a619b9115ee789b0c2689917017329cff189e62b8d
+4B zero-shot,v004|alerted|misleading,v004,alerted,misleading,independent,shared,shared,E-63,1,0,0,1,a8bd51aba3477f7598556e29e7de8df3b85b2bb46ff2dae39d5e62e2b2223ddf
+4B zero-shot,v004|neutral|bare,v004,neutral,bare,independent,shared,shared,E-63;E-63,1,0,0,1,c5cdecde7e67d4b8d9fde64e86553a5dce1fb8bc4c4b31352e3a0e06046a6437
+4B zero-shot,v004|neutral|stamped,v004,neutral,stamped,independent,shared,shared,E-63,1,0,0,1,c9e3c691629558eb7abd6910dd40b15edf2c482a60917e9adc2e243c15be0db6
+4B zero-shot,v004|neutral|none,v004,neutral,none,,shared,shared,E-63,1,0,0,1,0cce9ecb4f6362accbc46a00455bdd507802c150df098ba605269364db38042a
+4B zero-shot,v005|alerted|bare,v005,alerted,bare,shared,independent,independent,F-12;H-40,1,1,1,1,740ff7814265c0a6e21ba7c67d6c61ecd1863f42aeeac566ad9752689988de6e
+4B zero-shot,v005|alerted|stamped,v005,alerted,stamped,shared,independent,independent,F-12;H-40,1,1,1,1,1ee9d14cf7d7d5813426b5db8ed010ddf7852deb7e7712936a909362c9b6c247
+4B zero-shot,v005|alerted|none,v005,alerted,none,,independent,independent,F-12;H-40,1,1,1,1,4278374e5754a4821d632cd686c97be035a4e295279f830c7c6d8b348fc8234b
+4B zero-shot,v005|neutral|bare,v005,neutral,bare,shared,independent,independent,F-12;H-40,1,1,1,1,8de26e9d5bc2da782c7d874c1f14571622fc43f6ebf6e70fc2a09658106d5abc
+4B zero-shot,v005|neutral|stamped,v005,neutral,stamped,shared,independent,independent,F-12;H-40,1,1,1,1,2ab8b978228a077e0b4133ecc9f0ffa05eecdcd0ee1d4da3b27a0afbb4e159a2
+4B zero-shot,v005|neutral|none,v005,neutral,none,,independent,independent,F-12;H-40,1,1,1,1,a6c4b83cf18da7f8df2285deb53e8f5d09c249302c5dc7fda9c29ae8cbe70600
+4B zero-shot,v006|alerted|bare,v006,alerted,bare,independent,shared,shared,R-14,1,1,1,1,8618441b7afd94d2d42755e0bb4ce4cbf39be1e687232fb5ff3bc8967ead0a2f
+4B zero-shot,v006|alerted|stamped,v006,alerted,stamped,independent,shared,shared,R-14,1,1,1,1,1dd4c6e690b0f215a8437c250e704aa3e638eda11ee40ef967a4b6a81447f228
+4B zero-shot,v006|alerted|none,v006,alerted,none,,shared,shared,R-14,1,1,1,1,9f09a4fbef7b61728eb6193305eaedb25943117f9294fdb954aacff23ba511ff
+4B zero-shot,v006|alerted|misleading,v006,alerted,misleading,independent,shared,shared,R-14,1,1,1,1,bfa54d0012319be29ebb6b6b7abc5f7a6727147a0d9140f638b70714850af444
+4B zero-shot,v006|neutral|bare,v006,neutral,bare,independent,shared,shared,R-14,1,1,1,1,a5f3f9df1a3c35fd9491eaa391e6f2eb6e60a72377066e4c479c48dc649446ad
+4B zero-shot,v006|neutral|stamped,v006,neutral,stamped,independent,shared,shared,R-14,1,1,1,1,5ff04d3c9dc5694acac42a2b5602453092ec41861c746281694328b3de2d3ebd
+4B zero-shot,v006|neutral|none,v006,neutral,none,,shared,shared,R-14,1,1,1,1,c1d93c75eb248149cd6e21fa2c31331a015133e9ea4680af573d4f3e4787cc43
+4B zero-shot,v007|alerted|bare,v007,alerted,bare,independent,shared,shared,E-71,1,0,0,1,0848dd9d70b382497ff6fa1385825aa0e5dd51c46e1c663f43290ee9c2c205f1
+4B zero-shot,v007|alerted|stamped,v007,alerted,stamped,independent,shared,shared,E-71,1,0,0,1,34d664cde9e57aa0b87ad562a0f23c25fb736a2ef47f6beddfb6a38f1d8cfc70
+4B zero-shot,v007|alerted|none,v007,alerted,none,,shared,shared,E-71,1,0,0,1,62e0e7a117c58f719850d412db36be1f38002cbcc4f9580367e160e969a562c3
+4B zero-shot,v007|alerted|misleading,v007,alerted,misleading,independent,shared,shared,E-71,1,0,0,1,364eeddc5216da4d7b0eaf5ea5d33d55c72f42324a3dfe1f1a2eb56581416d43
+4B zero-shot,v007|neutral|bare,v007,neutral,bare,independent,shared,shared,E-71,1,0,0,1,05c1702572b8dfdde3c017d3f7448e825c746868fe7cffb6ce0efe1b07752dc4
+4B zero-shot,v007|neutral|stamped,v007,neutral,stamped,independent,shared,shared,E-71,1,0,0,1,07b5909704ddd8fb2e08488b956513e45e8bc1ff6a638e310f5e1f6bc6813f30
+4B zero-shot,v007|neutral|none,v007,neutral,none,,shared,shared,E-71,1,0,0,1,d2cea3cff43b3f534d7338033ed68e7100615024c420db623a4e849b97641b17
+4B zero-shot,v008|alerted|bare,v008,alerted,bare,shared,independent,independent,H-71;W-18,1,1,1,1,b3d63f8269a6404e3fa484dab5516fadb394a76c466ee4643a31184a46449d58
+4B zero-shot,v008|alerted|stamped,v008,alerted,stamped,shared,independent,independent,H-71;W-18,1,1,1,1,703727ac192ca247745e0cb85078a0860e298e66dc10ec938e03d59b143fd51e
+4B zero-shot,v008|alerted|none,v008,alerted,none,,independent,independent,H-71;W-18,1,1,1,1,8cfaa300a6e3cc1fe6701860bf41a05e1f86ef59ac3ca6343174cfddf23a34ac
+4B zero-shot,v008|neutral|bare,v008,neutral,bare,shared,independent,independent,H-71;W-18,1,1,1,1,943aa5491515f73ba32dd6e8638554a0849fa3404d28fc4677b3777aadc80dbb
+4B zero-shot,v008|neutral|stamped,v008,neutral,stamped,shared,independent,independent,H-71;W-18,1,1,1,1,04662e21d4c49accd24603428af21d90d83e5419e50b78d1d14a72b934fdd2c0
+4B zero-shot,v008|neutral|none,v008,neutral,none,,independent,independent,H-71;W-18,1,1,1,1,60340e577dfdc808695a1b55db8c8b745cff3ac90982114b4fef9a01f92b50b4
+4B zero-shot,v009|alerted|bare,v009,alerted,bare,independent,shared,shared,L-120,1,1,1,1,a69dfd0fd14bf42b167fc440223a6c67f47276eed3a1fdb20db63db91b5afdf9
+4B zero-shot,v009|alerted|stamped,v009,alerted,stamped,independent,shared,shared,L-120,1,1,1,1,6f00a2e0273630c64152cdcb74c0acd4ea3a3ea1ef21c7fceeec0f526611aec7
+4B zero-shot,v009|alerted|none,v009,alerted,none,,shared,shared,L-120,1,1,1,1,27d794693b95bc5e3e57a0e5b5ff18d8381d0fb6a0d9aa232ceadd6397d5f28d
+4B zero-shot,v009|alerted|misleading,v009,alerted,misleading,independent,shared,shared,L-120,1,1,1,1,7c0ac3c5f93f02c3a952cb9e3c3319d1761c96b7439d72e5d45a01ff2851bf99
+4B zero-shot,v009|neutral|bare,v009,neutral,bare,independent,shared,shared,L-120,1,1,1,1,a7b5df50a94d828a44854b2293ee72f7a91415e17519ef46d8687c8cb5ab60c4
+4B zero-shot,v009|neutral|stamped,v009,neutral,stamped,independent,shared,shared,L-120,1,1,1,1,6ed6681235574e1b31734111c06c998098969fc2cda53485a70dce385a643014
+4B zero-shot,v009|neutral|none,v009,neutral,none,,shared,shared,L-120,1,1,1,1,253a0757a2268fe6ce8f2814a6bd72deca02a473ca97ce63baad84417edbe857
+4B zero-shot,v010|alerted|bare,v010,alerted,bare,shared,shared,shared,K-58,1,1,1,1,e8f10d4f3b8447bf6c74dff413c7984c16fafe13f034f6e38eacd88952ec3c4f
+4B zero-shot,v010|alerted|stamped,v010,alerted,stamped,shared,shared,shared,K-58,1,1,1,1,0ac244748e318749e0762a48d0eb122e98ace42bf495a6d428de0cb061aa4f1d
+4B zero-shot,v010|alerted|none,v010,alerted,none,,shared,shared,K-58,1,1,1,1,0959b9311c397be28099c860fccf08b9aebd27a60ceb58c1f3898b2022130cf9
+4B zero-shot,v010|neutral|bare,v010,neutral,bare,shared,shared,shared,K-58,1,1,1,1,d27849cc8af56a5cd9987269168d9cbd6afac8fbc0340b3d91a0c10007547d43
+4B zero-shot,v010|neutral|stamped,v010,neutral,stamped,shared,shared,shared,K-58,1,1,1,1,59eb26d9f18410c9ce466ca3886a7247631145c8b77cfc7190144b6148445c75
+4B zero-shot,v010|neutral|none,v010,neutral,none,,shared,shared,K-58,1,1,1,1,dbdb457ed2e2572083dda900a135fbdc6caf94af44fde6aca35a8b9f4e4fc334
+4B zero-shot,v011|alerted|bare,v011,alerted,bare,independent,shared,shared,DG-3;DG-3,1,0,0,1,e54de68a34d765675be812cddd353740486886c2a7b85cde68833c41aa51c2f6
+4B zero-shot,v011|alerted|stamped,v011,alerted,stamped,independent,shared,shared,DG-3;DG-3,1,0,0,1,dee8fb5043cded5faccf8e2489f34aede419b3818fd3bcf40899d1c1ce48ad1e
+4B zero-shot,v011|alerted|none,v011,alerted,none,,shared,shared,DG-3,1,0,0,1,f85563bd1bee6287e9997bd7dcf9055b68af10ea243d0705cb5a18c95efbd101
+4B zero-shot,v011|alerted|misleading,v011,alerted,misleading,independent,shared,shared,DG-3,1,0,0,1,ddc20ea9bdfda1483ec2a1a69c2de46b97e8ac14c899a0fee488df0c76ce81de
+4B zero-shot,v011|neutral|bare,v011,neutral,bare,independent,shared,shared,DG-3,1,0,0,1,5260d4bd8720143f7e511462d15c5fb83e01df3fb9c75c000d5d6d4af941f761
+4B zero-shot,v011|neutral|stamped,v011,neutral,stamped,independent,shared,shared,DG-3;DG-3,1,0,0,1,1ea540dc115d219c1e6e278c71b9828e5d61ede0585a2c8708249b60024cdc47
+4B zero-shot,v011|neutral|none,v011,neutral,none,,shared,shared,DG-3,1,0,0,1,b40ed19eda82fccb990cb5ad70ff6b26e547f49a471f56e6a7bd29cb62b3434b
+4B zero-shot,v012|alerted|bare,v012,alerted,bare,shared,independent,independent,Q-07;W-47,1,1,1,1,10d83f75127789dbac85335ce0d7418e31b7b87a390facd1a03bc813106e64ae
+4B zero-shot,v012|alerted|stamped,v012,alerted,stamped,shared,independent,independent,Q-07;W-47,1,1,1,1,18a4303e05d24ed3dab1316e6f034124945f72ffe31669a121539593e9d8c9be
+4B zero-shot,v012|alerted|none,v012,alerted,none,,independent,independent,Q-07;W-47,1,1,1,1,2b79c5586325f5b6344df49842c619593181df8a5dc7453c2c2db522f27ef16b
+4B zero-shot,v012|neutral|bare,v012,neutral,bare,shared,independent,independent,Q-07;W-47,1,1,1,1,9415d486fdbd067976f0258e62c49455e48ef6cfbae1261aa7a260013d7262f6
+4B zero-shot,v012|neutral|stamped,v012,neutral,stamped,shared,independent,independent,Q-07;W-47,1,1,1,1,4930823bf9e7b5f179057fe96a49134663c294cb227a2fa45ed6bac481caddea
+4B zero-shot,v012|neutral|none,v012,neutral,none,,independent,independent,Q-07;W-47,1,1,1,1,63e40beecd054cce23e09d9c4667e03857355d0c2ffee1c8a8218e3abe0fa107
+4B zero-shot,v013|alerted|bare,v013,alerted,bare,independent,independent,independent,C-24;T-61,1,1,1,1,0e261d9b186c725da20df4b33ecf45e9058220a4b70ee1d4353cf80dd9146c6c
+4B zero-shot,v013|alerted|stamped,v013,alerted,stamped,independent,independent,independent,C-24;T-61,1,1,1,1,47dcaadda11ba9a4ea670d043cc2b028cdcf5597dc8f845c62a790f742c8e328
+4B zero-shot,v013|alerted|none,v013,alerted,none,,independent,independent,C-24;T-61,1,1,1,1,ce128745c8d45dadb2c709e61f8b1cc35d4aaaf3d98fb0cf3025a468d79a067f
+4B zero-shot,v013|neutral|bare,v013,neutral,bare,independent,independent,independent,C-24;T-61,1,1,1,1,632b13d79d5848058ad415c52c9384910b4c0789a46b375c0859d28b856c7bf1
+4B zero-shot,v013|neutral|stamped,v013,neutral,stamped,independent,independent,independent,C-24;T-61,1,1,1,1,54d2adaada330deffe53061ff04ccc4afd4126f5e207de5a69fdd047a038794d
+4B zero-shot,v013|neutral|none,v013,neutral,none,,independent,independent,C-24;T-61,1,1,1,1,52283b186055c61ef858e7efa2bbc1a7057f3d657e24edac83c0ae8fd992115b
+4B zero-shot,v014|alerted|bare,v014,alerted,bare,independent,shared,shared,BR-5,1,1,1,1,55df33aac98f4c372228bbd5bc293e1f0592a4280811e6f3eef97e13c9369366
+4B zero-shot,v014|alerted|stamped,v014,alerted,stamped,independent,shared,shared,BR-5,1,1,1,1,a6d6643202ad02a7fd9942e284b6d4ceb324ef65a3ec297d002affdc7651f0a9
+4B zero-shot,v014|alerted|none,v014,alerted,none,,shared,shared,BR-5,1,1,1,1,adc49bb0e82134ba0c6cbe25f4ddc3b3e831018d8f30b2f30debbc98ff7f1b48
+4B zero-shot,v014|alerted|misleading,v014,alerted,misleading,independent,shared,shared,BR-5,1,1,1,1,4ebecb3052100323da82ebe558e5dfdc7b2ab8d437b38630a6149e2b482293b6
+4B zero-shot,v014|neutral|bare,v014,neutral,bare,independent,shared,shared,BR-5,1,1,1,1,5d877bdef214833af3e9e4ccfa4b27c0b01077af8078ecd058d877876cc2820c
+4B zero-shot,v014|neutral|stamped,v014,neutral,stamped,independent,shared,shared,BR-5,1,1,1,1,c53e5a3c05e89dd203c2503ba265a9e65ca4ed7cdd96d1eb8ec71ff20231f27a
+4B zero-shot,v014|neutral|none,v014,neutral,none,,shared,shared,BR-5,1,1,1,1,cc31d1610e56b82ee773cc4640d8489afd3aa1f6dbdfc532b823bb5614988fc5
+4B three-shot,v000|alerted|bare,v000,alerted,bare,independent,shared,shared,G-52,1,1,1,1,dd39e509a617895f5e9defbb512c561090b99fe213856dc030bbb57d2a391c21
+4B three-shot,v000|alerted|stamped,v000,alerted,stamped,independent,shared,shared,G-52,1,1,1,1,b58627dda13820194b2845a9a9c224217762f50fee4a558e293449e65c543275
+4B three-shot,v000|alerted|none,v000,alerted,none,,shared,shared,G-52,1,1,1,1,64b08a2d854cdb0cf8f63abf5f87ddeca529088f3a3589228d33676e999663d6
+4B three-shot,v000|alerted|misleading,v000,alerted,misleading,independent,shared,shared,G-52,1,1,1,1,50b1901297f2bc36f0bc1f4a85514827e6411dfa60cba6d10176551b5e45b4f2
+4B three-shot,v001|alerted|bare,v001,alerted,bare,independent,shared,shared,E-09,1,1,1,1,ccb1c38bba32f1833b13fffd2ea45c2f63eb6f6dc7cee85174eb07194a836377
+4B three-shot,v001|alerted|stamped,v001,alerted,stamped,independent,shared,shared,E-09,1,1,1,1,09525e97a82368231d1e48f66901214cc52f5b09aeeffaac688cc2b24a999b4c
+4B three-shot,v001|alerted|none,v001,alerted,none,,shared,shared,E-09,1,1,1,1,501ce15bdcdd986a0dff4bd906999aec501e1cc0725a5647536c7ab465243de0
+4B three-shot,v001|alerted|misleading,v001,alerted,misleading,independent,shared,shared,E-09,1,1,1,1,fd473dd5afe87fdd7d4f8fe72a0fd1260de396b058e80427a24005f0c68d5ebd
+4B three-shot,v002|alerted|bare,v002,alerted,bare,shared,independent,independent,I-19;S-60,1,1,1,1,5c9a04d9a651e76e70d42018ae26c6d09878276fa8032fe1fb2176d98e09644f
+4B three-shot,v002|alerted|stamped,v002,alerted,stamped,shared,independent,shared,S-60,0,0,0,1,b24b06a1a685a1f7dcc744e53f80eabfccd8cec4fbcd29346b2c7b11a44d4dc0
+4B three-shot,v002|alerted|none,v002,alerted,none,,independent,independent,I-19;S-60,1,1,1,1,a294321f152c7b1db6f3fc24225cb581a61642f216ad0832fa81b9cd13d7ae96
+4B three-shot,v003|alerted|bare,v003,alerted,bare,independent,shared,shared,MC-206,1,1,1,1,bf6481a023788ee4082087b042e229c4b571f3ef253bfbb12835226f4cd62a30
+4B three-shot,v003|alerted|stamped,v003,alerted,stamped,independent,shared,shared,MC-206,1,1,1,1,a0ec04bd3f602a878a634f6f647a14183eca5bf57a428cdef145ae84816471ee
+4B three-shot,v003|alerted|none,v003,alerted,none,,shared,shared,MC-206,1,1,1,1,62cd617bcea5039c3677fb39f147d89f6a4e650f54d43d08f474dd41587693d7
+4B three-shot,v003|alerted|misleading,v003,alerted,misleading,independent,shared,shared,MC-206,1,1,1,1,46a58a3008f412c3434d584ab292110e5168a47085c4143c6479f4a6d64d34c7
+4B three-shot,v004|alerted|bare,v004,alerted,bare,independent,shared,shared,S-09,1,1,1,1,bc02463e93e12318deb020dcb923194de465e3d1aee0ccd26dfa25aef1a971c3
+4B three-shot,v004|alerted|stamped,v004,alerted,stamped,independent,shared,shared,S-09,1,1,1,1,6d7e6ffa83ef75cf941f377566535e2796c9be6c3008c8de3143b6e3361bff3d
+4B three-shot,v004|alerted|none,v004,alerted,none,,shared,shared,S-09,1,1,1,1,3505659ccb275bee49d416a619b9115ee789b0c2689917017329cff189e62b8d
+4B three-shot,v004|alerted|misleading,v004,alerted,misleading,independent,shared,shared,S-09,1,1,1,1,a8bd51aba3477f7598556e29e7de8df3b85b2bb46ff2dae39d5e62e2b2223ddf
+4B three-shot,v005|alerted|bare,v005,alerted,bare,shared,independent,independent,F-12;H-40,1,1,1,1,740ff7814265c0a6e21ba7c67d6c61ecd1863f42aeeac566ad9752689988de6e
+4B three-shot,v005|alerted|stamped,v005,alerted,stamped,shared,independent,independent,F-12;H-40,1,1,1,1,1ee9d14cf7d7d5813426b5db8ed010ddf7852deb7e7712936a909362c9b6c247
+4B three-shot,v005|alerted|none,v005,alerted,none,,independent,independent,F-12;H-40,1,1,1,1,4278374e5754a4821d632cd686c97be035a4e295279f830c7c6d8b348fc8234b
+4B three-shot,v006|alerted|bare,v006,alerted,bare,independent,shared,shared,R-14,1,1,1,1,8618441b7afd94d2d42755e0bb4ce4cbf39be1e687232fb5ff3bc8967ead0a2f
+4B three-shot,v006|alerted|stamped,v006,alerted,stamped,independent,shared,shared,R-14,1,1,1,1,1dd4c6e690b0f215a8437c250e704aa3e638eda11ee40ef967a4b6a81447f228
+4B three-shot,v006|alerted|none,v006,alerted,none,,shared,shared,R-14,1,1,1,1,9f09a4fbef7b61728eb6193305eaedb25943117f9294fdb954aacff23ba511ff
+4B three-shot,v006|alerted|misleading,v006,alerted,misleading,independent,shared,shared,R-14,1,1,1,1,bfa54d0012319be29ebb6b6b7abc5f7a6727147a0d9140f638b70714850af444
+4B three-shot,v007|alerted|bare,v007,alerted,bare,independent,shared,shared,E-71,1,0,0,1,0848dd9d70b382497ff6fa1385825aa0e5dd51c46e1c663f43290ee9c2c205f1
+4B three-shot,v007|alerted|stamped,v007,alerted,stamped,independent,shared,shared,E-71,1,0,0,1,34d664cde9e57aa0b87ad562a0f23c25fb736a2ef47f6beddfb6a38f1d8cfc70
+4B three-shot,v007|alerted|none,v007,alerted,none,,shared,shared,E-71,1,0,0,1,62e0e7a117c58f719850d412db36be1f38002cbcc4f9580367e160e969a562c3
+4B three-shot,v007|alerted|misleading,v007,alerted,misleading,independent,shared,independent,B-02;B-02,0,0,0,1,364eeddc5216da4d7b0eaf5ea5d33d55c72f42324a3dfe1f1a2eb56581416d43
+4B three-shot,v008|alerted|bare,v008,alerted,bare,shared,independent,independent,H-71;W-18,1,1,1,1,b3d63f8269a6404e3fa484dab5516fadb394a76c466ee4643a31184a46449d58
+4B three-shot,v008|alerted|stamped,v008,alerted,stamped,shared,independent,independent,H-71;W-18,1,1,1,1,703727ac192ca247745e0cb85078a0860e298e66dc10ec938e03d59b143fd51e
+4B three-shot,v008|alerted|none,v008,alerted,none,,independent,independent,H-71;W-18,1,1,1,1,8cfaa300a6e3cc1fe6701860bf41a05e1f86ef59ac3ca6343174cfddf23a34ac
+4B three-shot,v009|alerted|bare,v009,alerted,bare,independent,shared,shared,L-120,1,1,1,1,a69dfd0fd14bf42b167fc440223a6c67f47276eed3a1fdb20db63db91b5afdf9
+4B three-shot,v009|alerted|stamped,v009,alerted,stamped,independent,shared,shared,L-120,1,1,1,1,6f00a2e0273630c64152cdcb74c0acd4ea3a3ea1ef21c7fceeec0f526611aec7
+4B three-shot,v009|alerted|none,v009,alerted,none,,shared,shared,L-120,1,1,1,1,27d794693b95bc5e3e57a0e5b5ff18d8381d0fb6a0d9aa232ceadd6397d5f28d
+4B three-shot,v009|alerted|misleading,v009,alerted,misleading,independent,shared,shared,L-120,1,1,1,1,7c0ac3c5f93f02c3a952cb9e3c3319d1761c96b7439d72e5d45a01ff2851bf99
+4B three-shot,v010|alerted|bare,v010,alerted,bare,shared,shared,shared,K-58,1,1,1,1,e8f10d4f3b8447bf6c74dff413c7984c16fafe13f034f6e38eacd88952ec3c4f
+4B three-shot,v010|alerted|stamped,v010,alerted,stamped,shared,shared,shared,K-58,1,1,1,1,0ac244748e318749e0762a48d0eb122e98ace42bf495a6d428de0cb061aa4f1d
+4B three-shot,v010|alerted|none,v010,alerted,none,,shared,shared,K-58,1,1,1,1,0959b9311c397be28099c860fccf08b9aebd27a60ceb58c1f3898b2022130cf9
+4B three-shot,v011|alerted|bare,v011,alerted,bare,independent,shared,shared,WF-88,1,1,1,1,e54de68a34d765675be812cddd353740486886c2a7b85cde68833c41aa51c2f6
+4B three-shot,v011|alerted|stamped,v011,alerted,stamped,independent,shared,shared,WF-88,1,1,1,1,dee8fb5043cded5faccf8e2489f34aede419b3818fd3bcf40899d1c1ce48ad1e
+4B three-shot,v011|alerted|none,v011,alerted,none,,shared,shared,WF-88,1,1,1,1,f85563bd1bee6287e9997bd7dcf9055b68af10ea243d0705cb5a18c95efbd101
+4B three-shot,v011|alerted|misleading,v011,alerted,misleading,independent,shared,shared,WF-88,1,1,1,1,ddc20ea9bdfda1483ec2a1a69c2de46b97e8ac14c899a0fee488df0c76ce81de
+4B three-shot,v012|alerted|bare,v012,alerted,bare,shared,independent,independent,Q-07;W-47,1,1,1,1,10d83f75127789dbac85335ce0d7418e31b7b87a390facd1a03bc813106e64ae
+4B three-shot,v012|alerted|stamped,v012,alerted,stamped,shared,independent,independent,Q-07;W-47,1,1,1,1,18a4303e05d24ed3dab1316e6f034124945f72ffe31669a121539593e9d8c9be
+4B three-shot,v012|alerted|none,v012,alerted,none,,independent,independent,Q-07;W-47,1,1,1,1,2b79c5586325f5b6344df49842c619593181df8a5dc7453c2c2db522f27ef16b
+4B three-shot,v013|alerted|bare,v013,alerted,bare,independent,independent,independent,C-24;T-61,1,1,1,1,0e261d9b186c725da20df4b33ecf45e9058220a4b70ee1d4353cf80dd9146c6c
+4B three-shot,v013|alerted|stamped,v013,alerted,stamped,independent,independent,independent,C-24;T-61,1,1,1,1,47dcaadda11ba9a4ea670d043cc2b028cdcf5597dc8f845c62a790f742c8e328
+4B three-shot,v013|alerted|none,v013,alerted,none,,independent,independent,C-24;T-61,1,1,1,1,ce128745c8d45dadb2c709e61f8b1cc35d4aaaf3d98fb0cf3025a468d79a067f
+4B three-shot,v014|alerted|bare,v014,alerted,bare,independent,shared,shared,BR-5,1,1,1,1,55df33aac98f4c372228bbd5bc293e1f0592a4280811e6f3eef97e13c9369366
+4B three-shot,v014|alerted|stamped,v014,alerted,stamped,independent,shared,shared,BR-5,1,1,1,1,a6d6643202ad02a7fd9942e284b6d4ceb324ef65a3ec297d002affdc7651f0a9
+4B three-shot,v014|alerted|none,v014,alerted,none,,shared,shared,BR-5,1,1,1,1,adc49bb0e82134ba0c6cbe25f4ddc3b3e831018d8f30b2f30debbc98ff7f1b48
+4B three-shot,v014|alerted|misleading,v014,alerted,misleading,independent,shared,shared,BR-5,1,1,1,1,4ebecb3052100323da82ebe558e5dfdc7b2ab8d437b38630a6149e2b482293b6
+4B tuned (v2),v000|alerted|bare,v000,alerted,bare,independent,shared,shared,G-52,1,1,1,1,dd39e509a617895f5e9defbb512c561090b99fe213856dc030bbb57d2a391c21
+4B tuned (v2),v000|alerted|stamped,v000,alerted,stamped,independent,shared,shared,G-52,1,1,1,1,b58627dda13820194b2845a9a9c224217762f50fee4a558e293449e65c543275
+4B tuned (v2),v000|alerted|none,v000,alerted,none,,shared,shared,G-52,1,1,1,1,64b08a2d854cdb0cf8f63abf5f87ddeca529088f3a3589228d33676e999663d6
+4B tuned (v2),v000|alerted|misleading,v000,alerted,misleading,independent,shared,shared,G-52,1,1,1,1,50b1901297f2bc36f0bc1f4a85514827e6411dfa60cba6d10176551b5e45b4f2
+4B tuned (v2),v000|neutral|bare,v000,neutral,bare,independent,shared,shared,G-52,1,1,1,1,5ee5cbc778dd31112afc9e939357a2828464d17b233ff3d51106fc3ac18a5561
+4B tuned (v2),v000|neutral|stamped,v000,neutral,stamped,independent,shared,shared,G-52,1,1,1,1,39e3102c13b7133c4bcee61d8900b50df7d446bd255f195b6d5f05834b1621c4
+4B tuned (v2),v000|neutral|none,v000,neutral,none,,shared,shared,G-52,1,1,1,1,d0638c1e1a15d2b5bc31c4053205f1a8b16d678bdff490282376e38b0db7fe04
+4B tuned (v2),v001|alerted|bare,v001,alerted,bare,independent,shared,shared,E-09,1,1,1,1,ccb1c38bba32f1833b13fffd2ea45c2f63eb6f6dc7cee85174eb07194a836377
+4B tuned (v2),v001|alerted|stamped,v001,alerted,stamped,independent,shared,shared,E-09,1,1,1,1,09525e97a82368231d1e48f66901214cc52f5b09aeeffaac688cc2b24a999b4c
+4B tuned (v2),v001|alerted|none,v001,alerted,none,,shared,shared,E-09,1,1,1,1,501ce15bdcdd986a0dff4bd906999aec501e1cc0725a5647536c7ab465243de0
+4B tuned (v2),v001|alerted|misleading,v001,alerted,misleading,independent,shared,shared,E-09,1,1,1,1,fd473dd5afe87fdd7d4f8fe72a0fd1260de396b058e80427a24005f0c68d5ebd
+4B tuned (v2),v001|neutral|bare,v001,neutral,bare,independent,shared,shared,E-09,1,1,1,1,43f332b03ce54f41f7427c240d9415df33aef8370b13c008d6b3f833ba895976
+4B tuned (v2),v001|neutral|stamped,v001,neutral,stamped,independent,shared,shared,E-09,1,1,1,1,c38b4a16fcabef44046cdd2991de76049a39a15de02420892b6d084b3ae63b0e
+4B tuned (v2),v001|neutral|none,v001,neutral,none,,shared,shared,E-09,1,1,1,1,bca71ed32cfdc011a0801b9c1d1ec5a4170ae2f1b73d13201857bacfc78f3562
+4B tuned (v2),v002|alerted|bare,v002,alerted,bare,shared,independent,independent,I-19;S-60,1,1,1,1,5c9a04d9a651e76e70d42018ae26c6d09878276fa8032fe1fb2176d98e09644f
+4B tuned (v2),v002|alerted|stamped,v002,alerted,stamped,shared,independent,independent,I-19;S-60,1,1,1,1,b24b06a1a685a1f7dcc744e53f80eabfccd8cec4fbcd29346b2c7b11a44d4dc0
+4B tuned (v2),v002|alerted|none,v002,alerted,none,,independent,independent,I-19;S-60,1,1,1,1,a294321f152c7b1db6f3fc24225cb581a61642f216ad0832fa81b9cd13d7ae96
+4B tuned (v2),v002|neutral|bare,v002,neutral,bare,shared,independent,shared,S-60,0,0,0,1,7aa2d141e8cc6b45dd43dec67f86029470c974706c1f7cdd95a7780acfaab20d
+4B tuned (v2),v002|neutral|stamped,v002,neutral,stamped,shared,independent,shared,S-60,0,0,0,1,0e7c4a3b7cea8a9305d6e0b222310ead8e6da380fbb120dc56836842c13f29a2
+4B tuned (v2),v002|neutral|none,v002,neutral,none,,independent,independent,I-19;S-60,1,1,1,1,c5f93225df8e3fecf94024d076fc353e1d7211a35fe8acec0891e6db0f9f6448
+4B tuned (v2),v003|alerted|bare,v003,alerted,bare,independent,shared,shared,MC-206,1,1,1,1,bf6481a023788ee4082087b042e229c4b571f3ef253bfbb12835226f4cd62a30
+4B tuned (v2),v003|alerted|stamped,v003,alerted,stamped,independent,shared,shared,MC-206,1,1,1,1,a0ec04bd3f602a878a634f6f647a14183eca5bf57a428cdef145ae84816471ee
+4B tuned (v2),v003|alerted|none,v003,alerted,none,,shared,shared,MC-206,1,1,1,1,62cd617bcea5039c3677fb39f147d89f6a4e650f54d43d08f474dd41587693d7
+4B tuned (v2),v003|alerted|misleading,v003,alerted,misleading,independent,shared,shared,MC-206,1,1,1,1,46a58a3008f412c3434d584ab292110e5168a47085c4143c6479f4a6d64d34c7
+4B tuned (v2),v003|neutral|bare,v003,neutral,bare,independent,shared,shared,MC-206,1,1,1,1,389adb90187fd6a0d8ab11d2f60e565eedd7dd30c6e7aabcde69b635a27aa6e0
+4B tuned (v2),v003|neutral|stamped,v003,neutral,stamped,independent,shared,shared,MC-206,1,1,1,1,893c44ac87bfd2b5184cfb4f420e4de2025e8fa3197752411e959c5f0b56f6e1
+4B tuned (v2),v003|neutral|none,v003,neutral,none,,shared,shared,MC-206,1,1,1,1,e9fe1387b99d97e3b5574435254e9d1967787cf1b4fa47f20015b1c09fae4b24
+4B tuned (v2),v004|alerted|bare,v004,alerted,bare,independent,shared,shared,S-09,1,1,1,1,bc02463e93e12318deb020dcb923194de465e3d1aee0ccd26dfa25aef1a971c3
+4B tuned (v2),v004|alerted|stamped,v004,alerted,stamped,independent,shared,shared,S-09,1,1,1,1,6d7e6ffa83ef75cf941f377566535e2796c9be6c3008c8de3143b6e3361bff3d
+4B tuned (v2),v004|alerted|none,v004,alerted,none,,shared,shared,S-09,1,1,1,1,3505659ccb275bee49d416a619b9115ee789b0c2689917017329cff189e62b8d
+4B tuned (v2),v004|alerted|misleading,v004,alerted,misleading,independent,shared,shared,E-63,1,0,0,1,a8bd51aba3477f7598556e29e7de8df3b85b2bb46ff2dae39d5e62e2b2223ddf
+4B tuned (v2),v004|neutral|bare,v004,neutral,bare,independent,shared,shared,S-09,1,1,1,1,c5cdecde7e67d4b8d9fde64e86553a5dce1fb8bc4c4b31352e3a0e06046a6437
+4B tuned (v2),v004|neutral|stamped,v004,neutral,stamped,independent,shared,shared,S-09,1,1,1,1,c9e3c691629558eb7abd6910dd40b15edf2c482a60917e9adc2e243c15be0db6
+4B tuned (v2),v004|neutral|none,v004,neutral,none,,shared,shared,S-09,1,1,1,1,0cce9ecb4f6362accbc46a00455bdd507802c150df098ba605269364db38042a
+4B tuned (v2),v005|alerted|bare,v005,alerted,bare,shared,independent,independent,F-12;H-40,1,1,1,1,740ff7814265c0a6e21ba7c67d6c61ecd1863f42aeeac566ad9752689988de6e
+4B tuned (v2),v005|alerted|stamped,v005,alerted,stamped,shared,independent,independent,F-12;H-40,1,1,1,1,1ee9d14cf7d7d5813426b5db8ed010ddf7852deb7e7712936a909362c9b6c247
+4B tuned (v2),v005|alerted|none,v005,alerted,none,,independent,independent,F-12;H-40,1,1,1,1,4278374e5754a4821d632cd686c97be035a4e295279f830c7c6d8b348fc8234b
+4B tuned (v2),v005|neutral|bare,v005,neutral,bare,shared,independent,independent,F-12;H-40,1,1,1,1,8de26e9d5bc2da782c7d874c1f14571622fc43f6ebf6e70fc2a09658106d5abc
+4B tuned (v2),v005|neutral|stamped,v005,neutral,stamped,shared,independent,independent,F-12;H-40,1,1,1,1,2ab8b978228a077e0b4133ecc9f0ffa05eecdcd0ee1d4da3b27a0afbb4e159a2
+4B tuned (v2),v005|neutral|none,v005,neutral,none,,independent,independent,F-12;H-40,1,1,1,1,a6c4b83cf18da7f8df2285deb53e8f5d09c249302c5dc7fda9c29ae8cbe70600
+4B tuned (v2),v006|alerted|bare,v006,alerted,bare,independent,shared,shared,R-14,1,1,1,1,8618441b7afd94d2d42755e0bb4ce4cbf39be1e687232fb5ff3bc8967ead0a2f
+4B tuned (v2),v006|alerted|stamped,v006,alerted,stamped,independent,shared,shared,R-14,1,1,1,1,1dd4c6e690b0f215a8437c250e704aa3e638eda11ee40ef967a4b6a81447f228
+4B tuned (v2),v006|alerted|none,v006,alerted,none,,shared,shared,R-14,1,1,1,1,9f09a4fbef7b61728eb6193305eaedb25943117f9294fdb954aacff23ba511ff
+4B tuned (v2),v006|alerted|misleading,v006,alerted,misleading,independent,shared,shared,R-14,1,1,1,1,bfa54d0012319be29ebb6b6b7abc5f7a6727147a0d9140f638b70714850af444
+4B tuned (v2),v006|neutral|bare,v006,neutral,bare,independent,shared,shared,R-14,1,1,1,1,a5f3f9df1a3c35fd9491eaa391e6f2eb6e60a72377066e4c479c48dc649446ad
+4B tuned (v2),v006|neutral|stamped,v006,neutral,stamped,independent,shared,shared,R-14,1,1,1,1,5ff04d3c9dc5694acac42a2b5602453092ec41861c746281694328b3de2d3ebd
+4B tuned (v2),v006|neutral|none,v006,neutral,none,,shared,shared,R-14,1,1,1,1,c1d93c75eb248149cd6e21fa2c31331a015133e9ea4680af573d4f3e4787cc43
+4B tuned (v2),v007|alerted|bare,v007,alerted,bare,independent,shared,shared,B-02,1,1,1,1,0848dd9d70b382497ff6fa1385825aa0e5dd51c46e1c663f43290ee9c2c205f1
+4B tuned (v2),v007|alerted|stamped,v007,alerted,stamped,independent,shared,shared,B-02,1,1,1,1,34d664cde9e57aa0b87ad562a0f23c25fb736a2ef47f6beddfb6a38f1d8cfc70
+4B tuned (v2),v007|alerted|none,v007,alerted,none,,shared,shared,B-02,1,1,1,1,62e0e7a117c58f719850d412db36be1f38002cbcc4f9580367e160e969a562c3
+4B tuned (v2),v007|alerted|misleading,v007,alerted,misleading,independent,shared,shared,B-02,1,1,1,1,364eeddc5216da4d7b0eaf5ea5d33d55c72f42324a3dfe1f1a2eb56581416d43
+4B tuned (v2),v007|neutral|bare,v007,neutral,bare,independent,shared,shared,B-02,1,1,1,1,05c1702572b8dfdde3c017d3f7448e825c746868fe7cffb6ce0efe1b07752dc4
+4B tuned (v2),v007|neutral|stamped,v007,neutral,stamped,independent,shared,shared,B-02,1,1,1,1,07b5909704ddd8fb2e08488b956513e45e8bc1ff6a638e310f5e1f6bc6813f30
+4B tuned (v2),v007|neutral|none,v007,neutral,none,,shared,shared,B-02,1,1,1,1,d2cea3cff43b3f534d7338033ed68e7100615024c420db623a4e849b97641b17
+4B tuned (v2),v008|alerted|bare,v008,alerted,bare,shared,independent,independent,H-71;W-18,1,1,1,1,b3d63f8269a6404e3fa484dab5516fadb394a76c466ee4643a31184a46449d58
+4B tuned (v2),v008|alerted|stamped,v008,alerted,stamped,shared,independent,independent,H-71;W-18,1,1,1,1,703727ac192ca247745e0cb85078a0860e298e66dc10ec938e03d59b143fd51e
+4B tuned (v2),v008|alerted|none,v008,alerted,none,,independent,independent,H-71;W-18,1,1,1,1,8cfaa300a6e3cc1fe6701860bf41a05e1f86ef59ac3ca6343174cfddf23a34ac
+4B tuned (v2),v008|neutral|bare,v008,neutral,bare,shared,independent,independent,H-71;W-18,1,1,1,1,943aa5491515f73ba32dd6e8638554a0849fa3404d28fc4677b3777aadc80dbb
+4B tuned (v2),v008|neutral|stamped,v008,neutral,stamped,shared,independent,independent,H-71;W-18,1,1,1,1,04662e21d4c49accd24603428af21d90d83e5419e50b78d1d14a72b934fdd2c0
+4B tuned (v2),v008|neutral|none,v008,neutral,none,,independent,independent,H-71;W-18,1,1,1,1,60340e577dfdc808695a1b55db8c8b745cff3ac90982114b4fef9a01f92b50b4
+4B tuned (v2),v009|alerted|bare,v009,alerted,bare,independent,shared,shared,L-120,1,1,1,1,a69dfd0fd14bf42b167fc440223a6c67f47276eed3a1fdb20db63db91b5afdf9
+4B tuned (v2),v009|alerted|stamped,v009,alerted,stamped,independent,shared,shared,L-120,1,1,1,1,6f00a2e0273630c64152cdcb74c0acd4ea3a3ea1ef21c7fceeec0f526611aec7
+4B tuned (v2),v009|alerted|none,v009,alerted,none,,shared,shared,L-120,1,1,1,1,27d794693b95bc5e3e57a0e5b5ff18d8381d0fb6a0d9aa232ceadd6397d5f28d
+4B tuned (v2),v009|alerted|misleading,v009,alerted,misleading,independent,shared,shared,L-120,1,1,1,1,7c0ac3c5f93f02c3a952cb9e3c3319d1761c96b7439d72e5d45a01ff2851bf99
+4B tuned (v2),v009|neutral|bare,v009,neutral,bare,independent,shared,shared,L-120,1,1,1,1,a7b5df50a94d828a44854b2293ee72f7a91415e17519ef46d8687c8cb5ab60c4
+4B tuned (v2),v009|neutral|stamped,v009,neutral,stamped,independent,shared,shared,L-120,1,1,1,1,6ed6681235574e1b31734111c06c998098969fc2cda53485a70dce385a643014
+4B tuned (v2),v009|neutral|none,v009,neutral,none,,shared,shared,L-120,1,1,1,1,253a0757a2268fe6ce8f2814a6bd72deca02a473ca97ce63baad84417edbe857
+4B tuned (v2),v010|alerted|bare,v010,alerted,bare,shared,shared,shared,K-58,1,1,1,1,e8f10d4f3b8447bf6c74dff413c7984c16fafe13f034f6e38eacd88952ec3c4f
+4B tuned (v2),v010|alerted|stamped,v010,alerted,stamped,shared,shared,shared,K-58,1,1,1,1,0ac244748e318749e0762a48d0eb122e98ace42bf495a6d428de0cb061aa4f1d
+4B tuned (v2),v010|alerted|none,v010,alerted,none,,shared,shared,K-58,1,1,1,1,0959b9311c397be28099c860fccf08b9aebd27a60ceb58c1f3898b2022130cf9
+4B tuned (v2),v010|neutral|bare,v010,neutral,bare,shared,shared,shared,K-58,1,1,1,1,d27849cc8af56a5cd9987269168d9cbd6afac8fbc0340b3d91a0c10007547d43
+4B tuned (v2),v010|neutral|stamped,v010,neutral,stamped,shared,shared,shared,K-58,1,1,1,1,59eb26d9f18410c9ce466ca3886a7247631145c8b77cfc7190144b6148445c75
+4B tuned (v2),v010|neutral|none,v010,neutral,none,,shared,shared,K-58,1,1,1,1,dbdb457ed2e2572083dda900a135fbdc6caf94af44fde6aca35a8b9f4e4fc334
+4B tuned (v2),v011|alerted|bare,v011,alerted,bare,independent,shared,shared,WF-88,1,1,1,1,e54de68a34d765675be812cddd353740486886c2a7b85cde68833c41aa51c2f6
+4B tuned (v2),v011|alerted|stamped,v011,alerted,stamped,independent,shared,shared,WF-88,1,1,1,1,dee8fb5043cded5faccf8e2489f34aede419b3818fd3bcf40899d1c1ce48ad1e
+4B tuned (v2),v011|alerted|none,v011,alerted,none,,shared,shared,WF-88,1,1,1,1,f85563bd1bee6287e9997bd7dcf9055b68af10ea243d0705cb5a18c95efbd101
+4B tuned (v2),v011|alerted|misleading,v011,alerted,misleading,independent,shared,shared,WF-88,1,1,1,1,ddc20ea9bdfda1483ec2a1a69c2de46b97e8ac14c899a0fee488df0c76ce81de
+4B tuned (v2),v011|neutral|bare,v011,neutral,bare,independent,shared,shared,WF-88,1,1,1,1,5260d4bd8720143f7e511462d15c5fb83e01df3fb9c75c000d5d6d4af941f761
+4B tuned (v2),v011|neutral|stamped,v011,neutral,stamped,independent,shared,shared,WF-88,1,1,1,1,1ea540dc115d219c1e6e278c71b9828e5d61ede0585a2c8708249b60024cdc47
+4B tuned (v2),v011|neutral|none,v011,neutral,none,,shared,shared,WF-88,1,1,1,1,b40ed19eda82fccb990cb5ad70ff6b26e547f49a471f56e6a7bd29cb62b3434b
+4B tuned (v2),v012|alerted|bare,v012,alerted,bare,shared,independent,independent,Q-07;W-47,1,1,1,1,10d83f75127789dbac85335ce0d7418e31b7b87a390facd1a03bc813106e64ae
+4B tuned (v2),v012|alerted|stamped,v012,alerted,stamped,shared,independent,independent,Q-07;W-47,1,1,1,1,18a4303e05d24ed3dab1316e6f034124945f72ffe31669a121539593e9d8c9be
+4B tuned (v2),v012|alerted|none,v012,alerted,none,,independent,independent,Q-07;W-47,1,1,1,1,2b79c5586325f5b6344df49842c619593181df8a5dc7453c2c2db522f27ef16b
+4B tuned (v2),v012|neutral|bare,v012,neutral,bare,shared,independent,independent,Q-07;W-47,1,1,1,1,9415d486fdbd067976f0258e62c49455e48ef6cfbae1261aa7a260013d7262f6
+4B tuned (v2),v012|neutral|stamped,v012,neutral,stamped,shared,independent,independent,Q-07;W-47,1,1,1,1,4930823bf9e7b5f179057fe96a49134663c294cb227a2fa45ed6bac481caddea
+4B tuned (v2),v012|neutral|none,v012,neutral,none,,independent,independent,Q-07;W-47,1,1,1,1,63e40beecd054cce23e09d9c4667e03857355d0c2ffee1c8a8218e3abe0fa107
+4B tuned (v2),v013|alerted|bare,v013,alerted,bare,independent,independent,independent,C-24;T-61,1,1,1,1,0e261d9b186c725da20df4b33ecf45e9058220a4b70ee1d4353cf80dd9146c6c
+4B tuned (v2),v013|alerted|stamped,v013,alerted,stamped,independent,independent,independent,C-24;T-61,1,1,1,1,47dcaadda11ba9a4ea670d043cc2b028cdcf5597dc8f845c62a790f742c8e328
+4B tuned (v2),v013|alerted|none,v013,alerted,none,,independent,independent,C-24;T-61,1,1,1,1,ce128745c8d45dadb2c709e61f8b1cc35d4aaaf3d98fb0cf3025a468d79a067f
+4B tuned (v2),v013|neutral|bare,v013,neutral,bare,independent,independent,independent,C-24;T-61,1,1,1,1,632b13d79d5848058ad415c52c9384910b4c0789a46b375c0859d28b856c7bf1
+4B tuned (v2),v013|neutral|stamped,v013,neutral,stamped,independent,independent,independent,C-24;T-61,1,1,1,1,54d2adaada330deffe53061ff04ccc4afd4126f5e207de5a69fdd047a038794d
+4B tuned (v2),v013|neutral|none,v013,neutral,none,,independent,independent,C-24;T-61,1,1,1,1,52283b186055c61ef858e7efa2bbc1a7057f3d657e24edac83c0ae8fd992115b
+4B tuned (v2),v014|alerted|bare,v014,alerted,bare,independent,shared,shared,BR-5,1,1,1,1,55df33aac98f4c372228bbd5bc293e1f0592a4280811e6f3eef97e13c9369366
+4B tuned (v2),v014|alerted|stamped,v014,alerted,stamped,independent,shared,shared,BR-5,1,1,1,1,a6d6643202ad02a7fd9942e284b6d4ceb324ef65a3ec297d002affdc7651f0a9
+4B tuned (v2),v014|alerted|none,v014,alerted,none,,shared,shared,BR-5,1,1,1,1,adc49bb0e82134ba0c6cbe25f4ddc3b3e831018d8f30b2f30debbc98ff7f1b48
+4B tuned (v2),v014|alerted|misleading,v014,alerted,misleading,independent,shared,shared,BR-5,1,1,1,1,4ebecb3052100323da82ebe558e5dfdc7b2ab8d437b38630a6149e2b482293b6
+4B tuned (v2),v014|neutral|bare,v014,neutral,bare,independent,shared,shared,BR-5,1,1,1,1,5d877bdef214833af3e9e4ccfa4b27c0b01077af8078ecd058d877876cc2820c
+4B tuned (v2),v014|neutral|stamped,v014,neutral,stamped,independent,shared,shared,BR-5,1,1,1,1,c53e5a3c05e89dd203c2503ba265a9e65ca4ed7cdd96d1eb8ec71ff20231f27a
+4B tuned (v2),v014|neutral|none,v014,neutral,none,,shared,shared,BR-5,1,1,1,1,cc31d1610e56b82ee773cc4640d8489afd3aa1f6dbdfc532b823bb5614988fc5
