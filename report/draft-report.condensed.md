@@ -101,11 +101,15 @@ On “please reconsider”, the 27b changed its verdict in 0 of 30 rows across t
 
 **Gap set.** A label does not fill the gap: every gaps-minus-controls interval includes zero. The models fill it themselves (Figure 1). With no label, the 4B zero-shot, 27b and DeepSeek give a firm verdict on 97 to 100% of gap bundles, and only Kimi tracks the gap. Ten of the 40 bundles are counted as mis-keyed (Appendix D); on the other 30, those three models answer undetermined on 2 to 3 of 90 prompts. One lead: in round 3, a “same source” note cuts abstention from 0.40 to 0.23, and its gap pull exceeds that of zero-shot and v2 by 0.10 [0.01, 0.19]. Kimi, which abstains untuned, shows no such pull.
 
-**Training loop.** Every round flipped with the label more often than the untuned model (8.4%): 13.6%, 16.8%, 14.0% and 25.3% in rounds 1 to 4. Round 3 is the only tuned arm apart from the collapsed v1 to abstain on broken chains (3 of 8 prompts). These are single-seed pilots, so they show an association, not a necessary trade-off.
+**Training loop.** Every round flipped with the label more often than the untuned model (Figure 2). Round 3 is the only tuned arm apart from the collapsed v1 to abstain on broken chains (3 of 8 prompts). These are single-seed pilots, so they show an association, not a necessary trade-off.
 
 ![Figure 1. Over-commitment on gap bundles.](figures-draft/fig-overcommitment-draft.png)
 
 **Figure 1. Over-commitment on gap bundles (exploratory).** Share of the 40 gap bundles each arm answered “undetermined” with no note; the dashed line is the keyed answer. Ten bundles are mis-keyed, so 100% is the defensible target only for the other 30 (Appendix D).
+
+![Figure 2. Training-loop rounds on the development set.](figures-draft/fig-loop-tradeoff.png)
+
+**Figure 2. Training-loop rounds on the development set (exploratory, single seed each).** Roots right and the share of pairs whose verdict flips when the label flips, for the untuned 4B and pilot rounds 1 to 4 (Table 11, Appendix H.6). Every round beats the untuned model on roots and also flips with the label more often. Round 0, which reproduced the v1 collapse, is left out.
 
 ## 5. Discussion and Limitations
 
