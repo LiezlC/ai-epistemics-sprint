@@ -6,3 +6,14 @@ papers/text/
 .obsidian/
 toy-run/checkpoint/
 training-trial/checkpoint/
+
+# internal working files, kept local
+fable.txt
+ai-epistemics-team-brief.html
+apart_ai_x_epistemics_project_accelerator.html
+sprint-plan.html
+HANDOVER.md
+PROJECT-ANGLES.md
+report/review-checksheet.md
+notes/
+papers/
