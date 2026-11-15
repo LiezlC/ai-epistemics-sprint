@@ -48,13 +48,13 @@ The count caught the first attempt’s flaw before training even started. Four r
 
 We scored the best round once on the real tests. On the hard cases it beat the untrained model but fell short of the big second attempt. On broken chains it did something no other model managed: it said “I can’t tell” on more than a third of them. On the gap cases it said “I can’t tell” far more often than any other trained model.
 
-That model also showed the effect we set out to find. Handed a note saying “same source,” it said “I can’t tell” less often (23 percent of gap cases, against 40 percent with no note), and went with the note instead. The models that never noticed the holes had nothing for a note to fill. Once a model learned to notice a hole, the note began to decide what went in it. It is one small model and a modest effect, so we treat it as a lead worth following.
+That model also hinted at the effect we first set out to find. Handed a note saying “same source,” it said “I can’t tell” less often (23 percent of gap cases, against 40 percent with no note) and went with the note instead. One reading is that a note can only fill a hole the reviewer has noticed. We hold that loosely. It comes from one small model picked after many comparisons, and Kimi, which noticed holes without any training, showed no such effect. It is a lead for the next study, and the findings above stand without it.
 
 ## What it adds up to
 
 Handoff notes sway these models less than we expected, on easy cases and hard ones alike. The bigger weakness is overconfidence. Most models give a firm answer when the evidence has a hole in it, and they will do it with no note at all.
 
-Teaching a model to say “I can’t tell” is harder than it looks. Get the training data slightly lopsided and it says it about everything. Fix the balance and it stops saying it where it should. Our most carefully shaped data taught it to say so in some of the right places, and that is where the note gained a foothold. Labels can only fill gaps a reviewer can see, so honesty about gaps and resistance to labels need teaching together.
+Teaching a model to say “I can’t tell” is harder than it looks. Get the training data slightly lopsided and it says it about everything. Fix the balance and it stops saying it where it should. Our most carefully shaped data taught it to say so in some of the right places, and in every round, better source tracing came with more sway from the note. Honesty about gaps and resistance to labels look like skills that need teaching together.
 
 The checks taught us something too. Counting the totals in a file and chasing odd results caught more than case-by-case review. Three agreeing models are not three independent opinions, which is this study’s own point turned on its makers. One careful human look found the flaw that the automated pipeline passed.
 

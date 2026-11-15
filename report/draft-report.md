@@ -420,9 +420,9 @@ Tuned minus zero-shot, paired over the 55 kept bundles (bootstrap, 10,000 resamp
 
 **The hypothesis is not supported.** In no arm is label pull larger on gaps than on controls; every interval includes zero. The models fill the gap themselves. With no label at all, 4B zero-shot, 27b and DeepSeek give a definite verdict, mostly "shared", on 97 to 100 percent of gap bundles. Kimi alone tracks the gap, and it misses mainly on G4 (ambiguous sameness) and G2 (unattributed root). Across arms, G4 is the hardest gap type to flag and G1 (missing record) the easiest. Tuned against zero-shot, paired over bundles, the undetermined rate on gaps rises by 0.98 [0.95, 1.00] and control accuracy falls by 0.59 [0.45, 0.73]: DPO v1 abstains everywhere and tracks nothing. DPO v2 (outputs `4d33ca5`, scores `25aa21d`) moves the right way on both sides: against zero-shot, the undetermined rate on gaps rises by 0.16 [0.07, 0.27] and control accuracy by 0.13 [0.04, 0.22]. It flags hearsay roots (G3) and sourceless relays (G5) but never unattributed roots (G2) or ambiguous sameness (G4). 17 of its 240 answers fail the parse rule. On the 30 bundles left after the audit exclusions, the gain holds: +0.11 [0.02, 0.22] on gap abstention and +0.17 [0.06, 0.29] on controls.
 
-**Loop round 3 and the label pull.** The loop's final candidate (Section 4.8; outputs `6a51323`, scores `0a55c6b`) abstains on gaps more than any other tuned arm: 0.40 with no note, 0.35 under "independent" and 0.23 under "same source". Against zero-shot, gap abstention rises by 0.31 [0.18, 0.43] and control joint accuracy by 0.18 [0.08, 0.29]; against v2, gap abstention rises by 0.15 [0.04, 0.27]. It catches hearsay roots (0.88 with no note) and sourceless relays, and almost none of the unsigned-root or ambiguous-sameness gaps. Here, for the first time in the study, the note fills the gap. A "same source" note cuts round 3's abstention from 0.40 to 0.23, and its label pull on gaps exceeds that of zero-shot and v2 by 0.10 [0.01, 0.19]. The 30-bundle analysis gives +0.10 [0.00, 0.22].
+**Loop round 3 and the label pull (exploratory).** The loop's final candidate (Section 4.8; outputs `6a51323`, scores `0a55c6b`) was chosen on the development set and scored once on the frozen sets. It abstains on gaps more than any other tuned arm: 0.40 with no note, 0.35 under "independent" and 0.23 under "same source". Against zero-shot, gap abstention rises by 0.31 [0.18, 0.43] and control joint accuracy by 0.18 [0.08, 0.29]; against v2, gap abstention rises by 0.15 [0.04, 0.27]. It catches hearsay roots (0.88 with no note) and sourceless relays, and almost none of the unsigned-root or ambiguous-sameness gaps. It is also the one arm in which the note appears to fill gaps: a "same source" note cuts its abstention from 0.40 to 0.23, and its label pull on gaps exceeds that of zero-shot and v2 by 0.10 [0.01, 0.19] (30-bundle analysis: +0.10 [0.00, 0.22]).
 
-This explains the earlier null. Arms that never abstain show no label pull on gaps because they have settled the question before the note can matter. The label begins to decide the answer only once a reviewer notices that the records leave it open. The evidence is one pilot adapter and one interval close to zero, so we treat it as a pointer. It is also the hypothesis the gap set was built to test, appearing in the one arm able to show it.
+Side by side: seven arms show no label pull on gaps, and the one tuned arm that abstains shows a pull of about ten points. A possible reading is that a label can only fill a gap a reviewer notices, since arms that never abstain have settled the question before the note can matter. Kimi cuts against this reading: it abstains on most gaps with no note and still shows no label pull. We report it as a lead for future work and not as a finding. Eight arms were scored on the gap set, each with a gap-minus-control contrast and further pairwise comparisons, and the 30-bundle reanalysis repeats them. Among that many comparisons, one interval just clear of zero is within what chance produces. A test of this reading needs a preregistered contrast on fresh cases and several abstaining models.
 
 **Audit and a flaw in the key.** Liezl's blind audit agreed with the key on 6 of 10 bundles: all 5 controls and the G1 bundle. The 4 disagreements were all G2, and they split two ways.
 
@@ -458,7 +458,7 @@ This explains the earlier null. Arms that never abstain show no label pull on ga
 
 ## 5. Discussion
 
-**Draft headline.** Handoff labels move these reviewers little when the records settle the question, and most reviewers over-commit when the records do not, guessing a verdict with or without a label. A reviewer tuned to notice gaps abstains more, and in that reviewer the label begins to decide how the gap gets filled. Labels can only fill gaps a reviewer can see. Teaching abstention and resisting labels pulled against each other in every training round we ran.
+**Draft headline.** Handoff labels moved these reviewers little when the records settled the question, on easy and hard cases alike. The consistent weakness was over-commitment: when the records left a gap, most models gave a firm verdict anyway, with or without a label, and only one of six untuned models abstained at a useful rate. Training a small model with preference pairs showed how fragile abstention is. Lopsided data taught it to abstain everywhere; balanced data sharpened source tracing but left it abstaining almost nowhere. In every loop round, gains in tracing came with more sensitivity to the label. One exploratory result points to where label influence may live: the one tuned model that abstained on gaps was also the one whose abstention a label could move (Section 4.7).
 
 `TBD after results. Planned points, kept only if the tables support them:`
 
@@ -489,7 +489,7 @@ This explains the earlier null. Arms that never abstain show no label pull on ga
 
 ## 6. Conclusion
 
-`Draft:` On easy and hard cases alike, a false handoff label rarely overrode records that settled the question. The larger weakness was over-commitment: most models gave a firm verdict on evidence with a hole in it, label or no label. Training a small model to abstain where the records fall short worked in part, and the abstaining model was the one that the label could steer, so abstention and label resistance need training together. Handoff labels should point to records for the reviewer to resolve, and reviewers should be tested on cases where the right answer is that the records cannot tell.
+`Draft:` On easy and hard cases alike, a false handoff label rarely overrode records that settled the question. The larger weakness was over-commitment: most models gave a firm verdict on evidence with a hole in it, label or no label. Training a small model to abstain where the records fall short worked in part and traded against label resistance in every round, which suggests the two need training together. Handoff labels should point to records for the reviewer to resolve, and reviewers should be tested on cases where the right answer is that the records cannot tell.
 
 ## Code and Data
 
@@ -558,3 +558,21 @@ All case packets, names, sites and records are fictional. No personal data was c
 ## Appendix C. Full tables
 
 `TBD: Table C1 (neutral instruction), per-arm full scorer output, verdict confusion matrices, representative errors with packet excerpts.`
+
+## Appendix D. Gap-set bundles excluded after the audit
+
+Ten of the 40 gap bundles were keyed undetermined where shared is defensible. In each, both reports trace through relays to one common end record that is unsigned (G2) or hearsay (G3); whatever that record's origin, the two reports repeat it and cannot corroborate each other. Liezl's blind audit surfaced the flaw on g009 and g012 after the freeze. The frozen scores stand as committed; Section 4.7 also reports every gap-set result on the remaining 30 bundles.
+
+| Bundle | Gap type | Control truth | Frozen key (gap) | Defensible answer |
+| --- | --- | --- | --- | --- |
+| g008 | G2 unsigned root | shared | undetermined | shared |
+| g009 | G2 unsigned root | shared | undetermined | shared (audit) |
+| g010 | G2 unsigned root | shared | undetermined | shared |
+| g011 | G2 unsigned root | shared | undetermined | shared |
+| g012 | G2 unsigned root | shared | undetermined | shared (audit) |
+| g016 | G3 hearsay root | shared | undetermined | shared |
+| g017 | G3 hearsay root | shared | undetermined | shared |
+| g018 | G3 hearsay root | shared | undetermined | shared |
+| g019 | G3 hearsay root | shared | undetermined | shared |
+| g020 | G3 hearsay root | shared | undetermined | shared |
+

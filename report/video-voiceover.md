@@ -36,10 +36,10 @@ Next we tried to train the small model to trace sources, by showing it thousands
 
 Big training runs take hours and reveal their flaws only at the end. So we switched to quick rounds: check the training file, train a small version in twelve minutes for about a dollar, test it on practice cases, and change one thing at a time. A simple count of the file caught that first mistake before any training started. Four rounds in, a pattern held. Every change that sharpened source tracing also made the model easier to sway with a note.
 
-**Scene 9. The finding** *(visual: a hole in the records, a sticky note sliding in to cover it)*
+**Scene 9. Where it leaves us** *(visual: a hole in the records; a sticky note hovering beside it)*
 
-The best of those rounds learned to say “I can’t tell” far more often than any other trained model. And in that model, the note started to matter. With no note, it said “I can’t tell” on 40 percent of the cases with holes. Handed a note saying “same source,” that fell to 23 percent: it took the note’s word and filled the hole. The other models showed no such effect, because they had already guessed. Labels can only fill gaps a reviewer can see.
+The best of those rounds learned to say “I can’t tell” far more often than any other trained model, and it caught some broken chains that even the large model missed. It also gave us a hint worth chasing. With no note, it said “I can’t tell” on 40 percent of the cases with holes. Handed a note saying “same source,” that fell to 23 percent. Perhaps a note can only fill a hole the reviewer has noticed. We treat that as a lead and nothing more: it comes from one small model, picked after many comparisons. What holds across every model we tested is simpler. Labels rarely overrode clear records, and most models guessed when the records ran out.
 
 **Scene 10. What follows** *(visual: the file closes; one line on screen)*
 
-So anyone building AI reviewers should teach two things together: honesty about gaps, and resistance to labels. Handoff notes should point to records and leave the conclusion to the reviewer. A reviewer that never says “I can’t tell” will sooner or later tell you about a source that was never there.
+So anyone building AI reviewers should test them on cases where the right answer is “I can’t tell,” and should expect honesty about gaps and resistance to labels to need training together. Handoff notes should point to records and leave the conclusion to the reviewer. A reviewer that never says “I can’t tell” will sooner or later tell you about a source that was never there.
