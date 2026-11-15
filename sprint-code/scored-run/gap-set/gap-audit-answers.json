@@ -1,0 +1,94 @@
+{
+ "sheet": "gap-audit",
+ "store": "gap-audit-answers-20261115-a7f3",
+ "submitted": false,
+ "answers": {
+  "Q1": {
+   "settled": "yes",
+   "verdict": "independent",
+   "roots": [
+    "Z-54",
+    "T-55"
+   ],
+   "note": ""
+  },
+  "Q2": {
+   "settled": "no",
+   "verdict": null,
+   "roots": [
+    "G-297"
+   ],
+   "note": "\"This information is taken from record DC-36\" - DC-36 record referred to but not presented to inspect so can't tell."
+  },
+  "Q3": {
+   "settled": "yes",
+   "verdict": "shared",
+   "roots": [
+    "DW-437"
+   ],
+   "note": ""
+  },
+  "Q4": {
+   "settled": "yes",
+   "verdict": "independent",
+   "roots": [
+    "W-634",
+    "L-83"
+   ],
+   "note": ""
+  },
+  "Q5": {
+   "settled": "yes",
+   "verdict": "shared",
+   "roots": [
+    "VH-39"
+   ],
+   "note": ""
+  },
+  "Q6": {
+   "settled": "yes",
+   "verdict": "shared",
+   "roots": [
+    "Z-65"
+   ],
+   "note": ""
+  },
+  "Q7": {
+   "settled": "yes",
+   "verdict": "independent",
+   "roots": [
+    "SC-32",
+    "C-24"
+   ],
+   "note": ""
+  },
+  "Q8": {
+   "settled": "yes",
+   "verdict": "independent",
+   "roots": [
+    "W-783",
+    "NC-24"
+   ],
+   "note": ""
+  },
+  "Q9": {
+   "settled": "yes",
+   "verdict": "independent",
+   "roots": [
+    "S-72",
+    "D-93"
+   ],
+   "note": ""
+  },
+  "Q10": {
+   "settled": "yes",
+   "verdict": "shared",
+   "roots": [
+    "CT-18"
+   ],
+   "note": ""
+  }
+ },
+ "key": null,
+ "exported_utc": "2026-11-15T09:35:43.333Z"
+}
