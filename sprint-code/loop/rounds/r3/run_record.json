@@ -1,0 +1,25 @@
+{
+ "round": "r3",
+ "base": "Qwen/Qwen3.5-4B",
+ "pairs_sha256": "7ea618eb1465e87e0467d8c0a0190dc6fbb96e9a55ef7cf6ad4c90a00b10f916",
+ "n_pairs": 1500,
+ "train_wall_s": 657.2,
+ "train_runtime_s": 632.1,
+ "versions": {
+  "torch": "2.9.0",
+  "transformers": "5.19.0",
+  "trl": "1.18.0",
+  "peft": "0.21.3",
+  "accelerate": "1.15.0",
+  "datasets": "5.2.0"
+ },
+ "adapter_sha256": {
+  "README.md": "57aab10b114f5ac4312230899bf8b85f36db71b370440260515275f0cea3264f",
+  "adapter_config.json": "9ee5b98eb9f24411bcdb3937a57143125b9c721d66d4ef404854539fd926bf94",
+  "adapter_model.safetensors": "400f1f69054c27daa595ff5f304248928b4c639dcb7f09d740179d0097d94dab"
+ },
+ "dev_sha256": "954c0c95088ff628134dee0a55c64c23901b61d51e8f2f7423b6d352234c425f",
+ "n_dev_prompts": 285,
+ "eval_wall_s": 383.6,
+ "decoding": "greedy temperature 0, thinking off, max 200 new tokens, vLLM 0.32.0, L40S, seed 0"
+}
