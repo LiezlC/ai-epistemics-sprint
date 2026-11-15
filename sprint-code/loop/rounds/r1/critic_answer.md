@@ -1,0 +1,36 @@
+## Diagnosis (3 to 5 sentences)
+
+Round 1 improved verdict accuracy while increasing dependence on the handoff note: label flips reached 20.0%, or 13.6% when both answers parsed. Balanced rejected verdicts prevent one form of collapse, but do not explicitly teach the same record packet to produce the same answer under conflicting notes. Similar aggregate accuracy across note conditions can hide individual packets switching verdicts. The next pilot should directly teach note invariance while preserving the current preference balance.
+
+## Proposed change (one change; precise enough to implement; say which rows change and how)
+
+**Replace the 1,500 independently sampled pairs with 500 matched handoff-note bundles, each containing three training pairs.**
+
+In `make_round_data.py`, reconstruct the current v2 sample using the existing seed and indices. Select 500 rows without replacement, sampling within each chosen/rejected stratum using `random.Random(SEED)` and sorted source indices:
+
+| Chosen > rejected | Source rows selected |
+|---|---:|
+| undetermined > shared | 101 |
+| undetermined > independent | 94 |
+| shared > undetermined | 82 |
+| shared > independent | 70 |
+| independent > undetermined | 78 |
+| independent > shared | 75 |
+
+For each selected row, replace only its handoff-note paragraph to generate these variants:
+
+- Remove the paragraph entirely.
+- Set it to `Handoff note: the reports are independent.`
+- Set it to `Handoff note: the reports share a source.`
+
+Keep the instruction, records and both answers byte-for-byte unchanged across variants. Emit all three variants per selected row, giving exactly 1,500 pairs. Every verdict remains chosen and rejected; the preference proportions stay close to the current round. All record content, IDs and domains come exclusively from the existing training rows.
+
+## Expected effect (which dev metrics move and roughly how far)
+
+My pilot hypothesis is that label-flip rate falls from **20% to roughly 10–14%**, with the both-parsed rate falling from **13.6% to 6–9%**. Wrong-note following should decline from **29% toward 20–25%**.
+
+Expect verdict accuracy to remain around **62–67%** and root accuracy around **55–60%**. Gap abstention may remain near its current level; this change targets note dependence. These are directional estimates, with substantial uncertainty from one pilot.
+
+## Risk (one or two sentences)
+
+Reducing unique record packets from 1,500 to 500 could weaken structural generalization despite preserving preference balance. Raw label flips could also fall through increased parsing failures, so a convincing improvement requires the both-parsed flip rate to fall without unparseable answers rising above 10.
