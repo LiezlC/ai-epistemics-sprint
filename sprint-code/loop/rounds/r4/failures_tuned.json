@@ -1,0 +1,512 @@
+{
+ "G1-gap truth=undetermined said=shared": {
+  "n": 10,
+  "examples": [
+   {
+    "id": "dg000|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"VD-96\"]}"
+   },
+   {
+    "id": "dg000|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"VD-96\"]}"
+   },
+   {
+    "id": "dg000|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"VD-96\"]}"
+   }
+  ]
+ },
+ "G3-gap truth=shared said=undetermined": {
+  "n": 7,
+  "examples": [
+   {
+    "id": "dg012|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   },
+   {
+    "id": "dg012|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   },
+   {
+    "id": "dg012|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   }
+  ]
+ },
+ "F2 truth=independent said=undetermined": {
+  "n": 7,
+  "examples": [
+   {
+    "id": "dh005|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   },
+   {
+    "id": "dh007|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   },
+   {
+    "id": "dh007|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   }
+  ]
+ },
+ "G4-gap truth=undetermined said=shared": {
+  "n": 6,
+  "examples": [
+   {
+    "id": "dg018|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"F-99\"]}"
+   },
+   {
+    "id": "dg018|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"CA-606\"]}"
+   },
+   {
+    "id": "dg019|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"M-23\"]}"
+   }
+  ]
+ },
+ "G4-control truth=independent said=undetermined": {
+  "n": 6,
+  "examples": [
+   {
+    "id": "dg020c|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   },
+   {
+    "id": "dg020c|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   },
+   {
+    "id": "dg020c|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   }
+  ]
+ },
+ "G5-control truth=independent said=undetermined": {
+  "n": 6,
+  "examples": [
+   {
+    "id": "dg027c|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   },
+   {
+    "id": "dg027c|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   },
+   {
+    "id": "dg027c|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   }
+  ]
+ },
+ "F3 truth=shared said=undetermined": {
+  "n": 6,
+  "examples": [
+   {
+    "id": "dh011|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   },
+   {
+    "id": "dh011|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   },
+   {
+    "id": "dh011|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   }
+  ]
+ },
+ "G1-control truth=independent said=undetermined": {
+  "n": 5,
+  "examples": [
+   {
+    "id": "dg004c|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   },
+   {
+    "id": "dg004c|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   },
+   {
+    "id": "dg004c|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   }
+  ]
+ },
+ "G2-gap truth=undetermined said=shared": {
+  "n": 5,
+  "examples": [
+   {
+    "id": "dg009|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"J-429\"]}"
+   },
+   {
+    "id": "dg009|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"J-429\"]}"
+   },
+   {
+    "id": "dg009|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"J-429\"]}"
+   }
+  ]
+ },
+ "G4-control truth=independent said=shared": {
+  "n": 5,
+  "examples": [
+   {
+    "id": "dg018c|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"CA-606\"]}"
+   },
+   {
+    "id": "dg019c|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"M-23\"]}"
+   },
+   {
+    "id": "dg022c|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"S-87\"]}"
+   }
+  ]
+ },
+ "G4-gap truth=undetermined said=independent": {
+  "n": 5,
+  "examples": [
+   {
+    "id": "dg018|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"independent\", \"root_records\": [\"F-99\", \"CA-606\"]}"
+   },
+   {
+    "id": "dg019|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"independent\", \"root_records\": [\"K-62\", \"H-96\"]}"
+   },
+   {
+    "id": "dg019|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"independent\", \"root_records\": [\"K-62\", \"H-96\"]}"
+   }
+  ]
+ },
+ "G1-control truth=shared said=undetermined": {
+  "n": 3,
+  "examples": [
+   {
+    "id": "dg001c|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   },
+   {
+    "id": "dg001c|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   },
+   {
+    "id": "dg002c|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   }
+  ]
+ },
+ "F2 truth=independent said=shared": {
+  "n": 3,
+  "examples": [
+   {
+    "id": "dh009|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"M-61\"]}"
+   },
+   {
+    "id": "dh009|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"M-61\"]}"
+   },
+   {
+    "id": "dh009|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"M-61\"]}"
+   }
+  ]
+ },
+ "F3 truth=independent said=shared": {
+  "n": 3,
+  "examples": [
+   {
+    "id": "dh014|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"FV-31\"]}"
+   },
+   {
+    "id": "dh014|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"V-67\"]}"
+   },
+   {
+    "id": "dh014|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"V-67\"]}"
+   }
+  ]
+ },
+ "F8 truth=shared said=independent": {
+  "n": 3,
+  "examples": [
+   {
+    "id": "dh030|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"independent\", \"root_records\": [\"A-27\", \"A-27\"]}"
+   },
+   {
+    "id": "dh030|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"independent\", \"root_records\": [\"A-27\", \"A-27\"]}"
+   },
+   {
+    "id": "dh030|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"independent\", \"root_records\": [\"A-27\", \"A-27\"]}"
+   }
+  ]
+ },
+ "G1-control truth=independent said=shared": {
+  "n": 2,
+  "examples": [
+   {
+    "id": "dg003c|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"C-53\"]}"
+   },
+   {
+    "id": "dg005c|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"A-111\"]}"
+   }
+  ]
+ },
+ "G2-control truth=independent said=undetermined": {
+  "n": 2,
+  "examples": [
+   {
+    "id": "dg010c|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   },
+   {
+    "id": "dg011c|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   }
+  ]
+ },
+ "G3-control truth=independent said=shared": {
+  "n": 2,
+  "examples": [
+   {
+    "id": "dg015c|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"M-75\"]}"
+   },
+   {
+    "id": "dg016c|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"TH-19\"]}"
+   }
+  ]
+ },
+ "G3-control truth=independent said=undetermined": {
+  "n": 2,
+  "examples": [
+   {
+    "id": "dg015c|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   },
+   {
+    "id": "dg015c|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   }
+  ]
+ },
+ "G3-gap truth=undetermined said=independent": {
+  "n": 2,
+  "examples": [
+   {
+    "id": "dg016|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"independent\", \"root_records\": [\"TH-19\", \"TH-19\"]}"
+   },
+   {
+    "id": "dg016|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"independent\", \"root_records\": [\"TH-19\", \"TH-19\"]}"
+   }
+  ]
+ },
+ "G5-control truth=independent said=shared": {
+  "n": 2,
+  "examples": [
+   {
+    "id": "dg028c|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"JZ-27\"]}"
+   },
+   {
+    "id": "dg028c|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"JZ-27\"]}"
+   }
+  ]
+ },
+ "F4 truth=shared said=undetermined": {
+  "n": 2,
+  "examples": [
+   {
+    "id": "dh016|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   },
+   {
+    "id": "dh016|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   }
+  ]
+ },
+ "F4 truth=independent said=shared": {
+  "n": 2,
+  "examples": [
+   {
+    "id": "dh017|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"B-92\"]}"
+   },
+   {
+    "id": "dh019|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"PX-86\"]}"
+   }
+  ]
+ },
+ "G2-gap truth=undetermined said=independent": {
+  "n": 1,
+  "examples": [
+   {
+    "id": "dg011|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"independent\", \"root_records\": [\"XN-39\", \"ZS-17\"]}"
+   }
+  ]
+ },
+ "G3-gap truth=undetermined said=shared": {
+  "n": 1,
+  "examples": [
+   {
+    "id": "dg016|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"TH-19\"]}"
+   }
+  ]
+ },
+ "G5-control truth=shared said=undetermined": {
+  "n": 1,
+  "examples": [
+   {
+    "id": "dg025c|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   }
+  ]
+ },
+ "G5-gap truth=undetermined said=shared": {
+  "n": 1,
+  "examples": [
+   {
+    "id": "dg026|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"W-816\"]}"
+   }
+  ]
+ },
+ "F1 truth=shared said=undetermined": {
+  "n": 1,
+  "examples": [
+   {
+    "id": "dh001|none",
+    "label": "none",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   }
+  ]
+ },
+ "F4 truth=independent said=undetermined": {
+  "n": 1,
+  "examples": [
+   {
+    "id": "dh018|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   }
+  ]
+ },
+ "F7 truth=undetermined said=shared": {
+  "n": 1,
+  "examples": [
+   {
+    "id": "dh027|shared",
+    "label": "shared",
+    "answer": "{\"verdict\": \"shared\", \"root_records\": [\"M-773\"]}"
+   }
+  ]
+ },
+ "F7 truth=undetermined said=independent": {
+  "n": 1,
+  "examples": [
+   {
+    "id": "dh029|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"independent\", \"root_records\": [\"L-85\", \"L-85\"]}"
+   }
+  ]
+ },
+ "F8 truth=shared said=undetermined": {
+  "n": 1,
+  "examples": [
+   {
+    "id": "dh033|independent",
+    "label": "independent",
+    "answer": "{\"verdict\": \"undetermined\", \"root_records\": []}"
+   }
+  ]
+ }
+}

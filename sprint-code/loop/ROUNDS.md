@@ -44,6 +44,14 @@ Spec: `notes/training-loop-spec.md` (approved by Liezl, 15 Nov 2026). Sprint cod
 - Reading: partial win against the round-3 prediction (flip 12 to 15%: met at 14.0; wrong-label following 23 to 27%: met at 25.8; note-direction gap 3 to 5 points: missed, still 7.3 points, 72.6% vs 66.3%). Flip rate is back to round 1's level, still well above the untuned base. F3 (distractor) fell to 60% (r2 86.7%).
 - Adapter (local, not in git): adapter_model.safetensors sha256 `400f1f69054c27daa595ff5f304248928b4c639dcb7f09d740179d0097d94dab`.
 
+### Round 4: v5 recipe (critic change on round 3, approved by Liezl: "Yes, run round 4")
+- Change: round 2's 500 files, notes and chosen answers; every rejected answer replaced by one note-independent negative per file (the other two verdicts alternating within each chosen-verdict group, chosen roots copied), the same under all three notes. sha256 `0f899376dcab4d09b4e5111fb89d297512efbd190bfd427919825d7eb59d224b`.
+- Data checks: pass (rejected 522 ind / 522 sh / 456 und).
+- Trained 663 s; dev eval 285 prompts, 0 unparseable.
+- Dev: verdict 63.2% (r3 68.1), roots 62.8% (best so far); undetermined on gaps 56.9% (r3 26.4), on F7 86.7%, but on gap controls 27.8% and on all settled cases 25.3% (r3 5.6); label-flip both-parsed 25.3% (r3 14.0, base 8.4: worst of any round); follows a wrong label 22.6% (best so far).
+- Reading: the prediction failed on its main target (flip 9 to 12% predicted, 25.3% observed). The model swung toward "undetermined" (104 of 285 answers) and away from "independent" (48): F2 deep independent chains fell from 93.3% to 33.3% and G4 controls to 38.9%. Gap recognition rose sharply (G5-gap 94.4%, G4-gap 38.9% from 0%). Copying chosen roots into rejected answers made "undetermined" with no roots never rejected on its own terms (undetermined negatives carry roots), a likely cause of the over-abstention.
+- Adapter (local, not in git): adapter_model.safetensors sha256 `bae37a0cd1c16aa28434886eae5704bba65b1ca7fe810248bdedefdac458005b`.
+
 ## Trajectory so far
 
 | Round | Recipe | Verdict | Roots | Und. on gaps | Flip (both parsed) | Follows wrong label |
@@ -53,5 +61,6 @@ Spec: `notes/training-loop-spec.md` (approved by Liezl, 15 Nov 2026). Sprint cod
 | 1 | v2 | 64.2 | 57.5 | 19.4 | 13.6 | 29.0 |
 | 2 | v3 matched notes | 68.4 | 59.3 | 27.8 | 16.8 | 29.0 |
 | 3 | v4 wrong-note rejects | 68.1 | 57.5 | 26.4 | 14.0 | 25.8 |
+| 4 | v5 note-independent rejects | 63.2 | 62.8 | 56.9 | 25.3 | 22.6 |
 
-No recipe yet clearly beats v2 on every axis: rounds 2 and 3 gain about 4 points of verdict accuracy and 7 to 8 points of gap abstention, but no round brings the flip rate below base. Differences of 2 to 3 points are within one-pilot noise on 95 cases.
+No recipe clearly beats v2 on every axis. Round 4 trades settled-case accuracy (25% wrongly undetermined) for gap recognition. Rounds 2 and 3 gain about 4 points of verdict accuracy and 7 to 8 points of gap abstention, but no round brings the flip rate below base. Differences of 2 to 3 points are within one-pilot noise on 95 cases.
